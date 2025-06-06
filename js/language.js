@@ -41,12 +41,12 @@ const translations = {
         // 联系方式
         contact: {
             title: "联系方式",
-            email: "邮箱：your.email@example.com"
+            email: "邮箱：995098125@qq.com"
         },
 
         // 页脚
         footer: {
-            copyright: "© 2024 周婧. All rights reserved."
+            copyright: "© 2025 周婧. All rights reserved."
         }
     },
     en: {
@@ -90,12 +90,12 @@ const translations = {
         // Contact
         contact: {
             title: "Contact",
-            email: "Email: your.email@example.com"
+            email: "Email: 995098125@qq.com"
         },
 
         // Footer
         footer: {
-            copyright: "© 2024 Zhou Jing. All rights reserved."
+            copyright: "© 2025 Zhou Jing. All rights reserved."
         }
     }
 };
