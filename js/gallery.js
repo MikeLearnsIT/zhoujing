@@ -8,28 +8,33 @@ document.addEventListener('DOMContentLoaded', function () {
     // 为所有图片添加点击事件
     document.querySelectorAll('.gallery-item img').forEach(img => {
         img.addEventListener('click', function () {
-            modal.style.display = "block";
+            modal.classList.add('show');
             modalImg.src = this.src;
             modalCaption.textContent = this.alt;
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
         });
     });
 
+    // 关闭模态框的函数
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto'; // 恢复背景滚动
+    }
+
     // 点击关闭按钮关闭模态框
-    closeBtn.addEventListener('click', function () {
-        modal.style.display = "none";
-    });
+    closeBtn.addEventListener('click', closeModal);
 
     // 点击模态框背景关闭模态框
     modal.addEventListener('click', function (e) {
         if (e.target === modal) {
-            modal.style.display = "none";
+            closeModal();
         }
     });
 
     // 添加键盘事件支持
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && modal.style.display === "block") {
-            modal.style.display = "none";
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
         }
     });
 

@@ -30,8 +30,11 @@
 
     <main>
         <section id="home" class="hero">
+            <div class="hero-background">
+                <img src="images/images_43.png" alt="">
+            </div>
             <div class="hero-content">
-                <h1 data-i18n="home.title"></h1>
+                <h1 data-i18n="home.artist"></h1>
                 <p class="subtitle" data-i18n="home.subtitle"></p>
             </div>
         </section>
@@ -44,19 +47,19 @@
                     <img src="images/images_06.png" alt="" data-i18n-alt="gallery.artwork1">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/images_07.png" alt="" data-i18n-alt="gallery.artwork2">
+                    <img src="images/images_08.png" alt="" data-i18n-alt="gallery.artwork2">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/images_08.png" alt="" data-i18n-alt="gallery.artwork3">
+                    <img src="images/images_40.png" alt="" data-i18n-alt="gallery.artwork3">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/images_09.png" alt="" data-i18n-alt="gallery.artwork1">
+                    <img src="images/images_31.png" alt="" data-i18n-alt="gallery.artwork1">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/images_10.png" alt="" data-i18n-alt="gallery.artwork2">
+                    <img src="images/images_51.png" alt="" data-i18n-alt="gallery.artwork2">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/images_11.png" alt="" data-i18n-alt="gallery.artwork3">
+                    <img src="images/images_53.png" alt="" data-i18n-alt="gallery.artwork3">
                 </div>
             </div>
         </section>
@@ -76,8 +79,9 @@
             <div class="contact-content">
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="social-link"><i class="fab fa-weibo"></i></a> -->
+                    <a href="https://www.instagram.com/jingzhou88888?igsh=azh5Y3R3cno5MHUy&utm_source=qr"
+                        class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
                 <p class="email" data-i18n="contact.email"></p>
             </div>
@@ -95,8 +99,16 @@
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
+    <!-- 微信二维码模态框 -->
+    <div class="modal" id="wechatModal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" src="images/wechat.png" alt="微信二维码" title="微信二维码">
+        <div class="modal-caption" data-i18n="contact.wechat"></div>
+    </div>
+
     <script src="js/language.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js/wechat.js"></script>
 </body>
 
 </html>

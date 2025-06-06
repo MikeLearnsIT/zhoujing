@@ -96,24 +96,78 @@ body {
 /* 英雄区域样式 */
 .hero {
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/images_64.png') center/cover no-repeat;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.hero:hover .hero-background {
+    transform: scale(1.1);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.2)
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    max-width: 800px;
+    animation: fadeInUp 1s ease;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
     font-size: 1.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 作品集样式 */
@@ -252,6 +306,10 @@ body {
         font-size: 3rem;
     }
 
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
@@ -259,10 +317,9 @@ body {
 
 /* 模态框样式 */
 .modal {
-    display: none;
+    display: none; /* 初始状态为隐藏 */
     position: fixed;
-    z-index: 1000;
-    padding-top: 50px;
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
@@ -271,27 +328,41 @@ body {
     overflow: auto;
 }
 
+/* 当模态框显示时的样式 */
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .modal-content {
     margin: auto;
     display: block;
     max-width: 90%;
     max-height: 90vh;
     object-fit: contain;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
 }
 
 .modal-caption {
-    margin: auto;
-    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
     width: 80%;
     max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
 }
 
 .modal-close {
-    position: absolute;
+    position: fixed;
     right: 35px;
     top: 15px;
     color: #f1f1f1;
@@ -299,6 +370,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
+    z-index: 10000;
 }
 
 .modal-close:hover {
@@ -309,8 +381,32 @@ body {
 .gallery-item {
     cursor: pointer;
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+/* 微信二维码模态框样式 */
+#wechatModal .modal-content {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#wechatModal .modal-caption {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
 } 

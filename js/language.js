@@ -17,7 +17,8 @@ const translations = {
 
         // 首页
         home: {
-            title: "周婧",
+            title: "周祥攸兴",
+            artist: "周婧",
             subtitle: "艺术家 / 画家"
         },
 
@@ -33,15 +34,16 @@ const translations = {
         about: {
             title: "关于我",
             content: [
-                "欢迎来到我的个人艺术空间。我是一名专注于[您的艺术风格]的画家，致力于通过画笔表达内心的情感和对世界的理解。",
-                "我的作品融合了传统与现代元素，探索[您的艺术理念]。"
+                "在成长过程中对绘画产生了深厚的兴趣并贯彻着自己独特的生命感悟和跨文化背景的神韵。以其多元化的风格、丰富多彩的线条和表现力强的色彩手法",
+                "在人物、景象、抽象等方面进行探索创作,并成功地将不同材料、主题和理念融合在一起。独特表述形式和热情洋溢的创作思维不仅吸引了广大观众的关注和认可，也得到了当代艺术界内同行和评论家们的高度评价。我的作品融合了传统与现代元素，探索[您的艺术理念]。"
             ]
         },
 
         // 联系方式
         contact: {
             title: "联系方式",
-            email: "邮箱：995098125@qq.com"
+            email: "邮箱：995098125@qq.com",
+            wechat: "扫描二维码添加微信"
         },
 
         // 页脚
@@ -66,7 +68,8 @@ const translations = {
 
         // Home
         home: {
-            title: "Zhou Jing",
+            title: "ZHOU XIANG YOU XING",
+            artist: "Zhou Jing",
             subtitle: "Artist / Painter"
         },
 
@@ -82,15 +85,16 @@ const translations = {
         about: {
             title: "About Me",
             content: [
-                "Welcome to my personal art space. I am a painter focused on [your art style], dedicated to expressing inner emotions and understanding of the world through my brush.",
-                "My works blend traditional and modern elements, exploring [your art concept]."
+                "Throughout my personal growth, I have developed a profound passion for painting, whichallows me to express my unique perspective on life and embrace the richness of cross cultural experiences.With a versatile style, dynamic lines, and a bold use of colors, I explore and create in various realms, including portraiture, landscapes, and abstract art.I skillfully ",
+                "blend different materials, themes, and concepts, seamlessly merging them together. My distinctive artistic expression and fervent creative thinking not only captivate a wide audience but also garner high acclaim from fellow artists and critics in the contemporary art world."
             ]
         },
 
         // Contact
         contact: {
             title: "Contact",
-            email: "Email: 995098125@qq.com"
+            email: "Email: 995098125@qq.com",
+            wechat: "Scan QR code to add WeChat"
         },
 
         // Footer
@@ -102,7 +106,7 @@ const translations = {
 
 class LanguageManager {
     constructor() {
-        this.currentLang = 'zh';
+        this.currentLang = 'en';
         this.init();
     }
 
