@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>周婧 - 联系方式 | Zhou Jing - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo" data-i18n="home.title"></div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home"></a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery"></a></li>
+                    <li><a href="exhibitions.html" class="nav-link" data-i18n="nav.exhibitions"></a></li>
+                    <li><a href="cv.html" class="nav-link" data-i18n="nav.cv"></a></li>
+                    <li><a href="statement.html" class="nav-link" data-i18n="nav.statement"></a></li>
+                    <li><a href="press.html" class="nav-link" data-i18n="nav.press"></a></li>
+                    <li><a href="studio.html" class="nav-link" data-i18n="nav.studio"></a></li>
+                    <li><a href="contact.html" class="nav-link active" data-i18n="nav.contact"></a></li>
+                </ul>
+                <button class="lang-toggle" aria-label="切换语言">
+                    <span class="lang-text" data-i18n="lang.current"></span>
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2 data-i18n="contact.title"></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="email" data-i18n="contact.email">zhoujingart@outlook.com</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="wechat-link"><i class="fab fa-weixin"></i></a>
+                        <a href="https://www.instagram.com/jingzhou88888?igsh=azh5Y3R3cno5MHUy&utm_source=qr"
+                            class="social-link" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" id="linkedin-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-download">
+                    <a href="assets/portfolio.pdf" class="download-button" data-i18n="contact.portfolio">
+                        <i class="fas fa-download"></i>
+                        <span data-i18n-text="contact.portfolioText"></span>
+                    </a>
+                    <p class="portfolio-note" data-i18n="contact.portfolioNote"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footer.copyright"></p>
+    </footer>
+
+    <!-- 微信二维码模态框 -->
+    <div class="modal" id="wechatModal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" src="images/wechat.png" alt="微信二维码" title="微信二维码">
+        <div class="modal-caption" data-i18n="contact.wechat"></div>
+    </div>
+
+    <script src="js/language.js"></script>
+    <script src="js/wechat.js"></script>
+</body>
+
+</html>
