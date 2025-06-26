@@ -18,8 +18,7 @@
                     <li><a href="index.html" class="nav-link" data-i18n="nav.home"></a></li>
                     <li><a href="gallery.html" class="nav-link active" data-i18n="nav.gallery"></a></li>
                     <li><a href="exhibitions.html" class="nav-link" data-i18n="nav.exhibitions"></a></li>
-                    <li><a href="cv.html" class="nav-link" data-i18n="nav.cv"></a></li>
-                    <li><a href="statement.html" class="nav-link" data-i18n="nav.statement"></a></li>
+                    <li><a href="about.html" class="nav-link" data-i18n="nav.about"></a></li>
                     <li><a href="press.html" class="nav-link" data-i18n="nav.press"></a></li>
                     <li><a href="studio.html" class="nav-link" data-i18n="nav.studio"></a></li>
                     <li><a href="contact.html" class="nav-link" data-i18n="nav.contact"></a></li>
@@ -34,25 +33,72 @@
 
     <main>
         <section class="gallery">
-            <h2 data-i18n="gallery.title"></h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/images_06.png" alt="" data-i18n-alt="gallery.artwork1">
+            <div class="gallery-container">
+                <div class="gallery-header">
+                    <h2 data-i18n="gallery.title">作品集</h2>
+                    <p class="gallery-subtitle" data-i18n="gallery.subtitle">探索色彩与情感的对话</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/images_08.png" alt="" data-i18n-alt="gallery.artwork2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/images_40.png" alt="" data-i18n-alt="gallery.artwork3">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/images_31.png" alt="" data-i18n-alt="gallery.artwork1">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/images_51.png" alt="" data-i18n-alt="gallery.artwork2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/images_53.png" alt="" data-i18n-alt="gallery.artwork3">
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_06.png" alt="内心景象">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork1.title">内心景象</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork1.meta">2024 • 布面油画</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_08.png" alt="色彩对话">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork2.title">色彩对话</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork2.meta">2024 • 混合媒材</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_40.png" alt="抽象表达">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork3.title">抽象表达</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork3.meta">2023 • 丙烯画</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_31.png" alt="情感流动">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork4.title">情感流动</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork4.meta">2023 • 水彩画</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_51.png" alt="文化融合">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork5.title">文化融合</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork5.meta">2023 • 综合材料</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <div class="gallery-item-image">
+                            <img src="images/images_53.png" alt="时间印记">
+                            <div class="gallery-item-overlay">
+                                <h3 class="gallery-item-title" data-i18n="gallery.artwork6.title">时间印记</h3>
+                                <p class="gallery-item-meta" data-i18n="gallery.artwork6.meta">2022 • 布面油画</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -62,11 +108,29 @@
         <p data-i18n="footer.copyright"></p>
     </footer>
 
-    <!-- 图片查看模态框 -->
+    <!-- 现代艺术气质图片查看模态框 -->
     <div class="modal" id="imageModal">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage" title="查看大图">
-        <div class="modal-caption" id="modalCaption"></div>
+        <div class="modal-container">
+            <span class="modal-close">&times;</span>
+            <div class="modal-nav modal-nav-prev" id="modalPrev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="modal-nav modal-nav-next" id="modalNext">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            
+            <div class="modal-image-container">
+                <img class="modal-content" id="modalImage" title="查看大图">
+            </div>
+            
+            <div class="modal-info">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <p class="modal-meta" id="modalMeta"></p>
+                <p class="modal-description" id="modalDescription">
+                    <span data-i18n="gallery.modalDescription">点击图片可以放大查看细节，使用左右箭头或键盘方向键浏览其他作品。</span>
+                </p>
+            </div>
+        </div>
     </div>
 
     <script src="js/language.js"></script>

@@ -1,10 +1,21 @@
-/* 全局样式 */
+/* 艺术气质全局样式 */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e74c3c;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --transition: all 0.3s ease;
+    --primary-color: #1a1a1a;
+    --secondary-color: #c9a96e;
+    --accent-color: #8b7355;
+    --text-color: #2c2c2c;
+    --light-text: #666;
+    --background-color: #fafafa;
+    --background-secondary: #f5f5f5;
+    --white: #ffffff;
+    --border-light: #e8e8e8;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --shadow-heavy: rgba(0, 0, 0, 0.15);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
+    --font-primary: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Georgia', 'Times New Roman', serif;
 }
 
 * {
@@ -14,21 +25,28 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-primary);
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--background-color);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* 导航栏样式 */
+/* 艺术气质导航栏 */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
     z-index: 1000;
+    transition: var(--transition);
 }
 
 .nav-container {
@@ -44,13 +62,15 @@ body {
 }
 
 .logo {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 200;
     color: var(--primary-color);
     white-space: nowrap;
-    width: 160px;
+    width: 180px;
     flex-shrink: 0;
     text-align: left;
+    letter-spacing: 0.1em;
+    font-family: var(--font-serif);
 }
 
 .nav-right {
@@ -78,10 +98,10 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
+    color: var(--light-text);
+    font-weight: 300;
     font-size: 0.9rem;
-    padding: 0.4rem 0.6rem;
+    padding: 0.6rem 1rem;
     transition: var(--transition);
     position: relative;
     white-space: nowrap;
@@ -89,27 +109,23 @@ body {
     flex-shrink: 0;
     width: auto;
     text-align: center;
+    letter-spacing: 0.05em;
+    border-radius: 20px;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+    background: var(--background-secondary);
 }
 
 .nav-link.active {
-    color: var(--primary-color);
-    font-weight: 600;
+    color: var(--white);
+    background: var(--secondary-color);
+    font-weight: 400;
 }
 
 .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 2px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
+    display: none;
 }
 
 .lang-toggle {
@@ -140,7 +156,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* 英雄区域样式 */
+/* 艺术气质英雄区域 */
 .hero {
     height: 100vh;
     position: relative;
@@ -158,13 +174,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('images/images_64.png') center/cover no-repeat;
-    transition: transform 0.5s ease;
     z-index: 1;
 }
 
-.hero:hover .hero-background {
-    transform: scale(1.1);
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    filter: brightness(0.7) contrast(1.1);
+}
+
+.hero:hover .hero-background img {
+    transform: scale(1.05);
 }
 
 .hero::before {
@@ -175,9 +197,10 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.2)
+        135deg,
+        rgba(26, 26, 26, 0.7) 0%,
+        rgba(139, 115, 85, 0.4) 50%,
+        rgba(0, 0, 0, 0.6) 100%
     );
     z-index: 2;
 }
@@ -185,25 +208,36 @@ body {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 2rem;
-    max-width: 800px;
-    animation: fadeInUp 1s ease;
+    padding: 4rem 3rem;
+    max-width: 900px;
+    animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.320, 1);
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 5rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    color: #ffffff;
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     opacity: 0.95;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
 }
 
 @keyframes fadeInUp {
@@ -217,45 +251,178 @@ body {
     }
 }
 
-/* 作品集样式 */
+/* 作品集样式 - 艺术气质重设计 */
 .gallery {
-    padding: 5rem 2rem;
-    max-width: 1200px;
+    padding: 8rem 0 6rem;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(180deg, rgba(44, 62, 80, 0.03) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.gallery-container {
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
 }
 
 .gallery h2 {
-    text-align: center;
-    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
     color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
 }
 
+.gallery h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.gallery-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+    opacity: 0.8;
+}
+
+/* 瀑布流网格布局 */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
+/* 艺术作品卡片 */
 .gallery-item {
+    position: relative;
+    background: white;
+    border-radius: 0;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-item-image {
+    position: relative;
+    overflow: hidden;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
-    transition: var(--transition);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    filter: contrast(1.1) saturate(1.1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: contrast(1.2) saturate(1.2);
+}
+
+/* 作品信息叠加 */
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 3;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    transform: translateY(0);
+}
+
+.gallery-item-title {
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-item-meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* 加载动画 */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 关于我样式 */
@@ -281,47 +448,316 @@ body {
     font-size: 1.1rem;
 }
 
-/* 联系方式样式 */
-.contact {
-    padding: 5rem 2rem;
+/* 现代联系页面 */
+.contact-modern {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--white) 100%);
+    min-height: 100vh;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
     text-align: center;
+    margin-bottom: 5rem;
 }
 
-.contact h2 {
-    margin-bottom: 3rem;
+.contact-header h1 {
+    font-size: 4rem;
+    font-weight: 200;
     color: var(--primary-color);
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    font-family: var(--font-serif);
 }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
+.contact-subtitle {
+    font-size: 1.3rem;
+    color: var(--light-text);
+    font-weight: 300;
+    letter-spacing: 0.05em;
 }
 
-.social-link {
-    color: var(--primary-color);
-    font-size: 1.5rem;
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 40px var(--shadow-light);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201, 169, 110, 0.1);
 }
 
-.social-link:hover {
-    color: var(--secondary-color);
-    transform: translateY(-3px);
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
 }
 
-.email {
-    font-size: 1.1rem;
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px var(--shadow-medium);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.card-content h3 {
     color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
 }
 
-/* 页脚样式 */
-.footer {
-    background-color: var(--primary-color);
-    color: white;
+.artist-name {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.artist-title {
+    color: var(--light-text);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.email-link {
+    display: inline-block;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    letter-spacing: 0.03em;
+}
+
+.email-link:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.contact-note {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.social-links-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-link-modern {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: var(--background-secondary);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--light-text);
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.social-link-modern:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.social-link-modern i {
+    font-size: 1.2rem;
+    width: 20px;
     text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
+}
+
+.portfolio-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.portfolio-download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(201, 169, 110, 0.4);
+}
+
+.contact-form-section {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-header h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.form-header p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.contact-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.form-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-top: 0.3rem;
+    width: 24px;
+    text-align: center;
+}
+
+.info-item h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+}
+
+.info-item p {
+    color: var(--light-text);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.form-cta {
+    text-align: center;
+}
+
+.form-cta p {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+    padding: 1.2rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: var(--transition);
+    letter-spacing: 0.05em;
+}
+
+.cta-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(201, 169, 110, 0.5);
+}
+
+.cta-button i {
+    font-size: 1rem;
+}
+
+/* 艺术气质页脚 */
+.footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 /* 响应式设计 */
@@ -403,79 +839,320 @@ body {
         justify-content: center;
     }
 
+    .hero-content {
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.4);
+    }
+
     .hero-content h1 {
         font-size: 3rem;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.9), 0 1px 6px rgba(0, 0, 0, 0.7);
     }
 
     .subtitle {
         font-size: 1.2rem;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6);
     }
 
+    .gallery {
+        padding: 6rem 0 4rem;
+    }
+    
+    .gallery-container {
+        padding: 0 1rem;
+    }
+    
+    .gallery h2 {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1rem;
+    }
+    
+    .gallery-header {
+        margin-bottom: 4rem;
+    }
+    
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .gallery-item img {
+        height: 300px;
+    }
+    
+    .gallery-item-overlay {
+        padding: 1.5rem;
+    }
+    
+    .gallery-item-title {
+        font-size: 1.1rem;
     }
 }
 
-/* 模态框样式 */
+/* 现代艺术气质模态框 */
 .modal {
-    display: none; /* 初始状态为隐藏 */
+    display: none;
     position: fixed;
     z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: auto;
+    background: rgba(0, 0, 0, 0.92);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-/* 当模态框显示时的样式 */
 .modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+/* 模态框主容器 */
+.modal-container {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.3),
+        0 20px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.show .modal-container {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* 图片容器 */
+.modal-image-container {
+    position: relative;
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 400px;
+    max-height: calc(95vh - 200px);
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
+    cursor: zoom-in;
+}
+
+/* 全屏模式 */
+.modal-fullscreen .modal-container {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+}
+
+.modal-fullscreen .modal-image-container {
+    max-height: calc(100vh - 100px);
+    background: #000;
+}
+
+.modal-fullscreen .modal-info {
+    padding: 1rem 2rem;
+}
+
+/* 信息面板 */
+.modal-info {
+    padding: 2rem 3rem 2.5rem;
+    background: var(--white);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.modal-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    right: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+    font-family: var(--font-serif);
+}
+
+.modal-meta {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.5rem;
+}
+
+.modal-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/* 关闭按钮 */
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 10000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-close:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+    border-color: var(--accent-color);
+}
+
+/* 导航按钮 */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
+.modal-nav:hover {
+    background: var(--secondary-color);
+    transform: translateY(-50%) scale(1.1);
+    border-color: var(--accent-color);
 }
 
-.modal-caption {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    width: 80%;
-    max-width: 700px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
+.modal-nav-prev {
+    left: 20px;
 }
 
-.modal-close {
-    position: fixed;
-    right: 35px;
-    top: 15px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transition);
-    z-index: 10000;
+.modal-nav-next {
+    right: 20px;
 }
 
-.modal-close:hover {
-    color: var(--secondary-color);
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .modal-container {
+        max-width: 98vw;
+        max-height: 98vh;
+        margin: 0 5px;
+    }
+    
+    .modal-image-container {
+        min-height: 300px;
+        max-height: calc(98vh - 180px);
+        padding: 1rem;
+    }
+    
+    .modal-info {
+        padding: 1.5rem 1.5rem 2rem;
+    }
+    
+    .modal-info::before {
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-meta {
+        font-size: 1rem;
+    }
+    
+    .modal-description {
+        font-size: 0.9rem;
+    }
+    
+    .modal-close {
+        right: 15px;
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .modal-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .modal-nav-prev {
+        left: 15px;
+    }
+    
+    .modal-nav-next {
+        right: 15px;
+    }
 }
 
 /* 图片悬停效果 */
@@ -497,34 +1174,104 @@ body {
 }
 
 /* 微信二维码模态框样式 */
-#wechatModal .modal-content {
+#wechatModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#wechatModal .wechat-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 400px;
+    width: 90%;
+}
+
+#wechatModal .modal-content {
     width: 100%;
     height: auto;
-    margin: auto;
-    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    background: white;
+    padding: 10px;
+}
+
+#wechatModal .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#wechatModal .modal-close:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
 }
 
 #wechatModal .modal-caption {
     color: white;
     text-align: center;
-    padding: 10px;
-    font-size: 14px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-top: 15px;
 }
 
-/* 展览部分样式 */
+/* 艺术气质展览页面 */
 .exhibitions {
-    padding: 5rem 2rem;
-    max-width: 1200px;
+    padding: 8rem 2rem 6rem;
+    max-width: 1400px;
     margin: 0 auto;
-    background-color: white;
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    min-height: 100vh;
 }
 
 .exhibitions h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.exhibitions h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .exhibitions-timeline {
@@ -537,24 +1284,45 @@ body {
 
 .exhibition-year h3 {
     color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+    letter-spacing: 0.08em;
+    font-family: var(--font-serif);
 }
 
 .exhibition-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 2rem;
+    background: var(--white);
+    border-radius: 0;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.exhibition-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
     transition: var(--transition);
 }
 
 .exhibition-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px var(--shadow-medium);
+}
+
+.exhibition-item:hover::before {
+    width: 8px;
 }
 
 .exhibition-info {
@@ -689,18 +1457,35 @@ body {
     }
 }
 
-/* CV部分样式 */
+/* 艺术气质CV页面 */
 .cv {
-    padding: 120px 2rem 5rem;
-    max-width: 1200px;
+    padding: 8rem 2rem 6rem;
+    max-width: 1400px;
     margin: 0 auto;
+    background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-color) 100%);
+    min-height: 100vh;
 }
 
 .cv h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.cv h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .cv-content {
@@ -716,24 +1501,45 @@ body {
 }
 
 .cv-section {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+    background: var(--white);
+    border-radius: 0;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 3rem;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
     transition: var(--transition);
 }
 
 .cv-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px var(--shadow-medium);
+}
+
+.cv-section:hover::before {
+    width: 8px;
 }
 
 .cv-section h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+    letter-spacing: 0.05em;
+    font-family: var(--font-serif);
 }
 
 .cv-items {
@@ -798,26 +1604,45 @@ body {
     }
 }
 
-/* 艺术家陈述样式 */
+/* 艺术气质陈述页面 */
 .statement {
-    padding: 120px 2rem 5rem;
-    max-width: 1200px;
+    padding: 8rem 2rem 6rem;
+    max-width: 1400px;
     margin: 0 auto;
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    min-height: 100vh;
 }
 
 .statement h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.statement h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .statement-content {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 3rem;
-    margin-bottom: 2rem;
+    background: var(--white);
+    border-radius: 0;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    padding: 4rem;
+    margin-bottom: 3rem;
+    position: relative;
+    border-left: 4px solid var(--secondary-color);
 }
 
 .statement-text {
@@ -896,19 +1721,33 @@ body {
     }
 }
 
-/* 媒体报道样式 */
+/* 艺术气质媒体报道页面 */
 .press {
-    padding: 5rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: white;
+    padding: 8rem 2rem 6rem;
+    background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-color) 100%);
+    min-height: 100vh;
 }
 
 .press h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.press h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .press-content {
@@ -917,54 +1756,212 @@ body {
 }
 
 .press-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.press-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.press-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .press-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
     padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
     transition: var(--transition);
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 
 .press-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: white;
 }
 
-.press-date {
-    color: var(--primary-color);
-    font-size: 0.9rem;
+.press-thumbnail {
+    flex-shrink: 0;
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    position: relative;
+    cursor: pointer;
+}
+
+.press-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.press-thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+.press-thumbnail-fallback {
+    color: #6c757d;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.press-thumbnail-fallback img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.press-thumbnail-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6c757d;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.press-thumbnail[data-loading="true"] .press-thumbnail-loading {
+    display: block;
+}
+
+.press-content-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.press-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .press-title {
     font-size: 1.3rem;
+    margin: 0;
+    flex: 1;
+}
+
+.press-title a {
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.press-source {
-    color: #666;
+.press-title a:hover {
+    color: var(--secondary-color);
+}
+
+.press-title a i {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.press-date,
+.press-publication {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    white-space: nowrap;
+}
+
+.press-description {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.press-note {
+    color: #888;
     font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
 }
 
-/* 工作室样式 */
+/* 艺术气质工作室页面 */
 .studio {
-    padding: 5rem 2rem;
-    max-width: 1200px;
+    padding: 8rem 2rem 6rem;
+    max-width: 1400px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    min-height: 100vh;
 }
 
 .studio h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.studio h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .studio-content {
@@ -1009,8 +2006,38 @@ body {
         padding: 2rem;
     }
 
-    .press-items {
-        grid-template-columns: 1fr;
+    .press {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .press-item {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .press-thumbnail {
+        width: 100%;
+        height: 120px;
+        align-self: stretch;
+    }
+    
+    .press-content-area {
+        width: 100%;
+    }
+    
+    .press-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .press-title {
+        font-size: 1.2rem;
     }
 
     .studio-content {
@@ -1023,5 +2050,368 @@ body {
 
     .studio-image {
         height: 200px;
+    }
+}
+
+/* 关于艺术家页面样式 */
+.about-statement,
+.about-cv,
+.about-downloads {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-statement {
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
+    padding-top: 8rem;
+}
+
+.about-cv {
+    background: var(--white);
+}
+
+.about-downloads {
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--white) 100%);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-statement h2,
+.about-cv h2,
+.about-downloads h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+}
+
+.about-statement h2::after,
+.about-cv h2::after,
+.about-downloads h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+/* 艺术家陈述样式 */
+.about-statement .statement-text {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.about-statement .statement-text p {
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.about-statement .statement-text p:first-of-type {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.about-statement .statement-text p:first-of-type::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    font-family: var(--font-serif);
+    opacity: 0.6;
+}
+
+/* 简历部分样式 */
+.about-cv .cv-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.about-cv .cv-section {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-cv .cv-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+    transition: var(--transition);
+}
+
+.about-cv .cv-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px var(--shadow-medium);
+}
+
+.about-cv .cv-section:hover::before {
+    width: 8px;
+}
+
+.about-cv .cv-section h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    font-family: var(--font-serif);
+}
+
+.about-cv .cv-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-cv .cv-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+    font-weight: 300;
+    color: var(--text-color);
+}
+
+.about-cv .cv-item:last-child {
+    border-bottom: none;
+}
+
+/* 下载部分样式 */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.download-item {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 15px 40px var(--shadow-light);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.download-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px var(--shadow-medium);
+}
+
+.download-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.download-info {
+    flex: 1;
+}
+
+.download-info h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+}
+
+.download-info p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.download-item .download-button {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+.download-item .download-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(201, 169, 110, 0.4);
+}
+
+.download-item .download-button i {
+    font-size: 0.8rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-statement,
+    .about-cv,
+    .about-downloads {
+        padding: 4rem 1.5rem;
+    }
+    
+    .about-statement {
+        padding-top: 6rem;
+    }
+    
+    .about-statement h2,
+    .about-cv h2,
+    .about-downloads h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .about-statement .statement-text {
+        font-size: 1rem;
+    }
+    
+    .about-statement .statement-text p:first-of-type {
+        font-size: 1.1rem;
+        padding-left: 1.5rem;
+    }
+    
+    .about-cv .cv-sections {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-cv .cv-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .download-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .download-info {
+        text-align: center;
+    }
+
+    /* 联系页面响应式 */
+    .contact-modern {
+        padding: 4rem 1.5rem;
+    }
+
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .artist-name {
+        font-size: 1.5rem;
+    }
+
+    .contact-form-section {
+        padding: 2rem;
+    }
+
+    .form-header h2 {
+        font-size: 2rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+    }
+
+    .contact-form-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .form-cta p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
     }
 } 

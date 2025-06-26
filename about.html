@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="周婧 - 关于艺术家" data-en="Zhou Jing - About">Zhou Jing - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo" data-i18n="home.title"></div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" data-i18n="nav.home"></a></li>
+                    <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery"></a></li>
+                    <li><a href="exhibitions.html" class="nav-link" data-i18n="nav.exhibitions"></a></li>
+                    <li><a href="about.html" class="nav-link active" data-i18n="nav.about"></a></li>
+                    <li><a href="press.html" class="nav-link" data-i18n="nav.press"></a></li>
+                    <li><a href="studio.html" class="nav-link" data-i18n="nav.studio"></a></li>
+                    <li><a href="contact.html" class="nav-link" data-i18n="nav.contact"></a></li>
+                </ul>
+                <button class="lang-toggle" aria-label="切换语言">
+                    <span class="lang-text" data-i18n="lang.current"></span>
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 艺术家陈述部分 -->
+        <section class="about-statement">
+            <div class="about-container">
+                <h2 data-i18n="about.statementTitle">艺术家陈述</h2>
+                <div class="statement-content">
+                    <div class="statement-text" data-i18n="about.statementContent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 简历部分 -->
+        <section class="about-cv">
+            <div class="about-container">
+                <h2 data-i18n="about.cvTitle">简历</h2>
+                <div class="cv-content">
+                    <div class="cv-sections">
+                        <div class="cv-section">
+                            <h3 data-i18n="about.education.title"></h3>
+                            <div class="cv-items" data-i18n="about.education.items"></div>
+                        </div>
+                        <div class="cv-section">
+                            <h3 data-i18n="about.awards.title"></h3>
+                            <div class="cv-items" data-i18n="about.awards.items"></div>
+                        </div>
+                        <div class="cv-section">
+                            <h3 data-i18n="about.residencies.title"></h3>
+                            <div class="cv-items" data-i18n="about.residencies.items"></div>
+                        </div>
+                        <div class="cv-section">
+                            <h3 data-i18n="about.publications.title"></h3>
+                            <div class="cv-items" data-i18n="about.publications.items"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载部分 -->
+        <section class="about-downloads">
+            <div class="about-container">
+                <h2 data-i18n="about.downloadsTitle">资料下载</h2>
+                <div class="downloads-grid">
+                    <div class="download-item">
+                        <div class="download-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 data-i18n="about.cvDownload">简历</h3>
+                            <p data-i18n="about.cvDescription">完整的教育背景和职业经历</p>
+                        </div>
+                        <a href="assets/Jing_Zhou_CV.docx" class="download-button">
+                            <i class="fas fa-download"></i>
+                            <span data-i18n="about.downloadText">下载</span>
+                        </a>
+                    </div>
+                    <div class="download-item">
+                        <div class="download-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="download-info">
+                            <h3 data-i18n="about.statementDownload">艺术家陈述</h3>
+                            <p data-i18n="about.statementDescription">详细的创作理念和艺术哲学</p>
+                        </div>
+                        <a href="assets/statement.pdf" class="download-button">
+                            <i class="fas fa-download"></i>
+                            <span data-i18n="about.downloadText">下载</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footer.copyright"></p>
+    </footer>
+
+    <script src="js/language.js"></script>
+</body>
+
+</html> 
