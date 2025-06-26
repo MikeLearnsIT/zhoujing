@@ -22,7 +22,7 @@ const pressData = {
                 {
                     title: "Rebirth 群展",
                     publication: "Wall Times",
-                    url: "http://www.globalspartmess.com/internet/2238.html",
+                    url: "http://www.globalpapertimes.com/internet/2238.html",
                     description: "群展报道"
                 },
                 {
@@ -32,14 +32,14 @@ const pressData = {
                 },
                 {
                     title: "Napoli Cina-Europa Culturale 那不勒斯群展",
-                    description: "群发媒体安全",
+                    description: "群发媒体",
                     publication: "China Art Weekly 艺术周刊（中文媒体）",
-                    url: "https://2play.2cul.com.cn/msb/mobile/2025-04/19/content_4328762.html?v=1"
+                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm"
                 },
                 {
                     title: "Partly Cloudy 群展",
                     description: "画廊报道网址：",
-                    url: "https://gallery.bnayan.net/events/ppt4dk31p/favkmbyayeawycqgum"
+                    url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum"
                 },
                 {
                     title: "Our Culture Mag",
@@ -50,7 +50,7 @@ const pressData = {
                     title: "NYCxDesign 纽约设计节艺术展",
                     description: "纽约设计节网展讯",
                     url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                    note: "请发媒体安全，比较重要的是一下4个："
+                    note: ""
                 }
             ]
         }
@@ -113,7 +113,7 @@ const pressData = {
 };
 
 // 当前语言
-let currentLang = 'zh';
+let currentLang = 'en';
 
 // 获取翻译文本
 function getTranslation(key) {
@@ -144,7 +144,7 @@ function getScreenshotUrl(url, attempt = 0) {
         // 如果上面的都不行，使用一个很简单的方法：显示网站的Open Graph图片
         getOpenGraphImage(url)
     ];
-    
+
     return services[attempt % services.length];
 }
 
@@ -174,7 +174,7 @@ function createPressItemHTML(item) {
     const screenshotUrl = getScreenshotUrl(item.url, 0);
     const faviconUrl = getFaviconUrl(item.url);
     const itemId = `press-item-${Math.random().toString(36).substr(2, 9)}`;
-    
+
     // 设置超时机制
     setTimeout(() => {
         const thumbnail = document.querySelector(`#${itemId} .press-thumbnail`);
@@ -185,7 +185,7 @@ function createPressItemHTML(item) {
             }
         }
     }, 10000); // 10秒超时
-    
+
     return `
         <div class="press-item" id="${itemId}">
             <div class="press-thumbnail" onclick="window.open('${item.url}', '_blank')" data-loading="true">
@@ -222,13 +222,13 @@ function createPressItemHTML(item) {
 // 处理图片加载错误 - 支持多个服务重试
 function handleImageError(img, faviconUrl, title, originalUrl, attempt = 0) {
     const maxAttempts = 4; // 对应上面4个服务
-    
+
     // 如果attempt是999，说明是超时触发的，直接跳到fallback
     if (attempt !== 999 && attempt < maxAttempts - 1) {
         // 尝试下一个快照服务
         const nextAttempt = attempt + 1;
         const nextScreenshotUrl = getScreenshotUrl(originalUrl, nextAttempt);
-        
+
         // 确保下一个URL有效
         if (nextScreenshotUrl && nextScreenshotUrl !== 'null') {
             img.src = nextScreenshotUrl;
@@ -236,13 +236,13 @@ function handleImageError(img, faviconUrl, title, originalUrl, attempt = 0) {
             return;
         }
     }
-    
+
     // 所有快照服务都失败了，使用favicon或默认图标
     img.parentElement.removeAttribute('data-loading');
     img.style.display = 'none';
-    
+
     const fallback = img.parentElement.querySelector('.press-thumbnail-fallback');
-    
+
     if (faviconUrl && faviconUrl !== 'null') {
         // 创建一个简单的Logo + 文字组合
         fallback.innerHTML = `
@@ -256,7 +256,7 @@ function handleImageError(img, faviconUrl, title, originalUrl, attempt = 0) {
     } else {
         fallback.innerHTML = '<i class="fas fa-newspaper"></i>';
     }
-    
+
     fallback.style.display = 'flex';
 }
 
@@ -272,9 +272,9 @@ function initPress() {
         currentLang = savedLang;
         loadPressContent();
     }
-    
+
     // 监听语言切换
-    document.addEventListener('languageChanged', function(e) {
+    document.addEventListener('languageChanged', function (e) {
         currentLang = e.detail.language;
         loadPressContent();
     });
@@ -284,12 +284,12 @@ function initPress() {
 function loadPressContent() {
     const data = pressData[currentLang];
     const container = document.querySelector('.press-items');
-    
+
     if (!container) return;
-    
+
     const personalInterviewsTitle = getTranslation('press.personalInterviews');
     const groupExhibitionsTitle = getTranslation('press.groupExhibitions');
-    
+
     container.innerHTML = `
         <div class="press-section">
             <h3 class="section-title">${personalInterviewsTitle}</h3>
@@ -308,7 +308,7 @@ function loadPressContent() {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 稍微延迟以确保LanguageManager已经加载
     setTimeout(initPress, 100);
 }); 

@@ -1,2 +1,2 @@
 # zhoujing
-This repository is for artest of zhou jing
+This repository is for artist of zhou jing
