@@ -1243,6 +1243,85 @@ body {
     margin-top: 15px;
 }
 
+/* Press页面大图模态框样式 */
+#pressImageModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#pressImageModal .press-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+}
+
+#pressImageModal .modal-content {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    background: white;
+    object-fit: contain;
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#pressImageModal .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#pressImageModal .modal-close:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+#pressImageModal .modal-caption {
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-top: 15px;
+    max-width: 600px;
+}
+
 /* 艺术气质展览页面 */
 .exhibitions {
     padding: 8rem 2rem 6rem;
@@ -1867,6 +1946,42 @@ body {
 
 .press-thumbnail[data-loading="true"] .press-thumbnail-loading {
     display: block;
+}
+
+/* 预览图悬停效果 */
+
+.press-thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+}
+
+.press-thumbnail-overlay i {
+    color: white;
+    font-size: 2rem;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.press-thumbnail:hover .press-thumbnail-overlay {
+    opacity: 1;
+}
+
+.press-thumbnail:hover .press-thumbnail-overlay i {
+    transform: scale(1);
+}
+
+.press-thumbnail:hover img {
+    transform: scale(1.05);
 }
 
 .press-content-area {
