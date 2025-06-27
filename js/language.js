@@ -60,7 +60,20 @@ const translations = {
         exhibitions: {
             title: "展览",
             documents: "展览文档",
-            noExhibitions: "暂无展览信息"
+            noExhibitions: "暂无展览信息",
+            viewDetail: "查看详情",
+            timeline: "展览时间线",
+            basicInfo: "基本信息",
+            exhibitionSite: "展览现场",
+            artworks: "参展作品",
+            press: "媒体报道",
+            period: "展期",
+            location: "地点",
+            type: "类型",
+            description: "简介",
+            medium: "媒材",
+            size: "尺寸",
+            year: "年份"
         },
 
         // 简历
@@ -280,7 +293,20 @@ const translations = {
         exhibitions: {
             title: "Exhibitions",
             documents: "Exhibition Documents",
-            noExhibitions: "No exhibitions available"
+            noExhibitions: "No exhibitions available",
+            viewDetail: "View Details",
+            timeline: "Exhibition Timeline",
+            basicInfo: "Basic Information",
+            exhibitionSite: "Exhibition Site",
+            artworks: "Artworks",
+            press: "Press Coverage",
+            period: "Period",
+            location: "Location",
+            type: "Type",
+            description: "Description",
+            medium: "Medium",
+            size: "Size",
+            year: "Year"
         },
 
         // CV
@@ -339,6 +365,26 @@ const translations = {
             ],
             download: "Download Artist Statement",
             downloadText: "Download PDF Version"
+        },
+
+        // Exhibitions
+        exhibitions: {
+            title: "Exhibitions",
+            documents: "Exhibition Documents",
+            noExhibitions: "No exhibitions available",
+            viewDetail: "View Details",
+            timeline: "Exhibition Timeline",
+            basicInfo: "Basic Information",
+            exhibitionSite: "Exhibition Site",
+            artworks: "Artworks",
+            press: "Press Coverage",
+            period: "Period",
+            location: "Location",
+            type: "Type",
+            description: "Description",
+            medium: "Medium",
+            size: "Size",
+            year: "Year"
         },
 
         // Press
@@ -497,7 +543,20 @@ class LanguageManager {
                 exhibitions: {
                     title: '展览',
                     documents: '展览文档',
-                    noExhibitions: '暂无展览信息'
+                    noExhibitions: '暂无展览信息',
+                    viewDetail: '查看详情',
+                    timeline: '展览时间线',
+                    basicInfo: '基本信息',
+                    exhibitionSite: '展览现场',
+                    artworks: '参展作品',
+                    press: '媒体报道',
+                    period: '展期',
+                    location: '地点',
+                    type: '类型',
+                    description: '简介',
+                    medium: '媒材',
+                    size: '尺寸',
+                    year: '年份'
                 },
                 cv: {
                     title: '简历',
@@ -675,7 +734,20 @@ class LanguageManager {
                 exhibitions: {
                     title: 'Exhibitions',
                     documents: 'Exhibition Documents',
-                    noExhibitions: 'No exhibitions available'
+                    noExhibitions: 'No exhibitions available',
+                    viewDetail: 'View Details',
+                    timeline: 'Exhibition Timeline',
+                    basicInfo: 'Basic Information',
+                    exhibitionSite: 'Exhibition Site',
+                    artworks: 'Artworks',
+                    press: 'Press Coverage',
+                    period: 'Period',
+                    location: 'Location',
+                    type: 'Type',
+                    description: 'Description',
+                    medium: 'Medium',
+                    size: 'Size',
+                    year: 'Year'
                 },
                 cv: {
                     title: 'Curriculum Vitae',

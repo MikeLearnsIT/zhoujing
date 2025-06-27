@@ -1464,16 +1464,25 @@ body {
     font-family: var(--font-serif);
 }
 
+.exhibitions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .exhibition-item {
     background: var(--white);
-    border-radius: 0;
+    border-radius: 15px;
     box-shadow: 0 8px 30px var(--shadow-light);
-    padding: 3rem;
-    margin-bottom: 3rem;
+    padding: 2rem;
     transition: var(--transition);
     border-left: 4px solid var(--secondary-color);
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .exhibition-item::before {
@@ -1528,6 +1537,48 @@ body {
     padding: 0.2rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
+}
+
+.exhibition-preview {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.preview-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.preview-image:hover {
+    transform: scale(1.1);
+}
+
+.exhibition-action {
+    display: flex;
+    align-items: center;
+}
+
+.view-detail-btn {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.view-detail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 169, 110, 0.3);
 }
 
 .exhibition-images {
@@ -1625,6 +1676,838 @@ body {
 
     .exhibition-title {
         font-size: 1.3rem;
+    }
+    
+    .exhibition-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .exhibition-preview {
+        justify-content: center;
+    }
+}
+
+/* 展览详情模态框样式 */
+.exhibition-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.exhibition-detail-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.exhibition-detail-modal .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.exhibition-detail-modal .modal-content {
+    background: var(--white);
+    border-radius: 20px;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 1000px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.9) translateY(50px);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.exhibition-detail-modal.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.exhibition-detail-modal .modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exhibition-detail-modal .modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+    font-family: var(--font-serif);
+}
+
+.exhibition-detail-modal .modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exhibition-detail-modal .modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.exhibition-detail-modal .modal-body {
+    padding: 2rem;
+    max-height: calc(90vh - 120px);
+    overflow-y: auto;
+}
+
+.exhibition-basic-info {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+.exhibition-basic-info .info-item {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.exhibition-basic-info .info-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.exhibition-basic-info .description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.exhibition-images h3,
+.exhibition-artworks h3,
+.exhibition-documents h3,
+.exhibition-press h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-serif);
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.image-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--shadow-medium);
+}
+
+.image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.image-item:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.image-item:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.image-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.image-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.artworks-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.artwork-item {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.artwork-item h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+}
+
+.artwork-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.artwork-details span {
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+.documents-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.document-item {
+    text-align: center;
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.document-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-light);
+}
+
+.document-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.document-title {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.press-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.press-item {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.press-item h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.press-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* 图片查看器模态框 */
+.image-viewer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.image-viewer-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-viewer-modal .viewer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.image-viewer-modal .viewer-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+}
+
+.image-viewer-modal .viewer-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.image-viewer-modal .viewer-info {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.image-viewer-modal .viewer-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.image-viewer-modal .viewer-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.image-viewer-modal .viewer-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 新的展览详情页面样式 */
+.exhibition-poster-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.poster-container {
+    display: inline-block;
+    position: relative;
+}
+
+.poster-container img {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.poster-container img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.poster-caption {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.exhibition-info-section {
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    border: 1px solid var(--border-light);
+}
+
+/* 参展作品网格样式 */
+.artworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.artwork-card {
+    background: var(--background-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+    overflow: hidden;
+}
+
+.artwork-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.artwork-image {
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.artwork-image img:hover {
+    transform: scale(1.05);
+}
+
+.artwork-header h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: var(--font-serif);
+}
+
+.artwork-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: var(--text-light);
+    min-width: 60px;
+}
+
+.detail-value {
+    color: var(--text-color);
+}
+
+/* 展会现场照片样式 */
+.exhibition-site {
+    margin-bottom: 3rem;
+}
+
+.site-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.site-image-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--background-color);
+    border: 1px solid var(--border-light);
+}
+
+.site-image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.site-image-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.site-image-item:hover img {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    padding: 1rem;
+}
+
+.image-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.image-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+/* 参展证书样式 */
+.exhibition-certificates {
+    margin-bottom: 3rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.certificate-item {
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--background-color);
+    border-radius: 15px;
+    padding: 1rem;
+    border: 1px solid var(--border-light);
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.certificate-title {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* 媒体报道样式 */
+.exhibition-press {
+    margin-bottom: 2rem;
+}
+
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.press-card {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.press-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.press-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-family: var(--font-serif);
+}
+
+.press-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.press-title a:hover {
+    color: var(--secondary-color);
+}
+
+.press-title i {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.press-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.press-source {
+    font-weight: 500;
+}
+
+.press-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* 证书查看器样式 */
+.certificate-viewer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-viewer-modal.show {
+    opacity: 1;
+}
+
+.certificate-viewer-modal .viewer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.certificate-viewer-modal .viewer-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+}
+
+.certificate-viewer-modal .viewer-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.certificate-viewer-modal .viewer-info {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.certificate-viewer-modal .viewer-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-viewer-modal .viewer-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 作品查看器样式 */
+.artwork-viewer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artwork-viewer-modal.show {
+    opacity: 1;
+}
+
+.artwork-viewer-modal .viewer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.artwork-viewer-modal .viewer-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
+}
+
+.artwork-viewer-modal .viewer-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.artwork-viewer-modal .viewer-info {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.artwork-viewer-modal .viewer-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.artwork-viewer-modal .viewer-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .exhibition-detail-modal .modal-content {
+        width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .exhibition-detail-modal .modal-header {
+        padding: 1.5rem;
+    }
+    
+    .exhibition-detail-modal .modal-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .exhibition-detail-modal .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .images-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .artworks-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .documents-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .artwork-details {
+        gap: 0.3rem;
+    }
+    
+    .press-meta {
+        flex-direction: column;
+        gap: 0.3rem;
     }
 }
 
@@ -2620,5 +3503,53 @@ body {
     .cta-button {
         padding: 1rem 2rem;
         font-size: 1rem;
+    }
+    
+    /* 新的展览详情页面移动端适配 */
+    .exhibition-poster-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .poster-container img {
+        max-height: 300px;
+    }
+    
+    .exhibition-info-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .artworks-grid,
+    .site-images-grid,
+    .certificates-grid,
+    .press-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .artwork-card,
+    .press-card {
+        padding: 1rem;
+    }
+    
+    .artwork-image {
+        margin: -1rem -1rem 1rem -1rem;
+    }
+    
+    .artwork-image img {
+        height: 150px;
+    }
+    
+    .site-image-item img,
+    .certificate-item img {
+        height: 200px;
+    }
+    
+    .press-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .press-card {
+        padding: 1rem;
     }
 } 

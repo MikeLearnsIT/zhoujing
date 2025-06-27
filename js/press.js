@@ -13,7 +13,7 @@ const pressData = {
                     title: "Kunst Plaza（德语媒体）",
                     description: "碎片化整体：周婧",
                     url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                    date: "2025年"
+                    date: "2025年6月3日"
                 }
             ]
         },
@@ -68,7 +68,7 @@ const pressData = {
                     title: "Kunst Plaza (German Media)",
                     description: "Fragmentierte Ganzheit: Jing Zhou",
                     url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                    date: "2025"
+                    date: "June 3, 2025"
                 }
             ]
         },
