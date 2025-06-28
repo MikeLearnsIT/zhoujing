@@ -3671,11 +3671,10 @@ body {
     box-shadow: 0 15px 40px var(--shadow-light);
     transition: var(--transition);
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.5rem;
     position: relative;
     overflow: hidden;
-    min-height: 120px;
 }
 
 .download-item::before {
@@ -3706,11 +3705,14 @@ body {
     flex-shrink: 0;
 }
 
+.download-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .download-info {
     flex: 1;
-    min-width: 0;
-    max-width: calc(100% - 200px);
-    padding-top: 0.5rem;
 }
 
 .download-info h3 {
@@ -3745,13 +3747,11 @@ body {
     transition: var(--transition);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     letter-spacing: 0.03em;
-    flex-shrink: 0;
-    min-width: 120px;
-    white-space: nowrap;
     align-self: flex-start;
-    margin-top: 0.5rem;
+    white-space: nowrap;
 }
 
 .download-item .download-button:hover {
