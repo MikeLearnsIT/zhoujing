@@ -3671,10 +3671,11 @@ body {
     box-shadow: 0 15px 40px var(--shadow-light);
     transition: var(--transition);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     position: relative;
     overflow: hidden;
+    min-height: 120px;
 }
 
 .download-item::before {
@@ -3707,6 +3708,8 @@ body {
 
 .download-info {
     flex: 1;
+    min-width: 0;
+    padding-top: 0.5rem;
 }
 
 .download-info h3 {
@@ -3746,6 +3749,8 @@ body {
     flex-shrink: 0;
     min-width: 120px;
     white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 0.5rem;
 }
 
 .download-item .download-button:hover {
