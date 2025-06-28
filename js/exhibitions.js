@@ -24,86 +24,161 @@ const exhibitionsData = {
             images: [
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928.webp",
-                    title: "展览海报",
-                    description: "\"NOW中取境\"展览主视觉海报"
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "\"NOW中取境\"展览主视觉海报",
+                        en: "Main visual poster of \"This Moment in China\" exhibition"
+                    }
                 },
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928_01.webp",
-                    title: "艺术家与嘉宾合影",
-                    description: "与上海中外文化艺术交流协会张秘书长（左6）、策展团队总策划胡晓芒老师（左5）、学术支持/艺术总监王远教授（右4）、上海中外文化青艺会侯秘书长（左3）及其他优秀青年艺术家的合影"
+                    title: {
+                        zh: "艺术家与嘉宾合影",
+                        en: "Group Photo with Artists and Guests"
+                    },
+                    description: {
+                        zh: "与上海中外文化艺术交流协会张秘书长（左6）、策展团队总策划胡晓芒老师（左5）、学术支持/艺术总监王远教授（右4）、上海中外文化青艺会侯秘书长（左3）及其他优秀青年艺术家的合影",
+                        en: "Group photo with Secretary General Zhang of Shanghai Sino-Foreign Cultural Art Exchange Association (6th from left), Chief Curator Hu Xiaomang (5th from left), Academic Support/Art Director Professor Wang Yuan (4th from right), Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (3rd from left), and other outstanding young artists"
+                    }
                 },
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928_02.webp",
-                    title: "与主办方合影",
-                    description: "与上海中外文化艺术交流协会张秘书长（右2）、总策划胡晓芒老师（左3）、上海中外文化青艺会侯秘书长（右1）的合影"
+                    title: {
+                        zh: "与主办方合影",
+                        en: "Photo with Organizers"
+                    },
+                    description: {
+                        zh: "与上海中外文化艺术交流协会张秘书长（右2）、总策划胡晓芒老师（左3）、上海中外文化青艺会侯秘书长（右1）的合影",
+                        en: "Photo with Secretary General Zhang of Shanghai Sino-Foreign Cultural Art Exchange Association (2nd from right), Chief Curator Hu Xiaomang (3rd from left), and Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (1st from right)"
+                    }
                 },
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928_03.webp",
-                    title: "媒体专访",
-                    description: "接受《新民晚报》的专访"
+                    title: {
+                        zh: "媒体专访",
+                        en: "Media Interview"
+                    },
+                    description: {
+                        zh: "接受《新民晚报》的专访",
+                        en: "Interview with Xinmin Evening News"
+                    }
                 },
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928_04.webp",
-                    title: "友好交流",
-                    description: "与俄中友好大爱天使陈老师的合影"
+                    title: {
+                        zh: "友好交流",
+                        en: "Friendly Exchange"
+                    },
+                    description: {
+                        zh: "与俄中友好大爱天使陈老师的合影",
+                        en: "Photo with Teacher Chen, Russia-China Friendship Ambassador"
+                    }
                 },
                 {
                     src: "images/exhibitions/20230928/exhibition_20230928_05.webp",
-                    title: "观众参观",
-                    description: "现场观众参观作品"
+                    title: {
+                        zh: "观众参观",
+                        en: "Visitors Viewing"
+                    },
+                    description: {
+                        zh: "现场观众参观作品",
+                        en: "Visitors viewing the artworks on site"
+                    }
                 }
             ],
             artworks: [
                 {
-                    title: "芽",
-                    medium: "丙烯 & 综合材料",
+                    title: {
+                        zh: "芽",
+                        en: "Sprout"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
                     size: "50cm×50cm",
                     year: "2023",
                     image: "images/painting_01.webp"
                 },
                 {
-                    title: "翡翠之光",
-                    medium: "丙烯 & 综合材料",
+                    title: {
+                        zh: "翡翠之光",
+                        en: "Emerald Light"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
                     size: "60cm×60cm",
                     year: "2023",
                     image: "images/painting_02.webp"
                 },
                 {
-                    title: "剪影",
-                    medium: "丙烯 & 综合材料",
+                    title: {
+                        zh: "剪影",
+                        en: "Silhouette"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
                     size: "80cm×80cm",
                     year: "2023",
                     image: "images/painting_03.webp"
                 },
                 {
-                    title: "靛蓝",
-                    medium: "丙烯 & 综合材料",
+                    title: {
+                        zh: "靛蓝",
+                        en: "Indigo Blue"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
                     size: "60cm×60cm",
                     year: "2023",
                     image: "images/painting_04.webp"
                 },
                 {
-                    title: "清逸之华",
-                    medium: "丙烯",
+                    title: {
+                        zh: "清逸之华",
+                        en: "Elegant Splendor"
+                    },
+                    medium: {
+                        zh: "丙烯",
+                        en: "Acrylic"
+                    },
                     size: "60cm×60cm",
                     year: "2023",
                     image: "images/painting_05.webp"
                 }
             ],
             documents: [
-                {
-                    title: "参展证书",
-                    type: "certificate",
-                    image: "images/images_31.png"
-                }
+                // {
+                //     title: "参展证书",
+                //     type: "certificate",
+                //     image: "images/images_31.png"
+                // }
             ],
             press: [
                 {
-                    title: "当代艺术的多元表达——\"NOW中取境\"展览评述",
-                    source: "艺术评论",
-                    date: "2023.04.05",
-                    url: "https://example.com/press-report-1",
-                    description: "详细报道了此次展览的艺术价值和社会意义，分析了参展艺术家的创作理念和作品特色。"
+                    title: {
+                        zh: "展览也玩谐音梗，\“NOW中取境——2023上海青年艺术家邀请展\”开幕",
+                        en: "The exhibition also plays a pun, the opening of \"NOW - 2023 Shanghai Young Artists Invitational Exhibition\""
+                    },
+                    source: {
+                        zh: "新闻晨报",
+                        en: "Morning News"
+                    },
+                    date: "2023.09.29",
+                    url: "https://www.shxwcb.com/#/detail/25299182E3446E7C4A92D0F2161D3DDB6BD0ABB9A44A2FE384A0B5DBEFC61352",
+                    description: {
+                        zh: "一个类似于谐音梗的主题，却点出了展览要旨——青年艺术家如何用创作，去勇敢掀翻缠绕在周围的羁绊，走入安宁之境",
+                        en: "A theme that resembles a pun, yet reveals the essence of the exhibition - how young artists use their creativity to bravely break free from the constraints around them and enter a realm of tranquility"
+                    }
                 }
             ]
         },
@@ -129,30 +204,60 @@ const exhibitionsData = {
             images: [
                 {
                     src: "images/images_51.png",
-                    title: "展览海报",
-                    description: "萨珞际艺术展主视觉"
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "萨珞际艺术展主视觉",
+                        en: "Main visual of Interlude Infini Art Exhibition"
+                    }
                 },
                 {
                     src: "images/images_53.png",
-                    title: "作品展示",
-                    description: "周婧参展作品展示"
+                    title: {
+                        zh: "作品展示",
+                        en: "Artwork Display"
+                    },
+                    description: {
+                        zh: "周婧参展作品展示",
+                        en: "Display of Zhou Jing's exhibited works"
+                    }
                 },
                 {
                     src: "images/images_59.png",
-                    title: "展览现场",
-                    description: "观众参观展览"
+                    title: {
+                        zh: "展览现场",
+                        en: "Exhibition Site"
+                    },
+                    description: {
+                        zh: "观众参观展览",
+                        en: "Visitors viewing the exhibition"
+                    }
                 }
             ],
             artworks: [
                 {
-                    title: "几何印象",
-                    medium: "综合材料",
+                    title: {
+                        zh: "几何印象",
+                        en: "Geometric Impression"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
                     size: "80×80cm",
                     year: "2023"
                 },
                 {
-                    title: "色彩构成",
-                    medium: "丙烯画",
+                    title: {
+                        zh: "色彩构成",
+                        en: "Color Composition"
+                    },
+                    medium: {
+                        zh: "丙烯画",
+                        en: "Acrylic Painting"
+                    },
                     size: "70×70cm",
                     year: "2023"
                 }
@@ -166,11 +271,20 @@ const exhibitionsData = {
             ],
             press: [
                 {
-                    title: "萨珞际艺术展：探索艺术的无限可能",
-                    source: "北京文艺报",
+                    title: {
+                        zh: "萨珞际艺术展：探索艺术的无限可能",
+                        en: "Interlude Infini Art Exhibition: Exploring the Infinite Possibilities of Art"
+                    },
+                    source: {
+                        zh: "北京文艺报",
+                        en: "Beijing Arts & Literature News"
+                    },
                     date: "2023.09.20",
                     url: "https://example.com/interlude-report",
-                    description: "深入报道了萨珞际艺术展的策展理念和参展作品的艺术特色。"
+                    description: {
+                        zh: "深入报道了萨珞际艺术展的策展理念和参展作品的艺术特色。",
+                        en: "In-depth coverage of the curatorial concept and artistic characteristics of the exhibited works in the Interlude Infini Art Exhibition."
+                    }
                 }
             ]
         },
@@ -196,14 +310,26 @@ const exhibitionsData = {
             images: [
                 {
                     src: "images/images_37.png",
-                    title: "作品展示",
-                    description: "参展作品《网格》"
+                    title: {
+                        zh: "作品展示",
+                        en: "Artwork Display"
+                    },
+                    description: {
+                        zh: "参展作品《网格》",
+                        en: "Exhibited artwork \"Grid\""
+                    }
                 }
             ],
             artworks: [
                 {
-                    title: "网格",
-                    medium: "综合材料",
+                    title: {
+                        zh: "网格",
+                        en: "Grid"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
                     size: "60×60cm",
                     year: "2023"
                 }
@@ -229,6 +355,7 @@ function getTranslation(key) {
     const defaultTranslations = {
         zh: {
             "exhibitions.viewDetail": "查看详情",
+        "exhibitions.backToList": "返回展览列表",
             "exhibitions.timeline": "展览时间线",
             "exhibitions.artworks": "参展作品",
             "exhibitions.documents": "展览文档",
@@ -244,6 +371,7 @@ function getTranslation(key) {
         },
         en: {
             "exhibitions.viewDetail": "View Details",
+        "exhibitions.backToList": "Back to Exhibition List",
             "exhibitions.timeline": "Exhibition Timeline",
             "exhibitions.artworks": "Artworks",
             "exhibitions.documents": "Exhibition Documents",
@@ -261,6 +389,30 @@ function getTranslation(key) {
     
     const lang = currentLang || 'zh';
     return defaultTranslations[lang][key] || key;
+}
+
+// 获取作品字段的多语言文本
+function getArtworkText(artwork, field) {
+    if (typeof artwork[field] === 'object' && artwork[field] !== null) {
+        return artwork[field][currentLang] || artwork[field].zh || artwork[field];
+    }
+    return artwork[field] || '';
+}
+
+// 获取图片字段的多语言文本
+function getImageText(img, field) {
+    if (typeof img[field] === 'object' && img[field] !== null) {
+        return img[field][currentLang] || img[field].zh || img[field];
+    }
+    return img[field] || '';
+}
+
+// 获取媒体报道字段的多语言文本
+function getPressText(press, field) {
+    if (typeof press[field] === 'object' && press[field] !== null) {
+        return press[field][currentLang] || press[field].zh || press[field];
+    }
+    return press[field] || '';
 }
 
 // 当前语言
@@ -354,10 +506,10 @@ function createExhibitionItem(exhibition) {
             ).join('')}
         </div>
         <div class="exhibition-action">
-            <button class="view-detail-btn" onclick="openExhibitionDetail('${exhibition.id}')">
+            <a href="exhibition-detail.html?id=${exhibition.id}" class="view-detail-btn">
                 <i class="fas fa-eye"></i>
                 <span>${getTranslation('exhibitions.viewDetail')}</span>
-            </button>
+            </a>
         </div>
     `;
     
@@ -401,9 +553,10 @@ function createDetailModal(exhibition) {
     const description = exhibition.description[currentLang] || exhibition.description.zh;
     
     // 找到海报图片（通常是第一张图片或标题包含"海报"的图片）
-    const posterImage = exhibition.images.find(img => 
-        img.title.includes('海报') || img.title.includes('poster') || img.title.includes('Poster')
-    ) || exhibition.images[0];
+    const posterImage = exhibition.images.find(img => {
+        const title = getImageText(img, 'title');
+        return title.includes('海报') || title.includes('poster') || title.includes('Poster');
+    }) || exhibition.images[0];
     
     // 展览现场照片（排除海报）
     const siteImages = exhibition.images.filter(img => img !== posterImage);
@@ -422,8 +575,8 @@ function createDetailModal(exhibition) {
                 <!-- 展览海报 -->
                 <div class="exhibition-poster-section">
                     <div class="poster-container">
-                        <img src="${posterImage.src}" alt="${posterImage.title}" onclick="openImageViewer(${exhibition.images.indexOf(posterImage)}, '${exhibition.id}')">
-                        <div class="poster-caption">${posterImage.title}</div>
+                        <img src="${posterImage.src}" alt="${getImageText(posterImage, 'title')}" onclick="openImageViewer(${exhibition.images.indexOf(posterImage)}, '${exhibition.id}')">
+                        <div class="poster-caption">${getImageText(posterImage, 'title')}</div>
                     </div>
                 </div>
                 
@@ -452,16 +605,16 @@ function createDetailModal(exhibition) {
                             <div class="artwork-card">
                                 ${artwork.image ? `
                                 <div class="artwork-image">
-                                    <img src="${artwork.image}" alt="${artwork.title}" onclick="openArtworkViewer('${artwork.image}', '${artwork.title}')">
+                                    <img src="${artwork.image}" alt="${getArtworkText(artwork, 'title')}" onclick="openArtworkViewer('${artwork.image}', '${getArtworkText(artwork, 'title')}')">
                                 </div>
                                 ` : ''}
                                 <div class="artwork-header">
-                                    <h4>${artwork.title}</h4>
+                                    <h4>${getArtworkText(artwork, 'title')}</h4>
                                 </div>
                                 <div class="artwork-details">
                                     <div class="detail-row">
                                         <span class="detail-label">${getTranslation('exhibitions.medium')}：</span>
-                                        <span class="detail-value">${artwork.medium}</span>
+                                        <span class="detail-value">${getArtworkText(artwork, 'medium')}</span>
                                     </div>
                                     <div class="detail-row">
                                         <span class="detail-label">${getTranslation('exhibitions.size')}：</span>
@@ -485,10 +638,10 @@ function createDetailModal(exhibition) {
                     <div class="site-images-grid">
                         ${siteImages.map((img, index) => `
                             <div class="site-image-item" onclick="openImageViewer(${exhibition.images.indexOf(img)}, '${exhibition.id}')">
-                                <img src="${img.src}" alt="${img.title}">
+                                <img src="${img.src}" alt="${getImageText(img, 'title')}">
                                 <div class="image-caption">
-                                    <div class="image-title">${img.title}</div>
-                                    <div class="image-description">${img.description}</div>
+                                    <div class="image-title">${getImageText(img, 'title')}</div>
+                                    <div class="image-description">${getImageText(img, 'description')}</div>
                                 </div>
                             </div>
                         `).join('')}
@@ -519,13 +672,13 @@ function createDetailModal(exhibition) {
                         ${exhibition.press.map(press => `
                             <div class="press-card">
                                 <h4 class="press-title">
-                                    ${press.url ? `<a href="${press.url}" target="_blank" rel="noopener noreferrer">${press.title} <i class="fas fa-external-link-alt"></i></a>` : press.title}
+                                    ${press.url ? `<a href="${press.url}" target="_blank" rel="noopener noreferrer">${getPressText(press, 'title')} <i class="fas fa-external-link-alt"></i></a>` : getPressText(press, 'title')}
                                 </h4>
                                 <div class="press-meta">
-                                    <span class="press-source">${press.source}</span>
+                                    <span class="press-source">${getPressText(press, 'source')}</span>
                                     <span class="press-date">${press.date}</span>
                                 </div>
-                                ${press.description ? `<p class="press-description">${press.description}</p>` : ''}
+                                ${getPressText(press, 'description') ? `<p class="press-description">${getPressText(press, 'description')}</p>` : ''}
                             </div>
                         `).join('')}
                     </div>
@@ -562,10 +715,10 @@ function openImageViewer(imageIndex, exhibitionId) {
     viewer.innerHTML = `
         <div class="viewer-overlay" onclick="this.parentElement.remove()"></div>
         <div class="viewer-content">
-            <img src="${image.src}" alt="${image.title}">
+            <img src="${image.src}" alt="${getImageText(image, 'title')}">
             <div class="viewer-info">
-                <h3>${image.title}</h3>
-                <p>${image.description}</p>
+                <h3>${getImageText(image, 'title')}</h3>
+                <p>${getImageText(image, 'description')}</p>
             </div>
             <button class="viewer-close" onclick="this.parentElement.parentElement.remove()">
                 <i class="fas fa-times"></i>

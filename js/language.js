@@ -62,6 +62,7 @@ const translations = {
             documents: "展览文档",
             noExhibitions: "暂无展览信息",
             viewDetail: "查看详情",
+            backToList: "返回展览列表",
             timeline: "展览时间线",
             basicInfo: "基本信息",
             exhibitionSite: "展览现场",
@@ -73,7 +74,10 @@ const translations = {
             description: "简介",
             medium: "媒材",
             size: "尺寸",
-            year: "年份"
+            year: "年份",
+            notFound: "展览未找到",
+            selectFromList: "请从展览列表中选择一个展览查看详情。",
+            idNotFound: "无法找到指定的展览。"
         },
 
         // 简历
@@ -295,6 +299,7 @@ const translations = {
             documents: "Exhibition Documents",
             noExhibitions: "No exhibitions available",
             viewDetail: "View Details",
+            backToList: "Back to Exhibition List",
             timeline: "Exhibition Timeline",
             basicInfo: "Basic Information",
             exhibitionSite: "Exhibition Site",
@@ -306,7 +311,10 @@ const translations = {
             description: "Description",
             medium: "Medium",
             size: "Size",
-            year: "Year"
+            year: "Year",
+            notFound: "Exhibition Not Found",
+            selectFromList: "Please select an exhibition from the list to view details.",
+            idNotFound: "Unable to find the specified exhibition."
         },
 
         // CV
@@ -373,6 +381,7 @@ const translations = {
             documents: "Exhibition Documents",
             noExhibitions: "No exhibitions available",
             viewDetail: "View Details",
+            backToList: "Back to Exhibition List",
             timeline: "Exhibition Timeline",
             basicInfo: "Basic Information",
             exhibitionSite: "Exhibition Site",
@@ -545,6 +554,7 @@ class LanguageManager {
                     documents: '展览文档',
                     noExhibitions: '暂无展览信息',
                     viewDetail: '查看详情',
+                    backToList: '返回展览列表',
                     timeline: '展览时间线',
                     basicInfo: '基本信息',
                     exhibitionSite: '展览现场',
@@ -556,7 +566,10 @@ class LanguageManager {
                     description: '简介',
                     medium: '媒材',
                     size: '尺寸',
-                    year: '年份'
+                    year: '年份',
+                    notFound: '展览未找到',
+                    selectFromList: '请从展览列表中选择一个展览查看详情。',
+                    idNotFound: '无法找到指定的展览。'
                 },
                 cv: {
                     title: '简历',
@@ -736,6 +749,7 @@ class LanguageManager {
                     documents: 'Exhibition Documents',
                     noExhibitions: 'No exhibitions available',
                     viewDetail: 'View Details',
+                    backToList: 'Back to Exhibition List',
                     timeline: 'Exhibition Timeline',
                     basicInfo: 'Basic Information',
                     exhibitionSite: 'Exhibition Site',
@@ -747,7 +761,10 @@ class LanguageManager {
                     description: 'Description',
                     medium: 'Medium',
                     size: 'Size',
-                    year: 'Year'
+                    year: 'Year',
+                    notFound: 'Exhibition Not Found',
+                    selectFromList: 'Please select an exhibition from the list to view details.',
+                    idNotFound: 'Unable to find the specified exhibition.'
                 },
                 cv: {
                     title: 'Curriculum Vitae',
