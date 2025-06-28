@@ -153,78 +153,27 @@ function getPressText(press, field) {
     return press[field] || '';
 }
 
-// 生成网站快照URL - 优先使用本地图片
-function getScreenshotUrl(item, attempt = 0) {
-    // 首先尝试使用数据结构中的thumbnail
-    if (item.thumbnail && attempt === 0) {
-        return item.thumbnail;
-    }
-    
-    // 如果没有本地图片或者本地图片加载失败，使用备用方案
-    const services = [
-        `https://s-shot.ru/1200x800/JPEG/1200/Z100/?${encodeURIComponent(item.url)}`,
-        `https://image.thum.io/get/width/240/crop/160/${encodeURIComponent(item.url)}`,
-        `https://api.thumbnail.ws/api/c9b2a89b82ad17133ba64d44e4ddfea5c7c0db6a5dfb/thumbnail/get?url=${encodeURIComponent(item.url)}&width=240`,
-        getOpenGraphImage(item.url)
-    ];
-
-    return services[(attempt - 1) % services.length];
-}
-
-// 尝试获取网站的Open Graph图片
-function getOpenGraphImage(url) {
-    // 这个方法通过一个代理服务获取网站的OG图片
-    try {
-        const domain = new URL(url).hostname;
-        return `https://logo.clearbit.com/${domain}`;
-    } catch {
-        return null;
-    }
-}
-
-// 获取域名图标作为备用
-function getFaviconUrl(url) {
-    try {
-        const domain = new URL(url).hostname;
-        return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-    } catch {
-        return null;
-    }
+// 获取缩略图URL - 直接使用本地图片
+function getScreenshotUrl(item) {
+    return item.thumbnail || null;
 }
 
 // 创建媒体项目HTML
 function createPressItemHTML(item) {
-    const screenshotUrl = getScreenshotUrl(item, 0);
-    const faviconUrl = getFaviconUrl(item.url);
-    const itemId = `press-item-${Math.random().toString(36).substr(2, 9)}`;
+    const screenshotUrl = getScreenshotUrl(item);
     
     const title = getPressText(item, 'title');
     const description = getPressText(item, 'description');
     const date = getPressText(item, 'date');
     const publication = getPressText(item, 'publication');
 
-    // 设置超时机制
-    setTimeout(() => {
-        const thumbnail = document.querySelector(`#${itemId} .press-thumbnail`);
-        if (thumbnail && thumbnail.hasAttribute('data-loading')) {
-            const img = thumbnail.querySelector('img');
-            if (img) {
-                handleImageError(img, faviconUrl, title, item, 999); // 直接跳到fallback
-            }
-        }
-    }, 10000); // 10秒超时
-
     return `
-        <div class="press-item" id="${itemId}">
-            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')" data-loading="true" style="cursor: pointer;">
-                <div class="press-thumbnail-loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                </div>
+        <div class="press-item">
+            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')" style="cursor: pointer;">
                 <img src="${screenshotUrl}" 
                      alt="${title}" 
                      loading="lazy"
-                     onload="this.parentElement.removeAttribute('data-loading')"
-                     onerror="handleImageError(this, '${faviconUrl}', '${title}', ${JSON.stringify(item)}, 0)">
+                     onerror="this.style.display='none'; this.parentElement.querySelector('.press-thumbnail-fallback').style.display='flex';">
                 <div class="press-thumbnail-fallback" style="display: none;">
                     <i class="fas fa-newspaper"></i>
                 </div>
@@ -250,46 +199,7 @@ function createPressItemHTML(item) {
     `;
 }
 
-// 处理图片加载错误 - 优先使用本地图片，失败时使用备用方案
-function handleImageError(img, faviconUrl, title, item, attempt = 0) {
-    const maxAttempts = 5; // 1个本地图片 + 4个在线服务
 
-    // 如果attempt是999，说明是超时触发的，直接跳到fallback
-    if (attempt !== 999 && attempt < maxAttempts - 1) {
-        // 尝试下一个快照服务
-        const nextAttempt = attempt + 1;
-        const nextScreenshotUrl = getScreenshotUrl(item, nextAttempt);
-
-        // 确保下一个URL有效
-        if (nextScreenshotUrl && nextScreenshotUrl !== 'null') {
-            img.src = nextScreenshotUrl;
-            img.onerror = () => handleImageError(img, faviconUrl, title, item, nextAttempt);
-            return;
-        }
-    }
-
-    // 所有服务都失败了，使用favicon或默认图标
-    img.parentElement.removeAttribute('data-loading');
-    img.style.display = 'none';
-
-    const fallback = img.parentElement.querySelector('.press-thumbnail-fallback');
-
-    if (faviconUrl && faviconUrl !== 'null') {
-        // 创建一个简单的Logo + 文字组合
-        fallback.innerHTML = `
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                <img src="${faviconUrl}" alt="${title}" style="width: 24px; height: 24px;" 
-                     onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='block';">
-                <i class="fas fa-newspaper fallback-icon" style="display: none; font-size: 24px;"></i>
-                <span style="font-size: 10px; text-align: center; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${title}</span>
-            </div>
-        `;
-    } else {
-        fallback.innerHTML = '<i class="fas fa-newspaper"></i>';
-    }
-
-    fallback.style.display = 'flex';
-}
 
 // 更新模态框提示文字
 function updateModalHints() {
