@@ -1,114 +1,117 @@
 // 媒体报道数据
 const pressData = {
-    zh: {
-        personalInterviews: {
-            items: [
-                {
-                    title: "Fad Mag",
-                    description: "当代艺术家——通过多维创造力连接文化",
-                    url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
-                    date: "2025年2月18日"
+    personalInterviews: {
+        items: [
+            {
+                title: {
+                    zh: "Fad Mag",
+                    en: "Fad Mag"
                 },
-                {
-                    title: "Kunst Plaza（德语媒体）",
-                    description: "碎片化整体：周婧",
-                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                    date: "2025年6月3日"
+                description: {
+                    zh: "当代艺术家——通过多维创造力连接文化",
+                    en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
+                },
+                url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
+                date: {
+                    zh: "2025年2月18日",
+                    en: "February 18, 2025"
                 }
-            ]
-        },
-        groupExhibitions: {
-            items: [
-                {
-                    title: "Rebirth 群展",
-                    publication: "Wall Times",
-                    url: "http://www.globalpapertimes.com/internet/2238.html",
-                    description: "群展报道"
+            },
+            {
+                title: {
+                    zh: "Kunst Plaza（德语媒体）",
+                    en: "Kunst Plaza (German Media)"
                 },
-                {
-                    title: "Artron 雅昌新闻（中文媒体）",
-                    url: "https://m-news.artron.net/20250324/n1139770.html",
-                    description: "艺术新闻报道"
+                description: {
+                    zh: "碎片化整体：周婧",
+                    en: "Fragmentierte Ganzheit: Jing Zhou"
                 },
-                {
-                    title: "Napoli Cina-Europa Culturale 那不勒斯群展",
-                    description: "群发媒体",
-                    publication: "China Art Weekly 艺术周刊（中文媒体）",
-                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm"
-                },
-                {
-                    title: "Partly Cloudy 群展",
-                    description: "画廊报道网址：",
-                    url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum"
-                },
-                {
-                    title: "Our Culture Mag",
-                    url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
-                    description: "过渡状态和本体论不确定性的探讨"
-                },
-                {
-                    title: "NYCxDesign 纽约设计节艺术展",
-                    description: "纽约设计节网展讯",
-                    url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                    note: ""
+                url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                date: {
+                    zh: "2025年6月3日",
+                    en: "June 3, 2025"
                 }
-            ]
-        }
+            }
+        ]
     },
-    en: {
-        personalInterviews: {
-            items: [
-                {
-                    title: "Fad Mag",
-                    description: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity",
-                    url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
-                    date: "February 18, 2025"
+    groupExhibitions: {
+        items: [
+            {
+                title: {
+                    zh: "Rebirth 群展",
+                    en: "Rebirth Group Exhibition"
                 },
-                {
-                    title: "Kunst Plaza (German Media)",
-                    description: "Fragmentierte Ganzheit: Jing Zhou",
-                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                    date: "June 3, 2025"
+                publication: {
+                    zh: "Wall Times",
+                    en: "Wall Times"
+                },
+                url: "http://www.globalpapertimes.com/internet/2238.html",
+                description: {
+                    zh: "群展报道",
+                    en: "Group exhibition review"
                 }
-            ]
-        },
-        groupExhibitions: {
-            items: [
-                {
-                    title: "Rebirth Group Exhibition",
-                    publication: "Wall Times",
-                    url: "http://www.globalpapertimes.com/internet/2238.html",
-                    description: "Group exhibition review"
+            },
+            {
+                title: {
+                    zh: "Artron 雅昌新闻（中文媒体）",
+                    en: "Artron News (Chinese Media)"
                 },
-                {
-                    title: "Artron News (Chinese Media)",
-                    url: "https://m-news.artron.net/20250324/n1139770.html",
-                    description: "Art news coverage"
-                },
-                {
-                    title: "Napoli Cina-Europa Culturale Naples Exhibition",
-                    description: "Cultural exchange exhibition",
-                    publication: "China Art Weekly (Chinese Media)",
-                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm"
-                },
-                {
-                    title: "Partly Cloudy Group Exhibition",
-                    description: "Gallery coverage",
-                    url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum"
-                },
-                {
-                    title: "Our Culture Mag",
-                    url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
-                    description: "An Examination of Transitional States and Ontological Uncertainty"
-                },
-                {
-                    title: "NYCxDesign Art Exhibition",
-                    description: "New York Design Festival exhibition announcement",
-                    url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                    note: ""
+                url: "https://m-news.artron.net/20250324/n1139770.html",
+                description: {
+                    zh: "艺术新闻报道",
+                    en: "Art news coverage"
                 }
-            ]
-        }
+            },
+            {
+                title: {
+                    zh: "Napoli Cina-Europa Culturale 那不勒斯群展",
+                    en: "Napoli Cina-Europa Culturale Naples Exhibition"
+                },
+                description: {
+                    zh: "群发媒体",
+                    en: "Cultural exchange exhibition"
+                },
+                publication: {
+                    zh: "China Art Weekly 艺术周刊（中文媒体）",
+                    en: "China Art Weekly (Chinese Media)"
+                },
+                url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm"
+            },
+            {
+                title: {
+                    zh: "Partly Cloudy 群展",
+                    en: "Partly Cloudy Group Exhibition"
+                },
+                description: {
+                    zh: "画廊报道网址：",
+                    en: "Gallery coverage"
+                },
+                url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum"
+            },
+            {
+                title: {
+                    zh: "Our Culture Mag",
+                    en: "Our Culture Mag"
+                },
+                url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
+                description: {
+                    zh: "过渡状态和本体论不确定性的探讨",
+                    en: "An Examination of Transitional States and Ontological Uncertainty"
+                }
+            },
+            {
+                title: {
+                    zh: "NYCxDesign 纽约设计节艺术展",
+                    en: "NYCxDesign Art Exhibition"
+                },
+                description: {
+                    zh: "纽约设计节网展讯",
+                    en: "New York Design Festival exhibition announcement"
+                },
+                url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
+                note: ""
+            }
+        ]
     }
 };
 
@@ -132,6 +135,14 @@ function getTranslation(key) {
         }
     };
     return translations[currentLang]?.[key] || key;
+}
+
+// 获取媒体报道文本的辅助函数
+function getPressText(press, field) {
+    if (typeof press[field] === 'object' && press[field] !== null) {
+        return press[field][currentLang] || press[field]['en'] || '';
+    }
+    return press[field] || '';
 }
 
 // 本地预览图映射 - 使用手动准备的预览图
@@ -198,6 +209,11 @@ function createPressItemHTML(item) {
     const screenshotUrl = getScreenshotUrl(item.url, 0);
     const faviconUrl = getFaviconUrl(item.url);
     const itemId = `press-item-${Math.random().toString(36).substr(2, 9)}`;
+    
+    const title = getPressText(item, 'title');
+    const description = getPressText(item, 'description');
+    const date = getPressText(item, 'date');
+    const publication = getPressText(item, 'publication');
 
     // 设置超时机制
     setTimeout(() => {
@@ -205,22 +221,22 @@ function createPressItemHTML(item) {
         if (thumbnail && thumbnail.hasAttribute('data-loading')) {
             const img = thumbnail.querySelector('img');
             if (img) {
-                handleImageError(img, faviconUrl, item.title, item.url, 999); // 直接跳到fallback
+                handleImageError(img, faviconUrl, title, item.url, 999); // 直接跳到fallback
             }
         }
     }, 10000); // 10秒超时
 
     return `
         <div class="press-item" id="${itemId}">
-            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${item.title}', '${item.url}')" data-loading="true" style="cursor: pointer;">
+            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')" data-loading="true" style="cursor: pointer;">
                 <div class="press-thumbnail-loading">
                     <i class="fas fa-spinner fa-spin"></i>
                 </div>
                 <img src="${screenshotUrl}" 
-                     alt="${item.title}" 
+                     alt="${title}" 
                      loading="lazy"
                      onload="this.parentElement.removeAttribute('data-loading')"
-                     onerror="handleImageError(this, '${faviconUrl}', '${item.title}', '${item.url}', 0)">
+                     onerror="handleImageError(this, '${faviconUrl}', '${title}', '${item.url}', 0)">
                 <div class="press-thumbnail-fallback" style="display: none;">
                     <i class="fas fa-newspaper"></i>
                 </div>
@@ -232,14 +248,14 @@ function createPressItemHTML(item) {
                 <div class="press-header">
                     <h4 class="press-title">
                         <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-                            ${item.title}
+                            ${title}
                             <i class="fas fa-external-link-alt"></i>
                         </a>
                     </h4>
-                    ${item.date ? `<span class="press-date">${item.date}</span>` : ''}
-                    ${item.publication ? `<span class="press-publication">${item.publication}</span>` : ''}
+                    ${date ? `<span class="press-date">${date}</span>` : ''}
+                    ${publication ? `<span class="press-publication">${publication}</span>` : ''}
                 </div>
-                <p class="press-description">${item.description}</p>
+                <p class="press-description">${description}</p>
                 ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
             </div>
         </div>
@@ -333,7 +349,6 @@ function initPress() {
 
 // 加载媒体报道内容
 function loadPressContent() {
-    const data = pressData[currentLang];
     const container = document.querySelector('.press-items');
 
     if (!container) return;
@@ -345,14 +360,14 @@ function loadPressContent() {
         <div class="press-section">
             <h3 class="section-title">${personalInterviewsTitle}</h3>
             <div class="press-list">
-                ${data.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
+                ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
             </div>
         </div>
         
         <div class="press-section">
             <h3 class="section-title">${groupExhibitionsTitle}</h3>
             <div class="press-list">
-                ${data.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
+                ${pressData.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
             </div>
         </div>
     `;
