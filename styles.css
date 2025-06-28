@@ -3709,6 +3709,7 @@ body {
 .download-info {
     flex: 1;
     min-width: 0;
+    max-width: calc(100% - 200px);
     padding-top: 0.5rem;
 }
 
