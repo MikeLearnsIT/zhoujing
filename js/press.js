@@ -1,118 +1,126 @@
 // 媒体报道数据
 const pressData = {
-    personalInterviews: {
-        items: [
-            {
-                title: {
-                    zh: "Fad Mag",
-                    en: "Fad Mag"
+            personalInterviews: {
+            items: [
+                {
+                    title: {
+                        zh: "Fad Mag",
+                        en: "Fad Mag"
+                    },
+                    description: {
+                        zh: "当代艺术家——通过多维创造力连接文化",
+                        en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
+                    },
+                    url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
+                    date: {
+                        zh: "2025年2月18日",
+                        en: "February 18, 2025"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_p_fadmagazine.com.jpeg"
                 },
-                description: {
-                    zh: "当代艺术家——通过多维创造力连接文化",
-                    en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
-                },
-                url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
-                date: {
-                    zh: "2025年2月18日",
-                    en: "February 18, 2025"
+                {
+                    title: {
+                        zh: "Kunst Plaza（德语媒体）",
+                        en: "Kunst Plaza (German Media)"
+                    },
+                    description: {
+                        zh: "碎片化整体：周婧",
+                        en: "Fragmentierte Ganzheit: Jing Zhou"
+                    },
+                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                    date: {
+                        zh: "2025年6月3日",
+                        en: "June 3, 2025"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_p_www.kunstplaza.de.jpeg"
                 }
-            },
-            {
-                title: {
-                    zh: "Kunst Plaza（德语媒体）",
-                    en: "Kunst Plaza (German Media)"
+            ]
+        },
+            groupExhibitions: {
+            items: [
+                {
+                    title: {
+                        zh: "Rebirth 群展",
+                        en: "Rebirth Group Exhibition"
+                    },
+                    publication: {
+                        zh: "Wall Times",
+                        en: "Wall Times"
+                    },
+                    url: "http://www.globalpapertimes.com/internet/2238.html",
+                    description: {
+                        zh: "群展报道",
+                        en: "Group exhibition review"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg"
                 },
-                description: {
-                    zh: "碎片化整体：周婧",
-                    en: "Fragmentierte Ganzheit: Jing Zhou"
+                {
+                    title: {
+                        zh: "Artron 雅昌新闻（中文媒体）",
+                        en: "Artron News (Chinese Media)"
+                    },
+                    url: "https://m-news.artron.net/20250324/n1139770.html",
+                    description: {
+                        zh: "艺术新闻报道",
+                        en: "Art news coverage"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg"
                 },
-                url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                date: {
-                    zh: "2025年6月3日",
-                    en: "June 3, 2025"
+                {
+                    title: {
+                        zh: "Napoli Cina-Europa Culturale 那不勒斯群展",
+                        en: "Napoli Cina-Europa Culturale Naples Exhibition"
+                    },
+                    description: {
+                        zh: "群发媒体",
+                        en: "Cultural exchange exhibition"
+                    },
+                    publication: {
+                        zh: "China Art Weekly 艺术周刊（中文媒体）",
+                        en: "China Art Weekly (Chinese Media)"
+                    },
+                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm",
+                    thumbnail: "images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg"
+                },
+                {
+                    title: {
+                        zh: "Partly Cloudy 群展",
+                        en: "Partly Cloudy Group Exhibition"
+                    },
+                    description: {
+                        zh: "画廊报道网址：",
+                        en: "Gallery coverage"
+                    },
+                    url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum",
+                    thumbnail: "images/pressSnapshot/snapshot_g_gallery.bhavan.net.jpeg"
+                },
+                {
+                    title: {
+                        zh: "Our Culture Mag",
+                        en: "Our Culture Mag"
+                    },
+                    url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
+                    description: {
+                        zh: "过渡状态和本体论不确定性的探讨",
+                        en: "An Examination of Transitional States and Ontological Uncertainty"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg"
+                },
+                {
+                    title: {
+                        zh: "NYCxDesign 纽约设计节艺术展",
+                        en: "NYCxDesign Art Exhibition"
+                    },
+                    description: {
+                        zh: "纽约设计节网展讯",
+                        en: "New York Design Festival exhibition announcement"
+                    },
+                    url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
+                    note: "",
+                    thumbnail: "images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg"
                 }
-            }
-        ]
-    },
-    groupExhibitions: {
-        items: [
-            {
-                title: {
-                    zh: "Rebirth 群展",
-                    en: "Rebirth Group Exhibition"
-                },
-                publication: {
-                    zh: "Wall Times",
-                    en: "Wall Times"
-                },
-                url: "http://www.globalpapertimes.com/internet/2238.html",
-                description: {
-                    zh: "群展报道",
-                    en: "Group exhibition review"
-                }
-            },
-            {
-                title: {
-                    zh: "Artron 雅昌新闻（中文媒体）",
-                    en: "Artron News (Chinese Media)"
-                },
-                url: "https://m-news.artron.net/20250324/n1139770.html",
-                description: {
-                    zh: "艺术新闻报道",
-                    en: "Art news coverage"
-                }
-            },
-            {
-                title: {
-                    zh: "Napoli Cina-Europa Culturale 那不勒斯群展",
-                    en: "Napoli Cina-Europa Culturale Naples Exhibition"
-                },
-                description: {
-                    zh: "群发媒体",
-                    en: "Cultural exchange exhibition"
-                },
-                publication: {
-                    zh: "China Art Weekly 艺术周刊（中文媒体）",
-                    en: "China Art Weekly (Chinese Media)"
-                },
-                url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm"
-            },
-            {
-                title: {
-                    zh: "Partly Cloudy 群展",
-                    en: "Partly Cloudy Group Exhibition"
-                },
-                description: {
-                    zh: "画廊报道网址：",
-                    en: "Gallery coverage"
-                },
-                url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum"
-            },
-            {
-                title: {
-                    zh: "Our Culture Mag",
-                    en: "Our Culture Mag"
-                },
-                url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
-                description: {
-                    zh: "过渡状态和本体论不确定性的探讨",
-                    en: "An Examination of Transitional States and Ontological Uncertainty"
-                }
-            },
-            {
-                title: {
-                    zh: "NYCxDesign 纽约设计节艺术展",
-                    en: "NYCxDesign Art Exhibition"
-                },
-                description: {
-                    zh: "纽约设计节网展讯",
-                    en: "New York Design Festival exhibition announcement"
-                },
-                url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                note: ""
-            }
-        ]
-    }
+            ]
+        }
 };
 
 // 当前语言
@@ -145,39 +153,19 @@ function getPressText(press, field) {
     return press[field] || '';
 }
 
-// 本地预览图映射 - 使用手动准备的预览图
-function getLocalScreenshotUrl(url) {
-    const urlToImageMap = {
-        // 个人专访
-        'https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/': 'images/pressSnapshot/snapshot_p_fadmagazine.com.jpeg',
-        'https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/': 'images/pressSnapshot/snapshot_p_www.kunstplaza.de.jpeg',
-        
-        // 群展报道
-        'http://www.globalpapertimes.com/internet/2238.html': 'images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg',
-        'https://m-news.artron.net/20250324/n1139770.html': 'images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg',
-        'https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm': 'images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg',
-        'https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum': 'images/pressSnapshot/snapshot_g_gallery.bhavan.net.jpeg',
-        'https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/': 'images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg',
-        'https://nycxdesign.org/event/fractured-horizons-exhibition/': 'images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg'
-    };
-    
-    return urlToImageMap[url] || null;
-}
-
 // 生成网站快照URL - 优先使用本地图片
-function getScreenshotUrl(url, attempt = 0) {
-    // 首先尝试使用本地预览图
-    const localImage = getLocalScreenshotUrl(url);
-    if (localImage && attempt === 0) {
-        return localImage;
+function getScreenshotUrl(item, attempt = 0) {
+    // 首先尝试使用数据结构中的thumbnail
+    if (item.thumbnail && attempt === 0) {
+        return item.thumbnail;
     }
     
     // 如果没有本地图片或者本地图片加载失败，使用备用方案
     const services = [
-        `https://s-shot.ru/1200x800/JPEG/1200/Z100/?${encodeURIComponent(url)}`,
-        `https://image.thum.io/get/width/240/crop/160/${encodeURIComponent(url)}`,
-        `https://api.thumbnail.ws/api/c9b2a89b82ad17133ba64d44e4ddfea5c7c0db6a5dfb/thumbnail/get?url=${encodeURIComponent(url)}&width=240`,
-        getOpenGraphImage(url)
+        `https://s-shot.ru/1200x800/JPEG/1200/Z100/?${encodeURIComponent(item.url)}`,
+        `https://image.thum.io/get/width/240/crop/160/${encodeURIComponent(item.url)}`,
+        `https://api.thumbnail.ws/api/c9b2a89b82ad17133ba64d44e4ddfea5c7c0db6a5dfb/thumbnail/get?url=${encodeURIComponent(item.url)}&width=240`,
+        getOpenGraphImage(item.url)
     ];
 
     return services[(attempt - 1) % services.length];
@@ -206,7 +194,7 @@ function getFaviconUrl(url) {
 
 // 创建媒体项目HTML
 function createPressItemHTML(item) {
-    const screenshotUrl = getScreenshotUrl(item.url, 0);
+    const screenshotUrl = getScreenshotUrl(item, 0);
     const faviconUrl = getFaviconUrl(item.url);
     const itemId = `press-item-${Math.random().toString(36).substr(2, 9)}`;
     
@@ -221,7 +209,7 @@ function createPressItemHTML(item) {
         if (thumbnail && thumbnail.hasAttribute('data-loading')) {
             const img = thumbnail.querySelector('img');
             if (img) {
-                handleImageError(img, faviconUrl, title, item.url, 999); // 直接跳到fallback
+                handleImageError(img, faviconUrl, title, item, 999); // 直接跳到fallback
             }
         }
     }, 10000); // 10秒超时
@@ -236,7 +224,7 @@ function createPressItemHTML(item) {
                      alt="${title}" 
                      loading="lazy"
                      onload="this.parentElement.removeAttribute('data-loading')"
-                     onerror="handleImageError(this, '${faviconUrl}', '${title}', '${item.url}', 0)">
+                     onerror="handleImageError(this, '${faviconUrl}', '${title}', ${JSON.stringify(item)}, 0)">
                 <div class="press-thumbnail-fallback" style="display: none;">
                     <i class="fas fa-newspaper"></i>
                 </div>
@@ -263,19 +251,19 @@ function createPressItemHTML(item) {
 }
 
 // 处理图片加载错误 - 优先使用本地图片，失败时使用备用方案
-function handleImageError(img, faviconUrl, title, originalUrl, attempt = 0) {
+function handleImageError(img, faviconUrl, title, item, attempt = 0) {
     const maxAttempts = 5; // 1个本地图片 + 4个在线服务
 
     // 如果attempt是999，说明是超时触发的，直接跳到fallback
     if (attempt !== 999 && attempt < maxAttempts - 1) {
         // 尝试下一个快照服务
         const nextAttempt = attempt + 1;
-        const nextScreenshotUrl = getScreenshotUrl(originalUrl, nextAttempt);
+        const nextScreenshotUrl = getScreenshotUrl(item, nextAttempt);
 
         // 确保下一个URL有效
         if (nextScreenshotUrl && nextScreenshotUrl !== 'null') {
             img.src = nextScreenshotUrl;
-            img.onerror = () => handleImageError(img, faviconUrl, title, originalUrl, nextAttempt);
+            img.onerror = () => handleImageError(img, faviconUrl, title, item, nextAttempt);
             return;
         }
     }
