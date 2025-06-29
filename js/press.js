@@ -1,126 +1,143 @@
 // 媒体报道数据
 const pressData = {
-            personalInterviews: {
-            items: [
-                {
-                    title: {
-                        zh: "Fad Mag",
-                        en: "Fad Mag"
-                    },
-                    description: {
-                        zh: "当代艺术家——通过多维创造力连接文化",
-                        en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
-                    },
-                    url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
-                    date: {
-                        zh: "2025年2月18日",
-                        en: "February 18, 2025"
-                    },
-                    thumbnail: "images/pressSnapshot/snapshot_p_fadmagazine.com.jpeg"
+    personalInterviews: {
+        items: [
+            {
+                title: {
+                    zh: "Fad Mag",
+                    en: "Fad Mag"
                 },
-                {
-                    title: {
-                        zh: "Kunst Plaza（德语媒体）",
-                        en: "Kunst Plaza (German Media)"
-                    },
-                    description: {
-                        zh: "碎片化整体：周婧",
-                        en: "Fragmentierte Ganzheit: Jing Zhou"
-                    },
-                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                    date: {
-                        zh: "2025年6月3日",
-                        en: "June 3, 2025"
-                    },
-                    thumbnail: "images/pressSnapshot/snapshot_p_www.kunstplaza.de.jpeg"
-                }
-            ]
-        },
-            groupExhibitions: {
-            items: [
-                {
-                    title: {
-                        zh: "Rebirth 群展",
-                        en: "Rebirth Group Exhibition"
-                    },
-                    publication: {
-                        zh: "Wall Times",
-                        en: "Wall Times"
-                    },
-                    url: "http://www.globalpapertimes.com/internet/2238.html",
-                    description: {
-                        zh: "群展报道",
-                        en: "Group exhibition review"
-                    },
-                    thumbnail: "images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg"
+                description: {
+                    zh: "当代艺术家——通过多维创造力连接文化",
+                    en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
                 },
-                {
-                    title: {
-                        zh: "Artron 雅昌新闻（中文媒体）",
-                        en: "Artron News (Chinese Media)"
-                    },
-                    url: "https://m-news.artron.net/20250324/n1139770.html",
-                    description: {
-                        zh: "艺术新闻报道",
-                        en: "Art news coverage"
-                    },
-                    thumbnail: "images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg"
+                url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
+                date: {
+                    zh: "2025年2月18日",
+                    en: "February 18, 2025"
                 },
-                {
-                    title: {
-                        zh: "Napoli Cina-Europa Culturale 那不勒斯群展",
-                        en: "Napoli Cina-Europa Culturale Naples Exhibition"
-                    },
-                    description: {
-                        zh: "群发媒体",
-                        en: "Cultural exchange exhibition"
-                    },
-                    publication: {
-                        zh: "China Art Weekly 艺术周刊（中文媒体）",
-                        en: "China Art Weekly (Chinese Media)"
-                    },
-                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm",
-                    thumbnail: "images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg"
+                thumbnail: "images/pressSnapshot/snapshot_p_fadmagazine.com.jpeg"
+            },
+            {
+                title: {
+                    zh: "Kunst Plaza（德语媒体）",
+                    en: "Kunst Plaza (German Media)"
                 },
-                {
-                    title: {
-                        zh: "Partly Cloudy 群展",
-                        en: "Partly Cloudy Group Exhibition"
-                    },
-                    description: {
-                        zh: "画廊报道网址：",
-                        en: "Gallery coverage"
-                    },
-                    url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum",
-                    thumbnail: "images/pressSnapshot/snapshot_g_gallery.bhavan.net.jpeg"
+                description: {
+                    zh: "碎片化整体：周婧",
+                    en: "Fragmentierte Ganzheit: Jing Zhou"
                 },
-                {
-                    title: {
-                        zh: "Our Culture Mag",
-                        en: "Our Culture Mag"
-                    },
-                    url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
-                    description: {
-                        zh: "过渡状态和本体论不确定性的探讨",
-                        en: "An Examination of Transitional States and Ontological Uncertainty"
-                    },
-                    thumbnail: "images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg"
+                url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                date: {
+                    zh: "2025年6月3日",
+                    en: "June 3, 2025"
                 },
-                {
-                    title: {
-                        zh: "NYCxDesign 纽约设计节艺术展",
-                        en: "NYCxDesign Art Exhibition"
-                    },
-                    description: {
-                        zh: "纽约设计节网展讯",
-                        en: "New York Design Festival exhibition announcement"
-                    },
-                    url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                    note: "",
-                    thumbnail: "images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg"
-                }
-            ]
-        }
+                thumbnail: "images/pressSnapshot/snapshot_p_www.kunstplaza.de.jpeg"
+            }
+        ]
+    },
+    groupExhibitions: {
+        items: [
+            {
+                title: {
+                    zh: "Rebirth 展览",
+                    en: "Rebirth Exhibition"
+                },
+                publication: {
+                    zh: "Wall Times",
+                    en: "Wall Times"
+                },
+                url: "http://www.globalpapertimes.com/internet/2238.html",
+                description: {
+                    zh: "展览报道",
+                    en: "Exhibition review"
+                },
+                thumbnail: "images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg"
+            },
+            {
+                title: {
+                    zh: "Artron 雅昌新闻（中文媒体）",
+                    en: "Artron News (Chinese Media)"
+                },
+                url: "https://m-news.artron.net/20250324/n1139770.html",
+                description: {
+                    zh: "艺术新闻报道",
+                    en: "Art news coverage"
+                },
+                thumbnail: "images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg"
+            },
+            {
+                title: {
+                    zh: "Napoli Cina-Europa Culturale 那不勒斯展览",
+                    en: "Napoli Cina-Europa Culturale Naples Exhibition"
+                },
+                description: {
+                    zh: "群发媒体",
+                    en: "Cultural exchange exhibition"
+                },
+                publication: {
+                    zh: "China Art Weekly 艺术周刊（中文媒体）",
+                    en: "China Art Weekly (Chinese Media)"
+                },
+                url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm",
+                thumbnail: "images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg"
+            },
+            {
+                title: {
+                    zh: "Partly Cloudy 展览",
+                    en: "Partly Cloudy Group Exhibition"
+                },
+                description: {
+                    zh: "画廊报道网址：",
+                    en: "Gallery coverage"
+                },
+                url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum",
+                thumbnail: "images/pressSnapshot/snapshot_g_gallery.bhavan.net.jpeg"
+            },
+            {
+                title: {
+                    zh: "Our Culture Mag",
+                    en: "Our Culture Mag"
+                },
+                url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
+                description: {
+                    zh: "过渡状态和本体论不确定性的探讨",
+                    en: "An Examination of Transitional States and Ontological Uncertainty"
+                },
+                thumbnail: "images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg"
+            },
+            {
+                title: {
+                    zh: "NYCxDesign 纽约设计节艺术展",
+                    en: "NYCxDesign Art Exhibition"
+                },
+                description: {
+                    zh: "纽约设计节网展讯",
+                    en: "New York Design Festival exhibition announcement"
+                },
+                url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
+                note: "",
+                thumbnail: "images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg"
+            },
+            {
+                title: {
+                    zh: "展览也玩谐音梗，“NOW中取境——2023上海青年艺术家邀请展”开幕",
+                    en: "Exhibition also plays a pun, \"NOW Zhong Qu Jing - 2023 Shanghai Young Artists Invitational Exhibition\" opens"
+                },
+                description: {
+                    zh: "一个类似于谐音梗的主题，却点出了展览要旨——青年艺术家如何用创作，去勇敢掀翻缠绕在周围的羁绊，走入安宁之境",
+                    en: "A theme that resembles a pun, yet reveals the essence of the exhibition - how young artists use their creativity to bravely break free from the constraints around them and enter a realm of tranquility"
+                },
+                date: {
+                    zh: "2023年09月29日",
+                    en: "September 29, 2023"
+                },
+                url: "https://www.shxwcb.com/#/detail/25299182E3446E7C4A92D0F2161D3DDB6BD0ABB9A44A2FE384A0B5DBEFC61352",
+                note: "",
+                thumbnail: "images/pressSnapshot/snapshot_g_www.shxwcb.com.jpeg"
+            }
+        ]
+    }
 };
 
 // 当前语言
@@ -135,11 +152,11 @@ function getTranslation(key) {
     const translations = {
         zh: {
             'press.personalInterviews': '个人专访',
-            'press.groupExhibitions': '群展报道'
+            'press.groupExhibitions': '展览报道'
         },
         en: {
             'press.personalInterviews': 'Personal Interviews',
-            'press.groupExhibitions': 'Group Exhibition Coverage'
+            'press.groupExhibitions': ' Exhibition Coverage'
         }
     };
     return translations[currentLang]?.[key] || key;
@@ -161,7 +178,7 @@ function getScreenshotUrl(item) {
 // 创建媒体项目HTML
 function createPressItemHTML(item) {
     const screenshotUrl = getScreenshotUrl(item);
-    
+
     const title = getPressText(item, 'title');
     const description = getPressText(item, 'description');
     const date = getPressText(item, 'date');
@@ -205,11 +222,11 @@ function createPressItemHTML(item) {
 function updateModalHints() {
     const modal = document.getElementById('pressImageModal');
     const modalCaption = document.getElementById('pressModalCaption');
-    
+
     if (modal && modal.style.display === 'flex' && modalCaption) {
         const hints = getImageViewerHints();
         const currentContent = modalCaption.innerHTML;
-        
+
         // 只更新提示部分，保留标题和链接
         const hintPattern = /<div style="margin-top: 10px; font-size: 14px; opacity: 0\.8;">[\s\S]*?<\/div>/;
         const newHints = `<div style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
@@ -218,7 +235,7 @@ function updateModalHints() {
             <i class="fas fa-hand-paper"></i> ${hints.dragMove} • 
             <i class="fas fa-keyboard"></i> ${hints.resetKey}
         </div>`;
-        
+
         modalCaption.innerHTML = currentContent.replace(hintPattern, newHints);
     }
 }
@@ -287,13 +304,13 @@ function openPressImageModal(imageSrc, title, url) {
     const modal = document.getElementById('pressImageModal');
     const modalImage = document.getElementById('pressModalImage');
     const modalCaption = document.getElementById('pressModalCaption');
-    
+
     // 重置图片查看器状态
     resetImageViewer();
-    
+
     // 获取提示文字
     const hints = getImageViewerHints();
-    
+
     // 设置图片和标题
     modalImage.src = imageSrc;
     modalImage.alt = title;
@@ -309,7 +326,7 @@ function openPressImageModal(imageSrc, title, url) {
             <i class="fas fa-keyboard"></i> ${hints.resetKey}
         </div>
     `;
-    
+
     // 显示模态框
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -318,10 +335,10 @@ function openPressImageModal(imageSrc, title, url) {
 // 关闭大图模态框
 function closePressImageModal() {
     const modal = document.getElementById('pressImageModal');
-    
+
     // 重置图片查看器状态
     resetImageViewer();
-    
+
     modal.style.display = 'none';
     document.body.style.overflow = '';
 }
@@ -364,24 +381,24 @@ function resetImageViewer() {
 function zoomImage(delta, clientX, clientY) {
     const modalImage = document.getElementById('pressModalImage');
     if (!modalImage) return;
-    
+
     const rect = modalImage.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
-    
+
     // 计算缩放中心点相对于图片的位置
     const offsetX = (clientX - centerX) / imageViewer.scale;
     const offsetY = (clientY - centerY) / imageViewer.scale;
-    
+
     // 计算新的缩放比例
     const newScale = Math.max(imageViewer.minScale, Math.min(imageViewer.maxScale, imageViewer.scale + delta));
-    
+
     if (newScale !== imageViewer.scale) {
         // 调整平移以保持缩放中心点不变
         imageViewer.translateX -= offsetX * (newScale - imageViewer.scale);
         imageViewer.translateY -= offsetY * (newScale - imageViewer.scale);
         imageViewer.scale = newScale;
-        
+
         updateImageTransform();
     }
 }
@@ -391,7 +408,7 @@ function toggleImageZoom(e) {
     const rect = e.target.getBoundingClientRect();
     const clientX = e.clientX || rect.left + rect.width / 2;
     const clientY = e.clientY || rect.top + rect.height / 2;
-    
+
     if (imageViewer.scale === imageViewer.minScale) {
         // 放大到2倍
         zoomImage(1, clientX, clientY);
@@ -406,32 +423,32 @@ function initPressModal() {
     const modal = document.getElementById('pressImageModal');
     const closeBtn = modal.querySelector('.modal-close');
     const modalImage = document.getElementById('pressModalImage');
-    
+
     // 关闭按钮事件
     if (closeBtn) {
         closeBtn.addEventListener('click', closePressImageModal);
     }
-    
+
     if (modalImage) {
         // 图片点击缩放事件（需要区分点击和拖拽）
-        modalImage.addEventListener('click', function(e) {
+        modalImage.addEventListener('click', function (e) {
             e.stopPropagation();
             // 只有在没有拖拽的情况下才执行缩放
             if (!imageViewer.hasDragged) {
                 toggleImageZoom(e);
             }
         });
-        
+
         // 鼠标滚轮缩放
-        modalImage.addEventListener('wheel', function(e) {
+        modalImage.addEventListener('wheel', function (e) {
             e.preventDefault();
             e.stopPropagation();
             const delta = e.deltaY > 0 ? -0.3 : 0.3;
             zoomImage(delta, e.clientX, e.clientY);
         });
-        
+
         // 鼠标拖拽开始
-        modalImage.addEventListener('mousedown', function(e) {
+        modalImage.addEventListener('mousedown', function (e) {
             if (imageViewer.scale > imageViewer.minScale) {
                 e.preventDefault();
                 imageViewer.isDragging = true;
@@ -443,40 +460,40 @@ function initPressModal() {
                 modalImage.style.cursor = 'grabbing';
             }
         });
-        
+
         // 鼠标拖拽移动
-        document.addEventListener('mousemove', function(e) {
+        document.addEventListener('mousemove', function (e) {
             if (imageViewer.isDragging) {
                 e.preventDefault();
                 const deltaX = e.clientX - imageViewer.startX;
                 const deltaY = e.clientY - imageViewer.startY;
-                
+
                 // 检测是否真的在拖拽（移动距离超过阈值）
                 if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
                     imageViewer.hasDragged = true;
                 }
-                
+
                 imageViewer.translateX = imageViewer.lastX + deltaX / imageViewer.scale;
                 imageViewer.translateY = imageViewer.lastY + deltaY / imageViewer.scale;
                 updateImageTransform();
             }
         });
-        
+
         // 鼠标拖拽结束
-        document.addEventListener('mouseup', function(e) {
+        document.addEventListener('mouseup', function (e) {
             if (imageViewer.isDragging) {
                 imageViewer.isDragging = false;
                 modalImage.style.cursor = imageViewer.scale > imageViewer.minScale ? 'grab' : 'zoom-in';
-                
+
                 // 延迟重置拖拽标志，避免立即触发点击事件
                 setTimeout(() => {
                     imageViewer.hasDragged = false;
                 }, 10);
             }
         });
-        
+
         // 触摸事件支持（移动端）
-        modalImage.addEventListener('touchstart', function(e) {
+        modalImage.addEventListener('touchstart', function (e) {
             if (e.touches.length === 1 && imageViewer.scale > imageViewer.minScale) {
                 e.preventDefault();
                 imageViewer.isDragging = true;
@@ -487,25 +504,25 @@ function initPressModal() {
                 imageViewer.lastY = imageViewer.translateY;
             }
         });
-        
-        modalImage.addEventListener('touchmove', function(e) {
+
+        modalImage.addEventListener('touchmove', function (e) {
             if (imageViewer.isDragging && e.touches.length === 1) {
                 e.preventDefault();
                 const deltaX = e.touches[0].clientX - imageViewer.startX;
                 const deltaY = e.touches[0].clientY - imageViewer.startY;
-                
+
                 // 检测是否真的在拖拽
                 if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
                     imageViewer.hasDragged = true;
                 }
-                
+
                 imageViewer.translateX = imageViewer.lastX + deltaX / imageViewer.scale;
                 imageViewer.translateY = imageViewer.lastY + deltaY / imageViewer.scale;
                 updateImageTransform();
             }
         });
-        
-        modalImage.addEventListener('touchend', function(e) {
+
+        modalImage.addEventListener('touchend', function (e) {
             imageViewer.isDragging = false;
             // 延迟重置拖拽标志
             setTimeout(() => {
@@ -513,16 +530,16 @@ function initPressModal() {
             }, 10);
         });
     }
-    
+
     // 点击背景关闭
-    modal.addEventListener('click', function(e) {
+    modal.addEventListener('click', function (e) {
         if (e.target === modal) {
             closePressImageModal();
         }
     });
-    
+
     // ESC键关闭和重置缩放
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (modal.style.display === 'flex') {
             if (e.key === 'Escape') {
                 closePressImageModal();

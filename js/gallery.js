@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.getElementById('modalPrev');
     const nextBtn = document.getElementById('modalNext');
     const galleryImages = document.querySelectorAll('.gallery-item img');
-    
+
     let currentImageIndex = 0;
     let imageData = [];
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const galleryItem = img.closest('.gallery-item');
         const titleElement = galleryItem.querySelector('.gallery-item-title');
         const metaElement = galleryItem.querySelector('.gallery-item-meta');
-        
+
         imageData.push({
             src: img.src,
             title: titleElement ? titleElement.textContent : '',
@@ -29,25 +29,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // 显示指定索引的图片
     function showImage(index) {
         if (index < 0 || index >= imageData.length) return;
-        
+
         currentImageIndex = index;
         const data = imageData[index];
-        
+
         // 添加加载状态
         modalImg.style.opacity = '0';
         modalImg.style.transform = 'scale(0.95)';
-        
+
         // 预加载图片以获取原始尺寸
         const img = new Image();
-        img.onload = function() {
+        img.onload = function () {
             modalImg.src = data.src;
             modalTitle.textContent = data.title;
             modalMeta.textContent = data.meta;
-            
+
             // 根据图片比例调整显示
             const imgAspectRatio = this.naturalWidth / this.naturalHeight;
             const containerAspectRatio = modalImg.parentElement.offsetWidth / modalImg.parentElement.offsetHeight;
-            
+
             if (imgAspectRatio > containerAspectRatio) {
                 // 横图：以宽度为准
                 modalImg.style.width = '100%';
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
         img.src = data.src;
-        
+
         // 更新导航按钮状态
         updateNavigationButtons();
     }
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateNavigationButtons() {
         const hasPrev = currentImageIndex > 0;
         const hasNext = currentImageIndex < imageData.length - 1;
-        
+
         prevBtn.style.opacity = hasPrev ? '1' : '0.3';
         nextBtn.style.opacity = hasNext ? '1' : '0.3';
         prevBtn.style.pointerEvents = hasPrev ? 'auto' : 'none';
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 点击图片打开模态框
     galleryImages.forEach((img, index) => {
-        img.addEventListener('click', function() {
+        img.addEventListener('click', function () {
             modal.style.display = 'flex';
             showImage(index);
             document.body.style.overflow = 'hidden'; // 防止背景滚动
-            
+
             // 添加显示类以触发动画
             setTimeout(() => {
                 modal.classList.add('show');
@@ -117,19 +117,19 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
         closeModal();
     });
-    
+
     // 点击模态框背景关闭
-    modal.addEventListener('click', function(e) {
+    modal.addEventListener('click', function (e) {
         if (e.target === modal) {
             closeModal();
         }
     });
 
     // 键盘导航
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (!modal.classList.contains('show')) return;
-        
-        switch(e.key) {
+
+        switch (e.key) {
             case 'Escape':
                 closeModal();
                 break;
@@ -147,13 +147,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // 图片加载完成后显示
-    modalImg.addEventListener('load', function() {
+    modalImg.addEventListener('load', function () {
         this.style.opacity = '1';
         this.style.transform = 'scale(1)';
     });
 
     // 双击图片进入/退出全屏模式
-    modalImg.addEventListener('dblclick', function() {
+    modalImg.addEventListener('dblclick', function () {
         modal.classList.toggle('modal-fullscreen');
     });
 
@@ -167,11 +167,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let touchStartX = 0;
     let touchEndX = 0;
 
-    modal.addEventListener('touchstart', function(e) {
+    modal.addEventListener('touchstart', function (e) {
         touchStartX = e.changedTouches[0].screenX;
     });
 
-    modal.addEventListener('touchend', function(e) {
+    modal.addEventListener('touchend', function (e) {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     });
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleSwipe() {
         const swipeThreshold = 50;
         const diff = touchStartX - touchEndX;
-        
+
         if (Math.abs(diff) > swipeThreshold) {
             if (diff > 0 && currentImageIndex < imageData.length - 1) {
                 // 向左滑动，显示下一张
@@ -188,6 +188,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 向右滑动，显示上一张
                 showImage(currentImageIndex - 1);
             }
-                 }
-     }
+        }
+    }
 }); 

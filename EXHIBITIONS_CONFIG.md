@@ -21,9 +21,9 @@ const exhibitionsData = {
                 zh: "中文地点",
                 en: "English Location"
             },
-            type: {
-                zh: "展览类型（个展/群展）",
-                en: "Exhibition Type"
+            country: {
+                zh: "国家",
+                en: "Country"
             },
             description: {
                 zh: "中文描述",
@@ -80,7 +80,7 @@ const exhibitionsData = {
 - `title`: 展览标题，支持中英文
 - `date`: 展览日期，格式为 "YYYY.MM.DD - YYYY.MM.DD"
 - `location`: 展览地点，支持中英文
-- `type`: 展览类型（个展/群展），支持中英文
+- `country`: 展览国家，支持中英文
 - `description`: 展览描述，支持中英文
 
 ### 图片数组 (images)

@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     const wechatLink = document.getElementById('wechat-link');
     const wechatModal = document.getElementById('wechatModal');
-    
+
     // 检查元素是否存在
     if (!wechatLink || !wechatModal) {
         console.warn('WeChat elements not found on this page');
         return;
     }
-    
+
     const closeBtn = wechatModal.querySelector('.modal-close');
 
     // 点击微信图标显示二维码

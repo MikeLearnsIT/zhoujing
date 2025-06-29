@@ -228,12 +228,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(26, 26, 26, 0.7) 0%,
-        rgba(139, 115, 85, 0.4) 50%,
-        rgba(0, 0, 0, 0.6) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(26, 26, 26, 0.7) 0%,
+            rgba(139, 115, 85, 0.4) 50%,
+            rgba(0, 0, 0, 0.6) 100%);
     z-index: 2;
 }
 
@@ -277,6 +275,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -371,7 +370,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
     opacity: 0;
     transition: opacity 0.6s ease;
     z-index: 2;
@@ -411,7 +410,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: white;
     padding: 2rem;
     transform: translateY(100%);
@@ -443,12 +442,29 @@ body {
     animation: fadeInUp 0.8s ease forwards;
 }
 
-.gallery-item:nth-child(1) { animation-delay: 0.1s; }
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.3s; }
-.gallery-item:nth-child(4) { animation-delay: 0.4s; }
-.gallery-item:nth-child(5) { animation-delay: 0.5s; }
-.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gallery-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gallery-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gallery-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.gallery-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.gallery-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -797,12 +813,12 @@ body {
     .nav-container {
         padding: 0 1.5rem;
     }
-    
+
     .logo {
         width: 140px;
         color: var(--primary-color) !important;
     }
-    
+
     .nav-links {
         gap: 0.8rem;
     }
@@ -812,12 +828,12 @@ body {
     .nav-links {
         gap: 0.6rem;
     }
-    
+
     .nav-link {
         font-size: 0.85rem;
         padding: 0.4rem 0.5rem;
     }
-    
+
     .logo {
         width: 120px;
         color: var(--primary-color) !important;
@@ -915,7 +931,7 @@ body {
     body.menu-open {
         overflow: hidden;
     }
-    
+
     /* 移动端菜单覆盖层 */
     .nav-right::before {
         content: '';
@@ -929,7 +945,7 @@ body {
         opacity: 0;
         transition: opacity 0.3s ease;
     }
-    
+
     .nav-right.active::before {
         opacity: 1;
     }
@@ -953,37 +969,37 @@ body {
     .gallery {
         padding: 6rem 0 4rem;
     }
-    
+
     .gallery-container {
         padding: 0 1rem;
     }
-    
+
     .gallery h2 {
         font-size: 2.5rem;
         letter-spacing: 0.1em;
     }
-    
+
     .gallery-subtitle {
         font-size: 1rem;
     }
-    
+
     .gallery-header {
         margin-bottom: 4rem;
     }
-    
+
     .gallery-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .gallery-item img {
         height: 300px;
     }
-    
+
     .gallery-item-overlay {
         padding: 1.5rem;
     }
-    
+
     .gallery-item-title {
         font-size: 1.1rem;
     }
@@ -1023,7 +1039,7 @@ body {
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 
+    box-shadow:
         0 40px 80px rgba(0, 0, 0, 0.3),
         0 20px 40px rgba(0, 0, 0, 0.2),
         0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -1199,34 +1215,34 @@ body {
         max-height: 98vh;
         margin: 0 5px;
     }
-    
+
     .modal-image-container {
         min-height: 300px;
         max-height: calc(98vh - 180px);
         padding: 1rem;
     }
-    
+
     .modal-info {
         padding: 1.5rem 1.5rem 2rem;
     }
-    
+
     .modal-info::before {
         left: 1.5rem;
         right: 1.5rem;
     }
-    
+
     .modal-title {
         font-size: 1.5rem;
     }
-    
+
     .modal-meta {
         font-size: 1rem;
     }
-    
+
     .modal-description {
         font-size: 0.9rem;
     }
-    
+
     .modal-close {
         right: 15px;
         top: 15px;
@@ -1234,17 +1250,17 @@ body {
         height: 40px;
         font-size: 1.3rem;
     }
-    
+
     .modal-nav {
         width: 45px;
         height: 45px;
         font-size: 1rem;
     }
-    
+
     .modal-nav-prev {
         left: 15px;
     }
-    
+
     .modal-nav-next {
         right: 15px;
     }
@@ -1434,7 +1450,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 30%, rgba(201, 169, 110, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(201, 169, 110, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 40% 80%, rgba(201, 169, 110, 0.02) 0%, transparent 50%);
@@ -1514,11 +1530,25 @@ body {
     animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.320, 1) forwards;
 }
 
-.exhibition-item:nth-child(1) { animation-delay: 0.1s; }
-.exhibition-item:nth-child(2) { animation-delay: 0.2s; }
-.exhibition-item:nth-child(3) { animation-delay: 0.3s; }
-.exhibition-item:nth-child(4) { animation-delay: 0.4s; }
-.exhibition-item:nth-child(5) { animation-delay: 0.5s; }
+.exhibition-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.exhibition-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.exhibition-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.exhibition-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.exhibition-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
 
 @keyframes fadeInUp {
     to {
@@ -1615,7 +1645,7 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.exhibition-type {
+.exhibition-country {
     display: inline-block;
     background: rgba(201, 169, 110, 0.1);
     color: var(--secondary-color);
@@ -1627,7 +1657,7 @@ body {
     transition: var(--transition);
 }
 
-.exhibition-type:hover {
+.exhibition-country:hover {
     background: rgba(201, 169, 110, 0.15);
     transform: translateY(-1px);
 }
@@ -1726,54 +1756,6 @@ body {
     transform: scale(1.05);
 }
 
-.exhibition-documents {
-    margin-top: 4rem;
-}
-
-.exhibition-documents h3 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-}
-
-.documents-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.document-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    transition: var(--transition);
-}
-
-.document-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.document-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-.document-link i {
-    font-size: 2rem;
-    color: var(--secondary-color);
-}
-
-.document-link span {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
 .no-content {
     text-align: center;
     color: #666;
@@ -1803,15 +1785,13 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .documents-grid {
-        grid-template-columns: 1fr;
-    }
+
 
     .exhibition-title {
         font-size: 1.4rem;
         margin-bottom: 1rem;
     }
-    
+
     .exhibition-preview {
         justify-content: center;
         gap: 0.5rem;
@@ -1835,7 +1815,7 @@ body {
         padding: 0.4rem 1rem;
     }
 
-    .exhibition-type {
+    .exhibition-country {
         font-size: 0.75rem;
         padding: 0.25rem 0.8rem;
     }
@@ -1959,7 +1939,7 @@ body {
 
 .exhibition-images h3,
 .exhibition-artworks h3,
-.exhibition-documents h3,
+.exhibition-certificates h3,
 .exhibition-press h3 {
     color: var(--primary-color);
     font-size: 1.4rem;
@@ -2057,39 +2037,6 @@ body {
 .artwork-details span {
     font-size: 0.9rem;
     color: var(--light-text);
-}
-
-.documents-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.document-item {
-    text-align: center;
-    background: var(--background-color);
-    padding: 1rem;
-    border-radius: 10px;
-    transition: var(--transition);
-}
-
-.document-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px var(--shadow-light);
-}
-
-.document-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.document-title {
-    font-weight: 500;
-    color: var(--primary-color);
 }
 
 .press-list {
@@ -2367,46 +2314,6 @@ body {
     line-height: 1.4;
 }
 
-/* 参展证书样式 */
-.exhibition-certificates {
-    margin-bottom: 3rem;
-}
-
-.certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.certificate-item {
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transition);
-    background: var(--background-color);
-    border-radius: 15px;
-    padding: 1rem;
-    border: 1px solid var(--border-light);
-}
-
-.certificate-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px var(--shadow-light);
-}
-
-.certificate-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.certificate-title {
-    font-size: 1rem;
-    color: var(--text-color);
-    font-weight: 500;
-}
-
 /* 媒体报道样式 */
 .exhibition-press {
     margin-bottom: 2rem;
@@ -2482,6 +2389,46 @@ body {
     color: var(--text-color);
 }
 
+/* 参展证书样式 */
+.exhibition-certificates {
+    margin-bottom: 3rem;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.certificate-item {
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--background-color);
+    border-radius: 15px;
+    padding: 1rem;
+    border: 1px solid var(--border-light);
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px var(--shadow-light);
+}
+
+.certificate-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.certificate-title {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
 /* 证书查看器样式 */
 .certificate-viewer-modal {
     position: fixed;
@@ -2536,26 +2483,32 @@ body {
     margin-top: 1rem;
 }
 
+.certificate-viewer-modal .viewer-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
 .certificate-viewer-modal .viewer-close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.2);
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
     border: none;
     color: white;
-    font-size: 1.5rem;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    transition: var(--transition);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    transition: var(--transition);
 }
 
 .certificate-viewer-modal .viewer-close:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 /* 作品查看器样式 */
@@ -2829,42 +2782,40 @@ body {
         width: 95vw;
         max-height: 95vh;
     }
-    
+
     .exhibition-detail-modal .modal-header {
         padding: 1.5rem;
     }
-    
+
     .exhibition-detail-modal .modal-header h2 {
         font-size: 1.4rem;
     }
-    
+
     .exhibition-detail-modal .modal-body {
         padding: 1.5rem;
     }
-    
+
     .images-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .artworks-list {
         grid-template-columns: 1fr;
     }
-    
-    .documents-list {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    
+
+
+
     .artwork-details {
         gap: 0.3rem;
     }
-    
+
     .press-meta {
         flex-direction: column;
         gap: 0.3rem;
         align-items: flex-start;
         justify-content: flex-start;
     }
-    
+
     .press-date {
         margin-top: 0.25rem;
         font-size: 0.8rem;
@@ -3459,33 +3410,33 @@ body {
     .press {
         padding: 6rem 1rem 3rem;
     }
-    
+
     .section-title {
         font-size: 1.5rem;
     }
-    
+
     .press-item {
         padding: 1.5rem;
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .press-thumbnail {
         width: 100%;
         height: 120px;
         align-self: stretch;
     }
-    
+
     .press-content-area {
         width: 100%;
     }
-    
+
     .press-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+
     .press-title {
         font-size: 1.2rem;
     }
@@ -3765,46 +3716,47 @@ body {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+
     .about-statement,
     .about-cv,
     .about-downloads {
         padding: 4rem 1.5rem;
     }
-    
+
     .about-statement {
         padding-top: 6rem;
     }
-    
+
     .about-statement h2,
     .about-cv h2,
     .about-downloads h2 {
         font-size: 2.5rem;
         margin-bottom: 3rem;
     }
-    
+
     .about-statement .statement-text {
         font-size: 1rem;
     }
-    
+
     .about-statement .statement-text p:first-of-type {
         font-size: 1.1rem;
         padding-left: 1.5rem;
     }
-    
+
     .about-cv .cv-sections {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .about-cv .cv-section {
         padding: 2rem 1.5rem;
     }
-    
+
     .downloads-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .download-item {
         flex-direction: column;
         text-align: center;
@@ -3812,7 +3764,7 @@ body {
         padding: 2rem 1.5rem;
         min-height: 0;
     }
-    
+
     .download-info {
         text-align: center;
         flex: 1;
@@ -3820,7 +3772,7 @@ body {
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .download-info h3 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
@@ -3828,13 +3780,13 @@ body {
         -webkit-hyphens: auto;
         hyphens: auto;
     }
-    
+
     .download-info p {
         font-size: 0.9rem;
         line-height: 1.4;
         word-wrap: break-word;
     }
-    
+
     .download-item .download-button {
         width: 100%;
         justify-content: center;
@@ -3905,102 +3857,102 @@ body {
         padding: 1rem 2rem;
         font-size: 1rem;
     }
-    
+
     /* 新的展览详情页面移动端适配 */
     .exhibition-poster-section {
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
     }
-    
+
     .poster-container img {
         max-height: 300px;
     }
-    
+
     .exhibition-info-section {
         padding: 1.5rem;
         margin-bottom: 2rem;
     }
-    
+
     .artworks-grid,
     .site-images-grid,
     .certificates-grid,
     .press-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .artwork-card,
     .press-card {
         padding: 1rem;
     }
-    
+
     .artwork-image {
         margin: -1rem -1rem 1rem -1rem;
     }
-    
+
     .artwork-image img {
         height: 150px;
     }
-    
+
     .site-image-item img,
     .certificate-item img {
         height: 200px;
     }
-    
+
     .press-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .press-card {
         padding: 1rem;
     }
-    
+
     /* 展览详情页面移动端适配 */
     .exhibition-detail-page {
         padding: calc(60px + 1rem) 0 1rem 0;
     }
-    
+
     .back-navigation {
         padding: 0 1rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .back-btn {
         font-size: 0.9rem;
         padding: 0.6rem 1.2rem;
     }
-    
+
     .exhibition-detail-container {
         padding: 0 1rem;
     }
-    
+
     .exhibition-detail-page .exhibition-title {
         font-size: 2rem;
         margin-bottom: 1rem;
     }
-    
+
     .exhibition-info-card {
         padding: 1.5rem;
         margin: 0 1rem;
     }
-    
+
     .info-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
         padding: 0.8rem 0;
     }
-    
+
     .info-label {
         min-width: auto;
         font-size: 0.9rem;
     }
-    
+
     .info-value {
         text-align: left;
         margin-left: 0;
         font-size: 0.9rem;
     }
-    
+
     .exhibition-detail-page .exhibition-info-section h2,
     .exhibition-detail-page .exhibition-artworks h2,
     .exhibition-detail-page .exhibition-site h2,
@@ -4009,23 +3961,23 @@ body {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
     }
-    
+
     .exhibition-description {
         font-size: 1rem;
         line-height: 1.6;
     }
-    
+
     .loading-state,
     .error-state {
         padding: 2rem 1rem;
     }
-    
+
     .error-state i {
         font-size: 2rem;
     }
-    
+
     .btn-primary {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
     }
-} 
+}

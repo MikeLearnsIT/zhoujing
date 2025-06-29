@@ -126,7 +126,7 @@
             const currentLang = window.languageManager?.currentLang || 'zh';
             const title = exhibition.title[currentLang] || exhibition.title.zh;
             const location = exhibition.location[currentLang] || exhibition.location.zh;
-            const type = exhibition.type[currentLang] || exhibition.type.zh;
+            const type = exhibition.country[currentLang] || exhibition.country.zh;
             const description = exhibition.description[currentLang] || exhibition.description.zh;
             
             // 获取多语言图片描述的函数
@@ -176,7 +176,7 @@
                             <span class="info-value">${location}</span>
                         </div>
                         <div class="info-row">
-                            <span class="info-label">${getTranslation('exhibitions.type')}</span>
+                            <span class="info-label">${getTranslation('exhibitions.country')}</span>
                             <span class="info-value">${type}</span>
                         </div>
                     </div>
@@ -287,6 +287,27 @@
             `;
             
             document.getElementById('exhibitionDetailContent').innerHTML = content;
+        }
+
+        // 打开证书查看器
+        function openCertificateViewer(imageSrc, title) {
+            const viewer = document.createElement('div');
+            viewer.className = 'certificate-viewer-modal';
+            viewer.innerHTML = `
+                <div class="viewer-overlay" onclick="this.parentElement.remove()"></div>
+                <div class="viewer-content">
+                    <img src="${imageSrc}" alt="${title}">
+                    <div class="viewer-info">
+                        <h3>${title}</h3>
+                    </div>
+                    <button class="viewer-close" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(viewer);
+            setTimeout(() => viewer.classList.add('show'), 10);
         }
 
         // 监听语言切换事件

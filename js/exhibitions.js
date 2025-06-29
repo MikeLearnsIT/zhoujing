@@ -5,21 +5,21 @@ const exhibitionsData = {
         {
             id: "this-moment-in-china-2023",
             title: {
-                zh: "NOW中取境--2023上海青年艺术家邀请展",
-                en: "NOW - 2023 Shanghai Young Artists Invitational Exhibition"
+                zh: "\"NOW中取境\"--2023上海青年艺术家邀请展",
+                en: "\"NOW Zhong Qu Jing\" - 2023 Shanghai Young Artists Invitational Exhibition"
             },
             date: "2023.09.28 - 2023.10.25",
             location: {
                 zh: "上海市普陀区文化馆3楼（上海市兰溪路138号）",
                 en: "Shanghai PuTuo District Cultural Center 3rd Floor (No. 138 Lanxi Road, Shanghai)"
             },
-            type: {
-                zh: "群展",
-                en: "Group Exhibition"
+            country: {
+                zh: "中国",
+                en: "China"
             },
             description: {
                 zh: "这是一场汇聚了多位中国当代艺术家的重要群展，展示了当代中国艺术的多元面貌和创新精神。展览通过不同媒介的艺术作品，呈现了艺术家们对当下社会、文化和个人体验的深度思考。",
-                en: "An important group exhibition bringing together multiple Chinese contemporary artists, showcasing the diverse landscape and innovative spirit of contemporary Chinese art. The exhibition presents artists' deep reflections on current society, culture, and personal experiences through various artistic media."
+                en: "An important exhibition bringing together multiple Chinese contemporary artists, showcasing the diverse landscape and innovative spirit of contemporary Chinese art. The exhibition presents artists' deep reflections on current society, culture, and personal experiences through various artistic media."
             },
             images: [
                 {
@@ -30,7 +30,7 @@ const exhibitionsData = {
                     },
                     description: {
                         zh: "\"NOW中取境\"展览主视觉海报",
-                        en: "Main visual poster of \"This Moment in China\" exhibition"
+                        en: "Main visual poster of \"NOW Zhong Qu Jing\" exhibition"
                     }
                 },
                 {
@@ -193,9 +193,9 @@ const exhibitionsData = {
                 zh: "北京798艺术区",
                 en: "Beijing 798 Art Zone"
             },
-            type: {
-                zh: "群展",
-                en: "Group Exhibition"
+            country: {
+                zh: "中国",
+                en: "China"
             },
             description: {
                 zh: "萨珞际艺术展探讨了艺术中的偶然与必然，展示了艺术家们如何通过不同的创作手法表达对生活、情感和存在的理解。展览汇集了多位艺术家的精彩作品，呈现了当代艺术的丰富内涵。",
@@ -299,9 +299,9 @@ const exhibitionsData = {
                 zh: "中国",
                 en: "China"
             },
-            type: {
-                zh: "群展",
-                en: "Group Exhibition"
+            country: {
+                zh: "中国",
+                en: "China"
             },
             description: {
                 zh: "第十三届中国当代艺术作品邀请展，周婧作品获得参展资格并获得相关奖项认可。",
@@ -355,14 +355,14 @@ function getTranslation(key) {
     const defaultTranslations = {
         zh: {
             "exhibitions.viewDetail": "查看详情",
-        "exhibitions.backToList": "返回展览列表",
+            "exhibitions.backToList": "返回展览列表",
             "exhibitions.timeline": "展览时间线",
             "exhibitions.artworks": "参展作品",
             "exhibitions.documents": "展览文档",
             "exhibitions.press": "媒体报道",
             "exhibitions.period": "展期",
             "exhibitions.location": "地点",
-            "exhibitions.type": "类型",
+            "exhibitions.country": "国家",
             "exhibitions.description": "简介",
             "exhibitions.medium": "媒材",
             "exhibitions.size": "尺寸",
@@ -371,14 +371,14 @@ function getTranslation(key) {
         },
         en: {
             "exhibitions.viewDetail": "View Details",
-        "exhibitions.backToList": "Back to Exhibition List",
+            "exhibitions.backToList": "Back to Exhibition List",
             "exhibitions.timeline": "Exhibition Timeline",
             "exhibitions.artworks": "Artworks",
             "exhibitions.documents": "Exhibition Documents",
             "exhibitions.press": "Press Coverage",
             "exhibitions.period": "Period",
             "exhibitions.location": "Location",
-            "exhibitions.type": "Type",
+            "exhibitions.country": "Country",
             "exhibitions.description": "Description",
             "exhibitions.medium": "Medium",
             "exhibitions.size": "Size",
@@ -386,7 +386,7 @@ function getTranslation(key) {
             "exhibitions.exhibitionSite": "Exhibition Site"
         }
     };
-    
+
     const lang = currentLang || 'zh';
     return defaultTranslations[lang][key] || key;
 }
@@ -419,14 +419,14 @@ function getPressText(press, field) {
 let currentLang = 'zh';
 
 // 监听语言切换事件
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 初始化当前语言
     if (window.languageManager) {
         currentLang = window.languageManager.currentLang;
     }
-    
+
     // 监听语言切换
-    document.addEventListener('languageChanged', function(e) {
+    document.addEventListener('languageChanged', function (e) {
         currentLang = e.detail.language;
         // 如果展览详情模态框已打开，重新渲染
         const modal = document.getElementById('exhibitionDetailModal');
@@ -441,13 +441,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // 初始化展览页面
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 监听语言切换
-    document.addEventListener('languageChanged', function(e) {
+    document.addEventListener('languageChanged', function (e) {
         currentLang = e.detail.language;
         renderExhibitions();
     });
-    
+
     // 初始渲染
     renderExhibitions();
 });
@@ -456,28 +456,28 @@ document.addEventListener('DOMContentLoaded', function() {
 function renderExhibitions() {
     const container = document.querySelector('.exhibitions-timeline');
     if (!container) return;
-    
+
     container.innerHTML = '';
-    
+
     // 按年份倒序排列
     const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
-    
+
     years.forEach(year => {
         const yearSection = document.createElement('div');
         yearSection.className = 'exhibition-year';
-        
+
         const yearTitle = document.createElement('h3');
         yearTitle.textContent = year;
         yearSection.appendChild(yearTitle);
-        
+
         const exhibitionsList = document.createElement('div');
         exhibitionsList.className = 'exhibitions-list';
-        
+
         exhibitionsData[year].forEach(exhibition => {
             const exhibitionItem = createExhibitionItem(exhibition);
             exhibitionsList.appendChild(exhibitionItem);
         });
-        
+
         yearSection.appendChild(exhibitionsList);
         container.appendChild(yearSection);
     });
@@ -488,22 +488,22 @@ function createExhibitionItem(exhibition) {
     const item = document.createElement('div');
     item.className = 'exhibition-item';
     item.setAttribute('data-exhibition-id', exhibition.id);
-    
+
     const title = exhibition.title[currentLang] || exhibition.title.zh;
     const location = exhibition.location[currentLang] || exhibition.location.zh;
-    const type = exhibition.type[currentLang] || exhibition.type.zh;
-    
+    const country = exhibition.country[currentLang] || exhibition.country.zh;
+
     item.innerHTML = `
         <div class="exhibition-info">
             <div class="exhibition-date">${exhibition.date}</div>
             <h4 class="exhibition-title">${title}</h4>
             <div class="exhibition-location">${location}</div>
-            <div class="exhibition-type">${type}</div>
+            <div class="exhibition-country">${country}</div>
         </div>
         <div class="exhibition-preview">
-            ${exhibition.images.slice(0, 3).map(img => 
-                `<img src="${img.src}" alt="${img.title}" class="preview-image">`
-            ).join('')}
+            ${exhibition.images.slice(0, 3).map(img =>
+        `<img src="${img.src}" alt="${img.title}" class="preview-image">`
+    ).join('')}
         </div>
         <div class="exhibition-action">
             <a href="exhibition-detail.html?id=${exhibition.id}" class="view-detail-btn">
@@ -512,7 +512,7 @@ function createExhibitionItem(exhibition) {
             </a>
         </div>
     `;
-    
+
     return item;
 }
 
@@ -520,12 +520,12 @@ function createExhibitionItem(exhibition) {
 function openExhibitionDetail(exhibitionId) {
     const exhibition = findExhibitionById(exhibitionId);
     if (!exhibition) return;
-    
+
     // 创建详情模态框
     const modal = createDetailModal(exhibition);
     modal.dataset.exhibitionId = exhibitionId; // 保存展览ID用于语言切换
     document.body.appendChild(modal);
-    
+
     // 显示模态框
     setTimeout(() => {
         modal.classList.add('show');
@@ -546,21 +546,21 @@ function createDetailModal(exhibition) {
     const modal = document.createElement('div');
     modal.className = 'exhibition-detail-modal';
     modal.id = 'exhibitionDetailModal';
-    
+
     const title = exhibition.title[currentLang] || exhibition.title.zh;
     const location = exhibition.location[currentLang] || exhibition.location.zh;
-    const type = exhibition.type[currentLang] || exhibition.type.zh;
+    const country = exhibition.country[currentLang] || exhibition.country.zh;
     const description = exhibition.description[currentLang] || exhibition.description.zh;
-    
+
     // 找到海报图片（通常是第一张图片或标题包含"海报"的图片）
     const posterImage = exhibition.images.find(img => {
         const title = getImageText(img, 'title');
         return title.includes('海报') || title.includes('poster') || title.includes('Poster');
     }) || exhibition.images[0];
-    
+
     // 展览现场照片（排除海报）
     const siteImages = exhibition.images.filter(img => img !== posterImage);
-    
+
     modal.innerHTML = `
         <div class="modal-overlay" onclick="closeExhibitionDetail()"></div>
         <div class="modal-content">
@@ -589,7 +589,7 @@ function createDetailModal(exhibition) {
                         <strong>${getTranslation('exhibitions.location')}：</strong> ${location}
                     </div>
                     <div class="info-item">
-                        <strong>${getTranslation('exhibitions.type')}：</strong> ${type}
+                        <strong>${getTranslation('exhibitions.country')}：</strong> ${country}
                     </div>
                     <div class="info-item description">
                         <strong>${getTranslation('exhibitions.description')}：</strong> ${description}
@@ -687,7 +687,7 @@ function createDetailModal(exhibition) {
             </div>
         </div>
     `;
-    
+
     return modal;
 }
 
@@ -706,7 +706,7 @@ function closeExhibitionDetail() {
 function openImageViewer(imageIndex, exhibitionId) {
     const exhibition = findExhibitionById(exhibitionId);
     if (!exhibition) return;
-    
+
     // 这里可以复用现有的图片查看器或创建新的
     // 暂时使用简单的实现
     const image = exhibition.images[imageIndex];
@@ -725,10 +725,12 @@ function openImageViewer(imageIndex, exhibitionId) {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(viewer);
     setTimeout(() => viewer.classList.add('show'), 10);
 }
+
+
 
 // 打开证书查看器
 function openCertificateViewer(imageSrc, title) {
@@ -746,7 +748,7 @@ function openCertificateViewer(imageSrc, title) {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(viewer);
     setTimeout(() => viewer.classList.add('show'), 10);
 }
@@ -767,13 +769,13 @@ function openArtworkViewer(imageSrc, title) {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(viewer);
     setTimeout(() => viewer.classList.add('show'), 10);
 }
 
 // ESC键关闭模态框
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
         closeExhibitionDetail();
         const imageViewer = document.querySelector('.image-viewer-modal');
