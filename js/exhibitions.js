@@ -99,7 +99,7 @@ const exhibitionsData = {
                         zh: "丙烯 & 综合材料",
                         en: "Acrylic & Mixed Media"
                     },
-                    size: "50cm×50cm",
+                    size: "60cm×60cm",
                     year: "2023",
                     image: "images/painting_01.webp"
                 },

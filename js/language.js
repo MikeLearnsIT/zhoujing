@@ -28,6 +28,10 @@ const translations = {
     gallery: {
         title: { zh: "作品集", en: "Gallery" },
         subtitle: { zh: "探索色彩与情感的对话", en: "Exploring the Dialogue Between Color and Emotion" },
+        sortBy: { zh: "排序方式", en: "Sort By" },
+        sortDefault: { zh: "默认排序", en: "Default Order" },
+        sortByYearDesc: { zh: "按年份 ↓ (新→旧)", en: "By Year ↓ (New→Old)" },
+        sortByYearAsc: { zh: "按年份 ↑ (旧→新)", en: "By Year ↑ (Old→New)" },
         artwork1: {
             title: { zh: "内心景象", en: "Inner Landscape" },
             meta: { zh: "2024 • 布面油画", en: "2024 • Oil on Canvas" }
@@ -292,6 +296,7 @@ const translations = {
 class LanguageManager {
     constructor() {
         this.currentLang = 'zh';
+        this.isInitialized = false;
         this.init();
     }
 
@@ -302,17 +307,43 @@ class LanguageManager {
             this.currentLang = savedLang;
         }
         
-        // 设置页面语言
+        // 立即设置页面语言
         document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
         
+        // 使用更频繁的检查来确保翻译及时应用
+        this.applyTranslationsRepeatedly();
+        
+        // 等待DOM加载完成后绑定事件
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.bindEvents();
+                this.applyTranslations();
+                this.isInitialized = true;
+            });
+        } else {
+            // DOM已经加载完成
+            this.bindEvents();
+            this.isInitialized = true;
+        }
+    }
+    
+    applyTranslationsRepeatedly() {
+        // 立即应用一次
+        this.applyTranslations();
+        
+        // 然后在短时间内多次应用，确保所有元素都被翻译
+        const intervals = [10, 50, 100, 200];
+        intervals.forEach(delay => {
+            setTimeout(() => this.applyTranslations(), delay);
+        });
+    }
+    
+    bindEvents() {
         // 绑定语言切换按钮
         const langToggle = document.querySelector('.lang-toggle');
         if (langToggle) {
             langToggle.addEventListener('click', () => this.toggleLanguage());
         }
-        
-        // 应用翻译
-        this.applyTranslations();
     }
 
     toggleLanguage() {
@@ -400,6 +431,9 @@ class LanguageManager {
         
         // 更新语言切换按钮文本
         this.updateLanguageToggle();
+        
+        // 更新自定义选择器的文本
+        this.updateCustomSelectText();
     }
 
     updateLanguageToggle() {
@@ -411,6 +445,28 @@ class LanguageManager {
         const langToggle = document.querySelector('.lang-toggle');
         if (langToggle) {
             langToggle.setAttribute('aria-label', this.getTranslation('lang.switch'));
+        }
+    }
+
+    // 更新自定义选择器的文本
+    updateCustomSelectText() {
+        const customSelect = document.getElementById('customSelect');
+        if (!customSelect) return;
+
+        const selectText = customSelect.querySelector('.select-text');
+        const activeOption = customSelect.querySelector('.select-option.active');
+        
+        if (selectText && activeOption) {
+            const spanElement = activeOption.querySelector('span');
+            if (spanElement) {
+                const i18nKey = spanElement.getAttribute('data-i18n');
+                if (i18nKey) {
+                    const translatedText = this.getTranslation(i18nKey);
+                    if (translatedText) {
+                        selectText.textContent = translatedText;
+                    }
+                }
+            }
         }
     }
 }
@@ -445,10 +501,8 @@ function getTranslationText(textObj) {
     return textObj.zh || textObj.en || '';
 }
 
-// 初始化语言管理器
-document.addEventListener('DOMContentLoaded', function() {
-    window.languageManager = new LanguageManager();
-});
+// 立即初始化语言管理器
+window.languageManager = new LanguageManager();
 
 // 导出供其他模块使用
 if (typeof module !== 'undefined' && module.exports) {

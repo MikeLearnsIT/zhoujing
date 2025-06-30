@@ -141,7 +141,7 @@ const pressData = {
 };
 
 // 当前语言
-let currentLang = 'en';
+let currentLang = localStorage.getItem('language') || 'zh';
 
 // 获取翻译文本
 function getTranslation(key) {
@@ -242,16 +242,18 @@ function updateModalHints() {
 
 // 初始化页面
 function initPress() {
-    // 等待LanguageManager加载
-    if (window.languageManager) {
-        currentLang = window.languageManager.currentLang;
-        loadPressContent();
-    } else {
-        // 如果LanguageManager还没加载，使用默认语言
-        const savedLang = localStorage.getItem('preferredLanguage') || 'zh';
-        currentLang = savedLang;
-        loadPressContent();
+    // 等待语言管理器初始化完成
+    function initPressContent() {
+        if (window.languageManager) {
+            currentLang = window.languageManager.currentLang;
+            loadPressContent();
+        } else {
+            // 如果语言管理器还没准备好，再等一下
+            setTimeout(initPressContent, 10);
+        }
     }
+    
+    initPressContent();
 
     // 监听语言切换
     document.addEventListener('languageChanged', function (e) {
