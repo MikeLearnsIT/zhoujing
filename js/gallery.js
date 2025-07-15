@@ -17,7 +17,7 @@ const artworksData = [
             en: "$2,000"
         },
         status: "available", // available, sold, reserved
-        image: "images/painting_01.webp",
+        image: "images/paintings/painting_01.jpg",
         description: {
             zh: "探索内心世界的色彩表达，通过抽象的形式语言展现情感的深度与复杂性。",
             en: "Exploring the color expression of the inner world, showing the depth and complexity of emotions through abstract formal language."
@@ -42,7 +42,7 @@ const artworksData = [
             en: "$2,000"
         },
         status: "sold",
-        image: "images/painting_02.webp",
+        image: "images/paintings/painting_02.jpg",
         description: {
             zh: "不同色彩之间的对话与碰撞，创造出充满张力的视觉体验。",
             en: "The dialogue and collision between different colors creates a visual experience full of tension."
@@ -67,7 +67,7 @@ const artworksData = [
             en: "$1,500"
         },
         status: "available",
-        image: "images/painting_03.webp",
+        image: "images/paintings/painting_03.jpg",
         description: {
             zh: "纯粹的抽象表达，通过色彩和形式的自由组合传达艺术家的内在感受。",
             en: "Pure abstract expression, conveying the artist's inner feelings through free combination of colors and forms."
@@ -92,7 +92,7 @@ const artworksData = [
             en: "$2,000"
         },
         status: "reserved",
-        image: "images/painting_04.webp",
+        image: "images/paintings/painting_04.png",
         description: {
             zh: "水彩的流动性完美诠释了情感的变化与流转。",
             en: "The fluidity of watercolor perfectly interprets the change and flow of emotions."
@@ -117,7 +117,7 @@ const artworksData = [
             en: "$2,000"
         },
         status: "available",
-        image: "images/painting_05.webp",
+        image: "images/paintings/painting_05.jpg",
         description: {
             zh: "不同文化元素的融合与碰撞，展现当代艺术的多元化特征。",
             en: "The fusion and collision of different cultural elements, showing the diversification characteristics of contemporary art."
@@ -142,13 +142,363 @@ const artworksData = [
             en: "$2,050"
         },
         status: "sold",
-        image: "images/painting_06.webp",
+        image: "images/paintings/painting_06.jpg",
         description: {
             zh: "时间在画布上留下的痕迹，记录着艺术家创作历程中的重要时刻。",
             en: "The traces left by time on the canvas, recording important moments in the artist's creative journey."
         },
         category: "painting",
         featured: false
+    },
+    {
+        id: "abstract-symphony-2023",
+        title: {
+            zh: "抽象交响",
+            en: "Abstract Symphony"
+        },
+        medium: {
+            zh: "油画 & 综合材料",
+            en: "Oil & Mixed Media"
+        },
+        size: "80cm × 100cm",
+        year: "2023",
+        price: {
+            zh: "¥22,000",
+            en: "$3,200"
+        },
+        status: "available",
+        image: "images/paintings/painting_07.jpg",
+        description: {
+            zh: "如音乐般的视觉旋律，抽象形式中蕴含着深层的情感共鸣。",
+            en: "A visual melody like music, containing deep emotional resonance in abstract forms."
+        },
+        category: "painting",
+        featured: true
+    },
+    {
+        id: "urban-reflection-2023",
+        title: {
+            zh: "都市倒影",
+            en: "Urban Reflection"
+        },
+        medium: {
+            zh: "丙烯 & 数字媒体",
+            en: "Acrylic & Digital Media"
+        },
+        size: "70cm × 70cm",
+        year: "2023",
+        price: {
+            zh: "¥16,000",
+            en: "$2,400"
+        },
+        status: "sold",
+        image: "images/paintings/painting_08.jpg",
+        description: {
+            zh: "现代都市生活的抽象表达，探索城市节奏与人文情怀的平衡。",
+            en: "Abstract expression of modern urban life, exploring the balance between city rhythm and humanistic feelings."
+        },
+        category: "mixed-media",
+        featured: false
+    },
+    {
+        id: "memory-fragments-2022",
+        title: {
+            zh: "记忆碎片",
+            en: "Memory Fragments"
+        },
+        medium: {
+            zh: "水彩 & 拼贴",
+            en: "Watercolor & Collage"
+        },
+        size: "50cm × 60cm",
+        year: "2022",
+        price: {
+            zh: "¥12,000",
+            en: "$1,800"
+        },
+        status: "available",
+        image: "images/paintings/painting_09.jpg",
+        description: {
+            zh: "破碎与重组的记忆片段，诉说着时间流逝中的点点滴滴。",
+            en: "Fragmented and reconstructed memory pieces, telling the bits and pieces in the passage of time."
+        },
+        category: "watercolor",
+        featured: false
+    },
+    {
+        id: "golden-horizon-2023",
+        title: {
+            zh: "金色地平线",
+            en: "Golden Horizon"
+        },
+        medium: {
+            zh: "油画 & 金箔",
+            en: "Oil & Gold Leaf"
+        },
+        size: "90cm × 120cm",
+        year: "2023",
+        price: {
+            zh: "¥35,000",
+            en: "$5,200"
+        },
+        status: "reserved",
+        image: "images/paintings/painting_10.jpg",
+        description: {
+            zh: "金色的希望与憧憬，描绘着心中理想的远方。",
+            en: "Golden hope and longing, depicting the ideal distant place in the heart."
+        },
+        category: "painting",
+        featured: true
+    },
+    {
+        id: "digital-nature-2023",
+        title: {
+            zh: "数字自然",
+            en: "Digital Nature"
+        },
+        medium: {
+            zh: "数字艺术 & 印刷",
+            en: "Digital Art & Print"
+        },
+        size: "60cm × 80cm",
+        year: "2023",
+        price: {
+            zh: "¥8,000",
+            en: "$1,200"
+        },
+        status: "available",
+        image: "images/paintings/painting_11.jpg",
+        description: {
+            zh: "科技与自然的完美融合，展现当代艺术的无限可能。",
+            en: "Perfect fusion of technology and nature, showing infinite possibilities of contemporary art."
+        },
+        category: "digital",
+        featured: false
+    },
+    {
+        id: "emotional-landscape-2022",
+        title: {
+            zh: "情感地貌",
+            en: "Emotional Landscape"
+        },
+        medium: {
+            zh: "丙烯 & 纹理材料",
+            en: "Acrylic & Texture Materials"
+        },
+        size: "75cm × 90cm",
+        year: "2022",
+        price: {
+            zh: "¥19,000",
+            en: "$2,800"
+        },
+        status: "sold",
+        image: "images/paintings/painting_12.jpg",
+        description: {
+            zh: "内心情感的地理图谱，每一处肌理都承载着不同的情绪。",
+            en: "A geographical map of inner emotions, each texture carries different emotions."
+        },
+        category: "mixed-media",
+        featured: false
+    },
+    {
+        id: "silent-dialogue-2023",
+        title: {
+            zh: "无声对话",
+            en: "Silent Dialogue"
+        },
+        medium: {
+            zh: "水墨 & 宣纸",
+            en: "Ink & Rice Paper"
+        },
+        size: "45cm × 65cm",
+        year: "2023",
+        price: {
+            zh: "¥14,000",
+            en: "$2,100"
+        },
+        status: "available",
+        image: "images/paintings/painting_13.jpg",
+        description: {
+            zh: "东方美学的现代诠释，在黑白之间寻找平衡与和谐。",
+            en: "Modern interpretation of Eastern aesthetics, seeking balance and harmony between black and white."
+        },
+        category: "ink",
+        featured: true
+    },
+    {
+        id: "cosmic-dance-2023",
+        title: {
+            zh: "宇宙之舞",
+            en: "Cosmic Dance"
+        },
+        medium: {
+            zh: "丙烯 & 荧光颜料",
+            en: "Acrylic & Fluorescent Pigments"
+        },
+        size: "100cm × 100cm",
+        year: "2023",
+        price: {
+            zh: "¥28,000",
+            en: "$4,200"
+        },
+        status: "available",
+        image: "images/paintings/painting_14.jpg",
+        description: {
+            zh: "宇宙能量的视觉呈现，探索生命与宇宙的神秘联系。",
+            en: "Visual representation of cosmic energy, exploring the mysterious connection between life and the universe."
+        },
+        category: "painting",
+        featured: false
+    },
+    {
+        id: "textural-poetry-2022",
+        title: {
+            zh: "质感诗篇",
+            en: "Textural Poetry"
+        },
+        medium: {
+            zh: "综合材料 & 雕塑",
+            en: "Mixed Media & Sculpture"
+        },
+        size: "55cm × 75cm",
+        year: "2022",
+        price: {
+            zh: "¥17,000",
+            en: "$2,500"
+        },
+        status: "sold",
+        image: "images/paintings/painting_15.jpg",
+        description: {
+            zh: "触觉与视觉的双重体验，材料本身就是艺术语言。",
+            en: "Dual experience of tactile and visual, the material itself is the artistic language."
+        },
+        category: "sculpture",
+        featured: false
+    },
+    {
+        id: "cultural-fusion-2023",
+        title: {
+            zh: "文化交融",
+            en: "Cultural Fusion"
+        },
+        medium: {
+            zh: "布面油画 & 传统工艺",
+            en: "Oil on Canvas & Traditional Crafts"
+        },
+        size: "85cm × 110cm",
+        year: "2023",
+        price: {
+            zh: "¥25,000",
+            en: "$3,700"
+        },
+        status: "available",
+        image: "images/paintings/painting_16.jpg",
+        description: {
+            zh: "东西方文化的碰撞与融合，展现全球化时代的艺术思考。",
+            en: "Collision and fusion of Eastern and Western cultures, showing artistic thinking in the era of globalization."
+        },
+        category: "painting",
+        featured: true
+    },
+    {
+        id: "minimalist-essence-2023",
+        title: {
+            zh: "极简本质",
+            en: "Minimalist Essence"
+        },
+        medium: {
+            zh: "丙烯 & 几何形态",
+            en: "Acrylic & Geometric Forms"
+        },
+        size: "40cm × 50cm",
+        year: "2023",
+        price: {
+            zh: "¥9,000",
+            en: "$1,350"
+        },
+        status: "available",
+        image: "images/paintings/painting_17.jpg",
+        description: {
+            zh: "简约而不简单，在极简中寻找艺术的本质力量。",
+            en: "Simple but not simplistic, seeking the essential power of art in minimalism."
+        },
+        category: "painting",
+        featured: false
+    },
+    {
+        id: "seasonal-transition-2022",
+        title: {
+            zh: "季节更迭",
+            en: "Seasonal Transition"
+        },
+        medium: {
+            zh: "水彩 & 自然材料",
+            en: "Watercolor & Natural Materials"
+        },
+        size: "65cm × 80cm",
+        year: "2022",
+        price: {
+            zh: "¥15,000",
+            en: "$2,250"
+        },
+        status: "reserved",
+        image: "images/paintings/painting_18.jpg",
+        description: {
+            zh: "四季轮回的生命哲学，感受自然变化中的美学节奏。",
+            en: "Life philosophy of seasonal cycles, feeling the aesthetic rhythm in natural changes."
+        },
+        category: "watercolor",
+        featured: false
+    },
+    {
+        id: "urban-solitude-2023",
+        title: {
+            zh: "都市孤独",
+            en: "Urban Solitude"
+        },
+        medium: {
+            zh: "油画 & 现代媒介",
+            en: "Oil & Modern Media"
+        },
+        size: "70cm × 95cm",
+        year: "2023",
+        price: {
+            zh: "¥21,000",
+            en: "$3,100"
+        },
+        status: "available",
+        image: "images/paintings/painting_19.jpg",
+        description: {
+            zh: "现代都市人的内心独白，探索繁华背后的孤独感受。",
+            en: "Inner monologue of modern urban people, exploring the sense of loneliness behind prosperity."
+        },
+        category: "painting",
+        featured: false
+    },
+    {
+        id: "infinite-possibilities-2023",
+        title: {
+            zh: "无限可能",
+            en: "Infinite Possibilities"
+        },
+        medium: {
+            zh: "综合材料 & 交互装置",
+            en: "Mixed Media"
+        },
+        size: "120cm × 150cm",
+        year: "2023",
+        price: {
+            zh: "¥45,000",
+            en: "$6,700"
+        },
+        status: "available",
+        image: "images/paintings/painting_20.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: true
     }
 ];
 

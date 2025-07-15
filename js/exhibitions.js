@@ -101,7 +101,7 @@ const exhibitionsData = {
                     },
                     size: "60cm×60cm",
                     year: "2023",
-                    image: "images/painting_01.webp"
+                    image: "images/paintings/painting_01.jpg"
                 },
                 {
                     title: {
@@ -114,7 +114,7 @@ const exhibitionsData = {
                     },
                     size: "60cm×60cm",
                     year: "2023",
-                    image: "images/painting_02.webp"
+                    image: "images/paintings/painting_02.jpg"
                 },
                 {
                     title: {
@@ -127,7 +127,7 @@ const exhibitionsData = {
                     },
                     size: "80cm×80cm",
                     year: "2023",
-                    image: "images/painting_03.webp"
+                    image: "images/paintings/painting_03.jpg"
                 },
                 {
                     title: {
@@ -140,7 +140,7 @@ const exhibitionsData = {
                     },
                     size: "60cm×60cm",
                     year: "2023",
-                    image: "images/painting_04.webp"
+                    image: "images/paintings/painting_04.png"
                 },
                 {
                     title: {
@@ -153,7 +153,7 @@ const exhibitionsData = {
                     },
                     size: "60cm×60cm",
                     year: "2023",
-                    image: "images/painting_05.webp"
+                    image: "images/paintings/painting_05.jpg"
                 }
             ],
             documents: [
