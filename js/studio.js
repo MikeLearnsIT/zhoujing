@@ -183,7 +183,6 @@ function renderStudioContent() {
             <div class="process-grid">
                 ${studioData.images.map((image, index) => `
                     <div class="process-step" data-step="${index + 1}">
-                        <div class="step-number">${index + 1}</div>
                         <div class="step-image">
                             <img src="${image.src}" alt="${getStudioTranslation(image.titleKey)}" onclick="openStudioViewer('${image.src}', '${image.titleKey}', '${image.descriptionKey}')">
                             <div class="step-overlay">

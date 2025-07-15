@@ -291,7 +291,7 @@ const translations = {
 // 语言管理器类
 class LanguageManager {
     constructor() {
-        this.currentLang = 'zh';
+        this.currentLang = 'en';
         this.isInitialized = false;
         this.init();
     }
@@ -480,7 +480,7 @@ function getCurrentLanguage() {
     if (window.languageManager) {
         return window.languageManager.currentLang;
     }
-    return 'zh';
+    return 'en';
 }
 
 // 辅助函数：获取翻译文本（处理对象格式）
@@ -493,8 +493,8 @@ function getTranslationText(textObj) {
         return textObj[currentLang];
     }
     
-    // 降级到中文
-    return textObj.zh || textObj.en || '';
+    // 降级到英文
+    return textObj.en || textObj.zh || '';
 }
 
 // 立即初始化语言管理器

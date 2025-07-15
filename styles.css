@@ -38,7 +38,6 @@ body {
     /* 移动端优化 */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* 艺术气质导航栏 */
@@ -1129,7 +1128,6 @@ body {
     background: rgba(0, 0, 0, 0.9);
     padding: 0.5rem;
     /* 触摸滚动优化 */
-    -webkit-overflow-scrolling: touch;
     overflow: hidden;
 }
 
@@ -1353,7 +1351,7 @@ body {
 
     /* 移动端滚动优化 */
     * {
-        -webkit-overflow-scrolling: touch;
+        overflow: auto;
     }
 
     /* 按钮触摸优化 */
@@ -2734,7 +2732,6 @@ body {
     background: var(--background-color);
     /* 性能优化 */
     will-change: scroll-position;
-    -webkit-overflow-scrolling: touch;
     /* 减少重绘 */
     contain: layout style paint;
 }
@@ -4214,8 +4211,8 @@ body {
     border: 1px solid rgba(201, 169, 110, 0.2);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
     position: relative;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     overflow: visible;
     z-index: 100;
 }
@@ -4385,8 +4382,8 @@ body {
     visibility: hidden;
     transform: translateY(-10px) scale(0.95);
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     overflow: hidden;
     display: block !important;
     min-width: 200px !important;
