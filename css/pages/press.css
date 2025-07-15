@@ -1,0 +1,548 @@
+/* 媒体报道页面样式 */
+
+/* 艺术气质媒体报道页面 */
+.press {
+    padding: 8rem 2rem 6rem;
+    background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-color) 100%);
+    min-height: 100vh;
+    /* 性能优化 */
+    will-change: scroll-position;
+    /* 减少重绘 */
+    contain: layout style paint;
+}
+
+.press h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.15em;
+    font-family: var(--font-serif);
+    position: relative;
+    /* 性能优化 */
+    contain: layout style paint;
+}
+
+.press h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.press-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-items {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-section {
+    margin-bottom: 3rem;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    /* 性能优化 */
+    contain: layout style paint;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.press-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-item {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1), box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    overflow: hidden;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    /* 减少重绘 */
+    contain: layout style paint;
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.press-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 20px 20px 0 0;
+    transition: height 0.3s ease;
+    /* 性能优化 */
+    will-change: height;
+    transform: translateZ(0);
+}
+
+.press-item:hover {
+    transform: translateZ(0) translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.press-item:hover::before {
+    height: 8px;
+}
+
+.press-thumbnail {
+    flex-shrink: 0;
+    width: 140px;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(201, 169, 110, 0.2);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    /* 减少重绘 */
+    contain: layout style paint;
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.press-thumbnail:hover {
+    transform: translateZ(0) scale(1.05);
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+}
+
+.press-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    /* 图片优化 */
+    image-rendering: optimizeQuality;
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.press-thumbnail:hover img {
+    transform: translateZ(0) scale(1.05);
+}
+
+.press-thumbnail-fallback {
+    color: #6c757d;
+    font-size: 2rem;
+    background: linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 性能优化 */
+    contain: layout style paint;
+}
+
+.press-thumbnail-fallback img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.press-thumbnail-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6c757d;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.press-thumbnail[data-loading="true"] .press-thumbnail-loading {
+    display: block;
+}
+
+/* 预览图悬停效果 */
+.press-thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.9) 0%, rgba(139, 115, 85, 0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+    /* 性能优化 */
+    will-change: opacity;
+    transform: translateZ(0);
+    /* 减少重绘 */
+    contain: layout style paint;
+}
+
+.press-thumbnail-overlay i {
+    color: white;
+    font-size: 2rem;
+    transform: translateZ(0) scale(0.8);
+    transition: transform 0.3s ease;
+    /* 性能优化 */
+    will-change: transform;
+}
+
+.press-thumbnail:hover .press-thumbnail-overlay {
+    opacity: 1;
+}
+
+.press-thumbnail:hover .press-thumbnail-overlay i {
+    transform: translateZ(0) scale(1);
+}
+
+.press-content-area {
+    flex: 1;
+    min-width: 0;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-title {
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
+    font-weight: 500;
+    color: var(--primary-color);
+    line-height: 1.3;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    /* 性能优化 */
+    will-change: color;
+}
+
+.press-title a:hover {
+    color: var(--secondary-color);
+}
+
+.press-title a i {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.press-date,
+.press-publication {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.15) 0%, rgba(139, 115, 85, 0.1) 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    transition: background 0.3s ease, border-color 0.3s ease;
+    /* 性能优化 */
+    will-change: background, border-color;
+    transform: translateZ(0);
+    /* 减少重绘 */
+    contain: layout style paint;
+}
+
+.press-date:hover,
+.press-publication:hover {
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.2) 0%, rgba(139, 115, 85, 0.15) 100%);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.press-description {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-note {
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(201, 169, 110, 0.1);
+    /* 性能优化 */
+    contain: layout style;
+}
+
+/* 媒体标签样式 */
+.press-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+.press-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    /* 减少重绘 */
+    contain: layout style paint;
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.press-source:hover {
+    transform: translateZ(0) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 169, 110, 0.3);
+}
+
+.press-source i {
+    font-size: 0.8rem;
+}
+
+/* Press页面大图模态框样式 */
+#pressImageModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    transition: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    /* 性能优化 */
+    contain: layout style paint;
+}
+
+#pressImageModal .press-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: auto;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+#pressImageModal .modal-content {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    background: white;
+    object-fit: contain;
+    cursor: zoom-in;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    /* 图片优化 - 提高渲染质量 */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimizeQuality;
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* 平滑过渡 */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-origin: center center;
+    /* 防止图片在缩放时变模糊 */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* 优化文本和图片渲染 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#pressImageModal .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    /* 性能优化 */
+    will-change: background, transform;
+    transform: translateZ(0);
+    /* 启用硬件加速 */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#pressImageModal .modal-close:hover {
+    background: var(--secondary-color);
+    transform: translateZ(0) scale(1.1);
+}
+
+#pressImageModal .modal-caption {
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    margin-top: 15px;
+    max-width: 600px;
+    /* 性能优化 */
+    contain: layout style;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .press {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .press-item {
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .press-thumbnail {
+        width: 100%;
+        height: 120px;
+        align-self: stretch;
+    }
+
+    .press-content-area {
+        width: 100%;
+    }
+
+    .press-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .press-title {
+        font-size: 1.3rem;
+    }
+
+    .press-description {
+        font-size: 1rem;
+    }
+
+    .press-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+} 

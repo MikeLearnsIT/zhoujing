@@ -152,11 +152,13 @@ function getTranslation(key) {
     const translations = {
         zh: {
             'press.personalInterviews': '个人专访',
-            'press.groupExhibitions': '展览报道'
+            'press.groupExhibitions': '展览报道',
+            'press.readMore': '查看完整报道'
         },
         en: {
             'press.personalInterviews': 'Personal Interviews',
-            'press.groupExhibitions': ' Exhibition Coverage'
+            'press.groupExhibitions': ' Exhibition Coverage',
+            'press.readMore': 'Read More'
         }
     };
     return translations[currentLang]?.[key] || key;
@@ -211,6 +213,12 @@ function createPressItemHTML(item) {
                 </div>
                 <p class="press-description">${description}</p>
                 ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
+                <div class="press-meta">
+                    <a href="${item.url}" class="press-source" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span data-i18n="press.readMore">查看完整报道</span>
+                    </a>
+                </div>
             </div>
         </div>
     `;
@@ -266,28 +274,8 @@ function initPress() {
 
 // 加载媒体报道内容
 function loadPressContent() {
-    const container = document.querySelector('.press-items');
-
-    if (!container) return;
-
-    const personalInterviewsTitle = getTranslation('press.personalInterviews');
-    const groupExhibitionsTitle = getTranslation('press.groupExhibitions');
-
-    container.innerHTML = `
-        <div class="press-section">
-            <h3 class="section-title">${personalInterviewsTitle}</h3>
-            <div class="press-list">
-                ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
-            </div>
-        </div>
-        
-        <div class="press-section">
-            <h3 class="section-title">${groupExhibitionsTitle}</h3>
-            <div class="press-list">
-                ${pressData.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
-            </div>
-        </div>
-    `;
+    // 使用优化的渲染函数
+    renderPressItems();
 }
 
 // 获取图片查看器操作提示文字
@@ -313,9 +301,43 @@ function openPressImageModal(imageSrc, title, url) {
     // 获取提示文字
     const hints = getImageViewerHints();
 
-    // 设置图片和标题
-    modalImage.src = imageSrc;
-    modalImage.alt = title;
+    // 预加载图片以确保清晰度
+    const img = new Image();
+    img.onload = function() {
+        // 设置图片源和属性
+        modalImage.src = imageSrc;
+        modalImage.alt = title;
+        
+        // 计算图片的实际显示比例
+        const viewportWidth = window.innerWidth * 0.9;
+        const viewportHeight = window.innerHeight * 0.9;
+        const imageRatio = Math.min(viewportWidth / img.naturalWidth, viewportHeight / img.naturalHeight);
+        
+        // 设置合适的最大缩放比例，不超过原始分辨率
+        imageViewer.maxScale = Math.max(1, Math.min(4, 1 / imageRatio));
+        
+        // 设置图片样式以确保最佳显示质量
+        modalImage.style.imageRendering = 'optimizeQuality';
+        modalImage.style.webkitImageRendering = '-webkit-optimize-contrast';
+        modalImage.style.msInterpolationMode = 'bicubic';
+        
+        // 显示模态框
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+    
+    img.onerror = function() {
+        // 即使预加载失败，也显示图片
+        modalImage.src = imageSrc;
+        modalImage.alt = title;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+    
+    // 开始预加载
+    img.src = imageSrc;
+    
+    // 设置标题和链接
     modalCaption.innerHTML = `
         <strong>${title}</strong><br>
         <a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #c9a96e; text-decoration: none;">
@@ -328,10 +350,6 @@ function openPressImageModal(imageSrc, title, url) {
             <i class="fas fa-keyboard"></i> ${hints.resetKey}
         </div>
     `;
-
-    // 显示模态框
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
 }
 
 // 关闭大图模态框
@@ -349,7 +367,7 @@ function closePressImageModal() {
 let imageViewer = {
     scale: 1,
     minScale: 1,
-    maxScale: 5,
+    maxScale: 4,
     translateX: 0,
     translateY: 0,
     isDragging: false,
@@ -364,8 +382,19 @@ let imageViewer = {
 function updateImageTransform() {
     const modalImage = document.getElementById('pressModalImage');
     if (modalImage) {
-        modalImage.style.transform = `scale(${imageViewer.scale}) translate(${imageViewer.translateX}px, ${imageViewer.translateY}px)`;
+        // 使用更精确的transform设置，避免模糊
+        const transform = `translate3d(${imageViewer.translateX}px, ${imageViewer.translateY}px, 0) scale(${imageViewer.scale})`;
+        modalImage.style.transform = transform;
         modalImage.style.cursor = imageViewer.scale > imageViewer.minScale ? 'grab' : 'zoom-in';
+        
+        // 动态调整图片渲染质量
+        if (imageViewer.scale > 1) {
+            modalImage.style.imageRendering = 'auto';
+            modalImage.style.webkitImageRendering = 'auto';
+        } else {
+            modalImage.style.imageRendering = 'optimizeQuality';
+            modalImage.style.webkitImageRendering = '-webkit-optimize-contrast';
+        }
     }
 }
 
@@ -412,8 +441,9 @@ function toggleImageZoom(e) {
     const clientY = e.clientY || rect.top + rect.height / 2;
 
     if (imageViewer.scale === imageViewer.minScale) {
-        // 放大到2倍
-        zoomImage(1, clientX, clientY);
+        // 智能选择放大倍数，不超过最大缩放比例
+        const targetScale = Math.min(imageViewer.maxScale, 2.5);
+        zoomImage(targetScale - imageViewer.scale, clientX, clientY);
     } else {
         // 重置到原始大小
         resetImageViewer();
@@ -445,7 +475,7 @@ function initPressModal() {
         modalImage.addEventListener('wheel', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            const delta = e.deltaY > 0 ? -0.3 : 0.3;
+            const delta = e.deltaY > 0 ? -0.2 : 0.2;
             zoomImage(delta, e.clientX, e.clientY);
         });
 
@@ -494,35 +524,32 @@ function initPressModal() {
             }
         });
 
-        // 触摸事件支持（移动端）
+        // 触摸事件支持
         modalImage.addEventListener('touchstart', function (e) {
-            if (e.touches.length === 1 && imageViewer.scale > imageViewer.minScale) {
-                e.preventDefault();
+            if (e.touches.length === 1) {
                 imageViewer.isDragging = true;
-                imageViewer.hasDragged = false;
                 imageViewer.startX = e.touches[0].clientX;
                 imageViewer.startY = e.touches[0].clientY;
                 imageViewer.lastX = imageViewer.translateX;
                 imageViewer.lastY = imageViewer.translateY;
             }
-        });
+        }, { passive: true });
 
         modalImage.addEventListener('touchmove', function (e) {
             if (imageViewer.isDragging && e.touches.length === 1) {
-                e.preventDefault();
+                e.preventDefault(); // 阻止默认滚动行为
+                imageViewer.hasDragged = true;
+                
                 const deltaX = e.touches[0].clientX - imageViewer.startX;
                 const deltaY = e.touches[0].clientY - imageViewer.startY;
-
-                // 检测是否真的在拖拽
-                if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
-                    imageViewer.hasDragged = true;
-                }
-
+                
                 imageViewer.translateX = imageViewer.lastX + deltaX / imageViewer.scale;
                 imageViewer.translateY = imageViewer.lastY + deltaY / imageViewer.scale;
-                updateImageTransform();
+                
+                // 使用 requestAnimationFrame 优化性能
+                requestAnimationFrame(updateImageTransform);
             }
-        });
+        }, { passive: false });
 
         modalImage.addEventListener('touchend', function (e) {
             imageViewer.isDragging = false;
@@ -530,7 +557,7 @@ function initPressModal() {
             setTimeout(() => {
                 imageViewer.hasDragged = false;
             }, 10);
-        });
+        }, { passive: true });
     }
 
     // 点击背景关闭
@@ -550,6 +577,72 @@ function initPressModal() {
                 resetImageViewer();
             }
         }
+    });
+}
+
+// 渲染媒体报道内容
+function renderPressItems() {
+    const container = document.querySelector('.press-items');
+    if (!container) return;
+
+    // 清空容器
+    container.innerHTML = '';
+
+    // 使用 DocumentFragment 优化DOM操作
+    const fragment = document.createDocumentFragment();
+
+    // 个人专访
+    if (pressData.personalInterviews.items.length > 0) {
+        const personalSection = document.createElement('div');
+        personalSection.className = 'press-section';
+        personalSection.innerHTML = `
+            <h3 class="section-title" data-i18n="press.personalInterviews">个人专访</h3>
+            <div class="press-list" data-section="personal">
+                ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
+            </div>
+        `;
+        fragment.appendChild(personalSection);
+    }
+
+    // 群展报道
+    if (pressData.groupExhibitions.items.length > 0) {
+        const groupSection = document.createElement('div');
+        groupSection.className = 'press-section';
+        groupSection.innerHTML = `
+            <h3 class="section-title" data-i18n="press.groupExhibitions">展览报道</h3>
+            <div class="press-list" data-section="group">
+                ${pressData.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
+            </div>
+        `;
+        fragment.appendChild(groupSection);
+    }
+
+    // 一次性插入所有内容
+    container.appendChild(fragment);
+    
+    // 延迟初始化图片加载
+    requestAnimationFrame(() => {
+        initImageLoading();
+    });
+}
+
+// 初始化图片加载优化
+function initImageLoading() {
+    const images = document.querySelectorAll('.press-thumbnail img');
+    
+    images.forEach(img => {
+        // 确保图片默认可见
+        img.style.opacity = '1';
+        img.style.transition = 'opacity 0.3s ease';
+        
+        // 如果图片加载失败，显示备用图标
+        img.onerror = function() {
+            this.style.display = 'none';
+            const fallback = this.parentElement.querySelector('.press-thumbnail-fallback');
+            if (fallback) {
+                fallback.style.display = 'flex';
+            }
+        };
     });
 }
 

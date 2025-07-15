@@ -203,7 +203,7 @@ const exhibitionsData = {
             },
             images: [
                 {
-                    src: "images/images_51.png",
+                    src: "images/paintings/painting_06.jpg",
                     title: {
                         zh: "展览海报",
                         en: "Exhibition Poster"
@@ -214,7 +214,7 @@ const exhibitionsData = {
                     }
                 },
                 {
-                    src: "images/images_53.png",
+                    src: "images/paintings/painting_07.jpg",
                     title: {
                         zh: "作品展示",
                         en: "Artwork Display"
@@ -225,7 +225,7 @@ const exhibitionsData = {
                     }
                 },
                 {
-                    src: "images/images_59.png",
+                    src: "images/paintings/painting_08.jpg",
                     title: {
                         zh: "展览现场",
                         en: "Exhibition Site"
@@ -266,7 +266,7 @@ const exhibitionsData = {
                 {
                     title: "展览画册",
                     type: "catalog",
-                    image: "images/images_64.png"
+                    image: "images/paintings/painting_09.jpg"
                 }
             ],
             press: [
@@ -309,7 +309,7 @@ const exhibitionsData = {
             },
             images: [
                 {
-                    src: "images/images_37.png",
+                    src: "images/paintings/painting_09.jpg",
                     title: {
                         zh: "作品展示",
                         en: "Artwork Display"
@@ -338,7 +338,7 @@ const exhibitionsData = {
                 {
                     title: "参展证书",
                     type: "certificate",
-                    image: "images/images_43.png"
+                    image: "images/paintings/painting_10.jpg"
                 }
             ],
             press: []

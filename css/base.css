@@ -1,0 +1,6 @@
+/* 基础样式 - 所有页面都需要的核心样式 */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('components/header.css');
+@import url('components/footer.css');
+@import url('components/modal.css'); 
