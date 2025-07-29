@@ -8,6 +8,18 @@ const exhibitionsData = {
                 zh: "\"NOW中取境\"--2023上海青年艺术家邀请展",
                 en: "\"NOW Zhong Qu Jing\" - 2023 Shanghai Young Artists Invitational Exhibition"
             },
+            organizer: {
+                zh: "上海中外文化艺术交流协会",
+                en: "Shanghai International Cultural Exchange Association"
+            },
+            organizerDescription: {
+                zh: "上海中外文化艺术交流协会成立于1992年，为上海市级国际文化艺术交流的社会团体。协会由上海市文联主管，在上海市民政局依法登记并取得法人资格。协会宗旨是通过开展民间中外文化艺术交流活动，为繁荣和发展上海的经济、文化和艺术事业服务，也为了增强与世界各国、各地区人民的相互了解和友好合作。协会通过在国内外举办各种艺术交流展览、演出，学术研讨和报告等活动，开展中外文化艺术的系列交流。",
+                en: "Shanghai International Cultural Exchange Association was founded in 1992, as a social organization for international cultural and artistic exchanges at the municipal level in Shanghai. The association is under the supervision of the Shanghai Federation of Literature and Arts, registered with the Shanghai Municipal Civil Affairs Bureau, and granted legal person status. The association's mission is to promote the economic, cultural, and artistic development of Shanghai through the organization of various cultural and artistic exchange activities, as well as to enhance mutual understanding and friendly cooperation with people from all over the world. The association conducts a series of cultural and artistic exchanges through various art exhibitions, performances, academic seminars, and reports both domestically and internationally."
+            },
+            organizerLink: {
+                zh: "https://baike.baidu.com/item/上海中外文化艺术交流协会",
+                en: "https://baike.baidu.com/item/上海中外文化艺术交流协会"
+            },
             date: "2023.09.28 - 2023.10.25",
             location: {
                 zh: "上海市普陀区文化馆3楼（上海市兰溪路138号）",
@@ -41,7 +53,7 @@ const exhibitionsData = {
                     },
                     description: {
                         zh: "与上海中外文化艺术交流协会张秘书长（左6）、策展团队总策划胡晓芒老师（左5）、学术支持/艺术总监王远教授（右4）、上海中外文化青艺会侯秘书长（左3）及其他优秀青年艺术家的合影",
-                        en: "Group photo with Secretary General Zhang of Shanghai Sino-Foreign Cultural Art Exchange Association (6th from left), Chief Curator Hu Xiaomang (5th from left), Academic Support/Art Director Professor Wang Yuan (4th from right), Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (3rd from left), and other outstanding young artists"
+                        en: "Group photo with Secretary General Zhang of Shanghai International Cultural Exchange Association (6th from left), Chief Curator Hu Xiaomang (5th from left), Academic Support/Art Director Professor Wang Yuan (4th from right), Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (3rd from left), and other outstanding young artists"
                     }
                 },
                 {
@@ -52,7 +64,7 @@ const exhibitionsData = {
                     },
                     description: {
                         zh: "与上海中外文化艺术交流协会张秘书长（右2）、总策划胡晓芒老师（左3）、上海中外文化青艺会侯秘书长（右1）的合影",
-                        en: "Photo with Secretary General Zhang of Shanghai Sino-Foreign Cultural Art Exchange Association (2nd from right), Chief Curator Hu Xiaomang (3rd from left), and Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (1st from right)"
+                        en: "Photo with Secretary General Zhang of Shanghai International Cultural Exchange Association (2nd from right), Chief Curator Hu Xiaomang (3rd from left), and Secretary General Hou of Shanghai Sino-Foreign Culture Youth Art Association (1st from right)"
                     }
                 },
                 {
@@ -188,6 +200,18 @@ const exhibitionsData = {
                 zh: "2023·\"萨珞际\"艺术展",
                 en: "2023 Interlude Infini Art Exhibition"
             },
+            organizer: {
+                zh: "北京798艺术区管理委员会",
+                en: "Beijing 798 Art Zone Management Committee"
+            },
+            organizerDescription: {
+                zh: "北京798艺术区是中国最著名的艺术区之一，由废弃的军工厂改建而成。艺术区管理委员会致力于推动当代艺术发展，为艺术家提供展示平台，促进艺术交流。通过举办各类展览和文化活动，798艺术区已成为展示中国当代艺术的重要窗口。",
+                en: "Beijing 798 Art Zone is one of China's most renowned art districts, converted from abandoned military factories. The Management Committee is dedicated to promoting contemporary art development, providing platforms for artists, and facilitating artistic exchange. Through various exhibitions and cultural events, 798 Art Zone has become an important window for showcasing Chinese contemporary art."
+            },
+            organizerLink: {
+                zh: "https://baike.baidu.com/item/798艺术区",
+                en: "https://baike.baidu.com/item/798艺术区"
+            },
             date: "2023.09.15 - 2023.10.20",
             location: {
                 zh: "北京798艺术区",
@@ -294,6 +318,18 @@ const exhibitionsData = {
                 zh: "第十三届中国当代艺术作品邀请展",
                 en: "13th China Contemporary Art Works Invitational Exhibition"
             },
+            organizer: {
+                zh: "中国艺术家协会",
+                en: "China Artists Association"
+            },
+            organizerDescription: {
+                zh: "中国艺术家协会是中国最具权威性的艺术家专业团体，长期致力于推动中国当代艺术的发展。协会通过组织高水平的展览、评奖活动，发掘和培养优秀艺术人才，促进中国当代艺术的繁荣发展。本次邀请展是协会年度重要活动之一，旨在展示中国当代艺术的最新成果。",
+                en: "The China Artists Association is China's most authoritative professional organization for artists, dedicated to promoting the development of contemporary Chinese art. Through organizing high-level exhibitions and awards, the association discovers and nurtures outstanding artistic talents, promoting the prosperity of contemporary Chinese art. This invitational exhibition is one of the association's important annual events, aimed at showcasing the latest achievements in Chinese contemporary art."
+            },
+            organizerLink: {
+                zh: "https://baike.baidu.com/item/中国美术家协会",
+                en: "https://baike.baidu.com/item/中国美术家协会"
+            },
             date: "2023",
             location: {
                 zh: "中国",
@@ -367,7 +403,9 @@ function getTranslation(key) {
             "exhibitions.medium": "媒材",
             "exhibitions.size": "尺寸",
             "exhibitions.year": "年份",
-            "exhibitions.exhibitionSite": "展览现场"
+            "exhibitions.exhibitionSite": "展览现场",
+            "exhibitions.organizer": "主办方",
+            "exhibitions.aboutOrganizer": "主办方介绍"
         },
         en: {
             "exhibitions.viewDetail": "View Details",
@@ -383,7 +421,9 @@ function getTranslation(key) {
             "exhibitions.medium": "Medium",
             "exhibitions.size": "Size",
             "exhibitions.year": "Year",
-            "exhibitions.exhibitionSite": "Exhibition Site"
+            "exhibitions.exhibitionSite": "Exhibition Site",
+            "exhibitions.organizer": "Organizer",
+            "exhibitions.aboutOrganizer": "About Organizer"
         }
     };
 
@@ -428,15 +468,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // 监听语言切换
     document.addEventListener('languageChanged', function (e) {
         currentLang = e.detail.language;
-        // 如果展览详情模态框已打开，重新渲染
-        const modal = document.getElementById('exhibitionDetailModal');
-        if (modal && modal.classList.contains('show')) {
-            const exhibitionId = modal.dataset.exhibitionId;
-            if (exhibitionId) {
-                closeExhibitionDetail();
-                setTimeout(() => openExhibitionDetail(exhibitionId), 100);
-            }
-        }
+        // 重新渲染展览列表
+        renderExhibitions(exhibitionsData);
     });
 });
 
@@ -492,11 +525,13 @@ function createExhibitionItem(exhibition) {
     const title = exhibition.title[currentLang] || exhibition.title.zh;
     const location = exhibition.location[currentLang] || exhibition.location.zh;
     const country = exhibition.country[currentLang] || exhibition.country.zh;
+    const organizer = exhibition.organizer ? (exhibition.organizer[currentLang] || exhibition.organizer.zh) : '';
 
     item.innerHTML = `
         <div class="exhibition-info">
             <div class="exhibition-date">${exhibition.date}</div>
             <h4 class="exhibition-title">${title}</h4>
+            ${organizer ? `<div class="exhibition-organizer">${organizer}</div>` : ''}
             <div class="exhibition-location">${location}</div>
             <div class="exhibition-country">${country}</div>
         </div>
@@ -516,21 +551,7 @@ function createExhibitionItem(exhibition) {
     return item;
 }
 
-// 打开展览详情
-function openExhibitionDetail(exhibitionId) {
-    const exhibition = findExhibitionById(exhibitionId);
-    if (!exhibition) return;
 
-    // 创建详情模态框
-    const modal = createDetailModal(exhibition);
-    modal.dataset.exhibitionId = exhibitionId; // 保存展览ID用于语言切换
-    document.body.appendChild(modal);
-
-    // 显示模态框
-    setTimeout(() => {
-        modal.classList.add('show');
-    }, 10);
-}
 
 // 根据ID查找展览
 function findExhibitionById(id) {
@@ -541,166 +562,9 @@ function findExhibitionById(id) {
     return null;
 }
 
-// 创建详情模态框
-function createDetailModal(exhibition) {
-    const modal = document.createElement('div');
-    modal.className = 'exhibition-detail-modal';
-    modal.id = 'exhibitionDetailModal';
 
-    const title = exhibition.title[currentLang] || exhibition.title.zh;
-    const location = exhibition.location[currentLang] || exhibition.location.zh;
-    const country = exhibition.country[currentLang] || exhibition.country.zh;
-    const description = exhibition.description[currentLang] || exhibition.description.zh;
 
-    // 找到海报图片（通常是第一张图片或标题包含"海报"的图片）
-    const posterImage = exhibition.images.find(img => {
-        const title = getImageText(img, 'title');
-        return title.includes('海报') || title.includes('poster') || title.includes('Poster');
-    }) || exhibition.images[0];
 
-    // 展览现场照片（排除海报）
-    const siteImages = exhibition.images.filter(img => img !== posterImage);
-
-    modal.innerHTML = `
-        <div class="modal-overlay" onclick="closeExhibitionDetail()"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>${title}</h2>
-                <button class="modal-close" onclick="closeExhibitionDetail()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <!-- 展览海报 -->
-                <div class="exhibition-poster-section">
-                    <div class="poster-container">
-                        <img src="${posterImage.src}" alt="${getImageText(posterImage, 'title')}" onclick="openImageViewer(${exhibition.images.indexOf(posterImage)}, '${exhibition.id}')">
-                        <div class="poster-caption">${getImageText(posterImage, 'title')}</div>
-                    </div>
-                </div>
-                
-                <!-- 展览基本信息 -->
-                <div class="exhibition-info-section">
-                    <div class="info-item">
-                        <strong>${getTranslation('exhibitions.period')}：</strong> ${exhibition.date}
-                    </div>
-                    <div class="info-item">
-                        <strong>${getTranslation('exhibitions.location')}：</strong> ${location}
-                    </div>
-                    <div class="info-item">
-                        <strong>${getTranslation('exhibitions.country')}：</strong> ${country}
-                    </div>
-                    <div class="info-item description">
-                        <strong>${getTranslation('exhibitions.description')}：</strong> ${description}
-                    </div>
-                </div>
-                
-                <!-- 参展作品 -->
-                ${exhibition.artworks && exhibition.artworks.length > 0 ? `
-                <div class="exhibition-artworks">
-                    <h3>${getTranslation('exhibitions.artworks')}</h3>
-                    <div class="artworks-grid">
-                        ${exhibition.artworks.map((artwork, index) => `
-                            <div class="artwork-card">
-                                ${artwork.image ? `
-                                <div class="artwork-image">
-                                    <img src="${artwork.image}" alt="${getArtworkText(artwork, 'title')}" onclick="openArtworkViewer('${artwork.image}', '${getArtworkText(artwork, 'title')}')">
-                                </div>
-                                ` : ''}
-                                <div class="artwork-header">
-                                    <h4>${getArtworkText(artwork, 'title')}</h4>
-                                </div>
-                                <div class="artwork-details">
-                                    <div class="detail-row">
-                                        <span class="detail-label">${getTranslation('exhibitions.medium')}：</span>
-                                        <span class="detail-value">${getArtworkText(artwork, 'medium')}</span>
-                                    </div>
-                                    <div class="detail-row">
-                                        <span class="detail-label">${getTranslation('exhibitions.size')}：</span>
-                                        <span class="detail-value">${artwork.size}</span>
-                                    </div>
-                                    <div class="detail-row">
-                                        <span class="detail-label">${getTranslation('exhibitions.year')}：</span>
-                                        <span class="detail-value">${artwork.year}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
-                <!-- 展会现场照片 -->
-                ${siteImages.length > 0 ? `
-                <div class="exhibition-site">
-                    <h3>${getTranslation('exhibitions.exhibitionSite')}</h3>
-                    <div class="site-images-grid">
-                        ${siteImages.map((img, index) => `
-                            <div class="site-image-item" onclick="openImageViewer(${exhibition.images.indexOf(img)}, '${exhibition.id}')">
-                                <img src="${img.src}" alt="${getImageText(img, 'title')}">
-                                <div class="image-caption">
-                                    <div class="image-title">${getImageText(img, 'title')}</div>
-                                    <div class="image-description">${getImageText(img, 'description')}</div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
-                <!-- 参展证书 -->
-                ${exhibition.documents && exhibition.documents.length > 0 ? `
-                <div class="exhibition-certificates">
-                    <h3>${getTranslation('exhibitions.documents')}</h3>
-                    <div class="certificates-grid">
-                        ${exhibition.documents.map(doc => `
-                            <div class="certificate-item" onclick="openCertificateViewer('${doc.image}', '${doc.title}')">
-                                <img src="${doc.image}" alt="${doc.title}">
-                                <div class="certificate-title">${doc.title}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-                
-                <!-- 媒体报道 -->
-                ${exhibition.press && exhibition.press.length > 0 ? `
-                <div class="exhibition-press">
-                    <h3>${getTranslation('exhibitions.press')}</h3>
-                    <div class="press-grid">
-                        ${exhibition.press.map(press => `
-                            <div class="press-card">
-                                <h4 class="press-title">
-                                    ${press.url ? `<a href="${press.url}" target="_blank" rel="noopener noreferrer">${getPressText(press, 'title')} <i class="fas fa-external-link-alt"></i></a>` : getPressText(press, 'title')}
-                                </h4>
-                                <div class="press-meta">
-                                    <span class="press-source">${getPressText(press, 'source')}</span>
-                                    <span class="press-date">${press.date}</span>
-                                </div>
-                                ${getPressText(press, 'description') ? `<p class="press-description">${getPressText(press, 'description')}</p>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                ` : ''}
-            </div>
-        </div>
-    `;
-
-    return modal;
-}
-
-// 关闭展览详情
-function closeExhibitionDetail() {
-    const modal = document.getElementById('exhibitionDetailModal');
-    if (modal) {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.remove();
-        }, 300);
-    }
-}
 
 // 打开图片查看器
 function openImageViewer(imageIndex, exhibitionId) {
@@ -777,7 +641,6 @@ function openArtworkViewer(imageSrc, title) {
 // ESC键关闭模态框
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-        closeExhibitionDetail();
         const imageViewer = document.querySelector('.image-viewer-modal');
         if (imageViewer) {
             imageViewer.remove();

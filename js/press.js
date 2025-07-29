@@ -148,20 +148,7 @@ function getTranslation(key) {
     if (window.languageManager) {
         return window.languageManager.getTranslation(key);
     }
-    // 回退到默认值
-    const translations = {
-        zh: {
-            'press.personalInterviews': '个人专访',
-            'press.groupExhibitions': '展览报道',
-            'press.readMore': '查看完整报道'
-        },
-        en: {
-            'press.personalInterviews': 'Personal Interviews',
-            'press.groupExhibitions': ' Exhibition Coverage',
-            'press.readMore': 'Read More'
-        }
-    };
-    return translations[currentLang]?.[key] || key;
+    return key;
 }
 
 // 获取媒体报道文本的辅助函数
@@ -216,7 +203,7 @@ function createPressItemHTML(item) {
                 <div class="press-meta">
                     <a href="${item.url}" class="press-source" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-external-link-alt"></i>
-                        <span data-i18n="press.readMore">查看完整报道</span>
+                        <span data-i18n="press.readMore">${getTranslation('press.readMore')}</span>
                     </a>
                 </div>
             </div>
@@ -596,7 +583,7 @@ function renderPressItems() {
         const personalSection = document.createElement('div');
         personalSection.className = 'press-section';
         personalSection.innerHTML = `
-            <h3 class="section-title" data-i18n="press.personalInterviews">个人专访</h3>
+            <h3 class="section-title" data-i18n="press.personalInterviews">${getTranslation('press.personalInterviews')}</h3>
             <div class="press-list" data-section="personal">
                 ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
             </div>
@@ -609,7 +596,7 @@ function renderPressItems() {
         const groupSection = document.createElement('div');
         groupSection.className = 'press-section';
         groupSection.innerHTML = `
-            <h3 class="section-title" data-i18n="press.groupExhibitions">展览报道</h3>
+            <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
             <div class="press-list" data-section="group">
                 ${pressData.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
             </div>

@@ -77,7 +77,10 @@ const translations = {
         period: { zh: "展期", en: "Period" },
         location: { zh: "地点", en: "Location" },
         country: { zh: "国家", en: "Country" },
-        description: { zh: "简介", en: "Description" },
+        description: { zh: "展览简介", en: "Description" },
+        organizer: { zh: "主办方", en: "Organizer" },
+        aboutOrganizer: { zh: "主办方介绍", en: "About the Organizer" },
+        learnMore: { zh: "了解更多", en: "Learn More" },
         medium: { zh: "媒材", en: "Medium" },
         size: { zh: "尺寸", en: "Size" },
         year: { zh: "年份", en: "Year" },
@@ -99,7 +102,7 @@ const translations = {
         awards: {
             title: { zh: "专业资质", en: "Professional Qualifications" },
             items: [
-                { zh: "中外文化交流协会会员", en: "Member of Sino-Foreign Cultural Exchange Association" },
+                { zh: "中外文化交流协会会员", en: "Member of Shanghai International Cultural Exchange Association" },
                 { zh: "青年艺术家协会会员", en: "Member of Youth Artists Association" },
                 { zh: "海外青年联合会会员", en: "Member of Overseas Youth Federation" }
             ]
@@ -129,7 +132,7 @@ const translations = {
         content: [
             {
                 zh: "周婧是一位毕业于格拉斯哥艺术学院的当代艺术家、时尚与纺织品设计师，同时也是ZJ STUDIO的创始人。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
-                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Sino-Foreign Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
+                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
             },
             {
                 zh: "她的艺术之旅始于对绘画的早期热爱，这种热爱逐渐发展成为表达生活洞察的深刻方式。在格拉斯哥艺术学院期间，她不仅磨练了时尚和纺织品设计的技术专长，还发展出创新的材料实验和艺术表达方法。沉浸在格拉斯哥充满活力的艺术氛围中，周婧培养了对色彩、形式和线条的敏锐感知，并将其无缝融入作品中，将前卫的西方概念与东方传统的精致美学相结合。",
@@ -160,7 +163,8 @@ const translations = {
     press: {
         title: { zh: "媒体报道", en: "Press & Reviews" },
         personalInterviews: { zh: "个人专访", en: "Personal Interviews" },
-        groupExhibitions: { zh: "展览报道", en: "Exhibition Coverage" }
+        groupExhibitions: { zh: "展览报道", en: "Exhibition Coverage" },
+        readMore: { zh: "查看完整报道", en: "Read Full Article" }
     },
 
 
@@ -196,7 +200,7 @@ const translations = {
         statementContent: [
             {
                 zh: "周婧是一位毕业于格拉斯哥艺术学院的当代艺术家、时尚与纺织品设计师，同时也是ZJ STUDIO的创始人。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
-                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Sino-Foreign Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
+                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
             },
             {
                 zh: "她的艺术之旅始于对绘画的早期热爱，这种热爱逐渐发展成为表达生活洞察的深刻方式。在格拉斯哥艺术学院期间，她不仅磨练了时尚和纺织品设计的技术专长，还发展出创新的材料实验和艺术表达方法。沉浸在格拉斯哥充满活力的艺术氛围中，周婧培养了对色彩、形式和线条的敏锐感知，并将其无缝融入作品中，将前卫的西方概念与东方传统的精致美学相结合。",
@@ -254,7 +258,7 @@ const translations = {
         awards: {
             title: { zh: "专业资质", en: "Professional Qualifications" },
             items: [
-                { zh: "中外文化交流协会会员", en: "Member of Sino-Foreign Cultural Exchange Association" },
+                { zh: "中外文化交流协会会员", en: "Member of Shanghai International Cultural Exchange Association" },
                 { zh: "青年艺术家协会会员", en: "Member of Youth Artists Association" },
                 { zh: "海外青年联合会会员", en: "Member of Overseas Youth Federation" }
             ]

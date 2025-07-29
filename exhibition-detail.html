@@ -127,9 +127,12 @@
         function renderExhibitionDetailPage(exhibition) {
             const currentLang = window.languageManager?.currentLang || 'zh';
             const title = exhibition.title[currentLang] || exhibition.title.zh;
+            const organizer = exhibition.organizer[currentLang] || exhibition.organizer.zh;
             const location = exhibition.location[currentLang] || exhibition.location.zh;
             const type = exhibition.country[currentLang] || exhibition.country.zh;
             const description = exhibition.description[currentLang] || exhibition.description.zh;
+            const organizerDescription = exhibition.organizerDescription[currentLang] || exhibition.organizerDescription.zh;
+            const organizerLink = exhibition.organizerLink ? (exhibition.organizerLink[currentLang] || exhibition.organizerLink.zh) : '';
             
             // 获取多语言图片描述的函数
             function getImageText(img, field) {
@@ -170,6 +173,10 @@
                     <h1 class="exhibition-title">${title}</h1>
                     <div class="exhibition-info-card">
                         <div class="info-row">
+                            <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.organizer') : '主办方'}</span>
+                            <span class="info-value">${organizer}</span>
+                        </div>
+                        <div class="info-row">
                             <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.period') : '展期'}</span>
                             <span class="info-value">${exhibition.date}</span>
                         </div>
@@ -191,7 +198,24 @@
                         <div class="poster-caption">${getImageText(posterImage, 'title')}</div>
                     </div>
                 </div>
-                
+
+                <!-- 主办方介绍 -->
+                <div class="exhibition-info-section">
+                    <h2>${window.getTranslation ? window.getTranslation('exhibitions.aboutOrganizer') : '主办方介绍'}</h2>
+                    <div class="organizer-content">
+                        <div class="organizer-name">${organizer}</div>
+                        <p class="exhibition-aboutOrganizer">${organizerDescription}</p>
+                        ${organizerLink ? `
+                        <div class="organizer-link">
+                            <a href="${organizerLink}" target="_blank" rel="noopener noreferrer" class="organizer-link-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>${window.getTranslation ? window.getTranslation('exhibitions.learnMore') : '了解更多'}</span>
+                            </a>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+
                 <!-- 展览基本信息 -->
                 <div class="exhibition-info-section">
                     <h2>${window.getTranslation ? window.getTranslation('exhibitions.description') : '展览介绍'}</h2>
