@@ -3,7 +3,7 @@ const exhibitionsData = {
     // 2023年展览
     "2023": [
         {
-            id: "this-moment-in-china-2023",
+            id: "now-zhong-qu-jing-china-2023",
             title: {
                 zh: "\"NOW中取境\"--2023上海青年艺术家邀请展",
                 en: "\"NOW Zhong Qu Jing\" - 2023 Shanghai Young Artists Invitational Exhibition"

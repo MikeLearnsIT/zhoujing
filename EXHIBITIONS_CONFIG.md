@@ -51,7 +51,7 @@ const exhibitionsData = {
 ### 2023年展览
 
 #### 1. NOW中取境--2023上海青年艺术家邀请展
-- **ID**: `this-moment-in-china-2023`
+- **ID**: `now-zhong-qu-jing-china-2023`
 - **展期**: 2023.03.25 - 2023.04.30
 - **地点**: 上海当代艺术馆
 - **类型**: 群展
