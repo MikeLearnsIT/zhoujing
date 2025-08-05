@@ -1,7 +1,7 @@
 // 作品集数据 - 专业艺术品展示
 const artworksData = [
     {
-        id: "inner-landscape-2024",
+        id: "gallery-painting-01",
         title: {
             zh: "芽",
             en: "Sprout"
@@ -13,8 +13,8 @@ const artworksData = [
         size: "60cm × 60cm",
         year: "2023",
         price: {
-            zh: "¥15,000",
-            en: "$2,000"
+            zh: "¥36,000",
+            en: "$5,000"
         },
         status: "available", // available, sold, reserved
         image: "images/paintings/painting_01.jpg",
@@ -23,10 +23,10 @@ const artworksData = [
             en: "Exploring the color expression of the inner world, showing the depth and complexity of emotions through abstract formal language."
         },
         category: "painting",
-        featured: true
+        featured: false
     },
     {
-        id: "color-dialogue-2024",
+        id: "gallery-painting-02",
         title: {
             zh: "翡翠之光",
             en: "Emerald Light"
@@ -38,8 +38,8 @@ const artworksData = [
         size: "60cm × 60cm",
         year: "2023",
         price: {
-            zh: "¥18,000",
-            en: "$2,000"
+            zh: "¥36,000",
+            en: "$5,000"
         },
         status: "sold",
         image: "images/paintings/painting_02.jpg",
@@ -48,10 +48,10 @@ const artworksData = [
             en: "The dialogue and collision between different colors creates a visual experience full of tension."
         },
         category: "mixed-media",
-        featured: true
+        featured: false
     },
     {
-        id: "abstract-expression-2023",
+        id: "gallery-painting-03",
         title: {
             zh: "剪影",
             en: "Silhouette"
@@ -60,11 +60,11 @@ const artworksData = [
             zh: "丙烯 & 综合材料",
             en: "Acrylic & Mixed Media"
         },
-        size: "60cm × 60cm",
+        size: "80cm × 80cm",
         year: "2023",
         price: {
-            zh: "¥12,000",
-            en: "$1,500"
+            zh: "¥48,000",
+            en: "$7,000"
         },
         status: "available",
         image: "images/paintings/painting_03.jpg",
@@ -76,20 +76,20 @@ const artworksData = [
         featured: false
     },
     {
-        id: "emotional-flow-2023",
+        id: "gallery-painting-04",
         title: {
             zh: "水墨",
             en: "Watercolor"
         },
         medium: {
-            zh: "水彩 & 综合材料",
-            en: "Watercolor & Mixed Media"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
         size: "60cm × 60cm",
-        year: "2024",
+        year: "2023",
         price: {
-            zh: "¥15,000",
-            en: "$2,000"
+            zh: "¥36,000",
+            en: "$5,000"
         },
         status: "reserved",
         image: "images/paintings/painting_04.png",
@@ -101,7 +101,7 @@ const artworksData = [
         featured: false
     },
     {
-        id: "cultural-fusion-2023",
+        id: "gallery-painting-05",
         title: {
             zh: "靛蓝",
             en: "Indigo Blue"
@@ -113,8 +113,8 @@ const artworksData = [
         size: "60cm × 60cm",
         year: "2023",
         price: {
-            zh: "¥16,000",
-            en: "$2,000"
+            zh: "¥36,000",
+            en: "$5,000"
         },
         status: "available",
         image: "images/paintings/painting_05.jpg",
@@ -126,7 +126,7 @@ const artworksData = [
         featured: true
     },
     {
-        id: "time-imprint-2022",
+        id: "gallery-painting-06",
         title: {
             zh: "樱",
             en: "Sakura"
@@ -138,10 +138,10 @@ const artworksData = [
         size: "60cm × 60cm",
         year: "2022",
         price: {
-            zh: "¥14,000",
-            en: "$2,050"
+            zh: "¥36,000",
+            en: "$5,400"
         },
-        status: "sold",
+        status: "available",
         image: "images/paintings/painting_06.jpg",
         description: {
             zh: "时间在画布上留下的痕迹，记录着艺术家创作历程中的重要时刻。",
@@ -151,20 +151,20 @@ const artworksData = [
         featured: false
     },
     {
-        id: "abstract-symphony-2023",
+        id: "gallery-painting-07",
         title: {
-            zh: "抽象交响",
-            en: "Abstract Symphony"
+            zh: "绯色格韵",
+            en: "Crimson Rhythm"
         },
         medium: {
-            zh: "油画 & 综合材料",
-            en: "Oil & Mixed Media"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
-        size: "80cm × 100cm",
+        size: "60cm × 60cm",
         year: "2023",
         price: {
-            zh: "¥22,000",
-            en: "$3,200"
+            zh: "¥36,000",
+            en: "$5,000"
         },
         status: "available",
         image: "images/paintings/painting_07.jpg",
@@ -176,22 +176,22 @@ const artworksData = [
         featured: true
     },
     {
-        id: "urban-reflection-2023",
+        id: "gallery-painting-08",
         title: {
-            zh: "都市倒影",
-            en: "Urban Reflection"
+            zh: "青橙织章",
+            en: "Blue-Orange Weave"
         },
         medium: {
-            zh: "丙烯 & 数字媒体",
-            en: "Acrylic & Digital Media"
+            zh: "丙烯",
+            en: "Acrylic"
         },
-        size: "70cm × 70cm",
+        size: "80cm × 80cm",
         year: "2023",
         price: {
-            zh: "¥16,000",
-            en: "$2,400"
+            zh: "¥48,000",
+            en: "$7,000"
         },
-        status: "sold",
+        status: "available",
         image: "images/paintings/painting_08.jpg",
         description: {
             zh: "现代都市生活的抽象表达，探索城市节奏与人文情怀的平衡。",
@@ -201,20 +201,20 @@ const artworksData = [
         featured: false
     },
     {
-        id: "memory-fragments-2022",
+        id: "gallery-painting-09",
         title: {
             zh: "记忆碎片",
             en: "Memory Fragments"
         },
         medium: {
-            zh: "水彩 & 拼贴",
-            en: "Watercolor & Collage"
+            zh: "综合材料",
+            en: "Mixed Media"
         },
-        size: "50cm × 60cm",
+        size: "30cm × 30cm",
         year: "2022",
         price: {
-            zh: "¥12,000",
-            en: "$1,800"
+            zh: "¥18,000",
+            en: "$2,700"
         },
         status: "available",
         image: "images/paintings/painting_09.jpg",
@@ -226,45 +226,45 @@ const artworksData = [
         featured: false
     },
     {
-        id: "golden-horizon-2023",
+        id: "gallery-painting-10",
         title: {
-            zh: "金色地平线",
-            en: "Golden Horizon"
+            zh: "珍珠马赛克",
+            en: "Pearl Mosaic"
         },
         medium: {
-            zh: "油画 & 金箔",
-            en: "Oil & Gold Leaf"
+            zh: "综合材料",
+            en: "Mixed Media"
         },
-        size: "90cm × 120cm",
+        size: "30cm × 30cm",
         year: "2023",
         price: {
-            zh: "¥35,000",
-            en: "$5,200"
+            zh: "¥18,000",
+            en: "$2,700"
         },
-        status: "reserved",
+        status: "available",
         image: "images/paintings/painting_10.jpg",
         description: {
             zh: "金色的希望与憧憬，描绘着心中理想的远方。",
             en: "Golden hope and longing, depicting the ideal distant place in the heart."
         },
         category: "painting",
-        featured: true
+        featured: false
     },
     {
-        id: "digital-nature-2023",
+        id: "gallery-painting-11",
         title: {
-            zh: "数字自然",
-            en: "Digital Nature"
+            zh: "漾彩",
+            en: "Rippling Colors"
         },
         medium: {
-            zh: "数字艺术 & 印刷",
-            en: "Digital Art & Print"
+            zh: "丙烯",
+            en: "Acrylic"
         },
-        size: "60cm × 80cm",
+        size: "60cm × 130cm",
         year: "2023",
         price: {
-            zh: "¥8,000",
-            en: "$1,200"
+            zh: "¥57,000",
+            en: "$8,500"
         },
         status: "available",
         image: "images/paintings/painting_11.jpg",
@@ -276,22 +276,22 @@ const artworksData = [
         featured: false
     },
     {
-        id: "emotional-landscape-2022",
+        id: "gallery-painting-12",
         title: {
-            zh: "情感地貌",
-            en: "Emotional Landscape"
+            zh: "彩格",
+            en: "Color Grid"
         },
         medium: {
-            zh: "丙烯 & 纹理材料",
-            en: "Acrylic & Texture Materials"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
-        size: "75cm × 90cm",
+        size: "60cm × 130cm",
         year: "2022",
         price: {
-            zh: "¥19,000",
-            en: "$2,800"
+            zh: "¥57,000",
+            en: "$8,500"
         },
-        status: "sold",
+        status: "available",
         image: "images/paintings/painting_12.jpg",
         description: {
             zh: "内心情感的地理图谱，每一处肌理都承载着不同的情绪。",
@@ -301,7 +301,7 @@ const artworksData = [
         featured: false
     },
     {
-        id: "silent-dialogue-2023",
+        id: "gallery-painting-13",
         title: {
             zh: "无声对话",
             en: "Silent Dialogue"
@@ -310,13 +310,13 @@ const artworksData = [
             zh: "水墨 & 宣纸",
             en: "Ink & Rice Paper"
         },
-        size: "45cm × 65cm",
-        year: "2023",
+        size: "100cm × 100cm",
+        year: "2024",
         price: {
             zh: "¥14,000",
             en: "$2,100"
         },
-        status: "available",
+        status: "sold",
         image: "images/paintings/painting_13.jpg",
         description: {
             zh: "东方美学的现代诠释，在黑白之间寻找平衡与和谐。",
@@ -326,7 +326,7 @@ const artworksData = [
         featured: true
     },
     {
-        id: "cosmic-dance-2023",
+        id: "gallery-painting-14",
         title: {
             zh: "宇宙之舞",
             en: "Cosmic Dance"
@@ -336,7 +336,7 @@ const artworksData = [
             en: "Acrylic & Fluorescent Pigments"
         },
         size: "100cm × 100cm",
-        year: "2023",
+        year: "2024",
         price: {
             zh: "¥28,000",
             en: "$4,200"
@@ -351,7 +351,7 @@ const artworksData = [
         featured: false
     },
     {
-        id: "textural-poetry-2022",
+        id: "gallery-painting-15",
         title: {
             zh: "质感诗篇",
             en: "Textural Poetry"
@@ -360,8 +360,8 @@ const artworksData = [
             zh: "综合材料 & 雕塑",
             en: "Mixed Media & Sculpture"
         },
-        size: "55cm × 75cm",
-        year: "2022",
+        size: "60cm × 60cm",
+        year: "2023",
         price: {
             zh: "¥17,000",
             en: "$2,500"
@@ -376,7 +376,7 @@ const artworksData = [
         featured: false
     },
     {
-        id: "cultural-fusion-2023",
+        id: "gallery-painting-16",
         title: {
             zh: "文化交融",
             en: "Cultural Fusion"
@@ -385,13 +385,13 @@ const artworksData = [
             zh: "布面油画 & 传统工艺",
             en: "Oil on Canvas & Traditional Crafts"
         },
-        size: "85cm × 110cm",
+        size: "60cm × 60cm",
         year: "2023",
         price: {
             zh: "¥25,000",
             en: "$3,700"
         },
-        status: "available",
+        status: "sold",
         image: "images/paintings/painting_16.jpg",
         description: {
             zh: "东西方文化的碰撞与融合，展现全球化时代的艺术思考。",
@@ -401,17 +401,17 @@ const artworksData = [
         featured: true
     },
     {
-        id: "minimalist-essence-2023",
+        id: "gallery-painting-17",
         title: {
             zh: "极简本质",
             en: "Minimalist Essence"
         },
         medium: {
-            zh: "丙烯 & 几何形态",
-            en: "Acrylic & Geometric Forms"
+            zh: "丙烯",
+            en: "Acrylic"
         },
-        size: "40cm × 50cm",
-        year: "2023",
+        size: "100cm × 100cm",
+        year: "2025",
         price: {
             zh: "¥9,000",
             en: "$1,350"
@@ -426,20 +426,20 @@ const artworksData = [
         featured: false
     },
     {
-        id: "seasonal-transition-2022",
+        id: "gallery-painting-18",
         title: {
             zh: "季节更迭",
             en: "Seasonal Transition"
         },
         medium: {
-            zh: "水彩 & 自然材料",
-            en: "Watercolor & Natural Materials"
+            zh: "丙烯",
+            en: "Acrylic"
         },
-        size: "65cm × 80cm",
+        size: "60cm × 60cm",
         year: "2022",
         price: {
-            zh: "¥15,000",
-            en: "$2,250"
+            zh: "¥19,000",
+            en: "$2,800"
         },
         status: "reserved",
         image: "images/paintings/painting_18.jpg",
@@ -451,14 +451,14 @@ const artworksData = [
         featured: false
     },
     {
-        id: "urban-solitude-2023",
+        id: "gallery-painting-19",
         title: {
             zh: "都市孤独",
             en: "Urban Solitude"
         },
         medium: {
-            zh: "油画 & 现代媒介",
-            en: "Oil & Modern Media"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
         size: "70cm × 95cm",
         year: "2023",
@@ -476,20 +476,20 @@ const artworksData = [
         featured: false
     },
     {
-        id: "infinite-possibilities-2023",
+        id: "gallery-painting-20",
         title: {
             zh: "无限可能",
             en: "Infinite Possibilities"
         },
         medium: {
-            zh: "综合材料 & 交互装置",
+            zh: "综合材料",
             en: "Mixed Media"
         },
-        size: "120cm × 150cm",
+        size: "50cm × 50cm",
         year: "2023",
         price: {
-            zh: "¥45,000",
-            en: "$6,700"
+            zh: "¥36,000",
+            en: "$5,400"
         },
         status: "available",
         image: "images/paintings/painting_20.png",
@@ -499,7 +499,378 @@ const artworksData = [
         },
         category: "installation",
         featured: true
+    },
+    {
+        id: "gallery-painting-21",
+        title: {
+            zh: "轮回",
+            en: "Cycle"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "40cm × 40cm",
+        year: "2019",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_21.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: true
+    },
+    {
+        id: "gallery-painting-22",
+        title: {
+            zh: "光束",
+            en: "Beam of Light"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2019",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_22.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-23",
+        title: {
+            zh: "仲夏星空",
+            en: "Midsummer Night Sky"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "60cm × 40cm",
+        year: "2019",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_23.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-24",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "60cm × 40cm",
+        year: "2018",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_24.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-25",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2018",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_25.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-26",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2018",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_26.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-27",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "60cm × 60cm",
+        year: "2018",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_27.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-28",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 30cm",
+        year: "2018",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_28.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-29",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2017",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_29.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-30",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2017",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_30.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-31",
+        title: {
+            zh: "最初",
+            en: "The Beginning"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2017",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_31.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-32",
+        title: {
+            zh: "",
+            en: ""
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "50cm × 50cm",
+        year: "2017",
+        price: {
+        },
+        status: "sold",
+        image: "images/paintings/painting_32.png",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-33",
+        title: {
+            zh: "玫紫绮梦",
+            en: "Purple Dream"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "30cm × 30cm",
+        year: "2023",
+        price: {
+        },
+        status: "available",
+        image: "images/paintings/painting_33.jpg",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-34",
+        title: {
+            zh: "一朵小花",
+            en: "A Little Flower"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "30cm × 30cm",
+        year: "2025",
+        price: {
+        },
+        status: "available",
+        image: "images/paintings/painting_34.jpg",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-35",
+        title: {
+            zh: "荔枝味的汽泡小狗",
+            en: "The Litchi-Flavored Bubble Dog"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "60cm × 60cm",
+        year: "2025",
+        price: {
+        },
+        status: "available",
+        image: "images/paintings/painting_35.jpg",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-36",
+        title: {
+            zh: "复古奢华",
+            en: "Vintage Luxury"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "30cm × 30cm",
+        year: "2025",
+        price: {
+            zh: "¥18,000",
+            en: "$2,700"
+        },
+        status: "available",
+        image: "images/paintings/painting_36.jpg",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
     }
+
 ];
 
 // 当前语言、筛选和排序状态
@@ -523,7 +894,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(initGallery, 50);
         }
     }
-    
+
     if (document.readyState === 'complete') {
         initGallery();
     } else {
@@ -532,7 +903,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 监听语言切换事件
-document.addEventListener('languageChanged', function(e) {
+document.addEventListener('languageChanged', function (e) {
     currentLang = e.detail.language;
     updateSortControlsText();
     renderGallery();
@@ -551,44 +922,44 @@ function initCustomSelect() {
     const selectOptions = customSelect?.querySelector('.select-options');
     const selectText = customSelect?.querySelector('.select-text');
     const hiddenSelect = document.getElementById('sortSelect');
-    
+
     if (!customSelect || !selectTrigger || !selectOptions || !selectText) return;
 
     // 点击触发器切换下拉菜单
-    selectTrigger.addEventListener('click', function(e) {
+    selectTrigger.addEventListener('click', function (e) {
         e.stopPropagation();
         toggleCustomSelect();
     });
 
     // 选项点击事件
-    selectOptions.addEventListener('click', function(e) {
+    selectOptions.addEventListener('click', function (e) {
         const option = e.target.closest('.select-option');
         if (!option) return;
 
         const value = option.dataset.value;
         const text = option.querySelector('span').textContent;
-        
+
         // 更新选中状态
         selectOptions.querySelectorAll('.select-option').forEach(opt => {
             opt.classList.remove('active');
         });
         option.classList.add('active');
-        
+
         // 更新显示文本
         selectText.textContent = text;
-        
+
         // 更新隐藏的select值
         if (hiddenSelect) {
             hiddenSelect.value = value;
         }
-        
+
         // 更新排序
         currentSort = value;
         renderGallery();
-        
+
         // 关闭下拉菜单
         closeCustomSelect();
-        
+
         // 添加视觉反馈
         const sortControls = document.querySelector('.sort-controls-premium');
         if (sortControls) {
@@ -600,14 +971,14 @@ function initCustomSelect() {
     });
 
     // 点击外部区域关闭
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!customSelect.contains(e.target)) {
             closeCustomSelect();
         }
     });
 
     // ESC键关闭
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             closeCustomSelect();
         }
@@ -625,7 +996,7 @@ function initCustomSelect() {
 function toggleCustomSelect() {
     const customSelect = document.getElementById('customSelect');
     if (!customSelect) return;
-    
+
     if (customSelect.classList.contains('open')) {
         closeCustomSelect();
     } else {
@@ -637,9 +1008,9 @@ function toggleCustomSelect() {
 function openCustomSelect() {
     const customSelect = document.getElementById('customSelect');
     if (!customSelect) return;
-    
+
     customSelect.classList.add('open');
-    
+
     // 关闭其他可能打开的下拉菜单
     document.querySelectorAll('.custom-select.open').forEach(select => {
         if (select !== customSelect) {
@@ -652,19 +1023,19 @@ function openCustomSelect() {
 function closeCustomSelect() {
     const customSelect = document.getElementById('customSelect');
     if (!customSelect) return;
-    
+
     customSelect.classList.remove('open');
 }
 
 // 更新排序控制器文本
 function updateSortControlsText() {
     if (!window.languageManager) return;
-    
+
     // 更新自定义选择器显示文本
     const customSelect = document.getElementById('customSelect');
     const selectText = customSelect?.querySelector('.select-text');
     const activeOption = customSelect?.querySelector('.select-option.active');
-    
+
     if (selectText && activeOption) {
         const spanElement = activeOption.querySelector('span');
         if (spanElement) {
@@ -677,7 +1048,7 @@ function updateSortControlsText() {
             }
         }
     }
-    
+
     // 更新隐藏的select选项文本（用于可访问性）
     const hiddenSelect = document.getElementById('sortSelect');
     if (hiddenSelect) {
@@ -687,7 +1058,7 @@ function updateSortControlsText() {
             options[1].textContent = window.languageManager.getTranslation('gallery.sortByYearDesc') || '按年份 (新→旧)';
             options[2].textContent = window.languageManager.getTranslation('gallery.sortByYearAsc') || '按年份 (旧→新)';
         }
-        
+
         // 更新select的aria-label
         const sortByText = window.languageManager.getTranslation('gallery.sortBy') || '排序方式';
         hiddenSelect.setAttribute('aria-label', sortByText);
@@ -726,8 +1097,8 @@ function renderGallery() {
     container.innerHTML = '';
 
     // 根据筛选条件过滤作品
-    const filteredArtworks = currentFilter === 'all' 
-        ? [...artworksData] 
+    const filteredArtworks = currentFilter === 'all'
+        ? [...artworksData]
         : artworksData.filter(artwork => artwork.category === currentFilter);
 
     // 根据当前排序方式排序
@@ -767,7 +1138,7 @@ function createArtworkElement(artwork) {
     const element = document.createElement('div');
     element.className = 'gallery-artwork-card';
     element.setAttribute('data-artwork-id', artwork.id);
-    
+
     const title = getArtworkText(artwork, 'title');
     const medium = getArtworkText(artwork, 'medium');
     const description = getArtworkText(artwork, 'description');
@@ -834,7 +1205,7 @@ function createArtworkElement(artwork) {
 function initImageModal() {
     imageModal = document.getElementById('imageModal');
     if (!imageModal) return;
-    
+
     imageModalImg = imageModal.querySelector('.modal-content');
     imageModalTitle = imageModal.querySelector('.modal-title');
     const closeBtn = imageModal.querySelector('.modal-close');
@@ -856,13 +1227,13 @@ function initImageModal() {
 // 打开图片模态框
 function openImageModal(imageSrc, imageTitle) {
     if (!imageModal) return;
-    
+
     imageModalImg.src = imageSrc;
     imageModalImg.alt = imageTitle;
     if (imageModalTitle) {
         imageModalTitle.textContent = imageTitle;
     }
-    
+
     imageModal.style.display = 'flex';
     setTimeout(() => {
         imageModal.classList.add('show');
@@ -873,7 +1244,7 @@ function openImageModal(imageSrc, imageTitle) {
 // 关闭图片模态框
 function closeImageModal() {
     if (!imageModal) return;
-    
+
     imageModal.classList.remove('show');
     setTimeout(() => {
         imageModal.style.display = 'none';
