@@ -999,9 +999,51 @@
 /* 参展作品网格样式 */
 .artworks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* 根据作品数量调整网格布局 */
+.artworks-grid.single-artwork {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 1.5rem auto 0;
+}
+
+.artworks-grid:not(.single-artwork) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.artwork-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .artworks-grid.single-artwork {
+        max-width: 100%;
+        margin: 1.5rem 0 0;
+    }
+
+    .artworks-grid:not(.single-artwork) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .artworks-grid {
+        gap: 1rem;
+    }
 }
 
 /* 展览详情页面的作品卡片样式 */

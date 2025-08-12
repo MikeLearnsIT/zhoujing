@@ -24,7 +24,8 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link" data-i18n="nav.home" title="Home">Home</a></li>
                     <li><a href="gallery.html" class="nav-link" data-i18n="nav.gallery" title="Gallery">Gallery</a></li>
-                    <li><a href="exhibitions.html" class="nav-link active" data-i18n="nav.exhibitions" title="Exhibitions">Exhibitions</a></li>
+                    <li><a href="exhibitions.html" class="nav-link active" data-i18n="nav.exhibitions"
+                            title="Exhibitions">Exhibitions</a></li>
                     <li><a href="about.html" class="nav-link" data-i18n="nav.about" title="About">About</a></li>
                     <li><a href="press.html" class="nav-link" data-i18n="nav.press" title="Press">Press</a></li>
                     <li><a href="studio.html" class="nav-link" data-i18n="nav.studio" title="Studio">Studio</a></li>
@@ -71,10 +72,10 @@
     <script src="js/exhibitions.js"></script>
     <script>
         // 页面加载时解析URL参数并显示展览详情
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const exhibitionId = urlParams.get('id');
-            
+
             if (exhibitionId) {
                 loadExhibitionDetail(exhibitionId);
             } else {
@@ -97,7 +98,7 @@
         // 加载展览详情的函数
         function loadExhibitionDetail(exhibitionId) {
             const exhibition = findExhibitionById(exhibitionId);
-            
+
             if (!exhibition) {
                 document.getElementById('exhibitionDetailContent').innerHTML = `
                     <div class="error-state">
@@ -133,7 +134,7 @@
             const description = exhibition.description[currentLang] || exhibition.description.zh;
             const organizerDescription = exhibition.organizerDescription[currentLang] || exhibition.organizerDescription.zh;
             const organizerLink = exhibition.organizerLink ? (exhibition.organizerLink[currentLang] || exhibition.organizerLink.zh) : '';
-            
+
             // 获取多语言图片描述的函数
             function getImageText(img, field) {
                 if (typeof img[field] === 'object' && img[field] !== null) {
@@ -141,7 +142,7 @@
                 }
                 return img[field] || '';
             }
-            
+
             // 获取作品字段的多语言文本
             function getArtworkText(artwork, field) {
                 if (typeof artwork[field] === 'object' && artwork[field] !== null) {
@@ -149,7 +150,7 @@
                 }
                 return artwork[field] || '';
             }
-            
+
             // 获取媒体报道字段的多语言文本
             function getPressText(press, field) {
                 if (typeof press[field] === 'object' && press[field] !== null) {
@@ -157,16 +158,16 @@
                 }
                 return press[field] || '';
             }
-            
+
             // 找到海报图片
             const posterImage = exhibition.images.find(img => {
                 const title = getImageText(img, 'title');
                 return title.includes('海报') || title.includes('poster') || title.includes('Poster');
             }) || exhibition.images[0];
-            
+
             // 展览现场照片（排除海报）
             const siteImages = exhibition.images.filter(img => img !== posterImage);
-            
+
             const content = `
                 <!-- 展览标题 -->
                 <div class="exhibition-header">
@@ -226,7 +227,7 @@
                 ${exhibition.artworks && exhibition.artworks.length > 0 ? `
                 <div class="exhibition-artworks">
                     <h2>${window.getTranslation ? window.getTranslation('exhibitions.artworks') : '参展作品'}</h2>
-                    <div class="artworks-grid">
+                    <div class="artworks-grid ${exhibition.artworks.length === 1 ? 'single-artwork' : ''}">
                         ${exhibition.artworks.map((artwork, index) => `
                             <div class="artwork-card">
                                 ${artwork.image ? `
@@ -311,7 +312,7 @@
                 </div>
                 ` : ''}
             `;
-            
+
             document.getElementById('exhibitionDetailContent').innerHTML = content;
         }
 
@@ -331,13 +332,13 @@
                     </button>
                 </div>
             `;
-            
+
             document.body.appendChild(viewer);
             setTimeout(() => viewer.classList.add('show'), 10);
         }
 
         // 监听语言切换事件
-        document.addEventListener('languageChanged', function() {
+        document.addEventListener('languageChanged', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const exhibitionId = urlParams.get('id');
             if (exhibitionId) {
@@ -346,4 +347,5 @@
         });
     </script>
 </body>
-</html> 
+
+</html>

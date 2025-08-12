@@ -460,8 +460,8 @@ const artworksData = [
             zh: "丙烯 & 综合材料",
             en: "Acrylic & Mixed Media"
         },
-        size: "70cm × 95cm",
-        year: "2023",
+        size: "80cm × 80cm",
+        year: "2025",
         price: {
             zh: "¥21,000",
             en: "$3,100"

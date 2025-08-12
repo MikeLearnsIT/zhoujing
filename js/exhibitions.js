@@ -1,5 +1,125 @@
 // 展览数据配置 - 便于后期维护和添加
 const exhibitionsData = {
+    "2025": [
+        {
+            id: "london-2025-rebirth",
+            title: {
+                zh: "重生",
+                en: "Rebirth"
+            },
+            organizer: {
+                zh: "",
+                en: ""
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.02.08",
+            location: {
+                zh: "英国伦敦 50 Baker Street",
+                en: "50 Baker Street, London, UK W1U 7BT"
+            },
+            country: {
+                zh: "英国",
+                en: "United Kingdom"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250208/ex_04.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "重生艺术展海报",
+                        en: "The poster of Rebirth Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250208/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250208/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250208/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "漾彩",
+                        en: "Rippling Colors"
+                    },
+                    medium: {
+                        zh: "丙烯",
+                        en: "Acrylic"
+                    },
+                    size: "60cm × 130cm",
+                    year: "2023",
+                    image: "images/paintings/painting_11.jpg"
+                }
+            ],
+            documents: [
+                // {
+                //     title: "参展证书",
+                //     type: "certificate",
+                //     image: "images/images_31.png"
+                // }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "重生",
+                        en: "Rebirth"
+                    },
+                    source: {
+                        zh: "AURORA Art & Culture",
+                        en: "AURORA Art & Culture"
+                    },
+                    date: "2025.02.08",
+                    url: "http://www.aurorartculture.com/home/show/index.html?aid=119",
+                    description: {
+                        zh: "2025 伦敦重生艺术展",
+                        en: "2025 London Rebirth Art Exhibition"
+                    }
+                }
+            ]
+        }
+    ],
     // 2023年展览
     "2023": [
         {
@@ -193,191 +313,6 @@ const exhibitionsData = {
                     }
                 }
             ]
-        },
-        {
-            id: "interlude-infini-2023",
-            title: {
-                zh: "2023·\"萨珞际\"艺术展",
-                en: "2023 Interlude Infini Art Exhibition"
-            },
-            organizer: {
-                zh: "北京798艺术区管理委员会",
-                en: "Beijing 798 Art Zone Management Committee"
-            },
-            organizerDescription: {
-                zh: "北京798艺术区是中国最著名的艺术区之一，由废弃的军工厂改建而成。艺术区管理委员会致力于推动当代艺术发展，为艺术家提供展示平台，促进艺术交流。通过举办各类展览和文化活动，798艺术区已成为展示中国当代艺术的重要窗口。",
-                en: "Beijing 798 Art Zone is one of China's most renowned art districts, converted from abandoned military factories. The Management Committee is dedicated to promoting contemporary art development, providing platforms for artists, and facilitating artistic exchange. Through various exhibitions and cultural events, 798 Art Zone has become an important window for showcasing Chinese contemporary art."
-            },
-            organizerLink: {
-                zh: "https://baike.baidu.com/item/798艺术区",
-                en: "https://baike.baidu.com/item/798艺术区"
-            },
-            date: "2023.09.15 - 2023.10.20",
-            location: {
-                zh: "北京798艺术区",
-                en: "Beijing 798 Art Zone"
-            },
-            country: {
-                zh: "中国",
-                en: "China"
-            },
-            description: {
-                zh: "萨珞际艺术展探讨了艺术中的偶然与必然，展示了艺术家们如何通过不同的创作手法表达对生活、情感和存在的理解。展览汇集了多位艺术家的精彩作品，呈现了当代艺术的丰富内涵。",
-                en: "Interlude Infini Art Exhibition explores the concepts of chance and inevitability in art, showcasing how artists express their understanding of life, emotions, and existence through various creative approaches. The exhibition brings together outstanding works from multiple artists, presenting the rich connotations of contemporary art."
-            },
-            images: [
-                {
-                    src: "images/paintings/painting_06.jpg",
-                    title: {
-                        zh: "展览海报",
-                        en: "Exhibition Poster"
-                    },
-                    description: {
-                        zh: "萨珞际艺术展主视觉",
-                        en: "Main visual of Interlude Infini Art Exhibition"
-                    }
-                },
-                {
-                    src: "images/paintings/painting_07.jpg",
-                    title: {
-                        zh: "作品展示",
-                        en: "Artwork Display"
-                    },
-                    description: {
-                        zh: "周婧参展作品展示",
-                        en: "Display of Zhou Jing's exhibited works"
-                    }
-                },
-                {
-                    src: "images/paintings/painting_08.jpg",
-                    title: {
-                        zh: "展览现场",
-                        en: "Exhibition Site"
-                    },
-                    description: {
-                        zh: "观众参观展览",
-                        en: "Visitors viewing the exhibition"
-                    }
-                }
-            ],
-            artworks: [
-                {
-                    title: {
-                        zh: "几何印象",
-                        en: "Geometric Impression"
-                    },
-                    medium: {
-                        zh: "综合材料",
-                        en: "Mixed Media"
-                    },
-                    size: "80×80cm",
-                    year: "2023"
-                },
-                {
-                    title: {
-                        zh: "色彩构成",
-                        en: "Color Composition"
-                    },
-                    medium: {
-                        zh: "丙烯画",
-                        en: "Acrylic Painting"
-                    },
-                    size: "70×70cm",
-                    year: "2023"
-                }
-            ],
-            documents: [
-                {
-                    title: "展览画册",
-                    type: "catalog",
-                    image: "images/paintings/painting_09.jpg"
-                }
-            ],
-            press: [
-                {
-                    title: {
-                        zh: "萨珞际艺术展：探索艺术的无限可能",
-                        en: "Interlude Infini Art Exhibition: Exploring the Infinite Possibilities of Art"
-                    },
-                    source: {
-                        zh: "北京文艺报",
-                        en: "Beijing Arts & Literature News"
-                    },
-                    date: "2023.09.20",
-                    url: "https://example.com/interlude-report",
-                    description: {
-                        zh: "深入报道了萨珞际艺术展的策展理念和参展作品的艺术特色。",
-                        en: "In-depth coverage of the curatorial concept and artistic characteristics of the exhibited works in the Interlude Infini Art Exhibition."
-                    }
-                }
-            ]
-        },
-        {
-            id: "award-exhibition-2023",
-            title: {
-                zh: "第十三届中国当代艺术作品邀请展",
-                en: "13th China Contemporary Art Works Invitational Exhibition"
-            },
-            organizer: {
-                zh: "中国艺术家协会",
-                en: "China Artists Association"
-            },
-            organizerDescription: {
-                zh: "中国艺术家协会是中国最具权威性的艺术家专业团体，长期致力于推动中国当代艺术的发展。协会通过组织高水平的展览、评奖活动，发掘和培养优秀艺术人才，促进中国当代艺术的繁荣发展。本次邀请展是协会年度重要活动之一，旨在展示中国当代艺术的最新成果。",
-                en: "The China Artists Association is China's most authoritative professional organization for artists, dedicated to promoting the development of contemporary Chinese art. Through organizing high-level exhibitions and awards, the association discovers and nurtures outstanding artistic talents, promoting the prosperity of contemporary Chinese art. This invitational exhibition is one of the association's important annual events, aimed at showcasing the latest achievements in Chinese contemporary art."
-            },
-            organizerLink: {
-                zh: "https://baike.baidu.com/item/中国美术家协会",
-                en: "https://baike.baidu.com/item/中国美术家协会"
-            },
-            date: "2023",
-            location: {
-                zh: "中国",
-                en: "China"
-            },
-            country: {
-                zh: "中国",
-                en: "China"
-            },
-            description: {
-                zh: "第十三届中国当代艺术作品邀请展，周婧作品获得参展资格并获得相关奖项认可。",
-                en: "The 13th China Contemporary Art Works Invitational Exhibition, where Zhou Jing's works were selected for participation and received recognition."
-            },
-            images: [
-                {
-                    src: "images/paintings/painting_09.jpg",
-                    title: {
-                        zh: "作品展示",
-                        en: "Artwork Display"
-                    },
-                    description: {
-                        zh: "参展作品《网格》",
-                        en: "Exhibited artwork \"Grid\""
-                    }
-                }
-            ],
-            artworks: [
-                {
-                    title: {
-                        zh: "网格",
-                        en: "Grid"
-                    },
-                    medium: {
-                        zh: "综合材料",
-                        en: "Mixed Media"
-                    },
-                    size: "60×60cm",
-                    year: "2023"
-                }
-            ],
-            documents: [
-                {
-                    title: "参展证书",
-                    type: "certificate",
-                    image: "images/paintings/painting_10.jpg"
-                }
-            ],
-            press: []
         }
     ]
 };
