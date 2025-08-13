@@ -61,7 +61,7 @@ const artworksData = [
             en: "Acrylic & Mixed Media"
         },
         size: "80cm × 80cm",
-        year: "2023",
+        year: "2024",
         price: {
             zh: "¥48,000",
             en: "$7,000"
@@ -161,7 +161,7 @@ const artworksData = [
             en: "Acrylic & Mixed Media"
         },
         size: "60cm × 60cm",
-        year: "2023",
+        year: "2024",
         price: {
             zh: "¥36,000",
             en: "$5,000"
@@ -261,7 +261,7 @@ const artworksData = [
             en: "Acrylic"
         },
         size: "60cm × 130cm",
-        year: "2023",
+        year: "2024",
         price: {
             zh: "¥57,000",
             en: "$8,500"
@@ -307,10 +307,10 @@ const artworksData = [
             en: "Silent Dialogue"
         },
         medium: {
-            zh: "水墨 & 宣纸",
-            en: "Ink & Rice Paper"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
-        size: "100cm × 100cm",
+        size: "80cm × 80cm",
         year: "2024",
         price: {
             zh: "¥14,000",

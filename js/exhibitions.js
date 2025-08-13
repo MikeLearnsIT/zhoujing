@@ -2,6 +2,431 @@
 const exhibitionsData = {
     "2025": [
         {
+            id: "2025-04-uk-london-partly-cloudy",
+            title: {
+                zh: "2025英国伦敦Partly Cloudy艺术展",
+                en: "Partly Cloudy"
+            },
+            organizer: {
+                zh: "",
+                en: ""
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.04.05-2025.04.07",
+            location: {
+                zh: "M P Birla Milennium Art Galery",
+                en: "M P Birla Milennium Art Galery"
+            },
+            country: {
+                zh: "英国伦敦",
+                en: "London, United Kingdom"
+            },
+            description: {
+                zh: "《Partly Cloudy | 半云》以气象现象为隐喻，探讨个体与世界、自我与身份认同之间的微妙关系。\"半云\"的状态既非晴空万里，亦非暴雨将至的阴云密布——它存在于两者之间，同时蕴含光明与阴影。这种二元性象征着生命中的不确定性、过渡状态以及变化的可能性。这场展览汇集了绘画、摄影、雕塑、装置、影像及新媒体艺术等多种媒介作品，构建了一个开放而富有沉思性的视觉空间。在\"半云\"的状态中，观众被邀请体验平衡与流动。哲学思考展览核心在于探讨二元对立的模糊性。当代哲学家蒂莫西·莫顿提出的\"模糊边界\"概念提醒我们：世界并非由严格对立的力量构成，而是一个由流动性与不确定性交织的复杂网络。《半云》与这一理念共鸣，聚焦现实的多重性，以及情感、环境、感知与存在状态的相互交织。我们如何在光与影之间定位自我？如何在清晰与模糊的阈限空间中定义存在？《半云》并非对未来的被动凝视，而是对世界本质的温柔认知——我们既不永驻阳光之下，也不迷失于无尽阴霾，而是行走于光与影、确定与未知之间的广阔空间。",
+                en: "\"Partly Cloudy | 半云\" uses meteorological phenomena as a metaphor to explore the delicate relationships between individuals and the world, as well as between the self and personal identity. The state of being partly cloudy is neither a clear sky nor a stormy overcast—it exists in between, embodying both light and shadow. This duality symbolizes uncertainty, transitional states, and the potential for change in life. Bringing together works across diverse media—including painting, photography, sculpture, installation, video, and new media art—this exhibition constructs an open and contemplative visual space. Within this state of “partly cloudy,” viewers are invited to experience balance and fluidity. Philosophical Reflection At its core, the exhibition delves into the ambiguity of binary oppositions. Contemporary philosopher Timothy Morton introduces the concept of \"blurred boundaries, \" reminding us that the world is not composed of strictly opposing forces, but rather an intricate network of fluidity and uncertainty. Partly Cloudy resonates with this idea, focusing on the multiplicity of realities and the interwoven states of emotion, environment, perception, and existence. How do we locate ourselves between light and shadow? How do we define our being in the liminal space between clarity and ambiguity? Partly Cloudy is not a passive gaze into the future, but a gentle acknowledgment of the world’s essence—one where we neither dwell in perpetual sunshine nor are lost in endless gloom. Instead, we walk within the vast space between light and shadow, certainty and the unknown"
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250405/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "Partly Cloudy艺术展海报",
+                        en: "The poster of Partly Cloudy Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250405/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250405/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250405/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250405/ex_04.jpg",
+                    title: {
+                        zh: "现场照片04",
+                        en: "Exhibition Site Photo 04"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "绯色格韵",
+                        en: "Crimson Rhythm"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_07.jpg"
+                }
+            ],
+            documents: [
+                {
+                    title: "邀请函",
+                    type: "invitation",
+                    image: "images/exhibitions/20250404/doc_01.jpg"
+                }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "重生",
+                        en: "Rebirth"
+                    },
+                    source: {
+                        zh: "AURORA Art & Culture",
+                        en: "AURORA Art & Culture"
+                    },
+                    date: "2025.02.08",
+                    url: "http://www.aurorartculture.com/home/show/index.html?aid=119",
+                    description: {
+                        zh: "2025 伦敦重生艺术展",
+                        en: "2025 London Rebirth Art Exhibition"
+                    }
+                }
+            ]
+        },
+        {
+            id: "2025-04-france-paris-art-shopping",
+            title: {
+                zh: "2025法国巴黎Art Shopping艺术展",
+                en: "Art Shopping"
+            },
+            organizer: {
+                zh: "UWEE卢浮宫国际艺术展览委员会",
+                en: "UWEE Louvre International Art Exhibition Committee"
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.04.04-2025.04.06",
+            location: {
+                zh: "",
+                en: ""
+            },
+            country: {
+                zh: "法国巴黎",
+                en: "France Paris"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250404/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "Art Now艺术展海报",
+                        en: "The poster of Art Now Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_04.jpg",
+                    title: {
+                        zh: "现场照片04",
+                        en: "Exhibition Site Photo 04"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_05.jpg",
+                    title: {
+                        zh: "现场照片05",
+                        en: "Exhibition Site Photo 05"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_06.jpg",
+                    title: {
+                        zh: "现场照片06",
+                        en: "Exhibition Site Photo 06"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_07.jpg",
+                    title: {
+                        zh: "现场照片07",
+                        en: "Exhibition Site Photo 07"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_08.jpg",
+                    title: {
+                        zh: "现场照片08",
+                        en: "Exhibition Site Photo 08"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250404/ex_09.jpg",
+                    title: {
+                        zh: "现场照片09",
+                        en: "Exhibition Site Photo 09"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "水墨",
+                        en: "Silhouette"
+                    },
+                    medium: {
+                        zh: "丙烯",
+                        en: "Acrylic"
+                    },
+                    size: "80cm × 80cm",
+                    year: "2024",
+                    image: "images/paintings/painting_04.png"
+                }
+            ],
+            documents: [
+                {
+                    title: "邀请函",
+                    type: "invitation",
+                    image: "images/exhibitions/20250404/doc_01.jpg"
+                },
+                {
+                    title: "邀请函",
+                    type: "invitation",
+                    image: "images/exhibitions/20250404/doc_02.jpg"
+                }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "重生",
+                        en: "Rebirth"
+                    },
+                    source: {
+                        zh: "AURORA Art & Culture",
+                        en: "AURORA Art & Culture"
+                    },
+                    date: "2025.02.08",
+                    url: "http://www.aurorartculture.com/home/show/index.html?aid=119",
+                    description: {
+                        zh: "2025 伦敦重生艺术展",
+                        en: "2025 London Rebirth Art Exhibition"
+                    }
+                }
+            ]
+        },
+        {
+            id: "2025-03-japan-osaka-art-now",
+            title: {
+                zh: "2025日本大阪当代艺术展-Art Now",
+                en: "Art Now"
+            },
+            organizer: {
+                zh: "",
+                en: ""
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.03.16-2025.03.23",
+            location: {
+                zh: "大阪文化博物馆",
+                en: "Osaka Museum of Culture"
+            },
+            country: {
+                zh: "日本大阪",
+                en: "Japan Osaka"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250316/ex_01.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "Art Now艺术展海报",
+                        en: "The poster of Art Now Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250316/ex_02.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250316/ex_03.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "剪影",
+                        en: "Silhouette"
+                    },
+                    medium: {
+                        zh: "丙烯",
+                        en: "Acrylic"
+                    },
+                    size: "80cm × 80cm",
+                    year: "2024",
+                    image: "images/paintings/painting_03.jpg"
+                }
+            ],
+            documents: [
+                {
+                    title: "邀请函",
+                    type: "invitation",
+                    image: "images/exhibitions/20250316/ex_04.jpg"
+                }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "重生",
+                        en: "Rebirth"
+                    },
+                    source: {
+                        zh: "AURORA Art & Culture",
+                        en: "AURORA Art & Culture"
+                    },
+                    date: "2025.02.08",
+                    url: "http://www.aurorartculture.com/home/show/index.html?aid=119",
+                    description: {
+                        zh: "2025 伦敦重生艺术展",
+                        en: "2025 London Rebirth Art Exhibition"
+                    }
+                }
+            ]
+        },
+        {
             id: "london-2025-rebirth",
             title: {
                 zh: "重生",
@@ -25,8 +450,8 @@ const exhibitionsData = {
                 en: "50 Baker Street, London, UK W1U 7BT"
             },
             country: {
-                zh: "英国",
-                en: "United Kingdom"
+                zh: "英国伦敦",
+                en: "London, United Kingdom"
             },
             description: {
                 zh: "",
@@ -89,7 +514,7 @@ const exhibitionsData = {
                         en: "Acrylic"
                     },
                     size: "60cm × 130cm",
-                    year: "2023",
+                    year: "2024",
                     image: "images/paintings/painting_11.jpg"
                 }
             ],
