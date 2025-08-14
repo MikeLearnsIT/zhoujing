@@ -107,11 +107,11 @@ const exhibitionsData = {
                         en: "Fragmented Wholeness Art Exhibition"
                     },
                     source: {
-                        zh: "Kunst Magazin",
-                        en: "Kunst Magazin"
+                        zh: "polenjournal",
+                        en: "polenjournal"
                     },
                     date: "2025.04.13",
-                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                    url: "https://polenjournal.de/aktuelles-aus-polen/kultur-lifestyle/fragmented-wholeness-internationale-gruppenausstellung-in-duesseldorf-beleuchtet-die-schoenheit-des-unvollstaendigen/",
                     description: {
                         zh: "碎片化的整体：Jing Zhou在杜塞尔多夫的国际展",
                         en: "Fragmentierte Ganzheit: Jing Zhou in der internationalen Gruppenausstellung in Düsseldorf"
