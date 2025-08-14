@@ -78,8 +78,8 @@ const artworksData = [
     {
         id: "gallery-painting-04",
         title: {
-            zh: "水墨",
-            en: "Watercolor"
+            zh: "靛蓝",
+            en: "Indigo Blue"
         },
         medium: {
             zh: "丙烯 & 综合材料",
@@ -103,8 +103,8 @@ const artworksData = [
     {
         id: "gallery-painting-05",
         title: {
-            zh: "靛蓝",
-            en: "Indigo Blue"
+            zh: "清逸之华",
+            en: "Graceful Bloom"
         },
         medium: {
             zh: "综合材料",

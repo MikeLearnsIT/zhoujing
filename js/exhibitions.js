@@ -2,6 +2,135 @@
 const exhibitionsData = {
     "2025": [
         {
+            id: "2025-04-italy-naples-china-european-cultural-art-exhibition",
+            title: {
+                zh: "2025意大利那不勒斯中欧文化艺术展",
+                en: "China-European Cultural Art Exhibition in Naples, Italy 2025"
+            },
+            organizer: {
+                zh: "A4U策展工作室",
+                en: "A4U Curatorial Studio"
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.04.13-2025.04.20",
+            location: {
+                zh: "Presidio Ospedaliero Elena D'Aosta, Collegio Cinese della Sacra Famiglia, Napoli",
+                en: "Presidio Ospedaliero Elena D'Aosta, Collegio Cinese della Sacra Famiglia, Napoli"
+            },
+            country: {
+                zh: "那不勒斯, 意大利",
+                en: "Naples, Italy"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250413/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250413/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250413/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250413/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250413/ex_04.webp",
+                    title: {
+                        zh: "现场照片04",
+                        en: "Exhibition Site Photo 04"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "清逸之华",
+                        en: "Graceful Bloom"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_05.jpg"
+                }
+            ],
+            documents: [
+                // {
+                //     title: "邀请函",
+                //     type: "invitation",
+                //     image: "images/exhibitions/20250404/doc_01.jpg"
+                // }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "Napoli Cina-Europa Culturale 那不勒斯展览",
+                        en: "Napoli Cina-Europa Culturale Naples Exhibition"
+                    },
+                    source: {
+                        zh: "搜狐新闻",
+                        en: "Sohu News"
+                    },
+                    date: "2025.04.13",
+                    url: "https://www.sohu.com/a/886152988_121627717",
+                    description: {
+                        zh: "2025意大利那不勒斯中欧文化艺术展",
+                        en: "China-European Cultural Art Exhibition in Naples, Italy 2025"
+                    }
+                }
+            ]
+        },
+        {
             id: "2025-04-uk-london-partly-cloudy",
             title: {
                 zh: "2025英国伦敦Partly Cloudy艺术展",
