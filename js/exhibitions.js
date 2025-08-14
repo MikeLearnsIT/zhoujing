@@ -2,6 +2,124 @@
 const exhibitionsData = {
     "2025": [
         {
+            id: "2025-04-fragmented-wholeness-germany-duesseldorf",
+            title: {
+                zh: "2025德国杜塞尔多夫Fragmented Wholeness艺术展",
+                en: "Fragmented Wholeness Art Exhibition in Düsseldorf, Germany 2025"
+            },
+            organizer: {
+                zh: "",
+                en: ""
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.04.19-2025.04.28",
+            location: {
+                zh: "16art8 Gallery, Blücher Straße 49, 40477 Düsseldorf Germany",
+                en: "16art8 Gallery, Blücher Straße 49, 40477 Düsseldorf Germany"
+            },
+            country: {
+                zh: "德国杜塞尔多夫",
+                en: "Düsseldorf Germany"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250419/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250419/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250419/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250419/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "狂躁的午后",
+                        en: "Wild Afternoon"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2023",
+                    image: "images/paintings/painting_37.png"
+                }
+            ],
+            documents: [
+                // {
+                //     title: "邀请函",
+                //     type: "invitation",
+                //     image: "images/exhibitions/20250404/doc_01.jpg"
+                // }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "碎片化的整体艺术展报道",
+                        en: "Fragmented Wholeness Art Exhibition"
+                    },
+                    source: {
+                        zh: "Kunst Magazin",
+                        en: "Kunst Magazin"
+                    },
+                    date: "2025.04.13",
+                    url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                    description: {
+                        zh: "碎片化的整体：Jing Zhou在杜塞尔多夫的国际展",
+                        en: "Fragmentierte Ganzheit: Jing Zhou in der internationalen Gruppenausstellung in Düsseldorf"
+                    }
+                }
+            ]
+        },
+        {
             id: "2025-04-italy-naples-china-european-cultural-art-exhibition",
             title: {
                 zh: "2025意大利那不勒斯中欧文化艺术展",
@@ -134,7 +252,7 @@ const exhibitionsData = {
             id: "2025-04-uk-london-partly-cloudy",
             title: {
                 zh: "2025英国伦敦Partly Cloudy艺术展",
-                en: "Partly Cloudy"
+                en: "Partly Cloudy Art Exhibition in London, UK 2025"
             },
             organizer: {
                 zh: "",
@@ -247,14 +365,14 @@ const exhibitionsData = {
                         en: "Rebirth"
                     },
                     source: {
-                        zh: "AURORA Art & Culture",
-                        en: "AURORA Art & Culture"
+                        zh: "ourculture",
+                        en: "ourculture"
                     },
                     date: "2025.02.08",
-                    url: "http://www.aurorartculture.com/home/show/index.html?aid=119",
+                    url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
                     description: {
-                        zh: "2025 伦敦重生艺术展",
-                        en: "2025 London Rebirth Art Exhibition"
+                        zh: "2025 伦敦半云艺术展——对过渡状态和本体论不确定性的考察",
+                        en: "2025 London Partly Cloudy – An Examination of Transitional States and Ontological Uncertainty"
                     }
                 }
             ]
@@ -263,7 +381,7 @@ const exhibitionsData = {
             id: "2025-04-france-paris-art-shopping",
             title: {
                 zh: "2025法国巴黎Art Shopping艺术展",
-                en: "Art Shopping"
+                en: "Art Shopping Art Exhibition in Paris, France 2025"
             },
             organizer: {
                 zh: "UWEE卢浮宫国际艺术展览委员会",
@@ -452,7 +570,7 @@ const exhibitionsData = {
             id: "2025-03-japan-osaka-art-now",
             title: {
                 zh: "2025日本大阪当代艺术展-Art Now",
-                en: "Art Now"
+                en: "Art Now Contemporary Art Exhibition in Osaka, Japan 2025"
             },
             organizer: {
                 zh: "",
@@ -558,8 +676,8 @@ const exhibitionsData = {
         {
             id: "london-2025-rebirth",
             title: {
-                zh: "重生",
-                en: "Rebirth"
+                zh: "2025-02英国伦敦-重生艺术展",
+                en: "Rebirth Art Exhibition 2025 London"
             },
             organizer: {
                 zh: "",

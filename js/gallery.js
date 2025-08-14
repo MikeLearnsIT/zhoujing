@@ -228,8 +228,8 @@ const artworksData = [
     {
         id: "gallery-painting-10",
         title: {
-            zh: "珍珠马赛克",
-            en: "Pearl Mosaic"
+            zh: "珠韵织章",
+            en: "Pearl Rhythm"
         },
         medium: {
             zh: "综合材料",
@@ -303,14 +303,14 @@ const artworksData = [
     {
         id: "gallery-painting-13",
         title: {
-            zh: "无声对话",
-            en: "Silent Dialogue"
+            zh: "花",
+            en: "Flower"
         },
         medium: {
             zh: "丙烯 & 综合材料",
             en: "Acrylic & Mixed Media"
         },
-        size: "80cm × 80cm",
+        size: "100cm × 100cm",
         year: "2024",
         price: {
             zh: "¥14,000",
@@ -328,12 +328,12 @@ const artworksData = [
     {
         id: "gallery-painting-14",
         title: {
-            zh: "宇宙之舞",
-            en: "Cosmic Dance"
+            zh: "花簇",
+            en: "Cluster of Flowers"
         },
         medium: {
-            zh: "丙烯 & 荧光颜料",
-            en: "Acrylic & Fluorescent Pigments"
+            zh: "丙烯",
+            en: "Acrylic"
         },
         size: "100cm × 100cm",
         year: "2024",
@@ -353,12 +353,12 @@ const artworksData = [
     {
         id: "gallery-painting-15",
         title: {
-            zh: "质感诗篇",
-            en: "Textural Poetry"
+            zh: "江南小镇上的乌篷船",
+            en: "Wupeng Boat in a Jiangnan Town"
         },
         medium: {
-            zh: "综合材料 & 雕塑",
-            en: "Mixed Media & Sculpture"
+            zh: "综合材料",
+            en: "Mixed Media"
         },
         size: "60cm × 60cm",
         year: "2023",
@@ -378,12 +378,12 @@ const artworksData = [
     {
         id: "gallery-painting-16",
         title: {
-            zh: "文化交融",
-            en: "Cultural Fusion"
+            zh: "江南小镇上的乌篷船 2",
+            en: "Wupeng Boat in a Jiangnan Town 2"
         },
         medium: {
-            zh: "布面油画 & 传统工艺",
-            en: "Oil on Canvas & Traditional Crafts"
+            zh: "综合材料",
+            en: "Mixed Media"
         },
         size: "60cm × 60cm",
         year: "2023",
@@ -403,8 +403,8 @@ const artworksData = [
     {
         id: "gallery-painting-17",
         title: {
-            zh: "极简本质",
-            en: "Minimalist Essence"
+            zh: "魔方大厦",
+            en: "Cube Mansion"
         },
         medium: {
             zh: "丙烯",
@@ -428,7 +428,7 @@ const artworksData = [
     {
         id: "gallery-painting-18",
         title: {
-            zh: "季节更迭",
+            zh: "流沙",
             en: "Seasonal Transition"
         },
         medium: {
@@ -453,8 +453,8 @@ const artworksData = [
     {
         id: "gallery-painting-19",
         title: {
-            zh: "都市孤独",
-            en: "Urban Solitude"
+            zh: "软绵绵",
+            en: "Soft and Fluffy"
         },
         medium: {
             zh: "丙烯 & 综合材料",
@@ -478,8 +478,8 @@ const artworksData = [
     {
         id: "gallery-painting-20",
         title: {
-            zh: "无限可能",
-            en: "Infinite Possibilities"
+            zh: "经纶",
+            en: "Co-Creation"
         },
         medium: {
             zh: "综合材料",
@@ -572,8 +572,8 @@ const artworksData = [
     {
         id: "gallery-painting-24",
         title: {
-            zh: "",
-            en: ""
+            zh: "仲夏星空 2",
+            en: "Midsummer Night Sky 2"
         },
         medium: {
             zh: "综合材料",
@@ -595,8 +595,8 @@ const artworksData = [
     {
         id: "gallery-painting-25",
         title: {
-            zh: "",
-            en: ""
+            zh: "光束 2",
+            en: "Beam of Light 2"
         },
         medium: {
             zh: "综合材料",
@@ -618,8 +618,8 @@ const artworksData = [
     {
         id: "gallery-painting-26",
         title: {
-            zh: "",
-            en: ""
+            zh: "日光涡旋",
+            en: "Sunlight Vortex"
         },
         medium: {
             zh: "综合材料",
@@ -641,8 +641,8 @@ const artworksData = [
     {
         id: "gallery-painting-27",
         title: {
-            zh: "",
-            en: ""
+            zh: "仲夏星空 3",
+            en: "Midsummer Night Sky 3"
         },
         medium: {
             zh: "综合材料",
@@ -664,8 +664,8 @@ const artworksData = [
     {
         id: "gallery-painting-28",
         title: {
-            zh: "",
-            en: ""
+            zh: "仲夏星空 4",
+            en: "Midsummer Night Sky 4"
         },
         medium: {
             zh: "综合材料",
@@ -687,8 +687,8 @@ const artworksData = [
     {
         id: "gallery-painting-29",
         title: {
-            zh: "",
-            en: ""
+            zh: "轮回 2",
+            en: "Cycle 2"
         },
         medium: {
             zh: "综合材料",
@@ -710,8 +710,8 @@ const artworksData = [
     {
         id: "gallery-painting-30",
         title: {
-            zh: "",
-            en: ""
+            zh: "梅果",
+            en: "Plum Fruit"
         },
         medium: {
             zh: "综合材料",
@@ -756,8 +756,8 @@ const artworksData = [
     {
         id: "gallery-painting-32",
         title: {
-            zh: "",
-            en: ""
+            zh: "光束 3",
+            en: "Beam of Light 3"
         },
         medium: {
             zh: "综合材料",
@@ -809,7 +809,7 @@ const artworksData = [
             zh: "综合材料",
             en: "Mixed Media"
         },
-        size: "30cm × 30cm",
+        size: "80cm × 80cm",
         year: "2025",
         price: {
         },
@@ -832,7 +832,7 @@ const artworksData = [
             zh: "综合材料",
             en: "Mixed Media"
         },
-        size: "60cm × 60cm",
+        size: "80cm × 80cm",
         year: "2025",
         price: {
         },
@@ -863,6 +863,31 @@ const artworksData = [
         },
         status: "available",
         image: "images/paintings/painting_36.jpg",
+        description: {
+            zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
+            en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
+        },
+        category: "installation",
+        featured: false
+    },
+    {
+        id: "gallery-painting-37",
+        title: {
+            zh: "狂躁的午后",
+            en: "Wild Afternoon"
+        },
+        medium: {
+            zh: "综合材料",
+            en: "Mixed Media"
+        },
+        size: "60cm × 60cm",
+        year: "2023",
+        price: {
+            zh: "¥18,000",
+            en: "$2,700"
+        },
+        status: "available",
+        image: "images/paintings/painting_37.png",
         description: {
             zh: "艺术创作的无限可能性，邀请观者参与共同创造的过程。",
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
