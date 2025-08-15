@@ -303,8 +303,8 @@ const artworksData = [
     {
         id: "gallery-painting-13",
         title: {
-            zh: "花",
-            en: "Flower"
+            zh: "静谧",
+            en: "Tranquility"
         },
         medium: {
             zh: "丙烯 & 综合材料",
@@ -357,8 +357,8 @@ const artworksData = [
             en: "Wupeng Boat in a Jiangnan Town"
         },
         medium: {
-            zh: "综合材料",
-            en: "Mixed Media"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
         size: "60cm × 60cm",
         year: "2023",

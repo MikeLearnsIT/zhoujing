@@ -1409,6 +1409,165 @@ const exhibitionsData = {
             ]
         }
     ],
+    // 2024年展览
+    "2024": [
+        {
+            id: "xin-xiang-cheng-jing-2024",
+            title: {
+                zh: "\"心象成境\"--2024上海青年艺术家邀请展暨上海中外文化青艺会年度展",
+                en: "\"Xin Xiang Cheng Jing\" - 2024 Shanghai Young Artists Invitational Exhibition"
+            },
+            organizer: {
+                zh: "上海中外文化艺术交流协会",
+                en: "Shanghai International Cultural Exchange Association"
+            },
+            organizerDescription: {
+                zh: "上海中外文化艺术交流协会成立于1992年，为上海市级国际文化艺术交流的社会团体。协会由上海市文联主管，在上海市民政局依法登记并取得法人资格。协会宗旨是通过开展民间中外文化艺术交流活动，为繁荣和发展上海的经济、文化和艺术事业服务，也为了增强与世界各国、各地区人民的相互了解和友好合作。协会通过在国内外举办各种艺术交流展览、演出，学术研讨和报告等活动，开展中外文化艺术的系列交流。",
+                en: "Shanghai International Cultural Exchange Association was founded in 1992, as a social organization for international cultural and artistic exchanges at the municipal level in Shanghai. The association is under the supervision of the Shanghai Federation of Literature and Arts, registered with the Shanghai Municipal Civil Affairs Bureau, and granted legal person status. The association's mission is to promote the economic, cultural, and artistic development of Shanghai through the organization of various cultural and artistic exchange activities, as well as to enhance mutual understanding and friendly cooperation with people from all over the world. The association conducts a series of cultural and artistic exchanges through various art exhibitions, performances, academic seminars, and reports both domestically and internationally."
+            },
+            organizerLink: {
+                zh: "https://baike.baidu.com/item/上海中外文化艺术交流协会",
+                en: "https://baike.baidu.com/item/上海中外文化艺术交流协会"
+            },
+            date: "2024.12.20 - 2024.12.30",
+            location: {
+                zh: "上海华萃当代美术馆(上海市长宁区长宁路1978号)",
+                en: "Shanghai Huacui Contemporary Art Museum (1978 Changning Road, Changning District, Shanghai)"
+            },
+            country: {
+                zh: "中国上海",
+                en: "Shanghai, China"
+            },
+            description: {
+                zh: "\"心象成境\"展览是一个重要的展览，汇集了多位中国当代艺术家的作品，展示了当代中国艺术的多样性和创新精神。展览通过各种艺术媒介，呈现了艺术家们对当下社会、文化和个人经历的深刻思考。",
+                en: "\"Xin Xiang Cheng Jing\" exhibition is a significant event that brings together works from multiple contemporary Chinese artists, showcasing the diversity and innovative spirit of contemporary Chinese art. The exhibition presents deep reflections by artists on current society, culture, and personal experiences through various artistic media."
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20241220/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20241220/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20241220/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20241220/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "静谧",
+                        en: "Tranquility"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "100cm × 100cm",
+                    year: "2024",
+                    image: "images/paintings/painting_13.jpg"
+                },
+                {
+                    title: {
+                        zh: "江南小镇上的乌篷船",
+                        en: "Wupeng Boat in a Jiangnan Town"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2023",
+                    image: "images/paintings/painting_15.jpg"
+                },
+                {
+                    title: {
+                        zh: "狂躁的午后",
+                        en: "Wild Afternoon"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_37.png"
+                }
+            ],
+            documents: [
+
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "2024上海青年艺术家邀请展开展，32位青年艺术家多元表达“心象成境”",
+                        en: "2024 Shanghai Young Artists Invitational Exhibition Opens, 32 Young Artists Express 'Xin Xiang Cheng Jing' in Diverse Ways"
+                    },
+                    source: {
+                        zh: "上观",
+                        en: "Shanghai Observer"
+                    },
+                    date: "2024.12.24",
+                    url: "https://export.shobserver.com/baijiahao/html/833238.html",
+                    description: {
+                        zh: "12月22日，“心象成境”——2024 上海青年艺术家邀请展暨上海中外文化青艺会年度展，在上海华萃当代美术馆启幕。展览由上海中外文化青艺会筹备策划，以独特的视角与多元的艺术呈现形式，吸引了众多目光。",
+                        en: "On December 22, 'Xin Xiang Cheng Jing' - 2024 Shanghai Young Artists Invitational Exhibition and Annual Exhibition of Shanghai Sino-Foreign Culture Youth Art Association, opened at Shanghai Huacui Contemporary Art Museum. The exhibition, organized and planned by Shanghai Sino-Foreign Culture Youth Art Association, attracted much attention with its unique perspective and diverse artistic presentation forms."
+                    }
+                },
+                {
+                    title: {
+                        zh: "【上海】2024青年艺术家邀请展：心象成境",
+                        en: "[Shanghai] 2024 Young Artists Invitational Exhibition: Xin Xiang Cheng Jing"
+                    },
+                    source: {
+                        zh: "搜狐新闻",
+                        en: "Sohu News"
+                    },
+                    date: "2024.12.24",
+                    url: "https://cul.sohu.com/a/841224852_122091088",
+                    description: {
+                        zh: "在这个充满创意的冬季，12月22日，上海华萃当代美术馆将展现一场艺术盛宴——“心象成境”！此展由上海中外文化青艺会精心筹备，独特的视角结合多元的艺术表现形式，吸引了无数目光，等待您的到来！",
+                        en: "In this creative winter, on December 22, Shanghai Huacui Contemporary Art Museum will present an art feast - 'Xin Xiang Cheng Jing'! This exhibition is meticulously prepared by Shanghai Sino-Foreign Culture Youth Art Association, combining a unique perspective with diverse artistic expressions, attracting countless eyes and awaiting your arrival!"
+                    }
+                }
+            ]
+        }
+    ],
     // 2023年展览
     "2023": [
         {
