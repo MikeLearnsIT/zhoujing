@@ -881,7 +881,7 @@ const artworksData = [
             en: "Mixed Media"
         },
         size: "60cm × 60cm",
-        year: "2023",
+        year: "2024",
         price: {
             zh: "¥18,000",
             en: "$2,700"

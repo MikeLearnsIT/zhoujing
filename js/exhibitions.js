@@ -2,6 +2,140 @@
 const exhibitionsData = {
     "2025": [
         {
+            id: "2025-05-conceputal-erasure-london",
+            title: {
+                zh: "2025英国伦敦Conceputal Erasure艺术展",
+                en: "Conceputal Erasure Art Exhibition in London, UK 2025"
+            },
+            organizer: {
+                zh: "artOrb",
+                en: "artOrb"
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.05.27-2025.06.02",
+            location: {
+                zh: "56 Dawes Rd, London SW6 7EB, United Kingdom",
+                en: "56 Dawes Rd, London SW6 7EB, United Kingdom"
+            },
+            country: {
+                zh: "英国伦敦",
+                en: "London, United Kingdom"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250527/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250527/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250527/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250527/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "翡翠之光",
+                        en: "Emerald Light"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2023",
+                    image: "images/paintings/painting_02.jpg"
+                }
+            ],
+            documents: [
+                // {
+                //     title: "邀请函",
+                //     type: "invitation",
+                //     image: "images/exhibitions/20250404/doc_01.jpg"
+                // }
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "概念抹除：意义之前",
+                        en: "Conceptual Erasure: Before Meaning"
+                    },
+                    source: {
+                        zh: "FAD Magazine",
+                        en: "FAD Magazine"
+                    },
+                    date: "2025.05.31",
+                    url: "https://fadmagazine.com/2025/05/31/conceptual-erasure-before-meaning/",
+                    description: {
+                        zh: "FAD Magazine-概念抹除：意义之前",
+                        en: "FAD Magazine-Conceptual Erasure: Before Meaning"
+                    }
+                },
+                {
+                    title: {
+                        zh: "意义的缝隙：体验‘概念抹除’",
+                        en: "In the Gap of Meaning: Experiencing ‘Conceptual Erasure’"
+                    },
+                    source: {
+                        zh: "Our Culture Magazine",
+                        en: "Our Culture Magazine"
+                    },
+                    date: "2025.06.08",
+                    url: "https://ourculturemag.com/2025/06/08/in-the-gap-of-meaning-experiencing-conceptual-erasure/",
+                    description: {
+                        zh: "Our Culture Magazine-意义的缝隙：体验‘概念抹除’",
+                        en: "Our Culture Magazine-In the Gap of Meaning: Experiencing ‘Conceptual Erasure’"
+                    }
+                }
+            ]
+        },
+        {
             id: "2025-04-fragmented-wholeness-germany-duesseldorf",
             title: {
                 zh: "2025德国杜塞尔多夫Fragmented Wholeness艺术展",
@@ -89,7 +223,7 @@ const exhibitionsData = {
                         en: "Mixed Media"
                     },
                     size: "60cm × 60cm",
-                    year: "2023",
+                    year: "2024",
                     image: "images/paintings/painting_37.png"
                 }
             ],
@@ -818,8 +952,8 @@ const exhibitionsData = {
                 en: "Shanghai PuTuo District Cultural Center 3rd Floor (No. 138 Lanxi Road, Shanghai)"
             },
             country: {
-                zh: "中国",
-                en: "China"
+                zh: "中国上海",
+                en: "Shanghai, China"
             },
             description: {
                 zh: "这是一场汇聚了多位中国当代艺术家的重要群展，展示了当代中国艺术的多元面貌和创新精神。展览通过不同媒介的艺术作品，呈现了艺术家们对当下社会、文化和个人体验的深度思考。",
