@@ -136,6 +136,146 @@ const exhibitionsData = {
             ]
         },
         {
+            id: "2025-05-fractured-horizons-new-york",
+            title: {
+                zh: "2025 纽约\"国际评审展：破碎的地平线\"艺术展",
+                en: "2025 \"International Juried Exhibition: Fractured Horizons\" Art Exhibition"
+            },
+            organizer: {
+                zh: "",
+                en: ""
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.05.16-2025.05.23",
+            location: {
+                zh: "New York Gallery: 115 W 3oth st #9oo, New York, NY 10001",
+                en: "New York Gallery: 115 W 3oth st #9oo, New York, NY 10001"
+            },
+            country: {
+                zh: "美国纽约",
+                en: "New York, USA"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250516/poster.png",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250516/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250516/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "翡翠之光",
+                        en: "Emerald Light"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2023",
+                    image: "images/paintings/painting_02.jpg"
+                },
+                {
+                    title: {
+                        zh: "狂躁的午后",
+                        en: "Wild Afternoon"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_37.png"
+                }
+            ],
+            documents: [
+                {
+                    title: {
+                        zh: "邀请函1",
+                        en: "Invitation 1"
+                    },
+                    type: "invitation",
+                    image: "images/exhibitions/20250516/doc_01.jpg"
+                },
+                {
+                    title: {
+                        zh: "邀请函2",
+                        en: "Invitation 2"
+                    },
+                    type: "invitation",
+                    image: "images/exhibitions/20250516/doc_02.jpg"
+                },
+                {
+                    title: {
+                        zh: "邀请函3",
+                        en: "Invitation 3"
+                    },
+                    type: "invitation",
+                    image: "images/exhibitions/20250516/doc_03.jpg"
+                }
+
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "周婧 - 周祥攸兴 - 狂躁的午后",
+                        en: "Jing Zhou - Zhou Xiang You Xing - Wild Afternoon"
+                    },
+                    source: {
+                        zh: "vsdsgn",
+                        en: "vsdsgn"
+                    },
+                    date: "2025.05.23",
+                    url: "https://vsdsgn.com/artists/fractured-horizons-jing-zhou",
+                    description: {
+                        zh: "vsdsgn -  Zhou Xiang You Xing - Wild Afternoon",
+                        en: "vsdsgn -  Zhou Xiang You Xing - Wild Afternoon"
+                    }
+                }
+            ]
+        },
+        {
             id: "2025-04-fragmented-wholeness-germany-duesseldorf",
             title: {
                 zh: "2025德国杜塞尔多夫Fragmented Wholeness艺术展",
@@ -228,11 +368,7 @@ const exhibitionsData = {
                 }
             ],
             documents: [
-                // {
-                //     title: "邀请函",
-                //     type: "invitation",
-                //     image: "images/exhibitions/20250404/doc_01.jpg"
-                // }
+
             ],
             press: [
                 {
@@ -357,11 +493,7 @@ const exhibitionsData = {
                 }
             ],
             documents: [
-                // {
-                //     title: "邀请函",
-                //     type: "invitation",
-                //     image: "images/exhibitions/20250404/doc_01.jpg"
-                // }
+
             ],
             press: [
                 {
@@ -487,7 +619,10 @@ const exhibitionsData = {
             ],
             documents: [
                 {
-                    title: "邀请函",
+                    title: {
+                        zh: "邀请函",
+                        en: "Invitation"
+                    },
                     type: "invitation",
                     image: "images/exhibitions/20250404/doc_01.jpg"
                 }
@@ -671,12 +806,18 @@ const exhibitionsData = {
             ],
             documents: [
                 {
-                    title: "邀请函",
+                    title: {
+                        zh: "邀请函1",
+                        en: "Invitation 1"
+                    },
                     type: "invitation",
                     image: "images/exhibitions/20250404/doc_01.jpg"
                 },
                 {
-                    title: "邀请函",
+                    title: {
+                        zh: "邀请函2",
+                        en: "Invitation 2"
+                    },
                     type: "invitation",
                     image: "images/exhibitions/20250404/doc_02.jpg"
                 }
@@ -783,7 +924,10 @@ const exhibitionsData = {
             ],
             documents: [
                 {
-                    title: "邀请函",
+                    title: {
+                        zh: "邀请函",
+                        en: "Invitation"
+                    },
                     type: "invitation",
                     image: "images/exhibitions/20250316/ex_04.jpg"
                 }
@@ -900,11 +1044,7 @@ const exhibitionsData = {
                 }
             ],
             documents: [
-                // {
-                //     title: "参展证书",
-                //     type: "certificate",
-                //     image: "images/images_31.png"
-                // }
+
             ],
             press: [
                 {
@@ -1095,11 +1235,7 @@ const exhibitionsData = {
                 }
             ],
             documents: [
-                // {
-                //     title: "参展证书",
-                //     type: "certificate",
-                //     image: "images/images_31.png"
-                // }
+
             ],
             press: [
                 {
