@@ -1873,24 +1873,18 @@ function createExhibitionItem(exhibition) {
     const location = exhibition.location[currentLang] || exhibition.location.zh;
     const country = exhibition.country[currentLang] || exhibition.country.zh;
     const organizer = exhibition.organizer ? (exhibition.organizer[currentLang] || exhibition.organizer.zh) : '';
-    // 选取封面图（优先含“海报/poster”的图片，其次第一张）
-    const images = exhibition.images || [];
-    const posterImage = images.find(img => {
-        const t = getImageText(img, 'title');
-        return t && (t.includes('海报') || /poster/i.test(t));
-    }) || images[0];
-
     item.innerHTML = `
-        ${posterImage ? `
-        <div class="exhibition-cover">
-            <img src="${posterImage.src}" alt="${getImageText(posterImage, 'title')}">
-        </div>` : ''}
         <div class="exhibition-info">
             <div class="exhibition-date">${exhibition.date}</div>
             <h4 class="exhibition-title">${title}</h4>
-            ${organizer ? `<div class="exhibition-organizer"><i class="fas fa-university"></i> ${organizer}</div>` : ''}
-            <div class="exhibition-location"><i class="fas fa-map-marker-alt"></i> ${location}</div>
+            ${organizer ? `<div class="exhibition-organizer">${organizer}</div>` : ''}
+            <div class="exhibition-location">${location}</div>
             <div class="exhibition-country">${country}</div>
+        </div>
+        <div class="exhibition-preview">
+            ${exhibition.images.slice(0, 3).map(img =>
+        `<img src="${img.src}" alt="${img.title}" class="preview-image">`
+    ).join('')}
         </div>
         <div class="exhibition-action">
             <a href="exhibition-detail.html?id=${exhibition.id}" class="view-detail-btn">
