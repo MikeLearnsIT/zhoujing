@@ -1,6 +1,353 @@
 // 展览数据配置 - 便于后期维护和添加
 const exhibitionsData = {
+    // 2025年展览
     "2025": [
+        {
+            id: "2025-07-what-remains-to-be-seen-canada",
+            title: {
+                zh: "2025加拿大魁北克省西蒙特1215画廊What Remains to be Seen艺术展",
+                en: "What Remains to be Seen Art Exhibition in Canada 2025"
+            },
+            organizer: {
+                zh: "1215 GALLERY",
+                en: "1215 GALLERY"
+            },
+            organizerDescription: {
+                zh: "",
+                en: ""
+            },
+            organizerLink: {
+                zh: "",
+                en: ""
+            },
+            date: "2025.07.19-2025.08.19",
+            location: {
+                zh: "1215 Gallery, 1215 Ave Greene, Westmount, Quebec, Canada",
+                en: "1215 Gallery, 1215 Ave Greene, Westmount, Quebed, Canada"
+            },
+            country: {
+                zh: "加拿大魁北克省西蒙特",
+                en: "Westmount, Quebed, Canada"
+            },
+            description: {
+                zh: "",
+                en: ""
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250719/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_00.jpg",
+                    title: {
+                        zh: "现场照片",
+                        en: "Exhibition Site Photo"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_04.jpg",
+                    title: {
+                        zh: "现场照片04",
+                        en: "Exhibition Site Photo 04"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_05.jpg",
+                    title: {
+                        zh: "现场照片05",
+                        en: "Exhibition Site Photo 05"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_06.jpg",
+                    title: {
+                        zh: "现场照片06",
+                        en: "Exhibition Site Photo 06"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_07.jpg",
+                    title: {
+                        zh: "现场照片07",
+                        en: "Exhibition Site Photo 07"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_08.jpg",
+                    title: {
+                        zh: "现场照片08",
+                        en: "Exhibition Site Photo 08"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_09.jpg",
+                    title: {
+                        zh: "现场照片09",
+                        en: "Exhibition Site Photo 09"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_10.jpg",
+                    title: {
+                        zh: "现场照片10",
+                        en: "Exhibition Site Photo 10"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_11.jpg",
+                    title: {
+                        zh: "现场照片11",
+                        en: "Exhibition Site Photo 11"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_12.jpg",
+                    title: {
+                        zh: "现场照片12",
+                        en: "Exhibition Site Photo 12"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_13.jpg",
+                    title: {
+                        zh: "现场照片13",
+                        en: "Exhibition Site Photo 13"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_14.jpg",
+                    title: {
+                        zh: "现场照片14",
+                        en: "Exhibition Site Photo 14"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_15.jpg",
+                    title: {
+                        zh: "现场照片15",
+                        en: "Exhibition Site Photo 15"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_16.jpg",
+                    title: {
+                        zh: "现场照片16",
+                        en: "Exhibition Site Photo 16"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_17.jpg",
+                    title: {
+                        zh: "现场照片17",
+                        en: "Exhibition Site Photo 17"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_18.jpg",
+                    title: {
+                        zh: "现场照片18",
+                        en: "Exhibition Site Photo 18"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_19.jpg",
+                    title: {
+                        zh: "现场照片19",
+                        en: "Exhibition Site Photo 19"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_20.jpg",
+                    title: {
+                        zh: "现场照片20",
+                        en: "Exhibition Site Photo 20"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_21.jpg",
+                    title: {
+                        zh: "现场照片21",
+                        en: "Exhibition Site Photo 21"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250719/ex_22.jpg",
+                    title: {
+                        zh: "现场照片22",
+                        en: "Exhibition Site Photo 22"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "绯色格韵",
+                        en: "Crimson Rhythm"
+                    },
+                    medium: {
+                        zh: "丙烯 & 综合材料",
+                        en: "Acrylic & Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_07.jpg"
+                },
+                {
+                    title: {
+                        zh: "狂躁的午后",
+                        en: "Wild Afternoon"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_37.png"
+                }
+            ],
+            documents: [
+            ],
+            press: [
+                {
+                    title: {
+                        zh: "概念抹除：意义之前",
+                        en: "Conceptual Erasure: Before Meaning"
+                    },
+                    source: {
+                        zh: "FAD Magazine",
+                        en: "FAD Magazine"
+                    },
+                    date: "2025.05.31",
+                    url: "https://fadmagazine.com/2025/05/31/conceptual-erasure-before-meaning/",
+                    description: {
+                        zh: "FAD Magazine-概念抹除：意义之前",
+                        en: "FAD Magazine-Conceptual Erasure: Before Meaning"
+                    }
+                }
+            ]
+        },
         {
             id: "2025-05-conceputal-erasure-london",
             title: {
@@ -94,11 +441,7 @@ const exhibitionsData = {
                 }
             ],
             documents: [
-                // {
-                //     title: "邀请函",
-                //     type: "invitation",
-                //     image: "images/exhibitions/20250404/doc_01.jpg"
-                // }
+
             ],
             press: [
                 {
