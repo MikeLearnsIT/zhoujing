@@ -46,9 +46,20 @@
         <section class="about-statement">
             <div class="about-container">
                 <h2 data-i18n="about.statementTitle">艺术家陈述</h2>
+                <div class="statement-portrait">
+                    <img src="images/studio/studio_01.jpg" alt="Artist Portrait">
+                </div>
                 <div class="statement-content">
                     <div class="statement-text" data-i18n="about.statementContent"></div>
                 </div>
+            </div>
+        </section>
+
+        <!-- 展览经历（时间线）-- 提出为独立模块 -->
+        <section class="about-exhibitions">
+            <div class="about-container">
+                <h2 data-i18n="exhibitions.timeline">展览时间线</h2>
+                <div id="cv-exhibitions-timeline" class="cv-timeline"></div>
             </div>
         </section>
 
@@ -70,7 +81,7 @@
                             <h3 data-i18n="about.residencies.title"></h3>
                             <ul class="cv-items" data-i18n="about.residencies.items"></ul>
                         </div>
-                        <div class="cv-section">
+                        <div class="cv-section" style="display: none;">
                             <h3 data-i18n="about.publications.title"></h3>
                             <ul class="cv-items" data-i18n="about.publications.items"></ul>
                         </div>
@@ -124,7 +135,73 @@
     </footer>
 
     <script src="js/language.js"></script>
+    <script src="js/exhibitions.js"></script>
     <script src="js/mobile-menu.js"></script>
+    <script>
+        // 在关于页渲染展览经历时间线
+        (function () {
+            function getTextByLang(obj, lang) {
+                if (!obj) return '';
+                if (typeof obj === 'string') return obj;
+                return obj[lang] || obj.zh || obj.en || '';
+            }
+
+            function renderCvExhibitionsTimeline() {
+                const container = document.getElementById('cv-exhibitions-timeline');
+                if (!container || typeof exhibitionsData !== 'object') return;
+
+                const lang = (window.languageManager && window.languageManager.currentLang) || 'zh';
+
+                // 按年份倒序
+                const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
+
+                const html = years.map(year => {
+                    const items = (exhibitionsData[year] || []).map(ex => {
+                        const title = getTextByLang(ex.title, lang);
+                        const location = getTextByLang(ex.location, lang);
+                        const country = getTextByLang(ex.country, lang);
+                        const date = ex.date || '';
+                        const link = `exhibition-detail.html?id=${ex.id}`;
+                        return `
+                            <div class="cv-timeline-item">
+                                <div class="cv-timeline-dot"></div>
+                                <div class="cv-timeline-content">
+                                    <div class="cv-timeline-date">${date}</div>
+                                    <div class="cv-timeline-title"><a href="${link}">${title}</a></div>
+                                    <div class="cv-timeline-meta">${location}${country ? ` · ${country}` : ''}</div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    return `
+                        <div class="cv-timeline-year">
+                            <div class="cv-year-label">${year}</div>
+                            <div class="cv-timeline-items">${items}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = html || '<div class="no-content">—</div>';
+            }
+
+            function init() {
+                if (window.languageManager && typeof exhibitionsData === 'object') {
+                    renderCvExhibitionsTimeline();
+                } else {
+                    setTimeout(init, 50);
+                }
+            }
+
+            if (document.readyState === 'complete') {
+                init();
+            } else {
+                window.addEventListener('load', init);
+            }
+
+            document.addEventListener('languageChanged', renderCvExhibitionsTimeline);
+        })();
+    </script>
 </body>
 
 </html> 

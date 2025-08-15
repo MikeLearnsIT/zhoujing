@@ -135,6 +135,13 @@
             const organizerDescription = exhibition.organizerDescription[currentLang] || exhibition.organizerDescription.zh;
             const organizerLink = exhibition.organizerLink ? (exhibition.organizerLink[currentLang] || exhibition.organizerLink.zh) : '';
 
+            const hasOrganizerSection = Boolean((organizerDescription && organizerDescription.trim()) || (organizerLink && organizerLink.trim()));
+            const hasDescriptionSection = Boolean(description && description.trim());
+            const hasOrganizerName = Boolean(organizer && organizer.trim());
+            const hasPeriod = Boolean(exhibition.date && String(exhibition.date).trim());
+            const hasLocation = Boolean(location && location.trim());
+            const hasCountry = Boolean(type && type.trim());
+            
             // 获取多语言图片描述的函数
             function getImageText(img, field) {
                 if (typeof img[field] === 'object' && img[field] !== null) {
@@ -159,6 +166,14 @@
                 return press[field] || '';
             }
 
+            // 文档字段多语言文本
+            function getDocText(doc, field) {
+                if (typeof doc[field] === 'object' && doc[field] !== null) {
+                    return doc[field][currentLang] || doc[field].zh || doc[field];
+                }
+                return doc[field] || '';
+            }
+
             // 找到海报图片
             const posterImage = exhibition.images.find(img => {
                 const title = getImageText(img, 'title');
@@ -173,22 +188,30 @@
                 <div class="exhibition-header">
                     <h1 class="exhibition-title">${title}</h1>
                     <div class="exhibition-info-card">
+                        ${hasOrganizerName ? `
                         <div class="info-row">
                             <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.organizer') : '主办方'}</span>
                             <span class="info-value">${organizer}</span>
                         </div>
+                        ` : ''}
+                        ${hasPeriod ? `
                         <div class="info-row">
                             <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.period') : '展期'}</span>
                             <span class="info-value">${exhibition.date}</span>
                         </div>
+                        ` : ''}
+                        ${hasLocation ? `
                         <div class="info-row">
                             <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.location') : '地点'}</span>
                             <span class="info-value">${location}</span>
                         </div>
+                        ` : ''}
+                        ${hasCountry ? `
                         <div class="info-row">
                             <span class="info-label">${window.getTranslation ? window.getTranslation('exhibitions.country') : '国家'}</span>
                             <span class="info-value">${type}</span>
                         </div>
+                        ` : ''}
                     </div>
                 </div>
 
@@ -201,12 +224,13 @@
                 </div>
 
                 <!-- 主办方介绍 -->
+                ${hasOrganizerSection ? `
                 <div class="exhibition-info-section">
                     <h2>${window.getTranslation ? window.getTranslation('exhibitions.aboutOrganizer') : '主办方介绍'}</h2>
                     <div class="organizer-content">
                         <div class="organizer-name">${organizer}</div>
-                        <p class="exhibition-aboutOrganizer">${organizerDescription}</p>
-                        ${organizerLink ? `
+                        ${organizerDescription && organizerDescription.trim() ? `<p class="exhibition-aboutOrganizer">${organizerDescription}</p>` : ''}
+                        ${organizerLink && organizerLink.trim() ? `
                         <div class="organizer-link">
                             <a href="${organizerLink}" target="_blank" rel="noopener noreferrer" class="organizer-link-btn">
                                 <i class="fas fa-external-link-alt"></i>
@@ -216,12 +240,15 @@
                         ` : ''}
                     </div>
                 </div>
+                ` : ''}
 
                 <!-- 展览基本信息 -->
+                ${hasDescriptionSection ? `
                 <div class="exhibition-info-section">
                     <h2>${window.getTranslation ? window.getTranslation('exhibitions.description') : '展览介绍'}</h2>
                     <p class="exhibition-description">${description}</p>
                 </div>
+                ` : ''}
                 
                 <!-- 参展作品 -->
                 ${exhibition.artworks && exhibition.artworks.length > 0 ? `
@@ -276,15 +303,15 @@
                 </div>
                 ` : ''}
                 
-                <!-- 参展证书 -->
+                <!-- 展览文档 -->
                 ${exhibition.documents && exhibition.documents.length > 0 ? `
                 <div class="exhibition-certificates">
-                    <h2>${window.getTranslation ? window.getTranslation('exhibitions.documents') : '参展证书'}</h2>
-                    <div class="certificates-grid">
+                    <h2>${window.getTranslation ? window.getTranslation('exhibitions.documents') : '展览文档'}</h2>
+                    <div class="certificates-grid ${exhibition.documents.length === 1 ? 'single-document' : ''}">
                         ${exhibition.documents.map(doc => `
-                            <div class="certificate-item" onclick="openCertificateViewer('${doc.image}', '${doc.title}')">
-                                <img src="${doc.image}" alt="${doc.title}">
-                                <div class="certificate-title">${doc.title}</div>
+                            <div class="certificate-item" onclick="openCertificateViewer('${doc.image}', '${getDocText(doc, 'title')}')">
+                                <img src="${doc.image}" alt="${getDocText(doc, 'title')}">
+                                <div class="certificate-title">${getDocText(doc, 'title')}</div>
                             </div>
                         `).join('')}
                     </div>

@@ -23,7 +23,8 @@ const artworksData = [
             en: "Exploring the color expression of the inner world, showing the depth and complexity of emotions through abstract formal language."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 2
     },
     {
         id: "gallery-painting-02",
@@ -48,7 +49,8 @@ const artworksData = [
             en: "The dialogue and collision between different colors creates a visual experience full of tension."
         },
         category: "mixed-media",
-        featured: false
+        featured: false,
+        sortWeight: 2
     },
     {
         id: "gallery-painting-03",
@@ -73,7 +75,8 @@ const artworksData = [
             en: "Pure abstract expression, conveying the artist's inner feelings through free combination of colors and forms."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 3
     },
     {
         id: "gallery-painting-04",
@@ -98,7 +101,8 @@ const artworksData = [
             en: "The fluidity of watercolor perfectly interprets the change and flow of emotions."
         },
         category: "watercolor",
-        featured: false
+        featured: false,
+        sortWeight: 4
     },
     {
         id: "gallery-painting-05",
@@ -123,7 +127,8 @@ const artworksData = [
             en: "The fusion and collision of different cultural elements, showing the diversification characteristics of contemporary art."
         },
         category: "mixed-media",
-        featured: true
+        featured: true,
+        sortWeight: 5
     },
     {
         id: "gallery-painting-06",
@@ -148,7 +153,8 @@ const artworksData = [
             en: "The traces left by time on the canvas, recording important moments in the artist's creative journey."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 6
     },
     {
         id: "gallery-painting-07",
@@ -173,7 +179,8 @@ const artworksData = [
             en: "A visual melody like music, containing deep emotional resonance in abstract forms."
         },
         category: "painting",
-        featured: true
+        featured: true,
+        sortWeight: 7
     },
     {
         id: "gallery-painting-08",
@@ -198,7 +205,8 @@ const artworksData = [
             en: "Abstract expression of modern urban life, exploring the balance between city rhythm and humanistic feelings."
         },
         category: "mixed-media",
-        featured: false
+        featured: false,
+        sortWeight: 8
     },
     {
         id: "gallery-painting-09",
@@ -223,7 +231,8 @@ const artworksData = [
             en: "Fragmented and reconstructed memory pieces, telling the bits and pieces in the passage of time."
         },
         category: "watercolor",
-        featured: false
+        featured: false,
+        sortWeight: 9
     },
     {
         id: "gallery-painting-10",
@@ -248,7 +257,8 @@ const artworksData = [
             en: "Golden hope and longing, depicting the ideal distant place in the heart."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 10
     },
     {
         id: "gallery-painting-11",
@@ -273,7 +283,8 @@ const artworksData = [
             en: "Perfect fusion of technology and nature, showing infinite possibilities of contemporary art."
         },
         category: "digital",
-        featured: false
+        featured: false,
+        sortWeight: 11
     },
     {
         id: "gallery-painting-12",
@@ -298,7 +309,8 @@ const artworksData = [
             en: "A geographical map of inner emotions, each texture carries different emotions."
         },
         category: "mixed-media",
-        featured: false
+        featured: false,
+        sortWeight: 12
     },
     {
         id: "gallery-painting-13",
@@ -323,7 +335,8 @@ const artworksData = [
             en: "Modern interpretation of Eastern aesthetics, seeking balance and harmony between black and white."
         },
         category: "ink",
-        featured: true
+        featured: true,
+        sortWeight: 13
     },
     {
         id: "gallery-painting-14",
@@ -348,7 +361,8 @@ const artworksData = [
             en: "Visual representation of cosmic energy, exploring the mysterious connection between life and the universe."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 14
     },
     {
         id: "gallery-painting-15",
@@ -373,7 +387,8 @@ const artworksData = [
             en: "Dual experience of tactile and visual, the material itself is the artistic language."
         },
         category: "sculpture",
-        featured: false
+        featured: false,
+        sortWeight: 15
     },
     {
         id: "gallery-painting-16",
@@ -398,7 +413,8 @@ const artworksData = [
             en: "Collision and fusion of Eastern and Western cultures, showing artistic thinking in the era of globalization."
         },
         category: "painting",
-        featured: true
+        featured: true,
+        sortWeight: 16
     },
     {
         id: "gallery-painting-17",
@@ -423,7 +439,8 @@ const artworksData = [
             en: "Simple but not simplistic, seeking the essential power of art in minimalism."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 17
     },
     {
         id: "gallery-painting-18",
@@ -448,7 +465,8 @@ const artworksData = [
             en: "Life philosophy of seasonal cycles, feeling the aesthetic rhythm in natural changes."
         },
         category: "watercolor",
-        featured: false
+        featured: false,
+        sortWeight: 18
     },
     {
         id: "gallery-painting-19",
@@ -473,7 +491,8 @@ const artworksData = [
             en: "Inner monologue of modern urban people, exploring the sense of loneliness behind prosperity."
         },
         category: "painting",
-        featured: false
+        featured: false,
+        sortWeight: 19
     },
     {
         id: "gallery-painting-20",
@@ -498,7 +517,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: true
+        featured: true,
+        sortWeight: 20
     },
     {
         id: "gallery-painting-21",
@@ -521,7 +541,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: true
+        featured: true,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-22",
@@ -544,7 +565,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-23",
@@ -567,7 +589,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-24",
@@ -590,7 +613,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-25",
@@ -613,7 +637,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-26",
@@ -636,7 +661,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-27",
@@ -659,7 +685,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-28",
@@ -682,7 +709,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-29",
@@ -705,7 +733,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-30",
@@ -728,7 +757,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-31",
@@ -751,7 +781,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-32",
@@ -774,7 +805,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 1
     },
     {
         id: "gallery-painting-33",
@@ -797,7 +829,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 10
     },
     {
         id: "gallery-painting-34",
@@ -820,7 +853,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 34
     },
     {
         id: "gallery-painting-35",
@@ -843,7 +877,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 35
     },
     {
         id: "gallery-painting-36",
@@ -868,7 +903,8 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 36
     },
     {
         id: "gallery-painting-37",
@@ -893,10 +929,19 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false
+        featured: false,
+        sortWeight: 100
     }
 
 ];
+
+// 初始化排序权重与原始索引（用于默认排序：权重高者在前，权重相同按初始顺序）
+artworksData.forEach((artwork, index) => {
+	if (typeof artwork.sortWeight !== 'number') {
+		artwork.sortWeight = 0;
+	}
+	artwork.__initialIndex = index;
+});
 
 // 当前语言、筛选和排序状态
 let currentLang = 'zh';
@@ -1152,8 +1197,15 @@ function sortArtworks(artworks) {
             break;
         case 'default':
         default:
-            // 默认排序：保持原数组顺序
-            // 由于我们使用了展开运算符创建副本，这里不需要额外排序
+            // 默认排序：按可配置权重降序，权重相同按初始顺序稳定排序
+            artworks.sort((a, b) => {
+                const wa = typeof a.sortWeight === 'number' ? a.sortWeight : 0;
+                const wb = typeof b.sortWeight === 'number' ? b.sortWeight : 0;
+                if (wb !== wa) return wb - wa; // 权重高者在前
+                const ia = typeof a.__initialIndex === 'number' ? a.__initialIndex : artworksData.findIndex(it => it.id === a.id);
+                const ib = typeof b.__initialIndex === 'number' ? b.__initialIndex : artworksData.findIndex(it => it.id === b.id);
+                return ia - ib; // 稳定：原始顺序
+            });
             break;
     }
 }

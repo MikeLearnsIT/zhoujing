@@ -1069,12 +1069,17 @@
     margin: -1.5rem -1.5rem 1rem -1.5rem;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
+    aspect-ratio: 4 / 3;
+    background: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .exhibition-detail-page .artwork-image img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     cursor: pointer;
     transition: var(--transition);
     /* 性能优化 */
@@ -1252,7 +1257,7 @@
     color: var(--text-color);
 }
 
-/* 参展证书样式 */
+/* 展览文档样式 */
 .exhibition-certificates {
     margin-bottom: 3rem;
 }
@@ -1261,6 +1266,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+}
+
+/* 单个文档时的布局优化：居中且限制最大宽度，避免横向拉伸 */
+.certificates-grid.single-document {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .certificate-item {
@@ -1423,7 +1435,7 @@
     }
 
     .exhibition-detail-page .artwork-image img {
-        height: 150px;
+        height: 100%;
     }
 
     .site-image-item img,
