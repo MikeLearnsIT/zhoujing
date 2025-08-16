@@ -42,15 +42,15 @@ const artworksData = [
             zh: "¥36,000",
             en: "$5,000"
         },
-        status: "sold",
+        status: "available",
         image: "images/paintings/painting_02.jpg",
         description: {
             zh: "不同色彩之间的对话与碰撞，创造出充满张力的视觉体验。",
             en: "The dialogue and collision between different colors creates a visual experience full of tension."
         },
         category: "mixed-media",
-        featured: false,
-        sortWeight: 2
+        featured: true,
+        sortWeight: 102
     },
     {
         id: "gallery-painting-03",
@@ -423,8 +423,8 @@ const artworksData = [
             en: "Cube Mansion"
         },
         medium: {
-            zh: "丙烯",
-            en: "Acrylic"
+            zh: "丙烯 & 综合材料",
+            en: "Acrylic & Mixed Media"
         },
         size: "100cm × 100cm",
         year: "2025",
@@ -439,8 +439,8 @@ const artworksData = [
             en: "Simple but not simplistic, seeking the essential power of art in minimalism."
         },
         category: "painting",
-        featured: false,
-        sortWeight: 17
+        featured: true,
+        sortWeight: 101
     },
     {
         id: "gallery-painting-18",
@@ -541,7 +541,7 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: true,
+        featured: false,
         sortWeight: 1
     },
     {
@@ -853,7 +853,7 @@ const artworksData = [
             en: "Infinite possibilities of artistic creation, inviting viewers to participate in the process of co-creation."
         },
         category: "installation",
-        featured: false,
+        featured: true,
         sortWeight: 34
     },
     {

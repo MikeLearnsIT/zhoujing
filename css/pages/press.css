@@ -179,6 +179,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: transform 0.3s ease;
     /* 性能优化 */
     will-change: transform;
@@ -304,6 +305,13 @@
     /* 性能优化 */
     contain: layout style;
 }
+
+/* 新的头部布局，缓解右侧拥挤：日期与出版信息放到左侧竖排，右侧仅保留“查看完整报道”按钮 */
+.press-header-v2 { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.press-header-left { display: grid; grid-auto-rows: min-content; gap: 0.35rem; align-items: start; }
+.press-meta-line { display: inline-grid; grid-auto-flow: column; gap: 0.5rem; align-items: center; justify-content: start; margin-bottom: 0.35rem; padding: 0; border-radius: 0; background: transparent; border: 0; }
+.press-meta-line .press-date, .press-meta-line .press-publication { color: var(--secondary-color); font-size: 0.95rem; font-weight: 600; opacity: 0.9; }
+.press-meta-line .press-sep { color: var(--secondary-color); opacity: 0.6; }
 
 .press-title {
     font-size: 1.5rem;
@@ -576,4 +584,6 @@
         flex-direction: column;
         align-items: flex-start;
     }
+    .press-header-v2 { grid-template-columns: 1fr; gap: 0.5rem; }
+    .press-readmore { justify-self: start; }
 }

@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // ESC键关闭
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && wechatModal.style.display === 'flex') {
-            console.log('Escape key pressed');
             wechatModal.style.display = 'none';
             document.body.style.overflow = ''; // 恢复背景滚动
         }

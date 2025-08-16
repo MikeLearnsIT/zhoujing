@@ -4,34 +4,36 @@ const pressData = {
         items: [
             {
                 title: {
-                    zh: "Fad Mag",
-                    en: "Fad Mag"
+                    zh: "Fad Mag 杂志 - 周婧的个人专访",
+                    en: "Fad Mag Magazine - Personal Interview with Jing Zhou"
                 },
                 description: {
                     zh: "当代艺术家——通过多维创造力连接文化",
                     en: "Jing Zhou: A Contemporary Artist Bridging Cultures Through Multidimensional Creativity"
                 },
-                url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
-                date: {
-                    zh: "2025年2月18日",
-                    en: "February 18, 2025"
+                publication: {
+                    zh: "Fad Mag 杂志",
+                    en: "Fad Mag Magazine"
                 },
+                url: "https://fadmagazine.com/2025/02/18/jing-zhou-a-contemporary-artist-bridging-cultures-through-multidimensional-creativity/",
+                date: "2025.02.18",
                 thumbnail: "images/pressSnapshot/snapshot_p_fadmagazine.com.jpeg"
             },
             {
                 title: {
-                    zh: "Kunst Plaza（德语媒体）",
-                    en: "Kunst Plaza (German Media)"
+                    zh: "Kunst Plaza - 周婧的个人专访",
+                    en: "Kunst Plaza - Personal Interview with Jing Zhou"
                 },
                 description: {
                     zh: "碎片化整体：周婧",
                     en: "Fragmentierte Ganzheit: Jing Zhou"
                 },
-                url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
-                date: {
-                    zh: "2025年6月3日",
-                    en: "June 3, 2025"
+                publication: {
+                    zh: "Kunst Plaza（德语媒体）",
+                    en: "Kunst Plaza (German Media)"
                 },
+                url: "https://www.kunstplaza.de/ausstellungen/fragmentierte-ganzheit-jing-zhou/",
+                date: "2025.06.03",
                 thumbnail: "images/pressSnapshot/snapshot_p_www.kunstplaza.de.jpeg"
             }
         ]
@@ -87,24 +89,26 @@ function createPressItemHTML(item) {
                 </div>
             </div>
             <div class="press-content-area">
-                <div class="press-header">
-                    <h4 class="press-title">
-                        <a href="${item.url}" target="_blank" rel="noopener noreferrer">
-                            ${title}
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </h4>
-                    ${date ? `<span class="press-date">${date}</span>` : ''}
-                    ${publication ? `<span class="press-publication">${publication}</span>` : ''}
-                </div>
-                <p class="press-description">${description}</p>
-                ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
-                <div class="press-meta">
+                <div class="press-header-v2">
+                    <div class="press-header-left">
+                        ${(date || publication) ? `<div class=\"press-meta-line\">${date ? `<span class=\"press-date\">${date}</span>` : ''}${publication ? `<span class=\"press-publication\">${publication}</span>` : ''}</div>` : ''}
+                        <h4 class="press-title">
+                            <a href="${item.url}" target="_blank" rel="noopener noreferrer">
+                                ${title}
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </h4>
+                        
+                    </div>
+                    <div class="press-meta">
                     <a href="${item.url}" class="press-source" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-external-link-alt"></i>
                         <span data-i18n="press.readMore">${getTranslation('press.readMore')}</span>
                     </a>
                 </div>
+                </div>
+                <p class="press-description">${description}</p>
+                ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
             </div>
         </div>
     `;

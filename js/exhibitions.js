@@ -1413,6 +1413,7 @@ const exhibitionsData = {
     ],
     // 2024年展览
     "2024": [
+        // 2024上海青年艺术家邀请展
         {
             id: "xin-xiang-cheng-jing-2024",
             title: {
@@ -1574,6 +1575,7 @@ const exhibitionsData = {
     ],
     // 2023年展览
     "2023": [
+        // 2023上海青年艺术家邀请展
         {
             id: "now-zhong-qu-jing-china-2023",
             title: {

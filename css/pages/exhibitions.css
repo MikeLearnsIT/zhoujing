@@ -98,11 +98,7 @@
     width: 100%;
 }
 
-.exhibitions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-}
+.exhibitions-list { display: flex; flex-direction: column; gap: 1.5rem; }
 
 .exhibition-item {
     opacity: 0;
@@ -130,24 +126,7 @@
     animation-delay: 0.5s;
 }
 
-.exhibition-item {
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px var(--shadow-light);
-    padding: 2.5rem;
-    transition: var(--transition);
-    border: 1px solid rgba(201, 169, 110, 0.1);
-    position: relative;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 2rem;
-    align-items: center;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    will-change: transform;
-    transform: translateZ(0);
-}
+.exhibition-item { background: var(--white); border-radius: 16px; box-shadow: 0 8px 30px var(--shadow-light); padding: 1.75rem; transition: var(--transition); border: 1px solid rgba(201, 169, 110, 0.1); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto auto; gap: 1.25rem; align-items: center; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); will-change: transform; transform: translateZ(0); }
 
 .exhibition-item::before {
     content: '';
@@ -169,9 +148,7 @@
     width: 8px;
 }
 
-.exhibition-info {
-    margin-bottom: 1.5rem;
-}
+.exhibition-info { margin-bottom: 0.75rem; }
 
 .exhibition-date {
     display: inline-block;
