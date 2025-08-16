@@ -629,12 +629,24 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.92);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(201, 169, 110, 0.08), transparent 60%),
+        radial-gradient(1000px 700px at 110% 10%, rgba(139, 115, 85, 0.07), transparent 60%),
+        linear-gradient(180deg, rgba(10, 12, 16, 0.85), rgba(12, 14, 20, 0.92));
+    -webkit-backdrop-filter: saturate(140%) blur(16px);
+    backdrop-filter: saturate(140%) blur(16px);
     overflow: hidden;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.modal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(80% 60% at 50% 50%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.35) 100%);
 }
 
 .modal.show {
@@ -709,9 +721,12 @@
 
 #imageModal .modal-image-container {
     max-height: calc(95vh - 60px);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 0.5rem;
+    background: linear-gradient(135deg, rgba(24, 26, 34, 0.85), rgba(30, 32, 42, 0.92));
+    padding: 0.75rem;
     overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 #imageModal .modal-content {
@@ -727,10 +742,13 @@
 }
 
 #imageModal .modal-info {
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(180deg, rgba(20, 22, 30, 0.72), rgba(20, 22, 30, 0.55));
     color: white;
     padding: 0.8rem 2rem;
     text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 #imageModal .modal-title {
@@ -800,13 +818,13 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(201,169,110,0.22), rgba(139,115,85,0.22));
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .modal-close:hover {
@@ -823,10 +841,10 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(201,169,110,0.22), rgba(139,115,85,0.22));
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: var(--white);
     font-size: 1.2rem;
     cursor: pointer;

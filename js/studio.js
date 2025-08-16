@@ -167,69 +167,75 @@ function renderStudioContent() {
         studioText.innerHTML = `<p>${getStudioTranslation('description')}</p>`;
     }
     
+    const heroImages = studioData.images.slice(0, 3);
     container.innerHTML = `
-        <!-- 工作室介绍 -->
-        <div class="studio-intro">
-            <h2 class="studio-title">${getStudioTranslation('studioTitle')}</h2>
-            <p class="studio-subtitle">${getStudioTranslation('studioSubtitle')}</p>
-            <div class="studio-description">
-                <p>${getStudioTranslation('studioIntroduction')}</p>
+        <!-- Hero v2：分层拼贴 + 文案 -->
+        <div class="studio-hero-v2">
+            <div class="hero2-text">
+                <h3 class="hero2-title">${getStudioTranslation('studioTitle')}</h3>
+                <p class="hero2-subtitle">${getStudioTranslation('studioSubtitle')}</p>
+                <p class="hero2-description">${getStudioTranslation('studioIntroduction')}</p>
+            </div>
+            <div class="hero2-collage">
+                ${heroImages.map((img, i) => `
+                    <div class="collage-layer layer-${i+1}" onclick="openStudioViewer('${img.src}', '${img.titleKey}', '${img.descriptionKey}')">
+                        <img src="${img.src}" alt="${getStudioTranslation(img.titleKey)}" />
+                    </div>
+                `).join('')}
             </div>
         </div>
-        
-        <!-- 创作过程展示 -->
-        <div class="studio-process">
-            <h3 class="process-title">${getStudioTranslation('processTitle')}</h3>
-            <div class="process-grid">
+
+        <!-- 纵向交替时间线：创作过程 -->
+        <div class="studio-steps-v2">
+            <h3 class="steps2-title">${getStudioTranslation('processTitle')}</h3>
+            <div class="steps2-timeline">
                 ${studioData.images.map((image, index) => `
-                    <div class="process-step" data-step="${index + 1}">
-                        <div class="step-image">
-                            <img src="${image.src}" alt="${getStudioTranslation(image.titleKey)}" onclick="openStudioViewer('${image.src}', '${image.titleKey}', '${image.descriptionKey}')">
-                            <div class="step-overlay">
+                    <div class="steps2-item ${index % 2 === 1 ? 'alt' : ''}">
+                        <div class="steps2-node">${index + 1}</div>
+                        <div class="steps2-card">
+                            <div class="steps2-thumb"><img src="${image.src}" alt="${getStudioTranslation(image.titleKey)}" /></div>
+                            <div class="steps2-content">
                                 <h4>${getStudioTranslation(image.processKey)}</h4>
+                                <p>${getStudioTranslation(image.descriptionKey)}</p>
                             </div>
-                        </div>
-                        <div class="step-content">
-                            <h4 class="step-title">${getStudioTranslation(image.titleKey)}</h4>
-                            <p class="step-description">${getStudioTranslation(image.descriptionKey)}</p>
                         </div>
                     </div>
                 `).join('')}
             </div>
         </div>
-        
-        <!-- 创作理念 -->
-        <div class="studio-philosophy">
-            <h3 class="philosophy-title">${getStudioTranslation('philosophyTitle')}</h3>
-            <div class="philosophy-content">
-                <blockquote class="philosophy-quote">
-                    "${getStudioTranslation('philosophyQuote')}"
-                </blockquote>
-                <cite class="philosophy-author">— ${getStudioTranslation('philosophyAuthor')}</cite>
-            </div>
+
+        <!-- 紧凑引言 -->
+        <div class="studio-quote-compact">
+            <blockquote>“${getStudioTranslation('philosophyQuote')}”</blockquote>
+            <cite>— ${getStudioTranslation('philosophyAuthor')}</cite>
         </div>
-        
-        <!-- 工作室特色 -->
-        <div class="studio-features">
-            <h3 class="features-title">${getStudioTranslation('featuresTitle')}</h3>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-lightbulb"></i>
+
+        <!-- 条纹特性区 -->
+        <div class="studio-stripes">
+            <div class="stripe">
+                <i class="fas fa-sun"></i>
+                <div class="stripe-body">
                     <h4>${getStudioTranslation('feature1Title')}</h4>
                     <p>${getStudioTranslation('feature1Description')}</p>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-palette"></i>
+            </div>
+            <div class="stripe">
+                <i class="fas fa-palette"></i>
+                <div class="stripe-body">
                     <h4>${getStudioTranslation('feature2Title')}</h4>
                     <p>${getStudioTranslation('feature2Description')}</p>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-leaf"></i>
+            </div>
+            <div class="stripe">
+                <i class="fas fa-leaf"></i>
+                <div class="stripe-body">
                     <h4>${getStudioTranslation('feature3Title')}</h4>
                     <p>${getStudioTranslation('feature3Description')}</p>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-heart"></i>
+            </div>
+            <div class="stripe">
+                <i class="fas fa-heart"></i>
+                <div class="stripe-body">
                     <h4>${getStudioTranslation('feature4Title')}</h4>
                     <p>${getStudioTranslation('feature4Description')}</p>
                 </div>
@@ -239,10 +245,10 @@ function renderStudioContent() {
     
     // 添加动画效果
     setTimeout(() => {
-        const steps = document.querySelectorAll('.process-step');
-        steps.forEach((step, index) => {
-            step.style.animationDelay = `${index * 0.2}s`;
-            step.classList.add('fade-in');
+        const steps2 = document.querySelectorAll('.steps2-item');
+        steps2.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.15}s`;
+            item.classList.add('fade-in');
         });
     }, 100);
 }

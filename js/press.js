@@ -36,112 +36,11 @@ const pressData = {
             }
         ]
     },
-    groupExhibitions: {
-        items: [
-            {
-                title: {
-                    zh: "Rebirth 展览",
-                    en: "Rebirth Exhibition"
-                },
-                publication: {
-                    zh: "Wall Times",
-                    en: "Wall Times"
-                },
-                url: "http://www.globalpapertimes.com/internet/2238.html",
-                description: {
-                    zh: "展览报道",
-                    en: "Exhibition review"
-                },
-                thumbnail: "images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg"
-            },
-            {
-                title: {
-                    zh: "Artron 雅昌新闻（中文媒体）",
-                    en: "Artron News (Chinese Media)"
-                },
-                url: "https://m-news.artron.net/20250324/n1139770.html",
-                description: {
-                    zh: "艺术新闻报道",
-                    en: "Art news coverage"
-                },
-                thumbnail: "images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg"
-            },
-            {
-                title: {
-                    zh: "Napoli Cina-Europa Culturale 那不勒斯展览",
-                    en: "Napoli Cina-Europa Culturale Naples Exhibition"
-                },
-                description: {
-                    zh: "群发媒体",
-                    en: "Cultural exchange exhibition"
-                },
-                publication: {
-                    zh: "China Art Weekly 艺术周刊（中文媒体）",
-                    en: "China Art Weekly (Chinese Media)"
-                },
-                url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm",
-                thumbnail: "images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg"
-            },
-            {
-                title: {
-                    zh: "Partly Cloudy 展览",
-                    en: "Partly Cloudy Group Exhibition"
-                },
-                description: {
-                    zh: "画廊报道网址：",
-                    en: "Gallery coverage"
-                },
-                url: "https://gallery.bhavan.net/events/pq14f0k31plfjxdvmby9yeawvdhgum",
-                thumbnail: "images/pressSnapshot/snapshot_g_gallery.bhavan.net.jpeg"
-            },
-            {
-                title: {
-                    zh: "Our Culture Mag",
-                    en: "Our Culture Mag"
-                },
-                url: "https://ourculturemag.com/2025/04/10/partly-cloudy-an-examination-of-transitional-states-and-ontological-uncertainty/",
-                description: {
-                    zh: "过渡状态和本体论不确定性的探讨",
-                    en: "An Examination of Transitional States and Ontological Uncertainty"
-                },
-                thumbnail: "images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg"
-            },
-            {
-                title: {
-                    zh: "NYCxDesign 纽约设计节艺术展",
-                    en: "NYCxDesign Art Exhibition"
-                },
-                description: {
-                    zh: "纽约设计节网展讯",
-                    en: "New York Design Festival exhibition announcement"
-                },
-                url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
-                note: "",
-                thumbnail: "images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg"
-            },
-            {
-                title: {
-                    zh: "展览也玩谐音梗，“NOW中取境——2023上海青年艺术家邀请展”开幕",
-                    en: "Exhibition also plays a pun, \"NOW Zhong Qu Jing - 2023 Shanghai Young Artists Invitational Exhibition\" opens"
-                },
-                description: {
-                    zh: "一个类似于谐音梗的主题，却点出了展览要旨——青年艺术家如何用创作，去勇敢掀翻缠绕在周围的羁绊，走入安宁之境",
-                    en: "A theme that resembles a pun, yet reveals the essence of the exhibition - how young artists use their creativity to bravely break free from the constraints around them and enter a realm of tranquility"
-                },
-                date: {
-                    zh: "2023年09月29日",
-                    en: "September 29, 2023"
-                },
-                url: "https://www.shxwcb.com/#/detail/25299182E3446E7C4A92D0F2161D3DDB6BD0ABB9A44A2FE384A0B5DBEFC61352",
-                note: "",
-                thumbnail: "images/pressSnapshot/snapshot_g_www.shxwcb.com.jpeg"
-            }
-        ]
-    }
+    groupExhibitions: { items: [] }
 };
 
-// 当前语言
-let currentLang = localStorage.getItem('language') || 'zh';
+// 当前语言（避免与其它脚本冲突）
+let pressCurrentLang = localStorage.getItem('language') || 'zh';
 
 // 获取翻译文本
 function getTranslation(key) {
@@ -154,7 +53,7 @@ function getTranslation(key) {
 // 获取媒体报道文本的辅助函数
 function getPressText(press, field) {
     if (typeof press[field] === 'object' && press[field] !== null) {
-        return press[field][currentLang] || press[field]['en'] || '';
+        return press[field][pressCurrentLang] || press[field]['en'] || '';
     }
     return press[field] || '';
 }
@@ -240,7 +139,7 @@ function initPress() {
     // 等待语言管理器初始化完成
     function initPressContent() {
         if (window.languageManager) {
-            currentLang = window.languageManager.currentLang;
+            pressCurrentLang = window.languageManager.currentLang;
             loadPressContent();
         } else {
             // 如果语言管理器还没准备好，再等一下
@@ -252,7 +151,7 @@ function initPress() {
 
     // 监听语言切换
     document.addEventListener('languageChanged', function (e) {
-        currentLang = e.detail.language;
+        pressCurrentLang = e.detail.language;
         loadPressContent();
         // 更新模态框提示文字（如果模态框是打开的）
         updateModalHints();
@@ -267,7 +166,7 @@ function loadPressContent() {
 
 // 获取图片查看器操作提示文字
 function getImageViewerHints() {
-    const isZh = currentLang === 'zh';
+    const isZh = pressCurrentLang === 'zh';
     return {
         clickZoom: isZh ? '点击放大' : 'Click to zoom',
         wheelZoom: isZh ? '滚轮缩放' : 'Wheel to zoom',
@@ -591,14 +490,35 @@ function renderPressItems() {
         fragment.appendChild(personalSection);
     }
 
-    // 群展报道
-    if (pressData.groupExhibitions.items.length > 0) {
+    // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
+    const exhibitionPressItems = [];
+    if (typeof exhibitionsData === 'object') {
+        Object.keys(exhibitionsData).forEach(year => {
+            (exhibitionsData[year] || []).forEach(ex => {
+                (ex.press || []).forEach(p => {
+                    exhibitionPressItems.push({
+                        title: p.title,
+                        description: p.description,
+                        publication: p.source,
+                        url: p.url,
+                        date: p.date ? { zh: p.date, en: p.date } : undefined,
+                        thumbnail: p.thumbnail || null
+                    });
+                });
+            });
+        });
+    }
+
+    if (exhibitionPressItems.length > 0) {
+        // 按时间倒序（YYYY.MM.DD 或 YYYY.MM）排序
+        exhibitionPressItems.sort((a, b) => (parsePressDate(b.date?.zh) - parsePressDate(a.date?.zh)));
+
         const groupSection = document.createElement('div');
         groupSection.className = 'press-section';
         groupSection.innerHTML = `
             <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
             <div class="press-list" data-section="group">
-                ${pressData.groupExhibitions.items.map(item => createPressItemHTML(item)).join('')}
+                ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
             </div>
         `;
         fragment.appendChild(groupSection);
@@ -611,6 +531,16 @@ function renderPressItems() {
     requestAnimationFrame(() => {
         initImageLoading();
     });
+}
+
+// 将 'YYYY.MM.DD' 或 'YYYY.MM' 转为时间戳
+function parsePressDate(dateStr) {
+    if (!dateStr || typeof dateStr !== 'string') return 0;
+    const parts = dateStr.split('.').map(n => parseInt(n, 10));
+    const y = parts[0] || 0;
+    const m = (parts[1] || 1) - 1;
+    const d = parts[2] || 1;
+    return new Date(y, m, d).getTime();
 }
 
 // 初始化图片加载优化

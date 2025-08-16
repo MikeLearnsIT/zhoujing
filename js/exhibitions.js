@@ -2,6 +2,7 @@
 const exhibitionsData = {
     // 2025年展览
     "2025": [
+        // 2025加拿大魁北克省西蒙特1215画廊What Remains to be Seen艺术展
         {
             id: "2025-07-what-remains-to-be-seen-canada",
             title: {
@@ -330,24 +331,9 @@ const exhibitionsData = {
             documents: [
             ],
             press: [
-                {
-                    title: {
-                        zh: "概念抹除：意义之前",
-                        en: "Conceptual Erasure: Before Meaning"
-                    },
-                    source: {
-                        zh: "FAD Magazine",
-                        en: "FAD Magazine"
-                    },
-                    date: "2025.05.31",
-                    url: "https://fadmagazine.com/2025/05/31/conceptual-erasure-before-meaning/",
-                    description: {
-                        zh: "FAD Magazine-概念抹除：意义之前",
-                        en: "FAD Magazine-Conceptual Erasure: Before Meaning"
-                    }
-                }
             ]
         },
+        // 2025英国伦敦Conceputal Erasure艺术展
         {
             id: "2025-05-conceputal-erasure-london",
             title: {
@@ -458,7 +444,8 @@ const exhibitionsData = {
                     description: {
                         zh: "FAD Magazine-概念抹除：意义之前",
                         en: "FAD Magazine-Conceptual Erasure: Before Meaning"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_17332_fadmagazine.com.jpeg"
                 },
                 {
                     title: {
@@ -474,10 +461,12 @@ const exhibitionsData = {
                     description: {
                         zh: "Our Culture Magazine-意义的缝隙：体验‘概念抹除’",
                         en: "Our Culture Magazine-In the Gap of Meaning: Experiencing ‘Conceptual Erasure’"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_165529_ourculturemag.com.jpeg"
                 }
             ]
         },
+        // 2025美国纽约Fractured Horizons艺术展
         {
             id: "2025-05-fractured-horizons-new-york",
             title: {
@@ -602,22 +591,24 @@ const exhibitionsData = {
             press: [
                 {
                     title: {
-                        zh: "周婧 - 周祥攸兴 - 狂躁的午后",
-                        en: "Jing Zhou - Zhou Xiang You Xing - Wild Afternoon"
+                        zh: "NYCxDesign 纽约设计节艺术展",
+                        en: "NYCxDesign Art Exhibition"
                     },
                     source: {
-                        zh: "vsdsgn",
-                        en: "vsdsgn"
+                        zh: "NYCxDesign",
+                        en: "NYCxDesign"
                     },
-                    date: "2025.05.23",
-                    url: "https://vsdsgn.com/artists/fractured-horizons-jing-zhou",
+                    date: "2025.05.16",
+                    url: "https://nycxdesign.org/event/fractured-horizons-exhibition/",
                     description: {
-                        zh: "vsdsgn -  Zhou Xiang You Xing - Wild Afternoon",
-                        en: "vsdsgn -  Zhou Xiang You Xing - Wild Afternoon"
-                    }
+                        zh: "纽约设计节网展讯",
+                        en: "New York Design Festival exhibition announcement"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_nycxdesign.org.jpeg"
                 }
             ]
         },
+        // 2025德国杜塞尔多夫Fragmented Wholeness艺术展
         {
             id: "2025-04-fragmented-wholeness-germany-duesseldorf",
             title: {
@@ -728,10 +719,12 @@ const exhibitionsData = {
                     description: {
                         zh: "碎片化的整体：Jing Zhou在杜塞尔多夫的国际展",
                         en: "Fragmentierte Ganzheit: Jing Zhou in der internationalen Gruppenausstellung in Düsseldorf"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_164541_polenjournal.de.jpeg"
                 }
             ]
         },
+        // 2025意大利那不勒斯中欧文化艺术展
         {
             id: "2025-04-italy-naples-china-european-cultural-art-exhibition",
             title: {
@@ -853,10 +846,29 @@ const exhibitionsData = {
                     description: {
                         zh: "2025意大利那不勒斯中欧文化艺术展",
                         en: "China-European Cultural Art Exhibition in Naples, Italy 2025"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_163728_www.sohu.com.jpeg"
+                },
+                {
+                    title: {
+                        zh: "Napoli Cina-Europa Culturale 那不勒斯展览",
+                        en: "Napoli Cina-Europa Culturale Naples Exhibition"
+                    },
+                    source: {
+                        zh: "China Art Weekly 艺术周刊（中文媒体）",
+                        en: "China Art Weekly (Chinese Media)"
+                    },
+                    date: "2025.04.19",
+                    url: "https://zjdaily.zjol.com.cn/msb/html/2025-04/19/content_4328762.htm",
+                    description: {
+                        zh: "2025意大利那不勒斯中欧文化艺术展",
+                        en: "China-European Cultural Art Exhibition in Naples, Italy 2025"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_zjdaily.zjol.com.cn.jpeg"
                 }
             ]
         },
+        // 2025英国伦敦Partly Cloudy艺术展
         {
             id: "2025-04-uk-london-partly-cloudy",
             title: {
@@ -985,10 +997,12 @@ const exhibitionsData = {
                     description: {
                         zh: "2025 伦敦半云艺术展——对过渡状态和本体论不确定性的考察",
                         en: "2025 London Partly Cloudy – An Examination of Transitional States and Ontological Uncertainty"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_ourculturemag.com.jpeg"
                 }
             ]
         },
+        // 2025法国巴黎Art Shopping艺术展
         {
             id: "2025-04-france-paris-art-shopping",
             title: {
@@ -1168,6 +1182,7 @@ const exhibitionsData = {
             press: [
             ]
         },
+        // 2025日本大阪当代艺术展
         {
             id: "2025-03-japan-osaka-art-now",
             title: {
@@ -1262,6 +1277,7 @@ const exhibitionsData = {
             press: [
             ]
         },
+        // 2025英国伦敦重生艺术展
         {
             id: "london-2025-rebirth",
             title: {
@@ -1360,8 +1376,8 @@ const exhibitionsData = {
             press: [
                 {
                     title: {
-                        zh: "重生",
-                        en: "Rebirth"
+                        zh: "重生艺术展",
+                        en: "Rebirth Art Exhibition"
                     },
                     source: {
                         zh: "AURORA Art & Culture",
@@ -1372,7 +1388,25 @@ const exhibitionsData = {
                     description: {
                         zh: "2025 伦敦重生艺术展",
                         en: "2025 London Rebirth Art Exhibition"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_www.globalpapertimes.com.jpeg"
+                },
+                {
+                    title: {
+                        zh: "Rebirth艺术展于2025年2月在伦敦Gallery House成功举办",
+                        en: "Rebirth Art Exhibition successfully held in London Gallery House in February 2025"
+                    },
+                    source: {
+                        zh: "Artron 雅昌新闻（中文媒体）",
+                        en: "Artron News (Chinese Media)"
+                    },
+                    date: "2025.03.24",
+                    url: "https://m-news.artron.net/20250324/n1139770.html",
+                    description: {
+                        zh: "伦敦Gallery House 2025年2月重生艺术展",
+                        en: "London Gallery House Rebirth Art Exhibition in February 2025"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_m-news.artron.net.jpeg"
                 }
             ]
         }
@@ -1515,7 +1549,8 @@ const exhibitionsData = {
                     description: {
                         zh: "12月22日，“心象成境”——2024 上海青年艺术家邀请展暨上海中外文化青艺会年度展，在上海华萃当代美术馆启幕。展览由上海中外文化青艺会筹备策划，以独特的视角与多元的艺术呈现形式，吸引了众多目光。",
                         en: "On December 22, 'Xin Xiang Cheng Jing' - 2024 Shanghai Young Artists Invitational Exhibition and Annual Exhibition of Shanghai Sino-Foreign Culture Youth Art Association, opened at Shanghai Huacui Contemporary Art Museum. The exhibition, organized and planned by Shanghai Sino-Foreign Culture Youth Art Association, attracted much attention with its unique perspective and diverse artistic presentation forms."
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_162722_export.shobserver.com.jpeg"
                 },
                 {
                     title: {
@@ -1531,7 +1566,8 @@ const exhibitionsData = {
                     description: {
                         zh: "在这个充满创意的冬季，12月22日，上海华萃当代美术馆将展现一场艺术盛宴——“心象成境”！此展由上海中外文化青艺会精心筹备，独特的视角结合多元的艺术表现形式，吸引了无数目光，等待您的到来！",
                         en: "In this creative winter, on December 22, Shanghai Huacui Contemporary Art Museum will present an art feast - 'Xin Xiang Cheng Jing'! This exhibition is meticulously prepared by Shanghai Sino-Foreign Culture Youth Art Association, combining a unique perspective with diverse artistic expressions, attracting countless eyes and awaiting your arrival!"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-8-2025_162457_cul.sohu.com.jpeg"
                 }
             ]
         }
@@ -1722,7 +1758,8 @@ const exhibitionsData = {
                     description: {
                         zh: "一个类似于谐音梗的主题，却点出了展览要旨——青年艺术家如何用创作，去勇敢掀翻缠绕在周围的羁绊，走入安宁之境",
                         en: "A theme that resembles a pun, yet reveals the essence of the exhibition - how young artists use their creativity to bravely break free from the constraints around them and enter a realm of tranquility"
-                    }
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_www.shxwcb.com.jpeg"
                 }
             ]
         }
