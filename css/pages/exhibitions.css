@@ -1,11 +1,23 @@
 /* 展览页面样式 */
 
 /* 展览页面基础样式 */
+/* 让背景由 main.site-full-bg 承担，内容容器仅负责左右留白；若未添加该类，可直接给 main.site-full-bg 添加以下背景 */
+.site-full-bg {
+    background-color: var(--background-color);
+    background-image:
+        radial-gradient(1000px 600px at 10% 0%, rgba(201, 169, 110, 0.08) 0%, rgba(201, 169, 110, 0) 60%),
+        radial-gradient(800px 500px at 90% 20%, rgba(139, 115, 85, 0.06) 0%, rgba(139, 115, 85, 0) 60%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.018) 0 2px, rgba(0, 0, 0, 0) 2px 10px);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center, center, center;
+    background-size: cover, cover, auto;
+}
+
+/* 内容容器 */
 .exhibitions {
     padding: 8rem 2rem 6rem;
     max-width: 1400px;
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%);
     min-height: 100vh;
     position: relative;
 }
@@ -29,11 +41,12 @@
     text-align: center;
     margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 3.5rem;
-    font-weight: 200;
-    letter-spacing: 0.15em;
+    font-size: 3.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     font-family: var(--font-serif);
     position: relative;
+    line-height: 1.1;
 }
 
 .exhibitions h2::after {
@@ -97,11 +110,25 @@
     animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.320, 1) forwards;
 }
 
-.exhibition-item:nth-child(1) { animation-delay: 0.1s; }
-.exhibition-item:nth-child(2) { animation-delay: 0.2s; }
-.exhibition-item:nth-child(3) { animation-delay: 0.3s; }
-.exhibition-item:nth-child(4) { animation-delay: 0.4s; }
-.exhibition-item:nth-child(5) { animation-delay: 0.5s; }
+.exhibition-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.exhibition-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.exhibition-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.exhibition-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.exhibition-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
 
 .exhibition-item {
     background: var(--white);
@@ -321,97 +348,6 @@
     padding: 2rem;
 }
 
-/* 展览详情模态框样式 */
-.exhibition-detail-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.exhibition-detail-modal.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.exhibition-detail-modal .modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.exhibition-detail-modal .modal-content {
-    background: var(--white);
-    border-radius: 20px;
-    max-width: 90vw;
-    max-height: 90vh;
-    width: 1000px;
-    position: relative;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transform: scale(0.9) translateY(50px);
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.exhibition-detail-modal.show .modal-content {
-    transform: scale(1) translateY(0);
-}
-
-.exhibition-detail-modal .modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.exhibition-detail-modal .modal-header h2 {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin: 0;
-    font-family: var(--font-serif);
-}
-
-.exhibition-detail-modal .modal-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: var(--transition);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.exhibition-detail-modal .modal-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.exhibition-detail-modal .modal-body {
-    padding: 2rem;
-    max-height: calc(90vh - 120px);
-    overflow-y: auto;
-}
 
 .exhibition-basic-info {
     margin-bottom: 2rem;
@@ -450,64 +386,7 @@
 
 /* 还原原有响应式 */
 
-.images-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.image-item {
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.image-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px var(--shadow-medium);
-}
-
-.image-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.image-item:hover img {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
-    padding: 1rem;
-    transform: translateY(100%);
-    transition: var(--transition);
-}
-
-.image-item:hover .image-overlay {
-    transform: translateY(0);
-}
-
-.image-title {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.image-description {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    line-height: 1.4;
-}
+/* 删除未使用的旧图片网格样式（images-grid/image-item） */
 
 .artworks-list {
     display: grid;
@@ -643,18 +522,9 @@
         align-items: flex-start;
         justify-content: flex-start;
     }
-} 
-
-/* 展览详情页面样式 */
-.exhibition-detail-page {
-    min-height: calc(100vh - 140px);
-    padding: calc(60px + 2rem) 0 2rem 0;
-    background: var(--background-color);
-    /* 性能优化 */
-    will-change: scroll-position;
-    /* 减少重绘 */
-    contain: layout style paint;
 }
+
+/* 展览详情页面样式：将详细样式移入独立文件 */
 
 /* 整体滚动性能优化 */
 .exhibition-detail-page * {
@@ -1457,7 +1327,7 @@
         gap: 0.5rem;
         margin-top: 0.75rem;
     }
-    
+
     .exhibition-detail-page .detail-row {
         padding: 0.25rem 0;
     }
@@ -1485,4 +1355,4 @@
         font-size: 0.95rem;
         line-height: 1.6;
     }
-} 
+}

@@ -2,8 +2,16 @@
 
 /* 艺术气质媒体报道页面 */
 .press {
+    /* 高级感、低干扰背景：轻微网格 + 角落暖色晕染 */
+    background-color: var(--background-color);
+    background-image:
+        radial-gradient(1000px 600px at 10% 0%, rgba(201, 169, 110, 0.08) 0%, rgba(201, 169, 110, 0) 60%),
+        radial-gradient(800px 500px at 90% 20%, rgba(139, 115, 85, 0.06) 0%, rgba(139, 115, 85, 0) 60%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.018) 0 2px, rgba(0, 0, 0, 0) 2px 10px);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center, center, center;
+    background-size: cover, cover, auto;
     padding: 8rem 2rem 6rem;
-    background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-color) 100%);
     min-height: 100vh;
     /* 性能优化 */
     will-change: scroll-position;
@@ -15,11 +23,12 @@
     text-align: center;
     margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 3.5rem;
-    font-weight: 200;
-    letter-spacing: 0.15em;
+    font-size: 3.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     font-family: var(--font-serif);
     position: relative;
+    line-height: 1.1;
     /* 性能优化 */
     contain: layout style paint;
 }
@@ -57,11 +66,14 @@
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.02em;
     /* 性能优化 */
     contain: layout style paint;
 }
@@ -204,14 +216,18 @@
     object-fit: contain;
 }
 
-.is-hidden { display: none !important; }
+.is-hidden {
+    display: none !important;
+}
 
 .press-link {
     color: #c9a96e;
     text-decoration: none;
 }
 
-.press-link i { font-size: 12px; }
+.press-link i {
+    font-size: 12px;
+}
 
 .press-hints {
     margin-top: 10px;
@@ -560,4 +576,4 @@
         flex-direction: column;
         align-items: flex-start;
     }
-} 
+}

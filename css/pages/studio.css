@@ -2,8 +2,16 @@
 
 /* 工作室页面基础布局 */
 .studio {
+    /* 高级感、低干扰背景：轻微网格 + 角落暖色晕染 */
+    background-color: var(--background-color);
+    background-image:
+        radial-gradient(1000px 600px at 10% 0%, rgba(201, 169, 110, 0.08) 0%, rgba(201, 169, 110, 0) 60%),
+        radial-gradient(800px 500px at 90% 20%, rgba(139, 115, 85, 0.06) 0%, rgba(139, 115, 85, 0) 60%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.018) 0 2px, rgba(0, 0, 0, 0) 2px 10px);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center, center, center;
+    background-size: cover, cover, auto;
     padding: 8rem 0 4rem;
-    background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
     min-height: 100vh;
 }
 
@@ -11,11 +19,12 @@
     text-align: center;
     margin-bottom: 4rem;
     color: var(--primary-color);
-    font-size: 3.5rem;
-    font-weight: 200;
-    letter-spacing: 0.15em;
+    font-size: 3.6rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     font-family: var(--font-serif);
     position: relative;
+    line-height: 1.1;
 }
 
 .studio h2::after {
@@ -74,13 +83,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.studio-title {
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-family: var(--font-serif);
-}
+.studio-title { font-size: 3.2rem; font-weight: 400; color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-serif); letter-spacing: 0.02em; line-height: 1.15; }
 
 .studio-subtitle {
     font-size: 1.3rem;
@@ -103,14 +106,7 @@
     margin-bottom: 5rem;
 }
 
-.process-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 3rem;
-    font-family: var(--font-serif);
-}
+.process-title { font-size: 2.6rem; font-weight: 400; color: var(--primary-color); text-align: center; margin-bottom: 3rem; font-family: var(--font-serif); letter-spacing: 0.02em; }
 
 .process-grid {
     display: grid;
@@ -227,13 +223,7 @@
     text-align: center;
 }
 
-.philosophy-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-family: var(--font-serif);
-}
+.philosophy-title { font-size: 2.6rem; font-weight: 400; color: var(--primary-color); margin-bottom: 2rem; font-family: var(--font-serif); letter-spacing: 0.02em; }
 
 .philosophy-content {
     max-width: 800px;
@@ -279,14 +269,7 @@
     margin-bottom: 3rem;
 }
 
-.features-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 3rem;
-    font-family: var(--font-serif);
-}
+.features-title { font-size: 2.6rem; font-weight: 400; color: var(--primary-color); text-align: center; margin-bottom: 3rem; font-family: var(--font-serif); letter-spacing: 0.02em; }
 
 .features-grid {
     display: grid;
@@ -421,41 +404,41 @@
     .studio-title {
         font-size: 2.5rem;
     }
-    
+
     .studio-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .process-title,
     .philosophy-title,
     .features-title {
         font-size: 2rem;
     }
-    
+
     .process-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .philosophy-quote {
         font-size: 1.1rem;
         padding: 0 2rem;
     }
-    
+
     .philosophy-quote::before,
     .philosophy-quote::after {
         font-size: 3rem;
     }
-    
+
     .studio-intro,
     .studio-philosophy {
         padding: 2rem 1.5rem;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* 基础工作室样式移动端适配 */
     .studio-content {
         grid-template-columns: 1fr;
@@ -474,14 +457,14 @@
     .studio-content {
         padding: 0 1rem;
     }
-    
+
     .studio-title {
         font-size: 2rem;
     }
-    
+
     .process-title,
     .philosophy-title,
     .features-title {
         font-size: 1.8rem;
     }
-} 
+}
