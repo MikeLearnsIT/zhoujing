@@ -180,6 +180,8 @@
     font-family: var(--font-serif);
 }
 
+.is-hidden { display: none !important; }
+
 .cv-timeline {
     position: relative;
     margin: 1rem 0 0;

@@ -175,12 +175,12 @@ function createPressItemHTML(item) {
 
     return `
         <div class="press-item">
-            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')" style="cursor: pointer;">
+            <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')">
                 <img src="${screenshotUrl}" 
                      alt="${title}" 
                      loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.querySelector('.press-thumbnail-fallback').style.display='flex';">
-                <div class="press-thumbnail-fallback" style="display: none;">
+                     onerror="this.classList.add('is-hidden'); this.parentElement.querySelector('.press-thumbnail-fallback').classList.remove('is-hidden');">
+                <div class="press-thumbnail-fallback is-hidden">
                     <i class="fas fa-newspaper"></i>
                 </div>
                 <div class="press-thumbnail-overlay">
@@ -223,8 +223,8 @@ function updateModalHints() {
         const currentContent = modalCaption.innerHTML;
 
         // 只更新提示部分，保留标题和链接
-        const hintPattern = /<div style="margin-top: 10px; font-size: 14px; opacity: 0\.8;">[\s\S]*?<\/div>/;
-        const newHints = `<div style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+        const hintPattern = /<div class=\"press-hints\">[\s\S]*?<\/div>/;
+        const newHints = `<div class="press-hints">
             <i class="fas fa-mouse"></i> ${hints.clickZoom} • 
             <i class="fas fa-mouse-pointer"></i> ${hints.wheelZoom} • 
             <i class="fas fa-hand-paper"></i> ${hints.dragMove} • 
@@ -327,10 +327,10 @@ function openPressImageModal(imageSrc, title, url) {
     // 设置标题和链接
     modalCaption.innerHTML = `
         <strong>${title}</strong><br>
-        <a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #c9a96e; text-decoration: none;">
+        <a href="${url}" target="_blank" rel="noopener noreferrer" class="press-link">
             ${url} <i class="fas fa-external-link-alt" style="font-size: 12px;"></i>
         </a>
-        <div style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+        <div class="press-hints">
             <i class="fas fa-mouse"></i> ${hints.clickZoom} • 
             <i class="fas fa-mouse-pointer"></i> ${hints.wheelZoom} • 
             <i class="fas fa-hand-paper"></i> ${hints.dragMove} • 

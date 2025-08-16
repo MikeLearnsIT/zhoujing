@@ -14,9 +14,17 @@
     margin: 0 auto;
 }
 
-.gallery-professional .gallery-header {
-    text-align: center;
-    margin-bottom: 3rem;
+.gallery-professional .gallery-header { margin-bottom: 3rem; }
+
+.gallery-header-top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+.gallery-header-top h2 {
+    grid-column: 2;
+    justify-self: center;
 }
 
 .gallery-professional .gallery-header h2 {
@@ -45,6 +53,7 @@
     color: var(--text-light);
     font-style: italic;
     margin-top: 2rem;
+    text-align: center;
 }
 
 /* 作品网格布局 */
@@ -149,6 +158,9 @@
     overflow: visible;
     z-index: 99;
 }
+
+/* 标题同行时的排序控件无外边距 */
+.gallery-controls-inline { margin-bottom: 0; padding: 0; grid-column: 3; justify-self: end; }
 
 .sort-controls-premium {
     display: flex;
@@ -838,6 +850,14 @@
     .gallery-professional .gallery-header h2 {
         font-size: 2.5rem;
     }
+
+    .gallery-header-top {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+    .gallery-controls-inline { width: 100%; grid-column: 1; justify-self: center; }
+    .sort-controls-premium { width: 100%; }
 
     .gallery-controls {
         padding: 0 1rem;

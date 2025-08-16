@@ -204,6 +204,21 @@
     object-fit: contain;
 }
 
+.is-hidden { display: none !important; }
+
+.press-link {
+    color: #c9a96e;
+    text-decoration: none;
+}
+
+.press-link i { font-size: 12px; }
+
+.press-hints {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
 .press-thumbnail-loading {
     position: absolute;
     top: 50%;
