@@ -67,8 +67,8 @@
 }
 
 .statement-portrait img {
-    width: 220px;
-    height: 220px;
+    width: 420px;
+    height: 420px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
