@@ -56,9 +56,9 @@ const translations = {
             title: { zh: "时间印记", en: "Time Imprint" },
             meta: { zh: "2022 • 布面油画", en: "2022 • Oil on Canvas" }
         },
-        modalDescription: { 
-            zh: "使用左右箭头或键盘方向键浏览作品，双击图片可进入全屏模式。", 
-            en: "Use arrow buttons or keyboard keys to browse artworks. Double-click image to enter fullscreen mode." 
+        modalDescription: {
+            zh: "使用左右箭头或键盘方向键浏览作品，双击图片可进入全屏模式。",
+            en: "Use arrow buttons or keyboard keys to browse artworks. Double-click image to enter fullscreen mode."
         }
     },
 
@@ -126,39 +126,6 @@ const translations = {
         downloadText: { zh: "下载PDF版本", en: "Download PDF Version" }
     },
 
-    // 艺术家陈述
-    statement: {
-        title: { zh: "艺术家陈述", en: "Artist Statement" },
-        content: [
-            {
-                zh: "周婧是一位毕业于格拉斯哥艺术学院的当代艺术家、时尚与纺织品设计师，同时也是ZJ STUDIO的创始人。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
-                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
-            },
-            {
-                zh: "她的艺术之旅始于对绘画的早期热爱，这种热爱逐渐发展成为表达生活洞察的深刻方式。在格拉斯哥艺术学院期间，她不仅磨练了时尚和纺织品设计的技术专长，还发展出创新的材料实验和艺术表达方法。沉浸在格拉斯哥充满活力的艺术氛围中，周婧培养了对色彩、形式和线条的敏锐感知，并将其无缝融入作品中，将前卫的西方概念与东方传统的精致美学相结合。",
-                en: "Her journey into art began with an early passion for painting, a love that evolved into a profound means of expressing her insights into life. During her time at the Glasgow School of Art, she not only honed her technical expertise in fashion and textile design but also developed an innovative approach to material experimentation and artistic expression. Immersed in Glasgow's vibrant art scene, Zhou cultivated a keen sensitivity to color, form, and line, which she seamlessly integrates into her work, combining avant-garde Western concepts with the refined aesthetic of Eastern traditions."
-            },
-            {
-                zh: "在她的创作中，周婧运用多样的风格、流畅而富有表现力的线条和生动的色彩调色板，探索包括肖像、风景和抽象构图在内的广泛主题。她善于融合各种材料、主题和概念，创造出视觉冲击力强且富有哲学深度的作品。周婧的创作超越了单纯的视觉吸引力，通过文化对话反映了她对人性、社会和自然的跨文化思考。",
-                en: "In her creative pursuits, Zhou employs diverse styles, fluid and expressive lines, and vivid color palettes to explore a wide range of subjects, including portraits, landscapes, and abstract compositions. Her adeptness in merging varied materials, themes, and concepts results in works that are visually impactful and imbued with philosophical depth. Zhou's creations transcend mere visual appeal, engaging audiences in cultural dialogues that reflect her contemplations on humanity, society, and nature within a cross-cultural context."
-            },
-            {
-                zh: "作为ZJ STUDIO的创意力量，周婧在艺术与商业之间取得了微妙的平衡。她对材料和市场的直觉理解巩固了她在国际舞台上的艺术和创业地位。周婧的创作理念源于对当代生活复杂性的敏锐意识和对人性的深入探索。她的作品通过大胆的构图、鲜艳的色彩和动态的线条，将隐藏的心理和社会维度可视化。",
-                en: "As the creative force behind ZJ STUDIO, Zhou strikes a delicate balance between art and commerce. Her intuitive understanding of materials and markets has solidified both her artistic and entrepreneurial presence on the international stage. Zhou's creative philosophy stems from an acute awareness of the complexities of contemporary life and a deep exploration of human nature. Her works visualize concealed psychological and societal dimensions through bold compositions, vibrant hues, and dynamic lines."
-            },
-            {
-                zh: "通过她独特的方法，周婧深入探索复杂的情感状态和心理暗流，捕捉人类精神的流动性和多样性。她的艺术为内心世界提供了深刻的连接，架起了存在的有形和无形领域之间的桥梁。",
-                en: "Through her distinctive approach, Zhou delves into complex emotional states and psychological undercurrents, capturing the fluidity and diversity of the human spirit. Her art offers a profound connection to the inner world, bridging the tangible and intangible realms of existence."
-            },
-            {
-                zh: "周婧的艺术成就已在众多展览中展示。她于2015年在伦敦新设计师展上首次亮相，作为新兴人才获得早期认可。2023年，她参加'This Moment in China'上海青年艺术家邀请展，进一步巩固了她在当代艺术中的地位，展示了她标志性的创作语言和跨文化视角。",
-                en: "Zhou's artistic achievements have been showcased in numerous exhibitions. She made her debut in 2015 at New Designers 2015 in London, where she gained early recognition as an emerging talent. In 2023, her participation in the 'This Moment in China'—Shanghai Young Artists Invitational Exhibition further solidified her position in contemporary art with her signature creative language and cross-cultural perspective."
-            }
-        ],
-        download: { zh: "下载艺术家陈述", en: "Download Artist Statement" },
-        downloadText: { zh: "下载PDF版本", en: "Download PDF Version" }
-    },
-
     // 媒体报道
     press: {
         title: { zh: "媒体报道", en: "Press & Reviews" },
@@ -166,8 +133,6 @@ const translations = {
         groupExhibitions: { zh: "展览报道", en: "Exhibition Coverage" },
         readMore: { zh: "查看完整报道", en: "Read Full Article" }
     },
-
-
 
     // 联系方式
     contact: {
@@ -199,8 +164,8 @@ const translations = {
         statementTitle: { zh: "艺术家陈述", en: "Artist Statement" },
         statementContent: [
             {
-                zh: "周婧是一位毕业于格拉斯哥艺术学院的当代艺术家、时尚与纺织品设计师，同时也是ZJ STUDIO的创始人。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
-                en: "Jing Zhou, a graduate of the Glasgow School of Art, is a contemporary artist, fashion and textile designer, and founder of ZJ STUDIO. As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
+                zh: "周婧是一位中国视觉艺术家，他的实践通过以过程为导向的标记来探索重复、耐力和更新。她的画作将日常生活的节奏转化为冥想带有情感清晰度和韧性的手势。自 2020 年以来，她创作了一系列作品，将东方的耐心和仪式哲学与西方概念抽象传统联系起来。最近的展览包括“What Remains to be See”（1215 画廊，蒙特利尔，2025 年）、NYCxDesign 的 Fractured Horizons（纽约，2025 年）和 Fables（Mall Galleries，伦敦，2025 年）。她的作品被国际收藏，包括 LooLooLook 画廊（巴黎）和 1215 画廊（蒙特利尔）的永久收藏。。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
+                en: "Jing Zhou is a Chinese visual artist whose practice explores repetition, endurance, and renewal through process-led mark-making. Her paintings transform the rhythms of everyday routine into meditativegestures that carry emotional clarity and resilience.Since 2020, she has developed a body of work that bridges Eastern philosophies of patience and ritual with Western traditions of conceptual abstraction.Recent exhibitions include What Remains to be Seen(1215 Gallery, Montreal, 2025), Fractured Horizons at NYCxDesign(New York, 2025), and Fables(Mall Galleries, London, 2025).Her work is held in international collections, including the permanent collection of LooLooLook Gallery(Paris) and 1215 Gallery(Montreal). As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
             },
             {
                 zh: "她的艺术之旅始于对绘画的早期热爱，这种热爱逐渐发展成为表达生活洞察的深刻方式。在格拉斯哥艺术学院期间，她不仅磨练了时尚和纺织品设计的技术专长，还发展出创新的材料实验和艺术表达方法。沉浸在格拉斯哥充满活力的艺术氛围中，周婧培养了对色彩、形式和线条的敏锐感知，并将其无缝融入作品中，将前卫的西方概念与东方传统的精致美学相结合。",
@@ -306,13 +271,13 @@ class LanguageManager {
         if (savedLang && (savedLang === 'zh' || savedLang === 'en')) {
             this.currentLang = savedLang;
         }
-        
+
         // 立即设置页面语言
         document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
-        
+
         // 使用更频繁的检查来确保翻译及时应用
         this.applyTranslationsRepeatedly();
-        
+
         // 等待DOM加载完成后绑定事件
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
@@ -326,18 +291,18 @@ class LanguageManager {
             this.isInitialized = true;
         }
     }
-    
+
     applyTranslationsRepeatedly() {
         // 立即应用一次
         this.applyTranslations();
-        
+
         // 然后在短时间内多次应用，确保所有元素都被翻译
         const intervals = [10, 50, 100, 200];
         intervals.forEach(delay => {
             setTimeout(() => this.applyTranslations(), delay);
         });
     }
-    
+
     bindEvents() {
         // 绑定语言切换按钮
         const langToggle = document.querySelector('.lang-toggle');
@@ -351,7 +316,7 @@ class LanguageManager {
         localStorage.setItem('language', this.currentLang);
         document.documentElement.lang = this.currentLang === 'zh' ? 'zh-CN' : 'en';
         this.applyTranslations();
-        
+
         // 触发语言切换事件
         document.dispatchEvent(new CustomEvent('languageChanged', {
             detail: { language: this.currentLang }
@@ -361,7 +326,7 @@ class LanguageManager {
     getTranslation(key) {
         const keys = key.split('.');
         let value = translations;
-        
+
         for (const k of keys) {
             if (value && typeof value === 'object' && k in value) {
                 value = value[k];
@@ -370,7 +335,7 @@ class LanguageManager {
                 return key;
             }
         }
-        
+
         // 如果是数组，处理数组中的每个元素
         if (Array.isArray(value)) {
             return value.map(item => {
@@ -380,17 +345,17 @@ class LanguageManager {
                 return item;
             });
         }
-        
+
         // 如果是对象且有当前语言的翻译，返回翻译
         if (value && typeof value === 'object' && value[this.currentLang]) {
             return value[this.currentLang];
         }
-        
+
         // 如果是字符串，直接返回
         if (typeof value === 'string') {
             return value;
         }
-        
+
         console.warn(`Translation not found for key: ${key} in language: ${this.currentLang}`);
         return key;
     }
@@ -401,7 +366,7 @@ class LanguageManager {
         elements.forEach(element => {
             const key = element.getAttribute('data-i18n');
             const translation = this.getTranslation(key);
-            
+
             // 特殊处理数组类型的翻译
             if (Array.isArray(translation)) {
                 if (key.includes('statementContent')) {
@@ -418,7 +383,7 @@ class LanguageManager {
                 element.textContent = translation;
             }
         });
-        
+
         // 更新页面标题
         const titleElement = document.querySelector('title');
         if (titleElement) {
@@ -428,10 +393,10 @@ class LanguageManager {
                 titleElement.textContent = this.currentLang === 'zh' ? zhTitle : enTitle;
             }
         }
-        
+
         // 更新语言切换按钮文本
         this.updateLanguageToggle();
-        
+
         // 更新自定义选择器的文本
         this.updateCustomSelectText();
     }
@@ -441,7 +406,7 @@ class LanguageManager {
         if (langText) {
             langText.textContent = this.getTranslation('lang.current');
         }
-        
+
         const langToggle = document.querySelector('.lang-toggle');
         if (langToggle) {
             langToggle.setAttribute('aria-label', this.getTranslation('lang.switch'));
@@ -455,7 +420,7 @@ class LanguageManager {
 
         const selectText = customSelect.querySelector('.select-text');
         const activeOption = customSelect.querySelector('.select-option.active');
-        
+
         if (selectText && activeOption) {
             const spanElement = activeOption.querySelector('span');
             if (spanElement) {
@@ -491,12 +456,12 @@ function getCurrentLanguage() {
 function getTranslationText(textObj) {
     if (!textObj) return '';
     if (typeof textObj === 'string') return textObj;
-    
+
     const currentLang = getCurrentLanguage();
     if (textObj[currentLang]) {
         return textObj[currentLang];
     }
-    
+
     // 降级到英文
     return textObj.en || textObj.zh || '';
 }
