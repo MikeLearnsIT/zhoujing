@@ -1749,7 +1749,7 @@ const exhibitionsData = {
                 {
                     title: {
                         zh: "展览也玩谐音梗，\“NOW中取境——2023上海青年艺术家邀请展\”开幕",
-                        en: "The exhibition also plays a pun, the opening of \"NOW - 2023 Shanghai Young Artists Invitational Exhibition\""
+                        en: "The exhibition also plays a pun, the opening of \"NOW Zhong Qu Jing - 2023 Shanghai Young Artists Invitational Exhibition\""
                     },
                     source: {
                         zh: "新闻晨报",

@@ -184,8 +184,8 @@ const translations = {
                 en: "Through her distinctive approach, Zhou delves into complex emotional states and psychological undercurrents, capturing the fluidity and diversity of the human spirit. Her art offers a profound connection to the inner world, bridging the tangible and intangible realms of existence."
             },
             {
-                zh: "周婧的艺术成就已在众多展览中展示。她于2015年在伦敦新设计师展上首次亮相，作为新兴人才获得早期认可。2023年，她参加'This Moment in China'上海青年艺术家邀请展，进一步巩固了她在当代艺术中的地位，展示了她标志性的创作语言和跨文化视角。",
-                en: "Zhou's artistic achievements have been showcased in numerous exhibitions. She made her debut in 2015 at New Designers 2015 in London, where she gained early recognition as an emerging talent. In 2023, her participation in the 'This Moment in China'—Shanghai Young Artists Invitational Exhibition further solidified her position in contemporary art with her signature creative language and cross-cultural perspective."
+                zh: "周婧的艺术成就已在众多展览中展示。她于2015年在伦敦新设计师展上首次亮相，作为新兴人才获得早期认可。2023年，她参加'Now中取境'上海青年艺术家邀请展，进一步巩固了她在当代艺术中的地位，展示了她标志性的创作语言和跨文化视角。",
+                en: "Zhou's artistic achievements have been showcased in numerous exhibitions. She made her debut in 2015 at New Designers 2015 in London, where she gained early recognition as an emerging talent. In 2023, her participation in the 'NOW Zhong Qu Jing'—Shanghai Young Artists Invitational Exhibition further solidified her position in contemporary art with her signature creative language and cross-cultural perspective."
             },
             {
                 zh: "周婧的艺术理念深深植根于她的个人成长和跨文化经历。她以艺术为媒介，传达对生活、情感和文化融合美学和谐的思考。她的作品在形式上大胆而富有动感，同时蕴含着深刻的社会和文化叙事。周婧的艺术邀请观众不仅欣赏其视觉美学，还参与潜在的情感和哲学探索。",
