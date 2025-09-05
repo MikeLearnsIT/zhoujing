@@ -16,4 +16,5 @@
     --transition-fast: transform 0.15s cubic-bezier(0.23, 1, 0.320, 1), opacity 0.15s ease;
     --font-primary: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-serif: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    --sidebar-width: 260px;
 } 

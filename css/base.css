@@ -6,3 +6,13 @@
 @import url('components/header.css');
 @import url('components/footer.css');
 @import url('components/modal.css'); 
+
+/* 左侧边栏布局的全局主内容偏移（桌面端） */
+@media (min-width: 769px) {
+    body > header.header + main,
+    body > header.header + main + footer,
+    body > main,
+    body > footer {
+        margin-left: var(--sidebar-width);
+    }
+}
