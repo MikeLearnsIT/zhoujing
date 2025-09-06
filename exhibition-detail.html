@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-zh="周婧 - 展览" data-en="Zhou Jing - Exhibitions">Zhou Jing - Exhibitions</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/base.css">
     <!-- 展览详情页特定样式 -->
     <link rel="stylesheet" href="css/pages/exhibitions.css">
@@ -142,7 +143,7 @@
             const hasPeriod = Boolean(exhibition.date && String(exhibition.date).trim());
             const hasLocation = Boolean(location && location.trim());
             const hasCountry = Boolean(type && type.trim());
-            
+
             // 获取多语言图片描述的函数
             function getImageText(img, field) {
                 if (typeof img[field] === 'object' && img[field] !== null) {
