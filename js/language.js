@@ -165,51 +165,35 @@ const translations = {
         statementContent: [
             {
                 zh: "周婧是一位中国视觉艺术家，他的实践通过以过程为导向的标记来探索重复、耐力和更新。她的画作将日常生活的节奏转化为冥想带有情感清晰度和韧性的手势。自 2020 年以来，她创作了一系列作品，将东方的耐心和仪式哲学与西方概念抽象传统联系起来。最近的展览包括“What Remains to be See”（1215 画廊，蒙特利尔，2025 年）、NYCxDesign 的 Fractured Horizons（纽约，2025 年）和 Fables（Mall Galleries，伦敦，2025 年）。她的作品被国际收藏，包括 LooLooLook 画廊（巴黎）和 1215 画廊（蒙特利尔）的永久收藏。作为中外文化交流协会、青年艺术家协会和海外青年联合会的会员，她凭借独特的跨文化背景和创意风格在当代艺术界获得了广泛关注和赞誉。",
-                en: "Jing Zhou is a Chinese visual artist whose practice explores repetition, endurance, and renewal through process-led mark-making. Her paintings transform the rhythms of everyday routine into meditativegestures that carry emotional clarity and resilience.Since 2020, she has developed a body of work that bridges Eastern philosophies of patience and ritual with Western traditions of conceptual abstraction.Recent exhibitions include What Remains to be Seen(1215 Gallery, Montreal, 2025), Fractured Horizons at NYCxDesign(New York, 2025), and Fables(Mall Galleries, London, 2025).Her work is held in international collections, including the permanent collection of LooLooLook Gallery(Paris) and 1215 Gallery(Montreal). As a member of the Shanghai International Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
+                en: "Jing Zhou is a Chinese visual artist whose practice explores repetition, endurance, and renewal through process-led mark-making. Her paintings transform the rhythms of everyday routine into meditative gestures that carry emotional clarity and resilience. Since 2020, she has developed a body of work that bridges Eastern philosophies of patience and ritual with Western traditions of conceptual abstraction. Recent exhibitions include What Remains to be Seen(1215 Gallery, Montreal, 2025), Fractured Horizons at NYCxDesign(New York, 2025), and Fables(Mall Galleries, London, 2025).Her work is held in international collections, including the permanent collection of LooLooLook Gallery(Paris) and 1215 Gallery(Montreal). As a member of the Sino-Foreign Cultural Exchange Association, Youth Artists Association, and Overseas Youth Federation, Zhou has garnered significant attention and acclaim in the contemporary art world for her distinctive cross-cultural background and unique creative style."
             },
             {
-                zh: "她的艺术之旅始于对绘画的早期热爱，这种热爱逐渐发展成为表达生活洞察的深刻方式。在格拉斯哥艺术学院期间，她不仅磨练了时尚和纺织品设计的技术专长，还发展出创新的材料实验和艺术表达方法。沉浸在格拉斯哥充满活力的艺术氛围中，周婧培养了对色彩、形式和线条的敏锐感知，并将其无缝融入作品中，将前卫的西方概念与东方传统的精致美学相结合。",
-                en: "Her journey into art began with an early passion for painting, a love that evolved into a profound means of expressing her insights into life. During her time at the Glasgow School of Art, she not only honed her technical expertise in fashion and textile design but also developed an innovative approach to material experimentation and artistic expression. Immersed in Glasgow's vibrant art scene, Zhou cultivated a keen sensitivity to color, form, and line, which she seamlessly integrates into her work, combining avant-garde Western concepts with the refined aesthetic of Eastern traditions."
+                zh: "逃逸仪式—当重复变成了阻力。",
+                en: "Rituals of Escape - Where repetition becomes resistance."
             },
             {
-                zh: "在她的创作中，周婧运用多样的风格、流畅而富有表现力的线条和生动的色彩调色板，探索包括肖像、风景和抽象构图在内的广泛主题。她善于融合各种材料、主题和概念，创造出视觉冲击力强且富有哲学深度的作品。周婧的创作超越了单纯的视觉吸引力，通过文化对话反映了她对人性、社会和自然的跨文化思考。",
-                en: "In her creative pursuits, Zhou employs diverse styles, fluid and expressive lines, and vivid color palettes to explore a wide range of subjects, including portraits, landscapes, and abstract compositions. Her adeptness in merging varied materials, themes, and concepts results in works that are visually impactual and imbued with philosophical depth. Zhou's creations transcend mere visual appeal, engaging audiences in cultural dialogues that reflect her contemplations on humanity, society, and nature within a cross-cultural context."
+                zh: "我们日复一日重复着同样的轨迹：闹钟、截止日期、通勤、以及那股无形的、要求我们不断表现的压力。久而久之，本应赋予我们目标的框架，却开始剥夺我们的目标感。“进步”的承诺，渐渐沦为生存的单调循环。",
+                en: "We move through the same motions each day. Alarms. Deadlines. Commutes. The quiet pressure to perform. Over time, the structure meant to give us purpose begins to strip it away. The promise of progress flattens into the monotony of survival."
             },
             {
-                zh: "作为ZJ STUDIO的创意力量，周婧在艺术与商业之间取得了微妙的平衡。她对材料和市场的直觉理解巩固了她在国际舞台上的艺术和创业地位。周婧的创作理念源于对当代生活复杂性的敏锐意识和对人性的深入探索。她的作品通过大胆的构图、鲜艳的色彩和动态的线条，将隐藏的心理和社会维度可视化。",
-                en: "As the creative force behind ZJ STUDIO, Zhou strikes a delicate balance between art and commerce. Her intuitive understanding of materials and markets has solidified both her artistic and entrepreneurial presence on the international stage. Zhou's creative philosophy stems from an acute awareness of the complexities of contemporary life and a deep exploration of human nature. Her works visualize concealed psychological and societal dimensions through bold compositions, vibrant hues, and dynamic lines."
+                zh: "周婧对这种节奏再熟悉不过。多年来，她身处的体系始终要求速度、精准，以及对自我的压抑。她走上艺术之路并非某个戏剧性的转折点，而更像一场渐进式的舒展。起初只是对疲惫的本能回应，后来逐渐演变成一种持久的耐力练习与自我修复。她抛开了截止日期，找到了新的节奏；在静默中，重新寻回了意义。",
+                en: "Jing Zhou knows this rhythm too well. For years, she moved within systems that demanded speed, precision, and the suppression of self. Her path into art was not a dramatic turning point, more a gradual unravelling. What began as an instinctive response to exhaustion evolved into a sustained practice of endurance and self-repair. In place of deadlines, she found a new tempo. In stillness, she began to rediscover meaning."
             },
             {
-                zh: "通过她独特的方法，周婧深入探索复杂的情感状态和心理暗流，捕捉人类精神的流动性和多样性。她的艺术为内心世界提供了深刻的连接，架起了存在的有形和无形领域之间的桥梁。",
-                en: "Through her distinctive approach, Zhou delves into complex emotional states and psychological undercurrents, capturing the fluidity and diversity of the human spirit. Her art offers a profound connection to the inner world, bridging the tangible and intangible realms of existence."
+                zh: "本作品集便是这场转变的成果。每一件作品都是一次无声的拒绝：几何形态在边界中生长；色彩在长久的克制后缓缓浮现；表层由手工打造，经过反复丈量，每一步都深思熟虑。看似极简的画面，实则承载着饱满的情绪；看似重复的笔触，其实是对节奏的重新掌控——这是一种自主选择的日常。",
+                en: "This exhibition is the outcome of that shift. Each work is a quiet refusal. Geometries build within boundaries. Colour emerges slowly, after long periods of restraint. Surfaces are hand-built, measured, and deliberate. What appears minimal is loaded with emotion. What looks repetitive is, in fact, a reclaiming of rhythm. It is routine, carefully chosen."
             },
             {
-                zh: "周婧的艺术成就已在众多展览中展示。她于2015年在伦敦新设计师展上首次亮相，作为新兴人才获得早期认可。2023年，她参加'Now中取境'上海青年艺术家邀请展，进一步巩固了她在当代艺术中的地位，展示了她标志性的创作语言和跨文化视角。",
-                en: "Zhou's artistic achievements have been showcased in numerous exhibitions. She made her debut in 2015 at New Designers 2015 in London, where she gained early recognition as an emerging talent. In 2023, her participation in the 'NOW Zhong Qu Jing'—Shanghai Young Artists Invitational Exhibition further solidified her position in contemporary art with her signature creative language and cross-cultural perspective."
+                zh: "周的创作受多种影响，但都处理得极为含蓄。佛教曼陀罗中冥想式的对称，为作品提供了结构基础；草间弥生对图案的沉浸式运用，在她的创作过程中有所呼应，只是周的基调更偏向内省。她曾从事设计的经历，体现在对构图的精准把控中，然而作品却摒弃了表面的光鲜，转而扎根于质感、从容与情感之中。",
+                en: "Zhou’s influences are present but handled with subtlety. The meditative symmetry of Buddhist mandalas provides a structural foundation. Yayoi Kusama’s immersive use of pattern resonates in the process, though Zhou’s tone is more introspective. Her past in design is visible in the control of composition, yet her work resists surface gloss. It is grounded in texture, slowness, and feeling."
             },
             {
-                zh: "周婧的艺术理念深深植根于她的个人成长和跨文化经历。她以艺术为媒介，传达对生活、情感和文化融合美学和谐的思考。她的作品在形式上大胆而富有动感，同时蕴含着深刻的社会和文化叙事。周婧的艺术邀请观众不仅欣赏其视觉美学，还参与潜在的情感和哲学探索。",
-                en: "Jing Zhou's artistic philosophy is deeply rooted in her personal growth and cross-cultural experiences. Using art as a medium, she conveys reflections on life, emotions, and the aesthetic harmony of cultural convergence. Her works are bold and dynamic in form yet enriched with profound social and cultural narratives. Zhou's art invites viewers to not only enjoy its visual aesthetics but also engage with the underlying emotional and philosophical inquiries."
+                zh: "对周而言，艺术成了对抗“被他人需求塑造的生活”所带来的缓慢侵蚀的生存方式。它所提供的并非奇幻意义上的逃离，而是作为治愈手段的“逃逸”。这些作品不喧嚣，它们为我们留出空间，邀请我们直面重负。而在这份静默之中，它们给予了我们别的东西：呼吸、关怀，以及无声的希望。",
+                en: "Art, for Zhou, became a way to survive the slow corrosion of a life shaped by others’ demands. It offered her not escape in the fantastical sense but escape as a method of healing. These works do not shout. They hold space. They ask us to sit with weight. And within that stillness, they offer something else: breath, care, and quiet hope."
             },
             {
-                zh: "她的创作体现了双重性：既是个人情感的外化，也是对普遍人类困境的分析。通过构建通往精神领域的桥梁，周婧使观众能够探索他们的内心世界和当代社会现实。她的艺术不仅诉诸感官，还促发反思和内省，为当代艺术领域注入新的活力。",
-                en: "Her creations embody a duality: they are both an externalization of personal emotion and an analysis of universal human dilemmas. By constructing a bridge to the spiritual realm, Zhou enables her audience to explore their inner selves and contemporary social realities. Her art doesn't merely appeal to the senses; it prompts reflection and introspection, breathing fresh vitality into the realm of contemporary art."
-            },
-            {
-                zh: "在时尚设计训练和当代艺术实践的背景下，周婧通过绘画融合情感、时尚和社会观察。她独特的方法整合了多元文化影响和设计专长，探索内心世界的流动性和社会心理的复杂性。她的作品以其美学吸引力和主题深度脱颖而出，鼓励观众反思自我和社会。",
-                en: "Trained in fashion design and engaged in contemporary artistic practices, Zhou merges emotions, fashion, and societal observations through her paintings. Her unique approach integrates multicultural influences and design expertise, exploring the fluidity of inner worlds and the complexities of social psychology. Her works stand out for their aesthetic allure and thematic depth, encouraging audiences to reflect on both self and society."
-            },
-            {
-                zh: "在全球化的艺术语境中，周婧的创作为艺术与时尚的融合提供了新的可能性。她在当代艺术中的地位由她无缝融合这些领域的能力所定义，呈现出既具有美学意义又具有思想深度的叙事。",
-                en: "In the context of globalized art, Zhou's creations offer new possibilities for the convergence of art and fashion. Her position in contemporary art is defined by her ability to seamlessly fuse these domains, presenting bold narratives that resonate with both aesthetic and intellectual significance."
-            },
-            {
-                zh: "周婧的艺术不仅仅是色彩和构图的创新，更反映了她对普遍精神挣扎的个人视角，创造出独特的叙事。她的作品植根于中国情感和精神内省的传统，同时从西方现代艺术对内心世界的关注中汲取灵感。这种融合形成了独特的个人风格，反映了对人性和社会问题的深刻洞察。",
-                en: "Jing Zhou's art is more than innovation in color and composition; it reflects a personal perspective on universal spiritual struggles, crafting a narrative uniquely her own. Her works are rooted in the Chinese tradition of emotional and spiritual introspection, while drawing inspiration from Western modern art's focus on internal worlds. This synthesis results in a distinctive personal style that reflects profound insights into human nature and societal issues."
-            },
-            {
-                zh: "她的艺术立场位于心理表现主义和当代社会艺术的交汇处。通过掌握色彩、线条和文化表达的相互作用，周婧在当代艺术中开辟了一条独特的道路。她的作品有潜力在该领域占据重要地位，继续为全球观众带来视觉冲击和思想启发。",
-                en: "Her artistic position lies at the intersection of psychological expressionism and contemporary social art. By mastering the interplay of color, line, and cultural expression, Zhou charts an individual path in contemporary art. Her work has the potential to occupy a significant place in the field, continuing to deliver both visual impact and intellectual inspiration to audiences worldwide."
+                zh: "这场展览不是抗议，也不是退缩，而是一场重新掌控。这些是耐力的仪式，是用柔软进行的反抗，是经时间慢慢雕琢而成的解放。",
+                en: "This exhibition is not a protest. It is not a retreat. It is a reclamation. These are rituals of endurance, of defiance through softness, and of liberation shaped slowly over time."
             }
         ],
         cvTitle: { zh: "简历", en: "Curriculum Vitae" },
