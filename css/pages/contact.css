@@ -33,6 +33,18 @@
     letter-spacing: 0.02em;
     font-family: var(--font-serif);
     line-height: 1.1;
+    position: relative;
+}
+
+.contact-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
 }
 
 .contact-subtitle {
