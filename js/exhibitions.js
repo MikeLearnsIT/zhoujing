@@ -2,6 +2,176 @@
 const exhibitionsData = {
     // 2025年展览
     "2025": [
+        // 2025加拿大魁北克省西蒙特1215画廊On Observation艺术展
+        {
+            id: "2025-08-no-observation-canada",
+            title: {
+                zh: "2025加拿大魁北克省西蒙特1215画廊No Observation艺术展",
+                en: "No Observation Art Exhibition in Canada 2025"
+            },
+            organizer: {
+                zh: "1215 GALLERY",
+                en: "1215 GALLERY"
+            },
+            organizerDescription: {
+                zh: "1215 Gallery 成立于加拿大第二大城市,同时拥有加拿大艺术中心称号的蒙特利尔. 画廊坐落于Westmount 是加拿大最有历史的三大富人区之一.这也让画廊拥有得天独厚的地理优势1215 Gallery是新锐思想与深厚底蕴的交融。这一特质使得画廊拥有着最前沿的视野和丰富的业内资源。我们与全球艺术机构、画廊和美术馆保持着密切的合作关系，我们的愿景是将那些具有深度思考与创新精神的艺术家的作品展示给全世界。亚洲艺术一直披着一层神秘的面纱, 西方世界对其了解甚少.我们无需揭开这层面纱, 但这股来自东方的神秘与能量会在1215 Gallery得到释放.",
+                en: "1215 Gallery Montreal, established in the second largest city in Canada and also known as the Canadian Art Center The gallery is located in Westmount, one of the three most historically affluent areas in Canada. This also gives the gallery a unique geographical advantage1215 Gallery is the fusion of cutting- edge ideas and profound heritage.This characteristic gives the gallery the most cutting- edge perspective and rich industry resources.We maintain close partnerships with global art institutions, galleries, and galleries, and our vision is to showcase the works of artists with deep thinking and innovative spirit to the world.Asian art has always been shrouded in a mysterious veil, and the Western world knows very little about it.We don't need to lift this veil, but this mystery and energy from the East will be revealed in 1215 Gallery is released."
+            },
+            organizerLink: {
+                zh: "https://www.1215gallery.com/english/index.html",
+                en: "https://www.1215gallery.com/english/index.html"
+            },
+            date: "2025.08.23-2025.09.23",
+            location: {
+                zh: "1215 Ave Greene Westmount, Montreal Quebec, Canada H3Z 3K2",
+                en: "1215 Ave Greene Westmount, Montreal Quebec, Canada H3Z 3K2"
+            },
+            country: {
+                zh: "加拿大魁北克省西蒙特",
+                en: "Westmount, Quebed, Canada"
+            },
+            description: {
+                zh: "No Observation（无观察）探讨了观察的多重维度及其在塑造我们与世界关系中的作用。观察不仅仅是视觉的行为；它是一种感知、理解和与环境互动的方式。通过艺术家的视角，这个展览邀请观众反思观察的复杂性及其对个人和集体记忆、身份和叙事的影响。观察不仅仅是单纯的观看——它是一种进入世界的方式。它在身体与土地、自我与社会、历史与当下之间建立联系。通过多样的视觉语言，这个展览揭示了观察的层次维度：它是感知与记忆，是启示与投射。在这里，观察成为一种探究的工具。它质问我们如何理解自我与环境的边界，如何在模糊与确定之间寻求意义，如何在和谐与混沌中识别真理。它还促使我们面对被掩盖的历史和现实，在那里美与痛苦共存于张力之中。《无观察》不仅邀请观众去看，更去反思他们如何看。当我们观看这些作品时，作品也在回望我们——提醒我们人与自然、历史之间不可分割的联系。",
+                en: "Observation is not mere looking—it is a way of entering the world. It forges connections between body and land, self and society, history and the present. Through diverse visual languages, this exhibition reveals the layered dimensions of observation: it is perception and memory, revelation and projection.Here, observation becomes a tool of inquiry. It asks how we understand the boundaries of self and environment, how we seek meaning between ambiguity and certainty, how we recognize truth within both harmony and chaos. It also compels us to confront obscured histories and present realities, where beauty and pain coexist in tension.On Observation invites viewers not only to see, but to reflect on how they see. As we look at these works, the works look back at us—reminding us of the inextricable ties between people, nature, and history."
+            },
+            images: [
+                {
+                    src: "images/exhibitions/20250823/poster.jpg",
+                    title: {
+                        zh: "展览海报",
+                        en: "Exhibition Poster"
+                    },
+                    description: {
+                        zh: "艺术展海报",
+                        en: "The poster of Art Exhibition"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_01.jpg",
+                    title: {
+                        zh: "现场照片01",
+                        en: "Exhibition Site Photo 01"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_02.jpg",
+                    title: {
+                        zh: "现场照片02",
+                        en: "Exhibition Site Photo 02"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_03.jpg",
+                    title: {
+                        zh: "现场照片03",
+                        en: "Exhibition Site Photo 03"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_04.jpg",
+                    title: {
+                        zh: "现场照片04",
+                        en: "Exhibition Site Photo 04"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_05.jpg",
+                    title: {
+                        zh: "现场照片05",
+                        en: "Exhibition Site Photo 05"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_06.jpg",
+                    title: {
+                        zh: "现场照片06",
+                        en: "Exhibition Site Photo 06"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_07.jpg",
+                    title: {
+                        zh: "现场照片07",
+                        en: "Exhibition Site Photo 07"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                },
+                {
+                    src: "images/exhibitions/20250823/ex_08.jpg",
+                    title: {
+                        zh: "现场照片08",
+                        en: "Exhibition Site Photo 08"
+                    },
+                    description: {
+                        zh: "现场照片",
+                        en: "Exhibition site photo"
+                    }
+                }
+            ],
+            artworks: [
+                {
+                    title: {
+                        zh: "狂躁的午后",
+                        en: "Wild Afternoon"
+                    },
+                    medium: {
+                        zh: "综合材料",
+                        en: "Mixed Media"
+                    },
+                    size: "60cm × 60cm",
+                    year: "2024",
+                    image: "images/paintings/painting_37.png"
+                }
+            ],
+            documents: [
+            ],
+            press: [
+                // {
+                //     title: {
+                //         zh: "On Observation展",
+                //         en: "On Observation"
+                //     },
+                //     source: {
+                //         zh: "1215 GALLERY",
+                //         en: "1215 GALLERY"
+                //     },
+                //     date: "2025.08.23",
+                //     url: "https://www.1215gallery.com/zhanlan/gaishu.html?id=22",
+                //     description: {
+                //         zh: "1215画廊-On Observation展",
+                //         en: "1215 GALLERY-On Observation Exhibition"
+                //     },
+                //     thumbnail: "images/pressSnapshot/snapshot_g_13-9-2025_22355_www.1215gallery.com.jpeg"
+                // }
+            ]
+        },
         // 2025加拿大魁北克省西蒙特1215画廊What Remains to be Seen艺术展
         {
             id: "2025-07-what-remains-to-be-seen-canada",
@@ -14,25 +184,25 @@ const exhibitionsData = {
                 en: "1215 GALLERY"
             },
             organizerDescription: {
-                zh: "",
-                en: ""
+                zh: "1215 Gallery 成立于加拿大第二大城市,同时拥有加拿大艺术中心称号的蒙特利尔. 画廊坐落于Westmount 是加拿大最有历史的三大富人区之一.这也让画廊拥有得天独厚的地理优势1215 Gallery是新锐思想与深厚底蕴的交融。这一特质使得画廊拥有着最前沿的视野和丰富的业内资源。我们与全球艺术机构、画廊和美术馆保持着密切的合作关系，我们的愿景是将那些具有深度思考与创新精神的艺术家的作品展示给全世界。亚洲艺术一直披着一层神秘的面纱, 西方世界对其了解甚少.我们无需揭开这层面纱, 但这股来自东方的神秘与能量会在1215 Gallery得到释放.",
+                en: "1215 Gallery Montreal, established in the second largest city in Canada and also known as the Canadian Art Center The gallery is located in Westmount, one of the three most historically affluent areas in Canada. This also gives the gallery a unique geographical advantage1215 Gallery is the fusion of cutting- edge ideas and profound heritage.This characteristic gives the gallery the most cutting- edge perspective and rich industry resources.We maintain close partnerships with global art institutions, galleries, and galleries, and our vision is to showcase the works of artists with deep thinking and innovative spirit to the world.Asian art has always been shrouded in a mysterious veil, and the Western world knows very little about it.We don't need to lift this veil, but this mystery and energy from the East will be revealed in 1215 Gallery is released."
             },
             organizerLink: {
-                zh: "",
-                en: ""
+                zh: "https://www.1215gallery.com/english/index.html",
+                en: "https://www.1215gallery.com/english/index.html"
             },
             date: "2025.07.19-2025.08.19",
             location: {
-                zh: "1215 Gallery, 1215 Ave Greene, Westmount, Quebec, Canada",
-                en: "1215 Gallery, 1215 Ave Greene, Westmount, Quebed, Canada"
+                zh: "1215 Ave Greene Westmount, Montreal Quebec, Canada H3Z 3K2",
+                en: "1215 Ave Greene Westmount, Montreal Quebec, Canada H3Z 3K2"
             },
             country: {
                 zh: "加拿大魁北克省西蒙特",
                 en: "Westmount, Quebed, Canada"
             },
             description: {
-                zh: "",
-                en: ""
+                zh: "What Remains to Be Seen反思日常生活中隐藏的维度，在无意识的创造、重组和文化记忆的行为中，平凡变得非凡。它邀请我们重新考虑意图与偶然、存在与缺席、物体与身份之间的界限。这个展览探讨了看似平凡的姿态、支离破碎的形式和个人叙事如何汇聚在一起，揭示关于人类经验的更深层次的真理——归属感、转变以及塑造我们认知的无形力量的问题。它提出了这样的问题：我们忽视了什么？什么在表面之下静静地存在，等待被认可？",
+                en: "What Remains to Be Seen reflects on the hidden dimensions of everyday life where the ordinary becomes extraordinary through acts of unconscious creation, reconfiguration, and cultural memory. It invites us to reconsider the boundaries between intention and accident, presence and absence, object and identity.This exhibition explores how seemingly mundane gestures, fragmented forms, and personal narratives converge to reveal deeper truths about human experience—questions of belonging, transformation, and the unseen forces shaping our perceptions. It asks: what do we overlook, and what persists quietly beneath the surface, waiting to be acknowledged?"
             },
             images: [
                 {
@@ -331,6 +501,23 @@ const exhibitionsData = {
             documents: [
             ],
             press: [
+                {
+                    title: {
+                        zh: "What Remains to be Seen展",
+                        en: "What Remains to be Seen"
+                    },
+                    source: {
+                        zh: "1215 GALLERY",
+                        en: "1215 GALLERY"
+                    },
+                    date: "2025.07.16",
+                    url: "https://www.1215gallery.com/zhanlan/gaishu.html?id=21",
+                    description: {
+                        zh: "1215画廊-What Remains to be Seen展",
+                        en: "1215 GALLERY-What Remains to be Seen Exhibition"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_13-9-2025_22355_www.1215gallery.com.jpeg"
+                }
             ]
         },
         // 2025英国伦敦Conceputal Erasure艺术展
