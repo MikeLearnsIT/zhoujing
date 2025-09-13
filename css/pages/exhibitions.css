@@ -15,7 +15,7 @@
 
 /* 内容容器 */
 .exhibitions {
-    padding: 8rem 2rem 6rem;
+    padding: 5rem 2rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
@@ -39,7 +39,7 @@
 
 .exhibitions h2 {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: var(--primary-color);
     font-size: 3.6rem;
     font-weight: 400;
@@ -61,19 +61,19 @@
 }
 
 .exhibitions-timeline {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .exhibition-year {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .exhibition-year h3 {
     color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: 200;
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
     border-bottom: 2px solid transparent;
     background: linear-gradient(to right, var(--secondary-color), var(--accent-color)) bottom no-repeat;
     background-size: 100% 2px;
@@ -98,7 +98,7 @@
     width: 100%;
 }
 
-.exhibitions-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.exhibitions-list { display: flex; flex-direction: column; gap: 1.2rem; }
 
 .exhibition-item {
     opacity: 0;
@@ -126,7 +126,7 @@
     animation-delay: 0.5s;
 }
 
-.exhibition-item { background: var(--white); border-radius: 16px; box-shadow: 0 8px 30px var(--shadow-light); padding: 1.75rem; transition: var(--transition); border: 1px solid rgba(201, 169, 110, 0.1); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto auto; gap: 1.25rem; align-items: center; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); will-change: transform; transform: translateZ(0); }
+.exhibition-item { background: var(--white); border-radius: 16px; box-shadow: 0 8px 30px var(--shadow-light); padding: 1.5rem; transition: var(--transition); border: 1px solid rgba(201, 169, 110, 0.1); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto auto; gap: 1.25rem; align-items: center; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); will-change: transform; transform: translateZ(0); cursor: pointer; }
 
 .exhibition-item::before {
     content: '';
@@ -154,11 +154,11 @@
     display: inline-block;
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: #ffffff;
-    padding: 0.6rem 1.4rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 30px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     letter-spacing: 0.08em;
     box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
     transition: var(--transition);
@@ -190,21 +190,23 @@
 }
 
 .exhibition-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
 }
 
 .exhibition-organizer {
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .exhibition-location {
     color: #666;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
 }
 
 .exhibition-country {
@@ -415,7 +417,7 @@
 /* 响应式设计 */
 @media (max-width: 768px) {
     .exhibitions {
-        padding: 3rem 1rem;
+        padding: 2.5rem 1rem;
     }
 
     .exhibition-year h3 {
@@ -424,9 +426,9 @@
     }
 
     .exhibition-item {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1.25rem;
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
         text-align: center;
     }
 

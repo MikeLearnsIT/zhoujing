@@ -2094,6 +2094,7 @@ function createExhibitionItem(exhibition) {
     const item = document.createElement('div');
     item.className = 'exhibition-item';
     item.setAttribute('data-exhibition-id', exhibition.id);
+    item.style.cursor = 'pointer';
 
     const title = exhibition.title[currentLang] || exhibition.title.zh;
     const location = exhibition.location[currentLang] || exhibition.location.zh;
@@ -2119,6 +2120,20 @@ function createExhibitionItem(exhibition) {
             </a>
         </div>
     `;
+
+    // 添加点击事件
+    item.addEventListener('click', function(e) {
+        // 如果点击的是链接按钮，不处理（让链接自己处理）
+        if (e.target.closest('.view-detail-btn')) {
+            return;
+        }
+        
+        // 阻止事件冒泡
+        e.preventDefault();
+        
+        // 跳转到详情页
+        window.location.href = `exhibition-detail.html?id=${exhibition.id}`;
+    });
 
     return item;
 }
