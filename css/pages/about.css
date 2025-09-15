@@ -256,11 +256,13 @@
 
 @media (max-width: 768px) {
     .cv-timeline-year {
-        padding-left: 2.8rem;
+        padding-left: 3.5rem;
     }
 
     .cv-year-label {
-        width: 2rem;
+        width: 3rem;
+        font-size: 0.9rem;
+        left: -0.5rem;
     }
 
     .cv-timeline-items {
@@ -629,7 +631,7 @@
     }
 
     .about-statement {
-        padding-top: 6rem;
+        padding-top: calc(60px + 4rem);
     }
 
     .about-statement h2,
@@ -646,6 +648,13 @@
     .about-statement .statement-text p:first-of-type {
         font-size: 1.1rem;
         padding-left: 1.5rem;
+    }
+
+    .statement-portrait img {
+        width: 280px;
+        height: 280px;
+        max-width: calc(100vw - 3rem);
+        max-height: calc(100vw - 3rem);
     }
 
     .about-cv .cv-sections {

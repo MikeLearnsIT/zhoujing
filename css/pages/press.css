@@ -540,10 +540,19 @@
     contain: layout style;
 }
 
+/* 桌面端按钮显示控制 */
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .press {
-        padding: 6rem 1rem 3rem;
+        padding: calc(60px + 4rem) 1rem 3rem;
     }
 
     .section-title {
@@ -551,39 +560,105 @@
     }
 
     .press-item {
-        padding: 2rem;
+        padding: 1.5rem;
         flex-direction: column;
         gap: 1.5rem;
+        min-height: auto;
     }
 
     .press-thumbnail {
         width: 100%;
-        height: 120px;
+        height: 140px;
         align-self: stretch;
+        flex-shrink: 0;
     }
 
     .press-content-area {
         width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
-    .press-header {
+    .press-header-v2 { 
+        margin-bottom: 1rem;
+    }
+    
+    .press-header-left {
+        gap: 0.75rem;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: auto;
+        padding-top: 0.5rem;
+    }
+
+    .press-meta-line {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
+        align-items: flex-start;
+        justify-content: start;
+    }
+
+    .press-meta-line .press-date,
+    .press-meta-line .press-publication {
+        font-size: 0.85rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .press-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .press-title a {
+        display: block;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .press-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0 0 1rem 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: var(--text-color);
+        opacity: 0.9;
     }
 
-    .press-meta {
-        flex-direction: column;
-        align-items: flex-start;
+
+    .press-source {
+        font-size: 0.9rem;
+        padding: 0.75rem 2rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
     }
-    .press-header-v2 { grid-template-columns: 1fr; gap: 0.5rem; }
-    .press-readmore { justify-self: start; }
+
+    .press-source:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(201, 169, 110, 0.3);
+        color: white;
+    }
 }

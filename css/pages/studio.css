@@ -399,17 +399,87 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    .studio-hero-v2 { grid-template-columns: 1fr; gap: 1.25rem; }
+    .studio {
+        padding: calc(60px + 2rem) 1rem 2rem;
+        overflow-x: hidden;
+    }
+    
+    .studio-content {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+    
+    .studio-hero-v2 { 
+        grid-template-columns: 1fr; 
+        gap: 1.25rem; 
+        overflow: hidden;
+    }
     .hero2-title { font-size: 2.2rem; }
     .hero2-collage { height: 300px; }
     .collage-layer.layer-1 { width: 70%; height: 60%; }
     .collage-layer.layer-2 { width: 58%; height: 56%; }
     .collage-layer.layer-3 { width: 62%; height: 54%; }
-    .steps2-timeline::before { left: 22px; transform: none; }
-    .steps2-item { grid-template-columns: 1fr; }
-    .steps2-item.alt { grid-template-columns: 1fr; }
-    .steps2-node { left: 22px; top: 0; transform: translate(0,-50%); }
-    .steps2-item:not(.alt) .steps2-card, .steps2-item.alt .steps2-card { margin: 0 0 0 2.5rem; }
+    .steps2-timeline::before { 
+        left: 22px;
+        transform: none;
+        background: linear-gradient(180deg, transparent, rgba(201,169,110,0.3), transparent);
+    }
+    
+    .steps2-item { 
+        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .steps2-item.alt { 
+        grid-template-columns: 1fr; 
+        flex-direction: row;
+    }
+    
+    .steps2-node { 
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: 0.5rem 0 0 0;
+        flex-shrink: 0;
+    }
+    
+    .steps2-item:not(.alt) .steps2-card, 
+    .steps2-item.alt .steps2-card { 
+        margin: 0; 
+        max-width: calc(100vw - 6rem);
+        width: 100%;
+        box-sizing: border-box;
+        flex: 1;
+    }
+    
+    .steps2-card { 
+        grid-template-columns: 100px 1fr; 
+        gap: 0.75rem; 
+        padding: 0.75rem;
+        box-sizing: border-box;
+    }
+    
+    .steps2-thumb { 
+        height: 80px;
+        width: 100px;
+        flex-shrink: 0;
+    }
+    
+    .studio-steps-v2 {
+        padding: 1.5rem 1rem;
+        margin: 0 auto;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
+    }
+    
+    .steps2-timeline {
+        max-width: 100%;
+        margin: 0 auto;
+    }
     .studio-stripes { grid-template-columns: 1fr; }
     .studio-title {
         font-size: 2.5rem;
@@ -442,7 +512,26 @@
 
     .studio-intro,
     .studio-philosophy {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
+        margin: 0 -1rem;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
+    }
+    
+    .studio-process,
+    .studio-features,
+    .studio-timeline,
+    .studio-advantages {
+        padding: 1.5rem 1rem;
+        margin: 0 -1rem;
+        max-width: calc(100vw - 2rem);
+        box-sizing: border-box;
+    }
+    
+    .philosophy-quote {
+        padding: 0 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .features-grid {
@@ -456,16 +545,29 @@
 
     .studio-gallery {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
+    .studio-gallery .studio-card {
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .studio-image {
         height: 200px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
 @media (max-width: 480px) {
+    .studio {
+        padding: calc(60px + 1.5rem) 0.5rem 1.5rem;
+    }
+    
     .studio-content {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
 
     .studio-title {
@@ -476,5 +578,24 @@
     .philosophy-title,
     .features-title {
         font-size: 1.8rem;
+    }
+    
+    .steps2-card {
+        grid-template-columns: 80px 1fr;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    .steps2-thumb {
+        height: 60px;
+        width: 80px;
+    }
+    
+    .steps2-item:not(.alt) .steps2-card, 
+    .steps2-item.alt .steps2-card {
+        margin: 0;
+        max-width: calc(100vw - 3rem);
+        width: 100%;
+        flex: 1;
     }
 }
