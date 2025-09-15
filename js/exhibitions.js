@@ -4,10 +4,10 @@ const exhibitionsData = {
     "2025": [
         // 2025加拿大魁北克省西蒙特1215画廊On Observation艺术展
         {
-            id: "2025-08-no-observation-canada",
+            id: "2025-08-on-observation-canada",
             title: {
-                zh: "2025加拿大魁北克省西蒙特1215画廊No Observation艺术展",
-                en: "No Observation Art Exhibition in Canada 2025"
+                zh: "2025加拿大魁北克省西蒙特1215画廊On Observation艺术展",
+                en: "On Observation Art Exhibition in Canada 2025"
             },
             organizer: {
                 zh: "1215 GALLERY",
@@ -31,7 +31,7 @@ const exhibitionsData = {
                 en: "Westmount, Quebed, Canada"
             },
             description: {
-                zh: "No Observation（无观察）探讨了观察的多重维度及其在塑造我们与世界关系中的作用。观察不仅仅是视觉的行为；它是一种感知、理解和与环境互动的方式。通过艺术家的视角，这个展览邀请观众反思观察的复杂性及其对个人和集体记忆、身份和叙事的影响。观察不仅仅是单纯的观看——它是一种进入世界的方式。它在身体与土地、自我与社会、历史与当下之间建立联系。通过多样的视觉语言，这个展览揭示了观察的层次维度：它是感知与记忆，是启示与投射。在这里，观察成为一种探究的工具。它质问我们如何理解自我与环境的边界，如何在模糊与确定之间寻求意义，如何在和谐与混沌中识别真理。它还促使我们面对被掩盖的历史和现实，在那里美与痛苦共存于张力之中。《无观察》不仅邀请观众去看，更去反思他们如何看。当我们观看这些作品时，作品也在回望我们——提醒我们人与自然、历史之间不可分割的联系。",
+                zh: "观察不仅仅是观看，更是进入世界的一种方式。它构建了身体与土地、自我与社会、历史与当下之间的联系。本次展览通过多元的视觉语言，揭示了观察的多重维度：它是感知与记忆、启示与投射。在此，观察成为一种探究的工具。它探究我们如何理解自我与环境的界限，如何在模糊与确定之间探寻意义，如何在和谐与混沌中辨识真理。它也迫使我们直面被遮蔽的历史和当下的现实，在那里，美与痛并存，张力交织。“观察”邀请观众不仅去观看，更要反思他们如何观看。当我们观看这些作品时，作品也在回望我们——提醒我们人、自然与历史之间密不可分的联系。",
                 en: "Observation is not mere looking—it is a way of entering the world. It forges connections between body and land, self and society, history and the present. Through diverse visual languages, this exhibition reveals the layered dimensions of observation: it is perception and memory, revelation and projection.Here, observation becomes a tool of inquiry. It asks how we understand the boundaries of self and environment, how we seek meaning between ambiguity and certainty, how we recognize truth within both harmony and chaos. It also compels us to confront obscured histories and present realities, where beauty and pain coexist in tension.On Observation invites viewers not only to see, but to reflect on how they see. As we look at these works, the works look back at us—reminding us of the inextricable ties between people, nature, and history."
             },
             images: [
