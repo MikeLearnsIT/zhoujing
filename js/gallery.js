@@ -1215,6 +1215,9 @@ function createArtworkElement(artwork) {
     const element = document.createElement('div');
     element.className = 'gallery-artwork-card';
     element.setAttribute('data-artwork-id', artwork.id);
+    
+    // 检测是否为移动端
+    const isMobile = window.innerWidth <= 768;
 
     const title = getArtworkText(artwork, 'title');
     const medium = getArtworkText(artwork, 'medium');
@@ -1274,6 +1277,19 @@ function createArtworkElement(artwork) {
             </div>
         </div>
     `;
+
+    // 移动端直接点击图片卡片打开大图
+    if (isMobile) {
+        element.addEventListener('click', function(e) {
+            // 防止事件冒泡
+            e.preventDefault();
+            e.stopPropagation();
+            openImageModal(artwork.image, title);
+        });
+        
+        // 添加移动端特有的样式类
+        element.classList.add('mobile-direct-click');
+    }
 
     return element;
 }

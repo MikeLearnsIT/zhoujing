@@ -97,7 +97,7 @@
     justify-content: center;
     margin-bottom: 2rem;
     color: var(--white);
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .card-content h3 {
@@ -403,16 +403,27 @@
 
     .contact-card {
         padding: 2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
     }
 
     .card-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    
+    .card-content {
+        flex: 1;
     }
 
     .card-content h3 {
         font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        margin-top: 0.2rem;
     }
 
     .artist-name {

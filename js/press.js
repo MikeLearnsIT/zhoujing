@@ -98,17 +98,22 @@ function createPressItemHTML(item) {
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </h4>
-                        
                     </div>
-                    <div class="press-meta">
+                    <div class="press-meta desktop-only">
+                        <a href="${item.url}" class="press-source" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-i18n="press.readMore">${getTranslation('press.readMore')}</span>
+                        </a>
+                    </div>
+                </div>
+                <p class="press-description">${description}</p>
+                ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
+                <div class="press-meta mobile-only">
                     <a href="${item.url}" class="press-source" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-external-link-alt"></i>
                         <span data-i18n="press.readMore">${getTranslation('press.readMore')}</span>
                     </a>
                 </div>
-                </div>
-                <p class="press-description">${description}</p>
-                ${item.note ? `<p class="press-note">${item.note}</p>` : ''}
             </div>
         </div>
     `;
