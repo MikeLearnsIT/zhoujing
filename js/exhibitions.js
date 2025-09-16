@@ -153,23 +153,23 @@ const exhibitionsData = {
             documents: [
             ],
             press: [
-                // {
-                //     title: {
-                //         zh: "On Observation展",
-                //         en: "On Observation"
-                //     },
-                //     source: {
-                //         zh: "1215 GALLERY",
-                //         en: "1215 GALLERY"
-                //     },
-                //     date: "2025.08.23",
-                //     url: "https://www.1215gallery.com/zhanlan/gaishu.html?id=22",
-                //     description: {
-                //         zh: "1215画廊-On Observation展",
-                //         en: "1215 GALLERY-On Observation Exhibition"
-                //     },
-                //     thumbnail: "images/pressSnapshot/snapshot_g_13-9-2025_22355_www.1215gallery.com.jpeg"
-                // }
+                {
+                    title: {
+                        zh: "On Observation展",
+                        en: "On Observation"
+                    },
+                    source: {
+                        zh: "1215 GALLERY",
+                        en: "1215 GALLERY"
+                    },
+                    date: "2025.08.23",
+                    url: "https://www.1215gallery.com/zhanlan/gaishu.html?id=22",
+                    description: {
+                        zh: "1215画廊-On Observation展",
+                        en: "1215 GALLERY-On Observation Exhibition"
+                    },
+                    thumbnail: "images/pressSnapshot/snapshot_g_16-9-2025_212012_www.1215gallery.com.jpeg"
+                }
             ]
         },
         // 2025加拿大魁北克省西蒙特1215画廊What Remains to be Seen艺术展
@@ -2122,15 +2122,15 @@ function createExhibitionItem(exhibition) {
     `;
 
     // 添加点击事件
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function (e) {
         // 如果点击的是链接按钮，不处理（让链接自己处理）
         if (e.target.closest('.view-detail-btn')) {
             return;
         }
-        
+
         // 阻止事件冒泡
         e.preventDefault();
-        
+
         // 跳转到详情页
         window.location.href = `exhibition-detail.html?id=${exhibition.id}`;
     });
