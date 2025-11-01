@@ -25,12 +25,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: transform 0.3s ease;
     filter: brightness(0.7) contrast(1.1);
 }
 
-.hero:hover .hero-background img {
-    transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+    .hero:hover .hero-background img {
+        transform: scale(1.02);
+    }
 }
 
 .hero::before {
@@ -42,7 +44,6 @@
     height: 100%;
     background: linear-gradient(135deg,
             rgba(26, 26, 26, 0.7) 0%,
-            rgba(139, 115, 85, 0.4) 50%,
             rgba(0, 0, 0, 0.6) 100%);
     z-index: 2;
 }
@@ -52,11 +53,10 @@
     z-index: 3;
     padding: 4rem 3rem;
     max-width: 900px;
-    animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.320, 1);
+    animation: fadeInUp 0.8s ease;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    /* 移除 backdrop-filter，避免GPU过载 */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -161,8 +161,9 @@
     border-radius: 0;
     overflow: hidden;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    /* 移除入场动画，首页实际不使用这些卡片 */
 }
 
 .gallery-item::before {
@@ -174,18 +175,29 @@
     bottom: 0;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.2s ease;
     z-index: 2;
     pointer-events: none;
 }
 
-.gallery-item:hover::before {
-    opacity: 1;
-}
+@media (hover: hover) and (pointer: fine) {
+    .gallery-item:hover::before {
+        opacity: 1;
+    }
 
-.gallery-item:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    .gallery-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+    
+    .gallery-item:hover img {
+        transform: scale(1.03);
+        filter: contrast(1.15) saturate(1.15);
+    }
+    
+    .gallery-item:hover .gallery-item-overlay {
+        transform: translateY(0);
+    }
 }
 
 .gallery-item-image {
@@ -197,13 +209,8 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: transform 0.2s ease, filter 0.2s ease;
     filter: contrast(1.1) saturate(1.1);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.08);
-    filter: contrast(1.2) saturate(1.2);
 }
 
 /* 作品信息叠加 */
@@ -216,12 +223,8 @@
     color: white;
     padding: 2rem;
     transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: transform 0.2s ease;
     z-index: 3;
-}
-
-.gallery-item:hover .gallery-item-overlay {
-    transform: translateY(0);
 }
 
 .gallery-item-title {
@@ -237,19 +240,7 @@
     font-weight: 300;
 }
 
-/* 加载动画 */
-.gallery-item {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.gallery-item:nth-child(1) { animation-delay: 0.1s; }
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.3s; }
-.gallery-item:nth-child(4) { animation-delay: 0.4s; }
-.gallery-item:nth-child(5) { animation-delay: 0.5s; }
-.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+/* 移除不必要的加载动画（首页实际不使用这些卡片） */
 
 /* 响应式设计 */
 @media (max-width: 768px) {

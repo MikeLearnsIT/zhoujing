@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(initStudio, 50);
         }
     }
-    
+
     if (document.readyState === 'complete') {
         initStudio();
     } else {
@@ -20,81 +20,81 @@ document.addEventListener('DOMContentLoaded', function () {
 const studioTranslations = {
     // 工作室页面标题和描述
     title: { zh: "工作室", en: "Studio" },
-    description: { 
+    description: {
         zh: "探索周婧的艺术工作室，了解她的创作过程和艺术理念。",
         en: "Explore Zhou Jing's art studio and discover her creative process and artistic philosophy."
     },
-    
+
     // 工作室介绍
     studioTitle: { zh: "周婧的艺术工作室", en: "Zhou Jing's Art Studio" },
     studioSubtitle: { zh: "创意与灵感的诞生地", en: "The Birthplace of Creativity and Inspiration" },
-    studioIntroduction: { 
+    studioIntroduction: {
         zh: "这里是周婧的私人艺术工作室，一个充满创意能量的神圣空间。在这里，每一个想法都可能成为艺术作品的起点，每一次实验都可能带来新的突破。工作室不仅是创作的场所，更是艺术家与内心对话的私密空间。",
         en: "This is Zhou Jing's private art studio, a sacred space filled with creative energy. Here, every idea can become the starting point of an artwork, and every experiment can lead to new breakthroughs. The studio is not only a place for creation, but also a private space for the artist to dialogue with her inner self."
     },
-    
+
     // 创作过程
     processTitle: { zh: "创作过程", en: "Creative Process" },
     processStep1: { zh: "构思与灵感", en: "Conception & Inspiration" },
     processStep2: { zh: "绘画与表达", en: "Painting & Expression" },
     processStep3: { zh: "技法与实验", en: "Technique & Experimentation" },
     processStep4: { zh: "完善与呈现", en: "Refinement & Presentation" },
-    
+
     // 图片标题和描述
     image1Title: { zh: "创作空间", en: "Creative Space" },
-    image1Description: { 
+    image1Description: {
         zh: "宽敞明亮的工作室，充满自然光线，为艺术创作提供理想环境。",
         en: "Spacious and bright studio filled with natural light, providing an ideal environment for artistic creation."
     },
-    
+
     image2Title: { zh: "创作过程", en: "Creative Process" },
-    image2Description: { 
+    image2Description: {
         zh: "艺术家专注于画布上的每一笔，将内心的情感转化为视觉语言。",
         en: "The artist focuses on every stroke on the canvas, transforming inner emotions into visual language."
     },
-    
+
     image3Title: { zh: "材料与工具", en: "Materials & Tools" },
-    image3Description: { 
+    image3Description: {
         zh: "丰富的绘画材料和工具，每一种都承载着不同的艺术可能性。",
         en: "Rich painting materials and tools, each carrying different artistic possibilities."
     },
-    
+
     image4Title: { zh: "作品完成", en: "Work Completion" },
-    image4Description: { 
+    image4Description: {
         zh: "完成的作品展示，记录着从构思到实现的完整创作历程。",
         en: "Display of completed works, documenting the complete creative journey from conception to realization."
     },
-    
+
     // 创作理念
     philosophyTitle: { zh: "创作理念", en: "Creative Philosophy" },
-    philosophyQuote: { 
+    philosophyQuote: {
         zh: "艺术创作是一个持续的探索过程，在这个过程中，我与材料、色彩、形式进行对话，寻找表达内心世界的最佳方式。每一件作品都是这种对话的结果，承载着创作时刻的情感与思考。",
         en: "Artistic creation is a continuous process of exploration, in which I dialogue with materials, colors, and forms, seeking the best way to express my inner world. Each work is the result of this dialogue, carrying the emotions and thoughts of the moment of creation."
     },
     philosophyAuthor: { zh: "周婧", en: "Zhou Jing" },
-    
+
     // 工作室特色
     featuresTitle: { zh: "工作室特色", en: "Studio Features" },
     feature1Title: { zh: "自然光线", en: "Natural Light" },
-    feature1Description: { 
+    feature1Description: {
         zh: "充足的自然光线为色彩创作提供最佳条件",
         en: "Abundant natural light provides optimal conditions for color creation"
     },
-    
+
     feature2Title: { zh: "专业设备", en: "Professional Equipment" },
-    feature2Description: { 
+    feature2Description: {
         zh: "完善的绘画工具和材料支持多种创作技法",
         en: "Complete painting tools and materials support various creative techniques"
     },
-    
+
     feature3Title: { zh: "静谧环境", en: "Tranquil Environment" },
-    feature3Description: { 
+    feature3Description: {
         zh: "安静的创作环境有助于艺术家专注创作",
         en: "Quiet creative environment helps artists focus on creation"
     },
-    
+
     feature4Title: { zh: "灵感空间", en: "Inspiration Space" },
-    feature4Description: { 
+    feature4Description: {
         zh: "充满艺术品和参考资料的启发性空间",
         en: "Inspiring space filled with artworks and reference materials"
     }
@@ -109,16 +109,16 @@ function getCurrentLanguage() {
 function getStudioTranslation(key) {
     const currentLang = getCurrentLanguage();
     const translation = studioTranslations[key];
-    
+
     if (translation && translation[currentLang]) {
         return translation[currentLang];
     }
-    
+
     // 降级到中文
     if (translation && translation.zh) {
         return translation.zh;
     }
-    
+
     return key;
 }
 
@@ -160,13 +160,13 @@ const studioData = {
 function renderStudioContent() {
     const container = document.querySelector('.studio-content');
     if (!container) return;
-    
+
     // 更新页面级别的描述
     const studioText = document.querySelector('.studio-text');
     if (studioText) {
         studioText.innerHTML = `<p>${getStudioTranslation('description')}</p>`;
     }
-    
+
     const heroImages = studioData.images.slice(0, 3);
     container.innerHTML = `
         <!-- Hero v2：分层拼贴 + 文案 -->
@@ -178,7 +178,7 @@ function renderStudioContent() {
             </div>
             <div class="hero2-collage">
                 ${heroImages.map((img, i) => `
-                    <div class="collage-layer layer-${i+1}" onclick="openStudioViewer('${img.src}', '${img.titleKey}', '${img.descriptionKey}')">
+                    <div class="collage-layer layer-${i + 1}" onclick="openStudioViewer('${img.src}', '${img.titleKey}', '${img.descriptionKey}')">
                         <img src="${img.src}" alt="${getStudioTranslation(img.titleKey)}" />
                     </div>
                 `).join('')}
@@ -193,7 +193,9 @@ function renderStudioContent() {
                     <div class="steps2-item ${index % 2 === 1 ? 'alt' : ''}">
                         <div class="steps2-node">${index + 1}</div>
                         <div class="steps2-card">
-                            <div class="steps2-thumb"><img src="${image.src}" alt="${getStudioTranslation(image.titleKey)}" /></div>
+                            <div class="steps2-thumb" onclick="openStudioViewer('${image.src}', '${image.processKey}', '${image.descriptionKey}')">
+                                <img src="${image.src}" alt="${getStudioTranslation(image.titleKey)}" loading="lazy" decoding="async" />
+                            </div>
                             <div class="steps2-content">
                                 <h4>${getStudioTranslation(image.processKey)}</h4>
                                 <p>${getStudioTranslation(image.descriptionKey)}</p>
@@ -242,7 +244,7 @@ function renderStudioContent() {
             </div>
         </div>
     `;
-    
+
     // 添加动画效果
     setTimeout(() => {
         const steps2 = document.querySelectorAll('.steps2-item');
@@ -257,7 +259,7 @@ function renderStudioContent() {
 function openStudioViewer(imageSrc, titleKey, descriptionKey) {
     const title = getStudioTranslation(titleKey);
     const description = getStudioTranslation(descriptionKey);
-    
+
     const viewer = document.createElement('div');
     viewer.className = 'studio-viewer-modal';
     viewer.innerHTML = `
@@ -273,12 +275,12 @@ function openStudioViewer(imageSrc, titleKey, descriptionKey) {
             </button>
         </div>
     `;
-    
+
     document.body.appendChild(viewer);
     setTimeout(() => viewer.classList.add('show'), 10);
 }
 
 // 监听语言切换
-document.addEventListener('languageChanged', function() {
+document.addEventListener('languageChanged', function () {
     renderStudioContent();
 }); 

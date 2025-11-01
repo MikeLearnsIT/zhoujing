@@ -2,7 +2,7 @@
 
 /* 工作室页面基础布局 */
 .studio {
-    /* 高级感、低干扰背景：轻微网格 + 角落暖色晕染 */
+    /* 高级感背景：轻微网格 + 角落暖色晕染 */
     background-color: var(--background-color);
     background-image:
         radial-gradient(1000px 600px at 10% 0%, rgba(201, 169, 110, 0.08) 0%, rgba(201, 169, 110, 0) 60%),
@@ -11,6 +11,7 @@
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
+    background-attachment: fixed;
     padding: 8rem 0 4rem;
     min-height: 100vh;
 }
@@ -57,17 +58,42 @@
 }
 
 .studio-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
-.studio-gallery .studio-card { grid-column: span 6; background: var(--white); border: 1px solid rgba(201,169,110,0.18); border-radius: 14px; overflow: hidden; box-shadow: 0 6px 22px rgba(0,0,0,0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.studio-gallery .studio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 34px rgba(0,0,0,0.12); }
+.studio-gallery .studio-card { 
+    grid-column: span 6; 
+    background: var(--white); 
+    border: 1px solid rgba(201,169,110,0.18); 
+    border-radius: 14px; 
+    overflow: hidden; 
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .studio-gallery .studio-card:hover { 
+        transform: translateY(-3px); 
+        box-shadow: 0 12px 34px rgba(0,0,0,0.12); 
+    }
+}
 .studio-gallery .studio-card .card-image { aspect-ratio: 4/3; background: var(--background-color); display: flex; align-items: center; justify-content: center; }
 .studio-gallery .studio-card .card-image img { width: 100%; height: 100%; object-fit: cover; }
 .studio-gallery .studio-card .card-meta { padding: 1rem 1.2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .studio-gallery .studio-card .meta-title { font-family: var(--font-serif); color: var(--primary-color); font-size: 1.05rem; }
 .studio-gallery .studio-card .meta-tag { font-size: 0.85rem; color: var(--secondary-color); opacity: 0.85; }
 
-.studio-image { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: var(--transition); }
+.studio-image { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: transform 0.2s ease; 
+}
 
-.studio-image:hover { transform: scale(1.03); }
+@media (hover: hover) and (pointer: fine) {
+    .studio-image:hover { 
+        transform: scale(1.02); 
+    }
+}
 
 .studio-text {
     font-size: 1.1rem;
@@ -86,8 +112,26 @@
 .hero2-subtitle { font-size: 1.15rem; color: var(--secondary-color); margin: 0 0 1.1rem 0; font-style: italic; }
 .hero2-description { font-size: 1.05rem; line-height: 1.9; color: var(--text-color); max-width: 50ch; }
 .hero2-collage { position: relative; height: 360px; }
-.collage-layer { position: absolute; border-radius: 16px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.18); transform: rotate(var(--r, 0deg)); background: var(--background-color); }
+.collage-layer { 
+    position: absolute; 
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 18px 40px rgba(0,0,0,.18); 
+    transform: rotate(var(--r, 0deg)); 
+    background: var(--background-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .collage-layer img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (hover: hover) and (pointer: fine) {
+    .collage-layer:hover {
+        transform: rotate(var(--r, 0deg)) translateY(-8px) scale(1.02);
+        box-shadow: 0 24px 50px rgba(0,0,0,.25);
+        z-index: 10;
+    }
+}
+
 .collage-layer.layer-1 { --r: -2.5deg; left: 0; top: 0; width: 62%; height: 70%; }
 .collage-layer.layer-2 { --r: 2deg; right: 2%; top: 10%; width: 52%; height: 60%; }
 .collage-layer.layer-3 { --r: -1deg; left: 20%; bottom: 0; width: 56%; height: 58%; }
@@ -103,8 +147,24 @@
 .steps2-card { display: grid; grid-template-columns: 180px 1fr; gap: 1rem; align-items: center; background: #fff; border: 1px solid rgba(201,169,110,0.2); border-radius: 12px; padding: 1rem; box-shadow: 0 8px 26px rgba(0,0,0,0.06); }
 .steps2-item:not(.alt) .steps2-card { grid-column: 1 / 2; margin-right: 3rem; }
 .steps2-item.alt .steps2-card { grid-column: 2 / 3; margin-left: 3rem; }
-.steps2-thumb { width: 100%; height: 120px; border-radius: 10px; overflow: hidden; background: var(--background-color); }
+.steps2-thumb { 
+    width: 100%; 
+    height: 120px; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    background: var(--background-color);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 .steps2-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (hover: hover) and (pointer: fine) {
+    .steps2-thumb:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+}
+
 .steps2-content h4 { margin: 0 0 .25rem 0; font-size: 1.1rem; color: var(--primary-color); font-family: var(--font-serif); }
 .steps2-content p { margin: 0; color: var(--text-light); line-height: 1.6; font-size: .98rem; }
 .steps2-item.fade-in { animation: fadeInUp .6s ease forwards; opacity: 1; transform: none; }
@@ -145,15 +205,23 @@
 
 .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 0; }
 
-.process-step { background: var(--white); border: 1px solid rgba(201,169,110,0.18); border-radius: 14px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: all 0.25s ease; position: relative; opacity: 0; transform: translateY(30px); }
-
-.process-step.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeInUp 0.6s ease forwards;
+.process-step { 
+    background: var(--white); 
+    border: 1px solid rgba(201,169,110,0.18); 
+    border-radius: 14px; 
+    overflow: hidden; 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    position: relative; 
+    /* 移除入场动画，改为直接显示 */
 }
 
-.process-step:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
+@media (hover: hover) and (pointer: fine) {
+    .process-step:hover { 
+        transform: translateY(-3px); 
+        box-shadow: 0 12px 28px rgba(0,0,0,0.12); 
+    }
+}
 
 .step-number {
     position: absolute;
@@ -182,18 +250,30 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
     cursor: pointer;
 }
 
-.step-image:hover img {
-    transform: scale(1.05);
+@media (hover: hover) and (pointer: fine) {
+    .step-image:hover img {
+        transform: scale(1.03);
+    }
+    
+    .step-image:hover .step-overlay {
+        transform: translateY(0);
+    }
 }
 
-.step-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); color: var(--white); padding: 1.2rem; transform: translateY(100%); transition: transform 0.3s ease; }
-
-.step-image:hover .step-overlay {
-    transform: translateY(0);
+.step-overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); 
+    color: var(--white); 
+    padding: 1.2rem; 
+    transform: translateY(100%); 
+    transition: transform 0.2s ease; 
 }
 
 .step-overlay h4 {
@@ -281,13 +361,15 @@
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid rgba(201, 169, 110, 0.2);
 }
 
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+@media (hover: hover) and (pointer: fine) {
+    .feature-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .feature-item i {
@@ -390,11 +472,13 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
 }
 
-.studio-viewer-modal .viewer-close:hover {
-    background: rgba(0, 0, 0, 0.7);
+@media (hover: hover) and (pointer: fine) {
+    .studio-viewer-modal .viewer-close:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
 }
 
 /* 响应式设计 */

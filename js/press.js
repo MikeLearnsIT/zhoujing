@@ -481,67 +481,62 @@ function renderPressItems() {
     const container = document.querySelector('.press-items');
     if (!container) return;
 
-    // 使用 requestAnimationFrame 优化渲染
-    requestAnimationFrame(() => {
-        // 使用 DocumentFragment 优化DOM操作
-        const fragment = document.createDocumentFragment();
+    // 使用 DocumentFragment 优化DOM操作
+    const fragment = document.createDocumentFragment();
 
-        // 个人专访
-        if (pressData.personalInterviews.items.length > 0) {
-            const personalSection = document.createElement('div');
-            personalSection.className = 'press-section';
-            personalSection.innerHTML = `
-                <h3 class="section-title" data-i18n="press.personalInterviews">${getTranslation('press.personalInterviews')}</h3>
-                <div class="press-list" data-section="personal">
-                    ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
-                </div>
-            `;
-            fragment.appendChild(personalSection);
-        }
+    // 个人专访
+    if (pressData.personalInterviews.items.length > 0) {
+        const personalSection = document.createElement('div');
+        personalSection.className = 'press-section';
+        personalSection.innerHTML = `
+            <h3 class="section-title" data-i18n="press.personalInterviews">${getTranslation('press.personalInterviews')}</h3>
+            <div class="press-list" data-section="personal">
+                ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
+            </div>
+        `;
+        fragment.appendChild(personalSection);
+    }
 
-        // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
-        const exhibitionPressItems = [];
-        if (typeof exhibitionsData === 'object') {
-            Object.keys(exhibitionsData).forEach(year => {
-                (exhibitionsData[year] || []).forEach(ex => {
-                    (ex.press || []).forEach(p => {
-                        exhibitionPressItems.push({
-                            title: p.title,
-                            description: p.description,
-                            publication: p.source,
-                            url: p.url,
-                            date: p.date ? { zh: p.date, en: p.date } : undefined,
-                            thumbnail: p.thumbnail || null
-                        });
+    // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
+    const exhibitionPressItems = [];
+    if (typeof exhibitionsData === 'object') {
+        Object.keys(exhibitionsData).forEach(year => {
+            (exhibitionsData[year] || []).forEach(ex => {
+                (ex.press || []).forEach(p => {
+                    exhibitionPressItems.push({
+                        title: p.title,
+                        description: p.description,
+                        publication: p.source,
+                        url: p.url,
+                        date: p.date ? { zh: p.date, en: p.date } : undefined,
+                        thumbnail: p.thumbnail || null
                     });
                 });
             });
-        }
-
-        if (exhibitionPressItems.length > 0) {
-            // 按时间倒序（YYYY.MM.DD 或 YYYY.MM）排序
-            exhibitionPressItems.sort((a, b) => (parsePressDate(b.date?.zh) - parsePressDate(a.date?.zh)));
-
-            const groupSection = document.createElement('div');
-            groupSection.className = 'press-section';
-            groupSection.innerHTML = `
-                <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
-                <div class="press-list" data-section="group">
-                    ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
-                </div>
-            `;
-            fragment.appendChild(groupSection);
-        }
-
-        // 清空容器并一次性插入所有内容
-        container.innerHTML = '';
-        container.appendChild(fragment);
-
-        // 延迟初始化图片加载
-        requestAnimationFrame(() => {
-            initImageLoading();
         });
-    });
+    }
+
+    if (exhibitionPressItems.length > 0) {
+        // 按时间倒序（YYYY.MM.DD 或 YYYY.MM）排序
+        exhibitionPressItems.sort((a, b) => (parsePressDate(b.date?.zh) - parsePressDate(a.date?.zh)));
+
+        const groupSection = document.createElement('div');
+        groupSection.className = 'press-section';
+        groupSection.innerHTML = `
+            <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
+            <div class="press-list" data-section="group">
+                ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
+            </div>
+        `;
+        fragment.appendChild(groupSection);
+    }
+
+    // 清空容器并一次性插入所有内容
+    container.innerHTML = '';
+    container.appendChild(fragment);
+
+    // 初始化图片加载
+    initImageLoading();
 }
 
 // 将 'YYYY.MM.DD' 或 'YYYY.MM' 转为时间戳
@@ -559,10 +554,6 @@ function initImageLoading() {
     const images = document.querySelectorAll('.press-thumbnail img');
 
     images.forEach(img => {
-        // 确保图片默认可见
-        img.style.opacity = '1';
-        img.style.transition = 'opacity 0.3s ease';
-
         // 如果图片加载失败，显示备用图标
         img.onerror = function () {
             this.style.display = 'none';
@@ -587,11 +578,13 @@ document.addEventListener('DOMContentLoaded', function () {
 // 初始化滚动优化
 function initScrollOptimization() {
     let scrollTimer;
+    let isScrolling = false;
     const body = document.body;
 
     window.addEventListener('scroll', function () {
-        // 添加滚动中的类
-        if (!body.classList.contains('is-scrolling')) {
+        // 节流：只在首次滚动时添加类
+        if (!isScrolling) {
+            isScrolling = true;
             body.classList.add('is-scrolling');
         }
 
@@ -601,6 +594,7 @@ function initScrollOptimization() {
         // 滚动停止后移除类
         scrollTimer = setTimeout(function () {
             body.classList.remove('is-scrolling');
+            isScrolling = false;
         }, 150);
     }, { passive: true });
 } 

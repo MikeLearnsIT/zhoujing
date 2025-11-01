@@ -49,7 +49,7 @@
             <div class="about-container">
                 <h2 data-i18n="about.statementTitle">艺术家陈述</h2>
                 <div class="statement-portrait">
-                    <img src="images/Jing-Zhou-portrait.jpg" alt="Artist Portrait">
+                    <img src="images/Jing-Zhou-portrait.jpg" alt="Zhou Jing Portrait" loading="eager" decoding="async">
                 </div>
                 <div class="statement-content">
                     <div class="statement-text" data-i18n="about.statementContent"></div>
@@ -152,19 +152,21 @@
                 const container = document.getElementById('cv-exhibitions-timeline');
                 if (!container || typeof exhibitionsData !== 'object') return;
 
-                const lang = (window.languageManager && window.languageManager.currentLang) || 'zh';
+                // 使用 requestAnimationFrame 优化渲染性能
+                requestAnimationFrame(() => {
+                    const lang = (window.languageManager && window.languageManager.currentLang) || 'zh';
 
-                // 按年份倒序
-                const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
+                    // 按年份倒序
+                    const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
 
-                const html = years.map(year => {
-                    const items = (exhibitionsData[year] || []).map(ex => {
-                        const title = getTextByLang(ex.title, lang);
-                        const location = getTextByLang(ex.location, lang);
-                        const country = getTextByLang(ex.country, lang);
-                        const date = ex.date || '';
-                        const link = `exhibition-detail.html?id=${ex.id}`;
-                        return `
+                    const html = years.map(year => {
+                        const items = (exhibitionsData[year] || []).map(ex => {
+                            const title = getTextByLang(ex.title, lang);
+                            const location = getTextByLang(ex.location, lang);
+                            const country = getTextByLang(ex.country, lang);
+                            const date = ex.date || '';
+                            const link = `exhibition-detail.html?id=${ex.id}`;
+                            return `
                             <div class="cv-timeline-item">
                                 <div class="cv-timeline-dot"></div>
                                 <div class="cv-timeline-content">
@@ -174,17 +176,18 @@
                                 </div>
                             </div>
                         `;
-                    }).join('');
+                        }).join('');
 
-                    return `
+                        return `
                         <div class="cv-timeline-year">
                             <div class="cv-year-label">${year}</div>
                             <div class="cv-timeline-items">${items}</div>
                         </div>
                     `;
-                }).join('');
+                    }).join('');
 
-                container.innerHTML = html || '<div class="no-content">—</div>';
+                    container.innerHTML = html || '<div class="no-content">—</div>';
+                });
             }
 
             function init() {
