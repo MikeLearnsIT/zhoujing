@@ -2031,7 +2031,7 @@ function getPressText(press, field) {
 // 当前语言
 let currentLang = 'zh';
 
-// 监听语言切换事件
+// 初始化展览页面
 document.addEventListener('DOMContentLoaded', function () {
     // 初始化当前语言
     if (window.languageManager) {
@@ -2042,17 +2042,48 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('languageChanged', function (e) {
         currentLang = e.detail.language;
         // 重新渲染展览列表
-        renderExhibitions(exhibitionsData);
-    });
-});
-
-// 初始化展览页面
-document.addEventListener('DOMContentLoaded', function () {
-    // 监听语言切换
-    document.addEventListener('languageChanged', function (e) {
-        currentLang = e.detail.language;
         renderExhibitions();
     });
+
+    // 使用事件委托处理展览项点击
+    const timeline = document.querySelector('.exhibitions-timeline');
+    if (timeline) {
+        timeline.addEventListener('click', function (e) {
+            const exhibitionItem = e.target.closest('.exhibition-item');
+            if (exhibitionItem) {
+                // 如果点击的是查看详情按钮，不处理（让链接自己跳转）
+                if (e.target.closest('.view-detail-btn')) {
+                    return;
+                }
+
+                // 获取展览ID并跳转
+                const exhibitionId = exhibitionItem.getAttribute('data-exhibition-id');
+                if (exhibitionId) {
+                    e.preventDefault();
+                    window.location.href = `exhibition-detail.html?id=${exhibitionId}`;
+                }
+            }
+        });
+    }
+
+    // 优化滚动性能：滚动时禁用 hover 效果
+    let scrollTimer;
+    const body = document.body;
+
+    window.addEventListener('scroll', function () {
+        // 添加滚动中的类
+        if (!body.classList.contains('is-scrolling')) {
+            body.classList.add('is-scrolling');
+        }
+
+        // 清除之前的定时器
+        clearTimeout(scrollTimer);
+
+        // 滚动停止后移除类
+        scrollTimer = setTimeout(function () {
+            body.classList.remove('is-scrolling');
+        }, 150);
+    }, { passive: true });
 
     // 初始渲染
     renderExhibitions();
@@ -2063,29 +2094,37 @@ function renderExhibitions() {
     const container = document.querySelector('.exhibitions-timeline');
     if (!container) return;
 
-    container.innerHTML = '';
+    // 使用 requestAnimationFrame 确保在浏览器准备好时再渲染
+    requestAnimationFrame(() => {
+        // 使用 DocumentFragment 减少重排
+        const fragment = document.createDocumentFragment();
 
-    // 按年份倒序排列
-    const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
+        // 按年份倒序排列
+        const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
 
-    years.forEach(year => {
-        const yearSection = document.createElement('div');
-        yearSection.className = 'exhibition-year';
+        years.forEach(year => {
+            const yearSection = document.createElement('div');
+            yearSection.className = 'exhibition-year';
 
-        const yearTitle = document.createElement('h3');
-        yearTitle.textContent = year;
-        yearSection.appendChild(yearTitle);
+            const yearTitle = document.createElement('h3');
+            yearTitle.textContent = year;
+            yearSection.appendChild(yearTitle);
 
-        const exhibitionsList = document.createElement('div');
-        exhibitionsList.className = 'exhibitions-list';
+            const exhibitionsList = document.createElement('div');
+            exhibitionsList.className = 'exhibitions-list';
 
-        exhibitionsData[year].forEach(exhibition => {
-            const exhibitionItem = createExhibitionItem(exhibition);
-            exhibitionsList.appendChild(exhibitionItem);
+            exhibitionsData[year].forEach(exhibition => {
+                const exhibitionItem = createExhibitionItem(exhibition);
+                exhibitionsList.appendChild(exhibitionItem);
+            });
+
+            yearSection.appendChild(exhibitionsList);
+            fragment.appendChild(yearSection);
         });
 
-        yearSection.appendChild(exhibitionsList);
-        container.appendChild(yearSection);
+        // 一次性插入所有内容
+        container.innerHTML = '';
+        container.appendChild(fragment);
     });
 }
 
@@ -2094,12 +2133,22 @@ function createExhibitionItem(exhibition) {
     const item = document.createElement('div');
     item.className = 'exhibition-item';
     item.setAttribute('data-exhibition-id', exhibition.id);
-    item.style.cursor = 'pointer';
 
     const title = exhibition.title[currentLang] || exhibition.title.zh;
     const location = exhibition.location[currentLang] || exhibition.location.zh;
     const country = exhibition.country[currentLang] || exhibition.country.zh;
     const organizer = exhibition.organizer ? (exhibition.organizer[currentLang] || exhibition.organizer.zh) : '';
+
+    // 优化：只显示前2张预览图（减少图片数量），使用懒加载和异步解码
+    const previewImages = exhibition.images.slice(0, 2).map((img, index) =>
+        `<img src="${img.src}" 
+              alt="${img.title}" 
+              class="preview-image" 
+              loading="lazy" 
+              decoding="async"
+              ${index > 0 ? 'fetchpriority="low"' : ''}>`
+    ).join('');
+
     item.innerHTML = `
         <div class="exhibition-info">
             <div class="exhibition-date">${exhibition.date}</div>
@@ -2109,9 +2158,7 @@ function createExhibitionItem(exhibition) {
             <div class="exhibition-country">${country}</div>
         </div>
         <div class="exhibition-preview">
-            ${exhibition.images.slice(0, 3).map(img =>
-        `<img src="${img.src}" alt="${img.title}" class="preview-image">`
-    ).join('')}
+            ${previewImages}
         </div>
         <div class="exhibition-action">
             <a href="exhibition-detail.html?id=${exhibition.id}" class="view-detail-btn">
@@ -2120,20 +2167,6 @@ function createExhibitionItem(exhibition) {
             </a>
         </div>
     `;
-
-    // 添加点击事件
-    item.addEventListener('click', function (e) {
-        // 如果点击的是链接按钮，不处理（让链接自己处理）
-        if (e.target.closest('.view-detail-btn')) {
-            return;
-        }
-
-        // 阻止事件冒泡
-        e.preventDefault();
-
-        // 跳转到详情页
-        window.location.href = `exhibition-detail.html?id=${exhibition.id}`;
-    });
 
     return item;
 }
