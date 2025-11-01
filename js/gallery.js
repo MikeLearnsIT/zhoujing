@@ -937,10 +937,10 @@ const artworksData = [
 
 // 初始化排序权重与原始索引（用于默认排序：权重高者在前，权重相同按初始顺序）
 artworksData.forEach((artwork, index) => {
-	if (typeof artwork.sortWeight !== 'number') {
-		artwork.sortWeight = 0;
-	}
-	artwork.__initialIndex = index;
+    if (typeof artwork.sortWeight !== 'number') {
+        artwork.sortWeight = 0;
+    }
+    artwork.__initialIndex = index;
 });
 
 // 当前语言、筛选和排序状态
@@ -958,6 +958,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.languageManager && window.languageManager.isInitialized) {
             currentLang = window.languageManager.currentLang;
             initSortControls();
+            initScrollOptimization();
             renderGallery();
             initImageModal();
         } else {
@@ -971,6 +972,21 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('load', initGallery);
     }
 });
+
+// 滚动优化：滚动时禁用 hover 效果
+function initScrollOptimization() {
+    let scrollTimer;
+    const body = document.body;
+
+    window.addEventListener('scroll', function () {
+        body.classList.add('is-scrolling');
+
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function () {
+            body.classList.remove('is-scrolling');
+        }, 150);
+    }, { passive: true });
+}
 
 // 监听语言切换事件
 document.addEventListener('languageChanged', function (e) {
@@ -1164,19 +1180,27 @@ function renderGallery() {
     const container = document.querySelector('.gallery-grid');
     if (!container) return;
 
-    container.innerHTML = '';
+    // 使用 requestAnimationFrame 优化渲染性能
+    requestAnimationFrame(() => {
+        container.innerHTML = '';
 
-    // 根据筛选条件过滤作品
-    const filteredArtworks = currentFilter === 'all'
-        ? [...artworksData]
-        : artworksData.filter(artwork => artwork.category === currentFilter);
+        // 根据筛选条件过滤作品
+        const filteredArtworks = currentFilter === 'all'
+            ? [...artworksData]
+            : artworksData.filter(artwork => artwork.category === currentFilter);
 
-    // 根据当前排序方式排序
-    sortArtworks(filteredArtworks);
+        // 根据当前排序方式排序
+        sortArtworks(filteredArtworks);
 
-    filteredArtworks.forEach(artwork => {
-        const artworkElement = createArtworkElement(artwork);
-        container.appendChild(artworkElement);
+        // 使用 DocumentFragment 批量插入DOM，减少重排
+        const fragment = document.createDocumentFragment();
+
+        filteredArtworks.forEach(artwork => {
+            const artworkElement = createArtworkElement(artwork);
+            fragment.appendChild(artworkElement);
+        });
+
+        container.appendChild(fragment);
     });
 }
 
@@ -1215,7 +1239,7 @@ function createArtworkElement(artwork) {
     const element = document.createElement('div');
     element.className = 'gallery-artwork-card';
     element.setAttribute('data-artwork-id', artwork.id);
-    
+
     // 检测是否为移动端
     const isMobile = window.innerWidth <= 768;
 
@@ -1228,7 +1252,11 @@ function createArtworkElement(artwork) {
 
     element.innerHTML = `
         <div class="gallery-artwork-image-container">
-            <img src="${artwork.image}" alt="${title}" class="gallery-artwork-image">
+            <img src="${artwork.image}" 
+                 alt="${title}" 
+                 class="gallery-artwork-image"
+                 loading="lazy"
+                 decoding="async">
             <div class="gallery-artwork-overlay">
                 <div class="gallery-artwork-actions">
                     <button class="action-btn view-btn" onclick="openImageModal('${artwork.image}', '${title}')">
@@ -1280,13 +1308,13 @@ function createArtworkElement(artwork) {
 
     // 移动端直接点击图片卡片打开大图
     if (isMobile) {
-        element.addEventListener('click', function(e) {
+        element.addEventListener('click', function (e) {
             // 防止事件冒泡
             e.preventDefault();
             e.stopPropagation();
             openImageModal(artwork.image, title);
         });
-        
+
         // 添加移动端特有的样式类
         element.classList.add('mobile-direct-click');
     }
