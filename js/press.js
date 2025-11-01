@@ -80,6 +80,7 @@ function createPressItemHTML(item) {
                 <img src="${screenshotUrl}" 
                      alt="${title}" 
                      loading="lazy"
+                     decoding="async"
                      onerror="this.classList.add('is-hidden'); this.parentElement.querySelector('.press-thumbnail-fallback').classList.remove('is-hidden');">
                 <div class="press-thumbnail-fallback is-hidden">
                     <i class="fas fa-newspaper"></i>
@@ -155,7 +156,7 @@ function initPress() {
             setTimeout(initPressContent, 10);
         }
     }
-    
+
     initPressContent();
 
     // 监听语言切换
@@ -198,40 +199,40 @@ function openPressImageModal(imageSrc, title, url) {
 
     // 预加载图片以确保清晰度
     const img = new Image();
-    img.onload = function() {
+    img.onload = function () {
         // 设置图片源和属性
         modalImage.src = imageSrc;
         modalImage.alt = title;
-        
+
         // 计算图片的实际显示比例
         const viewportWidth = window.innerWidth * 0.9;
         const viewportHeight = window.innerHeight * 0.9;
         const imageRatio = Math.min(viewportWidth / img.naturalWidth, viewportHeight / img.naturalHeight);
-        
+
         // 设置合适的最大缩放比例，不超过原始分辨率
         imageViewer.maxScale = Math.max(1, Math.min(4, 1 / imageRatio));
-        
+
         // 设置图片样式以确保最佳显示质量
         modalImage.style.imageRendering = 'optimizeQuality';
         modalImage.style.webkitImageRendering = '-webkit-optimize-contrast';
         modalImage.style.msInterpolationMode = 'bicubic';
-        
+
         // 显示模态框
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     };
-    
-    img.onerror = function() {
+
+    img.onerror = function () {
         // 即使预加载失败，也显示图片
         modalImage.src = imageSrc;
         modalImage.alt = title;
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     };
-    
+
     // 开始预加载
     img.src = imageSrc;
-    
+
     // 设置标题和链接
     modalCaption.innerHTML = `
         <strong>${title}</strong><br>
@@ -281,7 +282,7 @@ function updateImageTransform() {
         const transform = `translate3d(${imageViewer.translateX}px, ${imageViewer.translateY}px, 0) scale(${imageViewer.scale})`;
         modalImage.style.transform = transform;
         modalImage.style.cursor = imageViewer.scale > imageViewer.minScale ? 'grab' : 'zoom-in';
-        
+
         // 动态调整图片渲染质量
         if (imageViewer.scale > 1) {
             modalImage.style.imageRendering = 'auto';
@@ -434,13 +435,13 @@ function initPressModal() {
             if (imageViewer.isDragging && e.touches.length === 1) {
                 e.preventDefault(); // 阻止默认滚动行为
                 imageViewer.hasDragged = true;
-                
+
                 const deltaX = e.touches[0].clientX - imageViewer.startX;
                 const deltaY = e.touches[0].clientY - imageViewer.startY;
-                
+
                 imageViewer.translateX = imageViewer.lastX + deltaX / imageViewer.scale;
                 imageViewer.translateY = imageViewer.lastY + deltaY / imageViewer.scale;
-                
+
                 // 使用 requestAnimationFrame 优化性能
                 requestAnimationFrame(updateImageTransform);
             }
@@ -480,65 +481,66 @@ function renderPressItems() {
     const container = document.querySelector('.press-items');
     if (!container) return;
 
-    // 清空容器
-    container.innerHTML = '';
+    // 使用 requestAnimationFrame 优化渲染
+    requestAnimationFrame(() => {
+        // 使用 DocumentFragment 优化DOM操作
+        const fragment = document.createDocumentFragment();
 
-    // 使用 DocumentFragment 优化DOM操作
-    const fragment = document.createDocumentFragment();
+        // 个人专访
+        if (pressData.personalInterviews.items.length > 0) {
+            const personalSection = document.createElement('div');
+            personalSection.className = 'press-section';
+            personalSection.innerHTML = `
+                <h3 class="section-title" data-i18n="press.personalInterviews">${getTranslation('press.personalInterviews')}</h3>
+                <div class="press-list" data-section="personal">
+                    ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
+                </div>
+            `;
+            fragment.appendChild(personalSection);
+        }
 
-    // 个人专访
-    if (pressData.personalInterviews.items.length > 0) {
-        const personalSection = document.createElement('div');
-        personalSection.className = 'press-section';
-        personalSection.innerHTML = `
-            <h3 class="section-title" data-i18n="press.personalInterviews">${getTranslation('press.personalInterviews')}</h3>
-            <div class="press-list" data-section="personal">
-                ${pressData.personalInterviews.items.map(item => createPressItemHTML(item)).join('')}
-            </div>
-        `;
-        fragment.appendChild(personalSection);
-    }
-
-    // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
-    const exhibitionPressItems = [];
-    if (typeof exhibitionsData === 'object') {
-        Object.keys(exhibitionsData).forEach(year => {
-            (exhibitionsData[year] || []).forEach(ex => {
-                (ex.press || []).forEach(p => {
-                    exhibitionPressItems.push({
-                        title: p.title,
-                        description: p.description,
-                        publication: p.source,
-                        url: p.url,
-                        date: p.date ? { zh: p.date, en: p.date } : undefined,
-                        thumbnail: p.thumbnail || null
+        // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
+        const exhibitionPressItems = [];
+        if (typeof exhibitionsData === 'object') {
+            Object.keys(exhibitionsData).forEach(year => {
+                (exhibitionsData[year] || []).forEach(ex => {
+                    (ex.press || []).forEach(p => {
+                        exhibitionPressItems.push({
+                            title: p.title,
+                            description: p.description,
+                            publication: p.source,
+                            url: p.url,
+                            date: p.date ? { zh: p.date, en: p.date } : undefined,
+                            thumbnail: p.thumbnail || null
+                        });
                     });
                 });
             });
+        }
+
+        if (exhibitionPressItems.length > 0) {
+            // 按时间倒序（YYYY.MM.DD 或 YYYY.MM）排序
+            exhibitionPressItems.sort((a, b) => (parsePressDate(b.date?.zh) - parsePressDate(a.date?.zh)));
+
+            const groupSection = document.createElement('div');
+            groupSection.className = 'press-section';
+            groupSection.innerHTML = `
+                <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
+                <div class="press-list" data-section="group">
+                    ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
+                </div>
+            `;
+            fragment.appendChild(groupSection);
+        }
+
+        // 清空容器并一次性插入所有内容
+        container.innerHTML = '';
+        container.appendChild(fragment);
+
+        // 延迟初始化图片加载
+        requestAnimationFrame(() => {
+            initImageLoading();
         });
-    }
-
-    if (exhibitionPressItems.length > 0) {
-        // 按时间倒序（YYYY.MM.DD 或 YYYY.MM）排序
-        exhibitionPressItems.sort((a, b) => (parsePressDate(b.date?.zh) - parsePressDate(a.date?.zh)));
-
-        const groupSection = document.createElement('div');
-        groupSection.className = 'press-section';
-        groupSection.innerHTML = `
-            <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
-            <div class="press-list" data-section="group">
-                ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
-            </div>
-        `;
-        fragment.appendChild(groupSection);
-    }
-
-    // 一次性插入所有内容
-    container.appendChild(fragment);
-    
-    // 延迟初始化图片加载
-    requestAnimationFrame(() => {
-        initImageLoading();
     });
 }
 
@@ -555,14 +557,14 @@ function parsePressDate(dateStr) {
 // 初始化图片加载优化
 function initImageLoading() {
     const images = document.querySelectorAll('.press-thumbnail img');
-    
+
     images.forEach(img => {
         // 确保图片默认可见
         img.style.opacity = '1';
         img.style.transition = 'opacity 0.3s ease';
-        
+
         // 如果图片加载失败，显示备用图标
-        img.onerror = function() {
+        img.onerror = function () {
             this.style.display = 'none';
             const fallback = this.parentElement.querySelector('.press-thumbnail-fallback');
             if (fallback) {
@@ -578,4 +580,27 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(initPress, 100);
     // 初始化模态框
     initPressModal();
-}); 
+    // 初始化滚动优化
+    initScrollOptimization();
+});
+
+// 初始化滚动优化
+function initScrollOptimization() {
+    let scrollTimer;
+    const body = document.body;
+
+    window.addEventListener('scroll', function () {
+        // 添加滚动中的类
+        if (!body.classList.contains('is-scrolling')) {
+            body.classList.add('is-scrolling');
+        }
+
+        // 清除之前的定时器
+        clearTimeout(scrollTimer);
+
+        // 滚动停止后移除类
+        scrollTimer = setTimeout(function () {
+            body.classList.remove('is-scrolling');
+        }, 150);
+    }, { passive: true });
+} 
