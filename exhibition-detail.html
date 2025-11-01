@@ -73,6 +73,21 @@
     <script src="js/mobile-menu.js"></script>
     <script src="js/exhibitions.js"></script>
     <script>
+        // 滚动优化：滚动时禁用 hover 效果
+        (function initScrollOptimization() {
+            let scrollTimer;
+            const body = document.body;
+
+            window.addEventListener('scroll', function () {
+                body.classList.add('is-scrolling');
+
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function () {
+                    body.classList.remove('is-scrolling');
+                }, 150);
+            }, { passive: true });
+        })();
+
         // 页面加载时解析URL参数并显示展览详情
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
@@ -128,64 +143,66 @@
 
         // 渲染展览详情页面内容
         function renderExhibitionDetailPage(exhibition) {
-            const currentLang = window.languageManager?.currentLang || 'zh';
-            const title = exhibition.title[currentLang] || exhibition.title.zh;
-            const organizer = exhibition.organizer[currentLang] || exhibition.organizer.zh;
-            const location = exhibition.location[currentLang] || exhibition.location.zh;
-            const type = exhibition.country[currentLang] || exhibition.country.zh;
-            const description = exhibition.description[currentLang] || exhibition.description.zh;
-            const organizerDescription = exhibition.organizerDescription[currentLang] || exhibition.organizerDescription.zh;
-            const organizerLink = exhibition.organizerLink ? (exhibition.organizerLink[currentLang] || exhibition.organizerLink.zh) : '';
+            // 使用 requestAnimationFrame 优化渲染性能
+            requestAnimationFrame(() => {
+                const currentLang = window.languageManager?.currentLang || 'zh';
+                const title = exhibition.title[currentLang] || exhibition.title.zh;
+                const organizer = exhibition.organizer[currentLang] || exhibition.organizer.zh;
+                const location = exhibition.location[currentLang] || exhibition.location.zh;
+                const type = exhibition.country[currentLang] || exhibition.country.zh;
+                const description = exhibition.description[currentLang] || exhibition.description.zh;
+                const organizerDescription = exhibition.organizerDescription[currentLang] || exhibition.organizerDescription.zh;
+                const organizerLink = exhibition.organizerLink ? (exhibition.organizerLink[currentLang] || exhibition.organizerLink.zh) : '';
 
-            const hasOrganizerSection = Boolean((organizerDescription && organizerDescription.trim()) || (organizerLink && organizerLink.trim()));
-            const hasDescriptionSection = Boolean(description && description.trim());
-            const hasOrganizerName = Boolean(organizer && organizer.trim());
-            const hasPeriod = Boolean(exhibition.date && String(exhibition.date).trim());
-            const hasLocation = Boolean(location && location.trim());
-            const hasCountry = Boolean(type && type.trim());
+                const hasOrganizerSection = Boolean((organizerDescription && organizerDescription.trim()) || (organizerLink && organizerLink.trim()));
+                const hasDescriptionSection = Boolean(description && description.trim());
+                const hasOrganizerName = Boolean(organizer && organizer.trim());
+                const hasPeriod = Boolean(exhibition.date && String(exhibition.date).trim());
+                const hasLocation = Boolean(location && location.trim());
+                const hasCountry = Boolean(type && type.trim());
 
-            // 获取多语言图片描述的函数
-            function getImageText(img, field) {
-                if (typeof img[field] === 'object' && img[field] !== null) {
-                    return img[field][currentLang] || img[field].zh || img[field];
+                // 获取多语言图片描述的函数
+                function getImageText(img, field) {
+                    if (typeof img[field] === 'object' && img[field] !== null) {
+                        return img[field][currentLang] || img[field].zh || img[field];
+                    }
+                    return img[field] || '';
                 }
-                return img[field] || '';
-            }
 
-            // 获取作品字段的多语言文本
-            function getArtworkText(artwork, field) {
-                if (typeof artwork[field] === 'object' && artwork[field] !== null) {
-                    return artwork[field][currentLang] || artwork[field].zh || artwork[field];
+                // 获取作品字段的多语言文本
+                function getArtworkText(artwork, field) {
+                    if (typeof artwork[field] === 'object' && artwork[field] !== null) {
+                        return artwork[field][currentLang] || artwork[field].zh || artwork[field];
+                    }
+                    return artwork[field] || '';
                 }
-                return artwork[field] || '';
-            }
 
-            // 获取媒体报道字段的多语言文本
-            function getPressText(press, field) {
-                if (typeof press[field] === 'object' && press[field] !== null) {
-                    return press[field][currentLang] || press[field].zh || press[field];
+                // 获取媒体报道字段的多语言文本
+                function getPressText(press, field) {
+                    if (typeof press[field] === 'object' && press[field] !== null) {
+                        return press[field][currentLang] || press[field].zh || press[field];
+                    }
+                    return press[field] || '';
                 }
-                return press[field] || '';
-            }
 
-            // 文档字段多语言文本
-            function getDocText(doc, field) {
-                if (typeof doc[field] === 'object' && doc[field] !== null) {
-                    return doc[field][currentLang] || doc[field].zh || doc[field];
+                // 文档字段多语言文本
+                function getDocText(doc, field) {
+                    if (typeof doc[field] === 'object' && doc[field] !== null) {
+                        return doc[field][currentLang] || doc[field].zh || doc[field];
+                    }
+                    return doc[field] || '';
                 }
-                return doc[field] || '';
-            }
 
-            // 找到海报图片
-            const posterImage = exhibition.images.find(img => {
-                const title = getImageText(img, 'title');
-                return title.includes('海报') || title.includes('poster') || title.includes('Poster');
-            }) || exhibition.images[0];
+                // 找到海报图片
+                const posterImage = exhibition.images.find(img => {
+                    const title = getImageText(img, 'title');
+                    return title.includes('海报') || title.includes('poster') || title.includes('Poster');
+                }) || exhibition.images[0];
 
-            // 展览现场照片（排除海报）
-            const siteImages = exhibition.images.filter(img => img !== posterImage);
+                // 展览现场照片（排除海报）
+                const siteImages = exhibition.images.filter(img => img !== posterImage);
 
-            const content = `
+                const content = `
                 <!-- 展览标题 -->
                 <div class="exhibition-header">
                     <h1 class="exhibition-title">${title}</h1>
@@ -220,7 +237,11 @@
                 <!-- 展览海报 -->
                 <div class="exhibition-poster-section">
                     <div class="poster-container">
-                        <img src="${posterImage.src}" alt="${getImageText(posterImage, 'title')}" onclick="openImageViewer(${exhibition.images.indexOf(posterImage)}, '${exhibition.id}')">
+                        <img src="${posterImage.src}" 
+                             alt="${getImageText(posterImage, 'title')}" 
+                             loading="eager"
+                             decoding="async"
+                             onclick="openImageViewer(${exhibition.images.indexOf(posterImage)}, '${exhibition.id}')">
                         <div class="poster-caption">${getImageText(posterImage, 'title')}</div>
                     </div>
                 </div>
@@ -261,7 +282,11 @@
                             <div class="artwork-card">
                                 ${artwork.image ? `
                                 <div class="artwork-image">
-                                    <img src="${artwork.image}" alt="${getArtworkText(artwork, 'title')}" onclick="openArtworkViewer('${artwork.image}', '${getArtworkText(artwork, 'title')}')">
+                                    <img src="${artwork.image}" 
+                                         alt="${getArtworkText(artwork, 'title')}" 
+                                         loading="lazy"
+                                         decoding="async"
+                                         onclick="openArtworkViewer('${artwork.image}', '${getArtworkText(artwork, 'title')}')">
                                 </div>
                                 ` : ''}
                                 <div class="artwork-header">
@@ -294,7 +319,10 @@
                     <div class="site-images-grid">
                         ${siteImages.map((img, index) => `
                             <div class="site-image-item" onclick="openImageViewer(${exhibition.images.indexOf(img)}, '${exhibition.id}')">
-                                <img src="${img.src}" alt="${getImageText(img, 'title')}">
+                                <img src="${img.src}" 
+                                     alt="${getImageText(img, 'title')}"
+                                     loading="lazy"
+                                     decoding="async">
                                 <div class="image-caption">
                                     <div class="image-title">${getImageText(img, 'title')}</div>
                                     <div class="image-description">${getImageText(img, 'description')}</div>
@@ -312,7 +340,10 @@
                     <div class="certificates-grid ${exhibition.documents.length === 1 ? 'single-document' : ''}">
                         ${exhibition.documents.map(doc => `
                             <div class="certificate-item" onclick="openCertificateViewer('${doc.image}', '${getDocText(doc, 'title')}')">
-                                <img src="${doc.image}" alt="${getDocText(doc, 'title')}">
+                                <img src="${doc.image}" 
+                                     alt="${getDocText(doc, 'title')}"
+                                     loading="lazy"
+                                     decoding="async">
                                 <div class="certificate-title">${getDocText(doc, 'title')}</div>
                             </div>
                         `).join('')}
@@ -342,28 +373,35 @@
                 ` : ''}
             `;
 
-            document.getElementById('exhibitionDetailContent').innerHTML = content;
+                document.getElementById('exhibitionDetailContent').innerHTML = content;
+            });
         }
 
         // 打开证书查看器
         function openCertificateViewer(imageSrc, title) {
-            const viewer = document.createElement('div');
-            viewer.className = 'certificate-viewer-modal';
-            viewer.innerHTML = `
-                <div class="viewer-overlay" onclick="this.parentElement.remove()"></div>
-                <div class="viewer-content">
-                    <img src="${imageSrc}" alt="${title}">
-                    <div class="viewer-info">
-                        <h3>${title}</h3>
+            // 使用 requestAnimationFrame 优化模态框动画
+            requestAnimationFrame(() => {
+                const viewer = document.createElement('div');
+                viewer.className = 'certificate-viewer-modal';
+                viewer.innerHTML = `
+                    <div class="viewer-overlay" onclick="this.parentElement.remove()"></div>
+                    <div class="viewer-content">
+                        <img src="${imageSrc}" 
+                             alt="${title}"
+                             loading="lazy"
+                             decoding="async">
+                        <div class="viewer-info">
+                            <h3>${title}</h3>
+                        </div>
+                        <button class="viewer-close" onclick="this.parentElement.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <button class="viewer-close" onclick="this.parentElement.parentElement.remove()">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            `;
+                `;
 
-            document.body.appendChild(viewer);
-            setTimeout(() => viewer.classList.add('show'), 10);
+                document.body.appendChild(viewer);
+                setTimeout(() => viewer.classList.add('show'), 10);
+            });
         }
 
         // 监听语言切换事件
