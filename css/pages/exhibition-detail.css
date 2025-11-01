@@ -10,7 +10,6 @@
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
-    background-attachment: fixed;
     min-height: calc(100vh - 140px);
     padding: calc(60px + 2rem) 0 2rem 0;
     /* 移除 will-change 避免不必要的GPU层 */

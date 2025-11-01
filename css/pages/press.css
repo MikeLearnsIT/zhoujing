@@ -95,7 +95,6 @@
     gap: 2rem;
     align-items: flex-start;
     overflow: hidden;
-    /* 使用 will-change 替代过度的 contain，只在交互时提升性能 */
 }
 
 /* 只在支持 hover 的设备上启用过渡 */
@@ -311,8 +310,6 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
-    /* 性能优化 */
-    will-change: color;
 }
 
 .press-title a:hover {

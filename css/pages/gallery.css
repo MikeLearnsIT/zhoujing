@@ -12,7 +12,6 @@
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
-    background-attachment: fixed;
     min-height: 100vh;
     overflow: visible;
     position: relative;
