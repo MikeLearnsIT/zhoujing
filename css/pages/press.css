@@ -91,10 +91,7 @@ body.is-scrolling .press button {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    /* 性能优化：为整个列表启用 GPU 加速和分层 */
-    transform: translateZ(0);
-    will-change: scroll-position;
-    isolation: isolate;
+    /* 移除过度优化的属性，它们在某些情况下反而导致性能问题 */
 }
 
 .press-item {
@@ -111,10 +108,8 @@ body.is-scrolling .press button {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
-    /* 性能优化：强制 GPU 加速，特别是底部项目 */
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+    /* 轻量级 GPU 加速，避免过度分层 */
+    will-change: auto;
 }
 
 /* 只在支持 hover 的设备上启用过渡 */
@@ -183,7 +178,12 @@ body.is-scrolling .press button {
     height: 100%;
     object-fit: cover;
     object-position: top;
-    image-rendering: optimizeQuality;
+    /* 性能优化：禁用平滑缩放，提升渲染速度 */
+    image-rendering: auto;
+    /* 禁用图片拖拽和选择，减少事件处理 */
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 /* 懒加载图片优化：添加占位符背景，避免布局跳动 */
@@ -194,7 +194,8 @@ body.is-scrolling .press button {
     /* 移除 content-visibility - 它在快速滚动时会导致元素闪烁 */
     /* 未加载时不显示破损图标 */
     opacity: 0;
-    transition: opacity 0.3s ease;
+    /* 性能优化：减少过渡时间 0.3s → 0.15s */
+    transition: opacity 0.15s ease;
 }
 
 .press-lazy-img[src] {
