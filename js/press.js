@@ -77,9 +77,9 @@ function createPressItemHTML(item) {
     return `
         <div class="press-item">
             <div class="press-thumbnail" onclick="openPressImageModal('${screenshotUrl}', '${title}', '${item.url}')">
-                <img src="${screenshotUrl}" 
+                <img data-src="${screenshotUrl}" 
                      alt="${title}" 
-                     loading="lazy"
+                     class="press-lazy-img"
                      decoding="async"
                      onerror="this.classList.add('is-hidden'); this.parentElement.querySelector('.press-thumbnail-fallback').classList.remove('is-hidden');">
                 <div class="press-thumbnail-fallback is-hidden">
@@ -498,11 +498,22 @@ function renderPressItems() {
     }
 
     // 群展报道：从 exhibitionsData 中提取所有 press，按时间排序
+    // 性能优化：使用传统 for 循环替代 3 层嵌套 forEach
     const exhibitionPressItems = [];
     if (typeof exhibitionsData === 'object') {
-        Object.keys(exhibitionsData).forEach(year => {
-            (exhibitionsData[year] || []).forEach(ex => {
-                (ex.press || []).forEach(p => {
+        const years = Object.keys(exhibitionsData);
+        for (let i = 0; i < years.length; i++) {
+            const year = years[i];
+            const exhibitions = exhibitionsData[year];
+            if (!Array.isArray(exhibitions)) continue;
+
+            for (let j = 0; j < exhibitions.length; j++) {
+                const ex = exhibitions[j];
+                const pressArray = ex.press;
+                if (!Array.isArray(pressArray)) continue;
+
+                for (let k = 0; k < pressArray.length; k++) {
+                    const p = pressArray[k];
                     exhibitionPressItems.push({
                         title: p.title,
                         description: p.description,
@@ -511,9 +522,9 @@ function renderPressItems() {
                         date: p.date ? { zh: p.date, en: p.date } : undefined,
                         thumbnail: p.thumbnail || null
                     });
-                });
-            });
-        });
+                }
+            }
+        }
     }
 
     if (exhibitionPressItems.length > 0) {
@@ -522,13 +533,38 @@ function renderPressItems() {
 
         const groupSection = document.createElement('div');
         groupSection.className = 'press-section';
+
+        // 性能优化：分批渲染，初始只显示前 15 个项目
+        const INITIAL_ITEMS = 15;
+        const initialItems = exhibitionPressItems.slice(0, INITIAL_ITEMS);
+        const remainingItems = exhibitionPressItems.slice(INITIAL_ITEMS);
+
         groupSection.innerHTML = `
             <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
             <div class="press-list" data-section="group">
-                ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
+                ${initialItems.map(item => createPressItemHTML(item)).join('')}
             </div>
         `;
         fragment.appendChild(groupSection);
+
+        // 延迟加载剩余项目（使用 requestIdleCallback 或 setTimeout）
+        if (remainingItems.length > 0) {
+            const pressList = groupSection.querySelector('.press-list');
+
+            // 使用 requestIdleCallback 在浏览器空闲时加载剩余项目
+            const loadRemaining = () => {
+                requestAnimationFrame(() => {
+                    const remainingHTML = remainingItems.map(item => createPressItemHTML(item)).join('');
+                    pressList.insertAdjacentHTML('beforeend', remainingHTML);
+
+                    // 初始化新加载图片的懒加载
+                    initImageLoading();
+                });
+            };
+
+            // 在初始渲染完成后 500ms 加载剩余项目
+            setTimeout(loadRemaining, 500);
+        }
     }
 
     // 清空容器并一次性插入所有内容
@@ -537,6 +573,28 @@ function renderPressItems() {
 
     // 初始化图片加载
     initImageLoading();
+
+    // 性能优化：为最后几个项目添加特殊优化
+    optimizeBottomItems();
+}
+
+// 性能优化：为底部项目添加特殊处理
+function optimizeBottomItems() {
+    requestAnimationFrame(() => {
+        const allItems = document.querySelectorAll('.press-item');
+        const totalItems = allItems.length;
+
+        // 为最后 5 个项目添加 GPU 加速
+        for (let i = Math.max(0, totalItems - 5); i < totalItems; i++) {
+            const item = allItems[i];
+            if (item) {
+                // 强制使用 GPU 合成层，避免高度变化时重绘整个页面
+                item.style.transform = 'translateZ(0)';
+                item.style.willChange = 'transform';
+                item.style.backfaceVisibility = 'hidden';
+            }
+        }
+    });
 }
 
 // 将 'YYYY.MM.DD' 或 'YYYY.MM' 转为时间戳
@@ -549,23 +607,135 @@ function parsePressDate(dateStr) {
     return new Date(y, m, d).getTime();
 }
 
-// 初始化图片加载优化
+// 初始化图片懒加载优化 - 使用 Intersection Observer，滚动时暂停加载
 function initImageLoading() {
-    const images = document.querySelectorAll('.press-thumbnail img');
+    const images = document.querySelectorAll('.press-lazy-img');
+    if (images.length === 0) return;
 
-    images.forEach(img => {
-        // 如果图片加载失败，显示备用图标
+    let isScrolling = false;
+    let pendingImages = new Set();
+    const loadedImages = new Set(); // 追踪已加载的图片
+
+    // 创建 Intersection Observer
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const img = entry.target;
+
+            // 只处理进入视口且未加载的图片
+            if (entry.isIntersecting && !loadedImages.has(img)) {
+                // 如果正在滚动，延迟加载
+                if (isScrolling) {
+                    pendingImages.add(img);
+                } else {
+                    loadImage(img, imageObserver);
+                }
+            }
+        });
+    }, {
+        // 提前 200px 开始加载
+        rootMargin: '200px 0px',
+        threshold: 0.01
+    });
+
+    // 观察所有图片
+    images.forEach(img => imageObserver.observe(img));
+
+    // 加载单个图片的函数
+    function loadImage(img, observer) {
+        const src = img.getAttribute('data-src');
+        if (!src || img.src || loadedImages.has(img)) return;
+
+        // 标记为已加载（避免重复加载）
+        loadedImages.add(img);
+        const thumbnail = img.parentElement;
+
+        // 使用 requestIdleCallback 在浏览器空闲时加载
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                img.src = src;
+
+                // 图片加载成功后添加 loaded 类
+                img.onload = function () {
+                    if (thumbnail) {
+                        thumbnail.classList.add('loaded');
+                    }
+                    // 图片加载完成后才停止观察
+                    if (observer) {
+                        observer.unobserve(img);
+                    }
+                };
+            }, { timeout: 1000 });
+        } else {
+            // 降级方案：使用 setTimeout
+            setTimeout(() => {
+                img.src = src;
+
+                // 图片加载成功后添加 loaded 类
+                img.onload = function () {
+                    if (thumbnail) {
+                        thumbnail.classList.add('loaded');
+                    }
+                    // 图片加载完成后才停止观察
+                    if (observer) {
+                        observer.unobserve(img);
+                    }
+                };
+            }, 50);
+        }
+
+        // 错误处理
         img.onerror = function () {
-            this.style.display = 'none';
+            this.classList.add('is-hidden');
             const fallback = this.parentElement.querySelector('.press-thumbnail-fallback');
             if (fallback) {
                 fallback.style.display = 'flex';
             }
+            // 错误时也移除占位符和停止观察
+            if (thumbnail) {
+                thumbnail.classList.add('loaded');
+            }
+            if (observer) {
+                observer.unobserve(img);
+            }
         };
-    });
-}
+    }
 
-// 页面加载完成后初始化
+    // 监听滚动状态
+    let scrollTimer;
+    window.addEventListener('scroll', () => {
+        isScrolling = true;
+        clearTimeout(scrollTimer);
+
+        // 滚动停止后加载待处理的图片
+        scrollTimer = setTimeout(() => {
+            isScrolling = false;
+
+            // 批量加载待处理的图片
+            if (pendingImages.size > 0) {
+                requestAnimationFrame(() => {
+                    pendingImages.forEach(img => loadImage(img, imageObserver));
+                    pendingImages.clear();
+                });
+            }
+        }, 150);
+    }, { passive: true });
+
+    // 立即加载前 8 张可见图片，其余完全延迟
+    requestAnimationFrame(() => {
+        let loadedCount = 0;
+        const MAX_INITIAL_LOAD = 8;
+
+        images.forEach(img => {
+            if (loadedCount >= MAX_INITIAL_LOAD) return;
+
+            const rect = img.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                loadImage(img, imageObserver);
+                loadedCount++;
+            }
+        });
+    });
+}// 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', function () {
     // 稍微延迟以确保LanguageManager已经加载
     setTimeout(initPress, 100);
@@ -579,22 +749,30 @@ document.addEventListener('DOMContentLoaded', function () {
 function initScrollOptimization() {
     let scrollTimer;
     let isScrolling = false;
+    let ticking = false;
     const body = document.body;
 
     window.addEventListener('scroll', function () {
-        // 节流：只在首次滚动时添加类
-        if (!isScrolling) {
-            isScrolling = true;
-            body.classList.add('is-scrolling');
+        // 使用 requestAnimationFrame 优化性能
+        if (!ticking) {
+            requestAnimationFrame(function () {
+                // 节流：只在首次滚动时添加类
+                if (!isScrolling) {
+                    isScrolling = true;
+                    body.classList.add('is-scrolling');
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
 
         // 清除之前的定时器
         clearTimeout(scrollTimer);
 
-        // 滚动停止后移除类
+        // 滚动停止后移除类 - 缩短延迟从 150ms → 100ms
         scrollTimer = setTimeout(function () {
             body.classList.remove('is-scrolling');
             isScrolling = false;
-        }, 150);
+        }, 100);
     }, { passive: true });
 } 
