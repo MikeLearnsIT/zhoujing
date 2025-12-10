@@ -10,6 +10,8 @@
     border-bottom: 1px solid rgba(201, 169, 110, 0.15);
     z-index: 1000;
     transition: var(--transition);
+    /* 性能优化：提升为合成层 */
+    transform: translateZ(0);
 }
 
 .nav-container {

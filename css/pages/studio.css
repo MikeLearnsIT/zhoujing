@@ -2,6 +2,23 @@
 
 /* 工作室页面基础布局 */
 .studio {
+    position: relative;
+    padding: 8rem 0 4rem;
+    min-height: 100vh;
+}
+
+.studio::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
+    
     /* 高级感背景：轻微网格 + 角落暖色晕染 */
     background-color: var(--background-color);
     background-image:
@@ -11,8 +28,6 @@
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
-    padding: 8rem 0 4rem;
-    min-height: 100vh;
 }
 
 .studio h2 {

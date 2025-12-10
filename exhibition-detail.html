@@ -73,21 +73,6 @@
     <script src="js/mobile-menu.js"></script>
     <script src="js/exhibitions.js"></script>
     <script>
-        // 滚动优化：滚动时禁用 hover 效果
-        (function initScrollOptimization() {
-            let scrollTimer;
-            const body = document.body;
-
-            window.addEventListener('scroll', function () {
-                body.classList.add('is-scrolling');
-
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(function () {
-                    body.classList.remove('is-scrolling');
-                }, 150);
-            }, { passive: true });
-        })();
-
         // 页面加载时解析URL参数并显示展览详情
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);

@@ -534,77 +534,104 @@ function renderPressItems() {
         const groupSection = document.createElement('div');
         groupSection.className = 'press-section';
 
-        // 性能优化：分批渲染，初始只显示前 15 个项目
-        const INITIAL_ITEMS = 15;
-        const initialItems = exhibitionPressItems.slice(0, INITIAL_ITEMS);
-        const remainingItems = exhibitionPressItems.slice(INITIAL_ITEMS);
-
+        // 性能优化：一次性渲染所有项目，避免分批渲染导致的高度跳动和重排
         groupSection.innerHTML = `
             <h3 class="section-title" data-i18n="press.groupExhibitions">${getTranslation('press.groupExhibitions')}</h3>
             <div class="press-list" data-section="group">
-                ${initialItems.map(item => createPressItemHTML(item)).join('')}
+                ${exhibitionPressItems.map(item => createPressItemHTML(item)).join('')}
             </div>
         `;
         fragment.appendChild(groupSection);
-
-        // 延迟加载剩余项目（使用 requestIdleCallback 或 setTimeout）
-        if (remainingItems.length > 0) {
-            const pressList = groupSection.querySelector('.press-list');
-
-            // 使用 requestIdleCallback 在浏览器空闲时加载剩余项目
-            const loadRemaining = () => {
-                requestAnimationFrame(() => {
-                    const remainingHTML = remainingItems.map(item => createPressItemHTML(item)).join('');
-                    pressList.insertAdjacentHTML('beforeend', remainingHTML);
-
-                    // 初始化新加载图片的懒加载
-                    initImageLoading();
-                });
-            };
-
-            // 在初始渲染完成后 500ms 加载剩余项目
-            setTimeout(loadRemaining, 500);
-        }
     }
 
     // 清空容器并一次性插入所有内容
     container.innerHTML = '';
     container.appendChild(fragment);
 
-    // 初始化图片加载
-    initImageLoading();
-
-    // 性能优化：为最后几个项目添加特殊优化
-    optimizeBottomItems();
-}
-
-// 性能优化：为底部项目添加特殊处理
-function optimizeBottomItems() {
-    requestAnimationFrame(() => {
-        const allItems = document.querySelectorAll('.press-item');
-        const totalItems = allItems.length;
-
-        // 为最后 5 个项目添加 GPU 加速
-        for (let i = Math.max(0, totalItems - 5); i < totalItems; i++) {
-            const item = allItems[i];
-            if (item) {
-                // 强制使用 GPU 合成层，避免高度变化时重绘整个页面
-                item.style.transform = 'translateZ(0)';
-                item.style.willChange = 'transform';
-                item.style.backfaceVisibility = 'hidden';
-            }
-        }
-    });
+    // 初始化高性能懒加载
+    initSmartLazyLoading();
 }
 
 // 将 'YYYY.MM.DD' 或 'YYYY.MM' 转为时间戳
 function parsePressDate(dateStr) {
-    if (!dateStr || typeof dateStr !== 'string') return 0;
-    const parts = dateStr.split('.').map(n => parseInt(n, 10));
-    const y = parts[0] || 0;
-    const m = (parts[1] || 1) - 1;
-    const d = parts[2] || 1;
-    return new Date(y, m, d).getTime();
+    if (!dateStr) return 0;
+    // 移除所有非数字字符，转为数字进行比较
+    return parseInt(dateStr.replace(/[^\d]/g, '')) || 0;
+}
+
+// 智能懒加载系统：只在滚动停止时加载图片，彻底解决滚动卡顿
+function initSmartLazyLoading() {
+    const lazyImages = document.querySelectorAll('.press-lazy-img');
+    if (!lazyImages.length) return;
+
+    // 滚动状态追踪
+    let isScrolling = false;
+    let scrollTimer = null;
+
+    // 监听滚动状态
+    window.addEventListener('scroll', () => {
+        isScrolling = true;
+        clearTimeout(scrollTimer);
+        // 150ms 无滚动事件则认为滚动停止
+        scrollTimer = setTimeout(() => {
+            isScrolling = false;
+        }, 150);
+    }, { passive: true });
+
+    // 待加载图片队列
+    const loadQueue = new Set();
+
+    // 观察者：只负责将图片加入/移出队列
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadQueue.add(entry.target);
+            } else {
+                // 如果图片还没加载就移出了视口，从队列中移除
+                loadQueue.delete(entry.target);
+            }
+        });
+    }, {
+        rootMargin: "100px 0px", // 提前一点点检测
+        threshold: 0.01
+    });
+
+    lazyImages.forEach(img => observer.observe(img));
+
+    // 队列处理循环
+    function processQueue() {
+        // 只有在非滚动状态且队列不为空时才加载
+        if (!isScrolling && loadQueue.size > 0) {
+            // 每次处理最多 3 张图片，避免阻塞主线程
+            const batch = Array.from(loadQueue).slice(0, 3);
+
+            batch.forEach(img => {
+                const src = img.getAttribute('data-src');
+                if (src) {
+                    img.src = src;
+                    img.removeAttribute('data-src'); // 避免重复处理
+
+                    // 图片加载完成后的处理
+                    img.onload = function () {
+                        this.classList.add('is-loaded');
+                        if (this.parentElement) {
+                            this.parentElement.classList.add('loaded');
+                        }
+                    };
+
+                    // 停止观察已处理的图片
+                    observer.unobserve(img);
+                    loadQueue.delete(img);
+                }
+            });
+        }
+
+        // 继续下一帧检查
+        requestAnimationFrame(processQueue);
+    }
+
+    // 启动处理循环
+    requestAnimationFrame(processQueue);
 }
 
 // 全局滚动状态管理 - 避免多个滚动监听器
@@ -735,38 +762,4 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(initPress, 100);
     // 初始化模态框
     initPressModal();
-    // 初始化滚动优化
-    initScrollOptimization();
 });
-
-// 初始化滚动优化
-function initScrollOptimization() {
-    const body = document.body;
-
-    window.addEventListener('scroll', function () {
-        // 使用 requestAnimationFrame 优化性能
-        if (!globalScrollState.ticking) {
-            requestAnimationFrame(function () {
-                // 节流：只在首次滚动时添加类
-                if (!globalScrollState.isScrolling) {
-                    globalScrollState.isScrolling = true;
-                    body.classList.add('is-scrolling');
-                }
-                globalScrollState.ticking = false;
-            });
-            globalScrollState.ticking = true;
-        }
-
-        // 清除之前的定时器
-        clearTimeout(globalScrollState.scrollTimer);
-
-        // 滚动停止后移除类并触发事件
-        globalScrollState.scrollTimer = setTimeout(function () {
-            body.classList.remove('is-scrolling');
-            globalScrollState.isScrolling = false;
-
-            // 触发自定义事件，通知图片加载系统
-            window.dispatchEvent(new CustomEvent('scrollend-press'));
-        }, 80);
-    }, { passive: true });
-} 

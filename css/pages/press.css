@@ -12,7 +12,23 @@ body.is-scrolling .press button {
 
 /* 艺术气质媒体报道页面 */
 .press {
-    /* 高级背景：与 exhibitions 一致 - 角落暖色晕染 + 细腻斜线纹理（无 fixed 附加） */
+    position: relative;
+    padding: 8rem 2rem 6rem;
+    min-height: 100vh;
+}
+
+/* 使用伪元素实现固定背景，性能优于 background-attachment: fixed */
+.press::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    
+    /* 高级背景：与 exhibitions 一致 */
     background-color: var(--background-color);
     background-image:
         radial-gradient(1000px 600px at 10% 0%, rgba(201, 169, 110, 0.08) 0%, rgba(201, 169, 110, 0) 60%),
@@ -21,8 +37,10 @@ body.is-scrolling .press button {
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
-    padding: 8rem 2rem 6rem;
-    min-height: 100vh;
+    
+    /* 开启硬件加速 */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .press h2 {
@@ -198,7 +216,7 @@ body.is-scrolling .press button {
     transition: opacity 0.15s ease;
 }
 
-.press-lazy-img[src] {
+.press-lazy-img.is-loaded {
     /* 图片加载后显示 */
     opacity: 1;
     background: none;

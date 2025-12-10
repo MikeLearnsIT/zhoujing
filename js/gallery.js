@@ -1256,7 +1256,8 @@ function createArtworkElement(artwork) {
                  alt="${title}" 
                  class="gallery-artwork-image"
                  loading="lazy"
-                 decoding="async">
+                 decoding="async"
+                 onload="this.classList.add('is-loaded')">
             <div class="gallery-artwork-overlay">
                 <div class="gallery-artwork-actions">
                     <button class="action-btn view-btn" onclick="openImageModal('${artwork.image}', '${title}')">

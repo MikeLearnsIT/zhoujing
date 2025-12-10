@@ -3,6 +3,20 @@
 /* 展览页面基础样式 */
 /* 让背景由 main.site-full-bg 承担，内容容器仅负责左右留白；若未添加该类，可直接给 main.site-full-bg 添加以下背景 */
 .site-full-bg {
+    position: relative;
+}
+
+/* 使用伪元素实现固定背景，性能优于 background-attachment: fixed */
+.site-full-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* 确保在 .exhibitions::before (-1) 之下 */
+    pointer-events: none;
+
     /* 高级背景：角落暖色晕染 + 斜线纹理 */
     background-color: var(--background-color);
     background-image:
@@ -12,6 +26,10 @@
     background-repeat: no-repeat, no-repeat, repeat;
     background-position: center, center, center;
     background-size: cover, cover, auto;
+    
+    /* 开启硬件加速 */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 /* 内容容器 */
@@ -30,8 +48,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(circle at 50% 50%, rgba(201, 169, 110, 0.02) 0%, transparent 70%);
     pointer-events: none;
     z-index: -1;
@@ -66,9 +84,10 @@
 
 .exhibition-year {
     margin-bottom: 2.5rem;
-    /* 性能优化：只渲染可见区域 */
+    /* 性能优化：跳过屏幕外内容的渲染计算 */
     content-visibility: auto;
-    contain-intrinsic-size: auto 500px;
+    /* 给定一个预估高度，防止滚动条跳动 (假设平均高度) */
+    contain-intrinsic-size: 1000px; 
 }
 
 .exhibition-year h3 {
@@ -145,12 +164,6 @@
     .exhibition-item:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px var(--shadow-medium);
-    }
-    
-    /* 滚动时禁用 hover 效果，提升性能 */
-    body.is-scrolling .exhibition-item:hover {
-        transform: none;
-        box-shadow: 0 2px 8px var(--shadow-light);
     }
 }
 
@@ -254,11 +267,6 @@
         box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
     }
     
-    /* 滚动时禁用按钮 hover 效果 */
-    body.is-scrolling .view-detail-btn:hover {
-        transform: none;
-        box-shadow: 0 2px 8px rgba(201, 169, 110, 0.2);
-    }
 }
 
 .exhibition-images {

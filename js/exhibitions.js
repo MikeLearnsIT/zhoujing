@@ -2066,25 +2066,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 优化滚动性能：滚动时禁用 hover 效果
-    let scrollTimer;
-    const body = document.body;
-
-    window.addEventListener('scroll', function () {
-        // 添加滚动中的类
-        if (!body.classList.contains('is-scrolling')) {
-            body.classList.add('is-scrolling');
-        }
-
-        // 清除之前的定时器
-        clearTimeout(scrollTimer);
-
-        // 滚动停止后移除类
-        scrollTimer = setTimeout(function () {
-            body.classList.remove('is-scrolling');
-        }, 150);
-    }, { passive: true });
-
     // 初始渲染
     renderExhibitions();
 });
@@ -2094,15 +2075,22 @@ function renderExhibitions() {
     const container = document.querySelector('.exhibitions-timeline');
     if (!container) return;
 
-    // 使用 requestAnimationFrame 确保在浏览器准备好时再渲染
-    requestAnimationFrame(() => {
-        // 使用 DocumentFragment 减少重排
+    // 清空容器
+    container.innerHTML = '';
+
+    // 按年份倒序排列
+    const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
+
+    // 分批渲染配置
+    const BATCH_SIZE = 2; // 每次渲染2个年份
+    let currentIndex = 0;
+
+    function renderBatch() {
         const fragment = document.createDocumentFragment();
+        const endIndex = Math.min(currentIndex + BATCH_SIZE, years.length);
 
-        // 按年份倒序排列
-        const years = Object.keys(exhibitionsData).sort((a, b) => b - a);
-
-        years.forEach(year => {
+        for (let i = currentIndex; i < endIndex; i++) {
+            const year = years[i];
             const yearSection = document.createElement('div');
             yearSection.className = 'exhibition-year';
 
@@ -2120,12 +2108,20 @@ function renderExhibitions() {
 
             yearSection.appendChild(exhibitionsList);
             fragment.appendChild(yearSection);
-        });
+        }
 
-        // 一次性插入所有内容
-        container.innerHTML = '';
         container.appendChild(fragment);
-    });
+        currentIndex = endIndex;
+
+        // 如果还有未渲染的年份，继续下一批
+        if (currentIndex < years.length) {
+            // 使用 requestAnimationFrame 在下一帧继续渲染，避免阻塞主线程
+            requestAnimationFrame(renderBatch);
+        }
+    }
+
+    // 开始第一批渲染
+    requestAnimationFrame(renderBatch);
 }
 
 // 创建展览项目
