@@ -93,28 +93,35 @@
 /* Responsive for Exhibition List */
 @media (max-width: 768px) {
     .exhibition-item-row {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: 80px 1fr;
+        gap: 1.5rem;
         padding: 1.5rem 0;
+        align-items: start;
     }
 
     .ex-list-image {
-        display: none;
+        display: block;
+        width: 80px;
+        height: 110px;
+        grid-row: 1 / span 3;
     }
 
     .ex-date-col {
-        order: 1;
+        grid-column: 2;
         font-size: 0.8rem;
+        margin-bottom: 0.2rem;
     }
 
     .ex-info-col {
-        order: 2;
+        grid-column: 2;
         padding-right: 0;
     }
 
     .ex-type-col {
-        order: 3;
+        grid-column: 2;
         text-align: left;
+        margin-top: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .ex-arrow-col {
@@ -122,6 +129,7 @@
     }
     
     .ex-item-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
     }
 }
